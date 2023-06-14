@@ -18,8 +18,8 @@
    </div>
    <br><br><br>
    <div>
-    <button> <a href="pessoa.php">Cadastro Pessoa</a></button> <br>
-    <button> <a href="produto.php">Cadastro Produto</a></button>
+    <button> <a href="cad-pessoa.php">Cadastro Pessoa</a></button> <br>
+    <button> <a href="cad-produto.php">Cadastro Produto</a></button>
    </div>
    <br><br><br>
    <div>Copy Right 2023 - Todos os direitos reservados a ETEC Bento Quirino e Pedro Ruama #°DS</div>
