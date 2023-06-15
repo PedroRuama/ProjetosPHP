@@ -8,11 +8,6 @@
 </head>
 <body>
 
-    <?php
-        
-
-    ?>  
-
    <div>
         Atividade de DS - Bento Quirino
    </div>

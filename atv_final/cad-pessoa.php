@@ -36,8 +36,8 @@
     }
 </script>
 <body>
-    cadastro pessoaaaaa
-    <form action="">
+    cadastro pessoa
+    <form action="visualizar-dados.php" method="get" name="cadastro_pessoa">
         Nome:
         <input type="text" name="nome"> <br><br>
         cpf:
@@ -47,7 +47,8 @@
         Numero de Telefone:
         <input oninput="mascaraTelefone(this)" type="text" name="telefone"><br><br>
         e-mail:
-        <input type="text" name="email">
+        <input type="text" name="email"><br> <br>
+        <input type="submit" value="Enviar" />
 
 
 
