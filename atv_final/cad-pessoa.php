@@ -48,7 +48,7 @@
         <input oninput="mascaraTelefone(this)" type="text" name="telefone"><br><br>
         e-mail:
         <input type="text" name="email"><br> <br>
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar" name="submitPessoa" />
 
 
 

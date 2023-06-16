@@ -35,7 +35,7 @@
         <input type="date" name="DataVal"> <br><br>
         codigo:
         <input oninput="mascaraCod(this)" type="text" name="cod"><br><br>
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar" name="submitProduto"/>
     </form>
 
 
