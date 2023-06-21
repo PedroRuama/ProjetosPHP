@@ -8,35 +8,14 @@ body{
 }
 #align{
     display: flex;
-    background-color: aliceblue;
-    height: 100vh;
+    background-color: rgb(63, 107, 146);
+    height: 60vh;
     width: 60vw;
     justify-content: center;
     align-items: center;
-}
- #bemvindo{
-    background-color: rgb(143, 202, 182);
-    width: 40%;
-    height: 60%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    color: white;
     flex-direction: column;
-   
-    /* font-size: 40px; */
-    
-} 
-#txt_bv{
-    font-size: 30px;
-    border:  2px solid white;
-    padding: 15px;
-    border-radius: 20px;
 }
+
 #div_form{
     background-color: white;
     display: flex;
@@ -47,11 +26,6 @@ body{
     align-items: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-#txt_adm{
-    font-size: 30px;
-    color: rgb(143, 202, 182);;
-    
 }
 
 form{

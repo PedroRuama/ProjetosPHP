@@ -73,7 +73,10 @@ input{
     justify-content: center;
     display: flex;
 }
-
+#erro{
+    color: red;
+    font-size: 15px;
+}
 #enviar{
     background-color: rgb(143, 202, 182);
     padding: 10px;
