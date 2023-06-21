@@ -9,13 +9,23 @@
 </head>
 <body>
     <div id="align">
+        <div id="bemvindo">
+            <div id="txt_bv"> <b> Bem-Vindo!</b> </div> 
+            <br>
+            
+            Faça Login e entre na sua conta
+        </div>
         <div id="div_form">
             <form name='login' method="post" >
-                Login: <br>
-                <input type="text" name="login"> <br><br>
-                Senha: <br>
-                <input type="password" name="senha"> <br><br>
-                <input type="submit" value="Enviar" >
+                <div id="txt_adm"> <b>Entre como ADM</b></div> <br><br><br>
+               
+                <input type="text" name="login" placeholder="Login"> <br><br>
+                
+                <input type="password" name="senha" placeholder="Senha"> <br><br><br><br><br>
+                <div id="div_enviar">
+                    <input type="submit" value="Enviar" id="enviar">
+    
+                </div>
             </form>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

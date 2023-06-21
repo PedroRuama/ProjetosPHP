@@ -4,6 +4,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: Arial;
+    flex-direction: column;
 }
 #align{
     display: flex;

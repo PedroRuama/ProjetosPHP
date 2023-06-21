@@ -1,21 +1,26 @@
 body{
     display: flex;
     background-color:  aliceblue;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-family: Arial;
+    flex-direction: column;
+    height: 100vh;
+    
+    
 }
+
 #align{
     display: flex;
     background-color: aliceblue;
     height: 100vh;
-    width: 60vw;
+    width: 40vw;
     justify-content: center;
     align-items: center;
 }
  #bemvindo{
     background-color: rgb(143, 202, 182);
-    width: 40%;
+    width: 50%;
     height: 60%;
     padding: 20px;
     display: flex;
@@ -41,7 +46,7 @@ body{
     display: flex;
     padding: 20px;
     height: 60%;
-    width: 60%;
+    width: 50%;
     justify-content: center;
     align-items: center;
     border-top-right-radius: 20px;
@@ -49,14 +54,10 @@ body{
 }
 #txt_adm{
     font-size: 30px;
-    color: rgb(143, 202, 182);;
+    color: rgb(143, 202, 182);
     
 }
 
-form{
-    
-    font-size: 20px;
-}
 input{
     border-radius: 10px;
     padding: 15px;
@@ -66,18 +67,28 @@ input{
     
 
 }
-
-#div_enviar{
-   
-    width: 100;
-    justify-content: center;
-    display: flex;
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
-#enviar{
-    background-color: rgb(143, 202, 182);
-    padding: 10px;
-    color: white;
+button{
     font-size: 20px;
+    border:  2px solid white;
+    padding: 15px;
+    border-radius: 20px;
+    
+
+}
+
+#btn1{
+    background-color: white;
+    color:  rgb(72, 107, 95);
+    
+}
+
+#btn2{
+    background-color: rgb(143, 202, 182);;
+    color:  white;
     
 }
