@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADM</title>
+    <title>Visualizar Dados</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -18,15 +19,15 @@
             if(isset($_GET["submitPessoa"])){
                 echo "<br> <h3> Dados Cadastro pessoa  </h3>";
                 echo  "Nome: ".$_GET['nome'];
-                echo "<br>";
+                echo "<br> <br>";
                 echo  "CPF: ".$_GET['cpf'];
-                echo "<br>";
+                echo "<br> <br>";
                 echo  "Data de Nascmento: ".$_GET['DataNasc'];
-                echo "<br>";
+                echo "<br> <br>";
                 echo  "Telefone: ".$_GET['telefone'];
-                echo "<br>";
+                echo "<br> <br>";
                 echo  "E-mail: ".$_GET['email'];
-                echo "<br>";
+                echo "<br> <br>";
             }
          
             if(isset($_GET["submitProduto"])){

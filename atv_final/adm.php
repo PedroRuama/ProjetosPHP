@@ -9,28 +9,26 @@
 </head>
 <body>
 
-   <div >
+   <div id="top">
         Atividade de DS - Bento Quirino
    </div>
    <br><br><br>
 
    <div id="align">
-    <div id="bemvindo">
+        <div id="bemvindo">
+            <button id="btn1"> <a href="cad-pessoa.php">Cadastro Pessoa</a></button>
 
-        <button id="btn1"> <a href="cad-pessoa.php">Cadastro Pessoa</a></button> <br>
-
-    </div>
-    <div id="div_form">
-
-        <button id="btn2"> <a href="cad-produto.php">Cadastro Produto</a></button>
-    </div>
+        </div>
+        <div id="div_form">
+            <button id="btn2"> <a href="cad-produto.php">Cadastro Produto</a></button>
+        </div>
     </div>
 
 
 
 
    <br><br><br>
-   <div>Copy Right 2023 - Todos os direitos reservados a ETEC Bento Quirino e Pedro Ruama #°DS</div>
+   <div id="rodape">Copy Right 2023 - Todos os direitos reservados a ETEC Bento Quirino e Pedro Ruama 3°DS</div>
 </body>
 </html>
 

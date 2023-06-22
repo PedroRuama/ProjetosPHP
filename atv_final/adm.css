@@ -6,7 +6,7 @@ body{
     font-family: Arial;
     flex-direction: column;
     height: 100vh;
-    
+    margin: 0px;
     
 }
 
@@ -18,8 +18,25 @@ body{
     justify-content: center;
     align-items: center;
 }
+#top{
+    /* background-color: ; */
+    border-bottom:solid 2px rgb(143, 202, 182);  
+    padding: 10px;
+    width: 100vw;
+    text-align: center;
+    /* color: white; */
+    
+}
+#rodape{
+    border-top:solid 2px rgb(143, 202, 182);  
+    padding: 10px;
+    width: 100vw;
+    text-align: center;
+    /* color: white; */
+    
+}
  #bemvindo{
-    background-color: rgb(143, 202, 182);
+    background-color: aliceblue;
     width: 50%;
     height: 60%;
     padding: 20px;
@@ -42,7 +59,7 @@ body{
     border-radius: 20px;
 }
 #div_form{
-    background-color: white;
+    background-color: aliceblue;
     display: flex;
     padding: 20px;
     height: 60%;
@@ -82,13 +99,36 @@ button{
 }
 
 #btn1{
+    background-color: rgb(143, 202, 182);;
+    color:  white;
+    border-color: white;
+    transition: 0.5s;
+    white-space: nowrap;
+    
+}
+#btn1:hover{
     background-color: white;
     color:  rgb(72, 107, 95);
+    border-color: rgb(72, 107, 95);
+    font-size: 24px;
+    white-space: nowrap;
     
+    
+   
 }
 
 #btn2{
-    background-color: rgb(143, 202, 182);;
+    background-color: rgb(143, 202, 182);
     color:  white;
+    border-color: white;
+    transition: 0.5s;
+    white-space: nowrap;
     
+}
+#btn2:hover{
+    background-color: white;
+    color:  rgb(72, 107, 95);
+    border-color: rgb(72, 107, 95);
+    font-size: 24px;
+    white-space: nowrap;
 }

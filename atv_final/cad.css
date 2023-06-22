@@ -1,36 +1,28 @@
 body{
     display: flex;
-    background-color:  aliceblue;
+    background-color:  rgb(72, 107, 95);
     justify-content: center;
     align-items: center;
     font-family: Arial;
     flex-direction: column;
 }
+form{
+    color:white;
+}
 #align{
     display: flex;
-    background-color: rgb(63, 107, 146);
-    height: 60vh;
+    background-color: rgb(72, 107, 95);
+    height: 100vh;
     width: 60vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-#div_form{
-    background-color: white;
-    display: flex;
-    padding: 20px;
-    height: 60%;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-form{
-    
-    font-size: 20px;
+#txtCad{
+    color: rgb(143, 202, 182);
+    font-weight: bold;
+    font-size: 30px;
 }
 input{
     border-radius: 10px;
@@ -44,7 +36,7 @@ input{
 
 #div_enviar{
    
-    width: 100;
+   
     justify-content: center;
     display: flex;
 }
@@ -53,6 +45,16 @@ input{
     background-color: rgb(143, 202, 182);
     padding: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 50%;
+    transition: 0.5s;
+    
+}
+#enviar:hover{
+    background-color: white;
+    color:  rgb(72, 107, 95);
+    border-color: rgb(72, 107, 95);
+    font-size: 18px;
     
 }

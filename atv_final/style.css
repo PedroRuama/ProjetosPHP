@@ -4,6 +4,10 @@ body{
     justify-content: center;
     align-items: center;
     font-family: Arial;
+    color: black;
+}
+h3{
+   color: rgb(143, 202, 182); 
 }
 #align{
     display: flex;
@@ -82,5 +86,13 @@ input{
     padding: 10px;
     color: white;
     font-size: 20px;
+    
+    transition: 0.5s;
+    
+}
+#enviar:hover{
+    background-color: white;
+    color:  rgb(72, 107, 95);
+    border-color: solid rgb(72, 107, 95);
     
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro Pessoa</title>
     <link rel="stylesheet" href="cad.css"/>
 </head>
 <script
@@ -37,24 +37,26 @@
     }
 </script>
 <body>
-    cadastro pessoa
-    <form action="visualizar-dados.php" method="get" name="cadastro_pessoa">
-        Nome:
-        <input type="text" name="nome"> <br><br>
-        cpf:
-        <input oninput="mascaraCpf(this)" id="cpf" name="cpf"> <br><br>
-        data de nascimento:
-        <input type="date" name="DataNasc"> <br><br>
-        Numero de Telefone:
-        <input oninput="mascaraTelefone(this)" type="text" name="telefone"><br><br>
-        e-mail:
-        <input type="text" name="email"><br> <br>
-        <input type="submit" value="Enviar" name="submitPessoa" />
+    <div id="align">
+        <div id="txtCad">
+            Cadastro Pessoa 
+        </div>
+        <br> <br>
+        <form action="visualizar-dados.php" method="get" name="cadastro_pessoa">
+            
+            <input type="text" name="nome" placeholder="Nome"> <br><br>
+            
+            <input oninput="mascaraCpf(this)" id="cpf" name="cpf" placeholder="CPF"> <br><br>
+           
+            <input type="date" name="DataNasc" id="Data de nascimento" > <br><br>
+           
+            <input oninput="mascaraTelefone(this)" type="text" name="telefone" placeholder="Número de telefone"><br><br>
+           
+            <input type="text" name="email" placeholder="E-mail"><br> <br>
 
+            <input type="submit" value="Enviar" name="submitPessoa" id="enviar"/>
 
-
-
-
-    </form>
+        </form>
+    </div>
 </body>
 </html>

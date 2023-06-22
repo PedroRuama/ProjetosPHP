@@ -17,7 +17,7 @@
         </div>
         <div id="div_form">
             <form name='login' method="post" >
-                <div id="txt_adm"> <b>Entre como ADM</b></div> <br><br><br>
+                <div id="txt_adm"> <b>Entre como ADM</b></div> <br><br>
                
                 <input type="text" name="login" placeholder="Login"> <br><br>
                 
@@ -33,7 +33,7 @@
                         }
                     }
                     ?>
-                <br><br><br><br><br>
+                <br><br>
                 <div id="div_enviar">
                     <input type="submit" value="Enviar" id="enviar">
     
