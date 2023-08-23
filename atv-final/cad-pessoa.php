@@ -42,7 +42,7 @@
             Cadastro Pessoa 
         </div>
         <br> <br>
-        <form action="visualizar-dados.php" method="get" name="cadastro_pessoa">
+        <form action="visualizar-dados.php" method="post" name="cadastro_pessoa">
             
             <input type="text" name="nome" placeholder="Nome"> <br><br>
             

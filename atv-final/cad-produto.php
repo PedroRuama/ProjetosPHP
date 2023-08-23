@@ -28,7 +28,7 @@
         Cadastro Produto 
 
     </div> <br><br>
-    <form name="cadastro_produto" method="get" action="visualizar-dados.php">
+    <form name="cadastro_produto" method="post" action="visualizar-dados.php">
         
         <input type="text" name="produto" placeholder="Nome Produto"> <br><br>
         
