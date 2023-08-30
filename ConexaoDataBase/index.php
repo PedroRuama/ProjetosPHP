@@ -1,10 +1,21 @@
 <?php
-    include_once('conexao.php');
+    function converterdata($data){
+        $novadata = substr($data,8,2).'/'.substr($data,5,2).'/'.substr($data,0.4);
+    
+        return $novadata;
+        //substr($data,8,2) => 01
+        //substr($data,5,2) => 05
+        //substr($data,0.4) => 2017
+    
+    }
+
+    
     //executa a query com base na conexão
+    include_once('conexao.php');
     
 
     //executa a query com base na conexão
-    $query = mysqli_query($conexao, "select * from produtos ");
+    $query = mysqli_query($conexao, "select * from produtos");
 
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
@@ -27,6 +38,5 @@
 
 
 
-
-
+ 
 ?>
