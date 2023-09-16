@@ -104,7 +104,7 @@ tr:hover{
 }
 
 tr.colorir {
-    transition: 0.5s;
+    transition: 0.3s;
     background-color:rgb(228, 162, 62);
     
 }

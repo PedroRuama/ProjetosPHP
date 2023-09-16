@@ -45,7 +45,7 @@
             var trOn = tr.classList.toggle('colorir');  //colorir linha tr
 
             //id(td) da tr selecionada:
-            var td = tr.getElementsByTagName("td")[2]; //[0]= id  [2]=nome
+            var td = tr.getElementsByTagName("td")[0]; //[0]= id  [2]=nome
             var idSelec = td.innerHTML; 
             
             if(trOn){
@@ -73,6 +73,10 @@
             if (i > 0) { //liga e desliga o btn excluir de acordo com o numero de linhas ligadas
                 btnExcluir.style = "opacity: 100%; cursor: pointer;"; 
             }   else{btnExcluir.style = "opacity: 30%;  cursor: not-allowed;"}      
+
+            let InputSub = document.getElementById("inputIds");
+            InputSub.value = Selecionado;
+
         }
 
 
@@ -121,16 +125,16 @@
             <div id='box_acoes'>
                 <a href="cad_produto.php"> <button class="acoes" id="cad"> CADASTRAR </button> </a>
                         
-                <form action="" > 
-                    <input type="number" name="Ids" style="display:none" value=''>
-                    
+                <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
+                    <input type="txt" name="Ids" id="inputIds">
                     <input class="acoes" id="excluir" type="submit" value="Excluir">
                 </form>
                
                 <!-- 
                 <button class="acoes"></button>
                 <button class="acoes"></button>
-                <button class="acoes"></button> -->
+                <button class="acoes"></button> 
+                -->
             </div>
         </div>
     </div>
