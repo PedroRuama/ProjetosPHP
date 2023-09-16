@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="style/index.css">
 
     <script>
-        console.log("teste");
+        
         <?php 
             // $idPHP = array();      
             // php array_push($idPHP, $x, $y);                
@@ -37,27 +37,37 @@
 
         //selecão da linha: 
         let i = 0 //linhas atiivas
+
+        Selecionado = new Array();
+
         function trOn(tr) {
             var btnExcluir = document.getElementById('excluir');
             var trOn = tr.classList.toggle('colorir');  //colorir linha tr
 
-            //id da tr selecionada:
-            var td = tr.getElementsByTagName("td")[2];
+            //id(td) da tr selecionada:
+            var td = tr.getElementsByTagName("td")[2]; //[0]= id  [2]=nome
             var idSelec = td.innerHTML; 
             
             if(trOn){
                 console.log('trOn');
                 i = i + 1 //controle de qunatas linhas selecionadas/ligadas 
-                
                 console.log("linhas ativas: ", i)
-                // console.log(idSelec)
+
+                Selecionado.push(idSelec) //adiciona o item selecionada á array
+                console.log(Selecionado)
                 
             }
             else{
                 tr.classList.remove('colorir');    
                 i = i - 1
+                
                 console.log('trOff');
                 console.log("linhas ativas: ", i)
+                let index =Selecionado.indexOf(idSelec) //busca se existe e a posiçao do item na array
+                Selecionado.splice(index, 1) //apaga o item
+
+                console.log(Selecionado)
+                
             } 
 
             if (i > 0) { //liga e desliga o btn excluir de acordo com o numero de linhas ligadas
@@ -110,7 +120,13 @@
             </div>
             <div id='box_acoes'>
                 <a href="cad_produto.php"> <button class="acoes" id="cad"> CADASTRAR </button> </a>
-                <button class="acoes" id="excluir"> Excluir </button>
+                        
+                <form action="" > 
+                    <input type="number" name="Ids" style="display:none" value=''>
+                    
+                    <input class="acoes" id="excluir" type="submit" value="Excluir">
+                </form>
+               
                 <!-- 
                 <button class="acoes"></button>
                 <button class="acoes"></button>

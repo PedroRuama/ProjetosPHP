@@ -113,7 +113,7 @@ tr.colorir {
 #table{
     height: auto;
     width: auto;
-    background-color: blueviolet;
+    
     display: flex;
     border-radius: 10px;
     overflow: hidden;
