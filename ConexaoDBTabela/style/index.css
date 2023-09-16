@@ -6,7 +6,10 @@ body{
 h1{
     color: white;
 }
-
+a{
+    text-decoration: none;
+    color: orangered;
+}
 .center{
     display: flex;
     justify-content: center;
@@ -43,11 +46,17 @@ img{
 
 
 
-
+/* 
 #head{
     display: flex;
     justify-content: space-around;
     background-color: rgb(206, 89, 21);
+    
+    
+} */
+
+#componentes{
+    display: flex;
 }
 
 table,td,th {
@@ -55,55 +64,98 @@ table,td,th {
     border-collapse: collapse;
 }
     
-th, td{
-    text-align: center;
-    padding: 10px 14px;
+tr, th, td{
+    
+    padding: 14px 16px;
     text-align: center;
 }
 
 
 
 th{
-    
-    
     text-align: center;
-    display: flex;
+    /* display: flex; */
     color: white;
     background-color: rgb(206, 89, 21);
     
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: auto;
-    
+    /* align-items: center;
+    justify-content: center; */
 }
 
 td{
-    padding: 10px 14px;
+    /* padding: 10px 14px; */
     /* border-right: 0.1px solid black; */
     
 }
 
 tr{
+    
     background-color: white;
 
 }
+
+/* linha sim linha não, cor */
 tr:nth-child(even) {
     background-color: #ebeaea;
 } 
-/* linha sim linha não, cor */
+tr:hover{
+    transition: 0.5s;
+    background-color: rgb(233, 162, 120);
+}
+
+tr.colorir {
+    transition: 0.5s;
+    background-color:rgb(228, 162, 62);
+    
+}
+
 
 #table{
-    
-    width: auto;
     height: auto;
+    width: auto;
+    background-color: blueviolet;
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+   
 }
-table{
+.tabela_dados{
+    text-align: center;
+    height: 100%;
     
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+}
+
+.dados{
+    align-self: center;
     
+}
+
+/*btns : */
+
+#box_acoes{
+    display: flex;
+    flex-direction: column;
+}
+.acoes{
+    padding: 10px;
+    margin: 15px;
+    background-color: whitesmoke;
+    color: orangered;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+
+
+}
+
+#cad{
+    cursor: pointer;
+}
+#excluir{
+    transition: 0.5s;
+    opacity: 30%;
+    cursor: not-allowed;
 }

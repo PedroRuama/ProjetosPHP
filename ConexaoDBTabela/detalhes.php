@@ -1,5 +1,5 @@
 <?php //executa a query com base na conexão
-    include_once('conexao.php');
+    include_once('controllers/conexao.php');
     
 
     //recupera a informação da URL
