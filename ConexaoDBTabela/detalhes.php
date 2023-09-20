@@ -1,4 +1,5 @@
-<?php //executa a query com base na conexão
+<?php 
+    //executa a query com base na conexão
     include_once('controllers/conexao.php');
     
 

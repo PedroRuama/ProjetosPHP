@@ -1,4 +1,61 @@
+
+body{
+    background-color: whitesmoke;
+    font-family: Arial;
+}
+.input-group{
+    position: relative;
+}
+.input-group_input{
+    font: inherit;
+    color: rgb(41, 39, 39);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: 2px solid rgb(41, 39, 39);
+    background-color: transparent;
+    transition: outline-color 500ms;
+}
+
+.input-group_input:is(:focus){
+    outline-color: orangered;
+}
+.input-group_label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 10px;
+    font-size: 18px;
+    transition: 500ms;
+}
+
+.input-group_input:focus +
+.input-group_label,
+.input-group_input:valid
+
+
+
+.input-group_label:is(:focus, :valid){ 
+    padding-inline: 5px;
+    translate: 10px -10px;
+    scale: 0.8;
+    background-color: whitesmoke;
+    
+}
+.inputNotNull{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 500ms;
+    padding-inline: 5px;
+    translate: 10px -10px;
+    scale: 0.8;
+    background-color: whitesmoke;
+}
+
+
+
 form{
-    display: flex;
-    flex-direction: column;
+    
+    
 }

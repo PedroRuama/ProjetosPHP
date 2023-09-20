@@ -25,65 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja dataBase</title>
     <link rel="stylesheet" href="style/index.css">
-
-    <script>
-        
-        <?php 
-            // $idPHP = array();      
-            // php array_push($idPHP, $x, $y);                
-       ?>
-       
-
-
-        //selecão da linha: 
-        let i = 0 //linhas atiivas
-
-        Selecionado = new Array();
-
-        function trOn(tr) {
-            var btnExcluir = document.getElementById('excluir');
-            var trOn = tr.classList.toggle('colorir');  //colorir linha tr
-
-            //id(td) da tr selecionada:
-            var td = tr.getElementsByTagName("td")[0]; //[0]= id  [2]=nome
-            var idSelec = td.innerHTML; 
-            
-            if(trOn){
-                console.log('trOn');
-                i = i + 1 //controle de qunatas linhas selecionadas/ligadas 
-                console.log("linhas ativas: ", i)
-
-                Selecionado.push(idSelec) //adiciona o item selecionada á array
-                console.log(Selecionado)
-                
-            }
-            else{
-                tr.classList.remove('colorir');    
-                i = i - 1
-                
-                console.log('trOff');
-                console.log("linhas ativas: ", i)
-                let index =Selecionado.indexOf(idSelec) //busca se existe e a posiçao do item na array
-                Selecionado.splice(index, 1) //apaga o item
-
-                console.log(Selecionado)
-                
-            } 
-
-            if (i > 0) { //liga e desliga o btn excluir de acordo com o numero de linhas ligadas
-                btnExcluir.style = "opacity: 100%; cursor: pointer;"; 
-            }   else{btnExcluir.style = "opacity: 30%;  cursor: not-allowed;"}      
-
-            let InputSub = document.getElementById("inputIds");
-            InputSub.value = Selecionado;
-
-        }
-
-
-        
-
-
-    </script>
+    <script src="scripts/index.js"></script>
 
 </head>
 <body>
@@ -126,8 +68,8 @@
                 <a href="cad_produto.php"> <button class="acoes" id="cad"> CADASTRAR </button> </a>
                         
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
-                    <input type="txt" name="Ids" id="inputIds">
-                    <input class="acoes" id="excluir" type="submit" value="Excluir">
+                    <input type="txt" name="Ids" id="inputIds" style="display: block">
+                    <input class="acoes" id="excluir" type="submit" value="Excluir" disabled>
                 </form>
                
                 <!-- 

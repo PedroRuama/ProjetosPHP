@@ -1,0 +1,70 @@
+<?php
+    include_once("controllers/conexao.php");
+    
+    $query = mysqli_query($conexao, "select id from produtos order by id desc limit 1");
+
+    $ultimo_cad = mysqli_fetch_array($query);
+    $id = $ultimo_cad['id'] + 1;
+    
+    
+?>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/cad.css">
+    <script>
+        console.log("iniciado");
+        
+        
+        function preenchido(inputV) {
+            var labelPosition = document.getElementById('id_label')
+            // var inputV = document.getElementById('id').value;
+            if (inputV.value != "") {
+               console.log("preenchido")
+                labelPosition.classList.toggle('inputNotNull')
+
+            }  else{console.log("não preenchido")} //não preenchido
+
+        }
+       
+
+
+        
+        
+    </script>
+</head>
+
+<body>
+
+    <form action="controllers/incluir.php" method="post">
+        <div class="input-group">
+            <!-- value="<?= $id ?>" -->
+            <input type="text" name="id" id="id" class="input-group_input" onfocus="preenchido(this)" onfocusout="preenchido(this)" > 
+            <label for="id" id="id_label" class="input-group_label">ID</label>
+
+        </div>
+        <br>
+        <div class="input-group">
+            <input type="number" id="codigo" name="codigo" class="input-group_input" onfocus="preenchido()" onfocusout="preenchido()">
+            <label for="codigo" class="input-group_label">Código</label>
+
+        </div>
+        <input type="text" placeholder="Produto" name="produto">
+        <textarea name="descricao" id="desc" cols="30" rows="3"></textarea>
+        <input type="date" placeholder="Data" name="data">
+        <input type="number" id="valor" placeholder="Preço" name="valor">
+        <input type="submit" id="ok" value="Ok">&nbsp;&nbsp;
+        <input type="reset" id="reset" value="Limpar" name="vlimpar">
+    </form>
+</body>
+
+</html>
