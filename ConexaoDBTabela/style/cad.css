@@ -27,6 +27,8 @@ body{
     translate: 10px 10px;
     font-size: 18px;
     transition: 500ms;
+    width: 100px;
+    background-color: whitesmoke;
 }
 
 .input-group_input:focus +
@@ -39,6 +41,7 @@ body{
     padding-inline: 5px;
     translate: 10px -10px;
     scale: 0.8;
+    width: auto;
     background-color: whitesmoke;
     
 }

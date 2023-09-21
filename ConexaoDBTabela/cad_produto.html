@@ -25,18 +25,33 @@
         console.log("iniciado");
         
         
-        function preenchido(inputV) {
+        function InputId(input) {
             var labelPosition = document.getElementById('id_label')
-            // var inputV = document.getElementById('id').value;
-            if (inputV.value != "") {
-               console.log("preenchido")
+            // getElementsByTagName("label")
+            if (input.value != "") {
+                console.log("preenchido")
                 labelPosition.classList.toggle('inputNotNull')
 
-            }  else{console.log("não preenchido")} //não preenchido
-
+            } else{console.log('não preenchido')}
         }
-       
-
+        function InputCod(input) {
+            var labelPosition = document.getElementById('cod_label')
+            if (input.value != "") {
+             labelPosition.classList.toggle('inputNotNull')
+            }
+        }
+        function InputProd(input) {
+            var labelPosition = document.getElementById('prod_label')
+            if (input.value != "") {
+             labelPosition.classList.toggle('inputNotNull')
+            }
+        }
+        function InputDesc(input) {
+            var labelPosition = document.getElementById('desc_label')
+            if (input.value != "") {
+             labelPosition.classList.toggle('inputNotNull')
+            }
+        }
 
         
         
@@ -48,19 +63,31 @@
     <form action="controllers/incluir.php" method="post">
         <div class="input-group">
             <!-- value="<?= $id ?>" -->
-            <input type="text" name="id" id="id" class="input-group_input" onfocus="preenchido(this)" onfocusout="preenchido(this)" > 
+            <input type="text" name="id" class="input-group_input" onfocus="InputId(this)" onfocusout="InputId(this)" > 
             <label for="id" id="id_label" class="input-group_label">ID</label>
 
         </div>
         <br>
         <div class="input-group">
-            <input type="number" id="codigo" name="codigo" class="input-group_input" onfocus="preenchido()" onfocusout="preenchido()">
-            <label for="codigo" class="input-group_label">Código</label>
+            <input type="number" name="codigo" class="input-group_input" onfocus="InputCod(this)" onfocusout="InputCod(this)">
+            <label for="codigo" id="cod_label" class="input-group_label">Código</label>
 
         </div>
-        <input type="text" placeholder="Produto" name="produto">
-        <textarea name="descricao" id="desc" cols="30" rows="3"></textarea>
-        <input type="date" placeholder="Data" name="data">
+        <br>
+        <div class="input-group">
+            <input type="text" name="produto" class="input-group_input" onfocus="InputProd(this)" onfocusout="InputProd(this)" >
+            <label for="produto" id="prod_label" class="input-group_label">Produto</label>
+        </div>
+        <br> 
+        <div class="input-group">
+            <textarea name="descricao" cols="30" rows="3" class="input-group_input" onfocus="InputDesc(this)" onfocusout="InputDesc(this)"></textarea>
+            <label for="descricao" id="desc_label" class="input-group_label">Descrição</label>
+
+        </div>
+        <div class="input-group">
+            <input type="date" name="data" class="input-group_input" onfocus="InputData(this)" onfocusout="InputData(this)">
+            <label for="descricao" id="desc_label" class="input-group_label">Data</label>
+        </div>
         <input type="number" id="valor" placeholder="Preço" name="valor">
         <input type="submit" id="ok" value="Ok">&nbsp;&nbsp;
         <input type="reset" id="reset" value="Limpar" name="vlimpar">
