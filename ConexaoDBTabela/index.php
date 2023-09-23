@@ -56,7 +56,7 @@
                         <td><?= $dados['produto']?></td>
                         <!-- <td><?= $dados['descricao']?></td> -->
                         <td><?= $dados['data']?></td>
-                        <td><?= $dados['valor']?></td>
+                        <td>R$<?= $dados['valor']?></td>
                         <td><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
                                             <!-- ? envia a variavel para outra tela -->
                         </tr>
@@ -68,7 +68,7 @@
                 <a href="cad_produto.php"> <button class="acoes" id="cad"> CADASTRAR </button> </a>
                         
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
-                    <input type="txt" name="Ids" id="inputIds" style="display: block">
+                    <input type="txt" name="Ids" id="inputIds" style="display: none">
                     <input class="acoes" id="excluir" type="submit" value="Excluir" disabled>
                 </form>
                

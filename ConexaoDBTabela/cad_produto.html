@@ -23,75 +23,131 @@
     <link rel="stylesheet" href="style/cad.css">
     <script>
         console.log("iniciado");
-        
-        
-        function InputId(input) {
-            var labelPosition = document.getElementById('id_label')
-            // getElementsByTagName("label")
+        window.onload = function () {
+            //carregar junto com apagina
+            console.log("pre load");
+            var labelPosition = document.getElementById('id_label');
+            var input = document.getElementById('id');
+
             if (input.value != "") {
                 console.log("preenchido")
                 labelPosition.classList.toggle('inputNotNull')
 
-            } else{console.log('não preenchido')}
+            } else { console.log('não preenchido') }
+        }
+        //.
+        //.
+        //.
+        //.
+        //.
+        //.
+        //.       
+        //.
+        //.
+        function InputId(input) {
+            var labelPosition = document.getElementById('id_label')
+            // getElementsByTagName("label")
+            input.setAttribute("maxlength", "3");
+            if (input.value != "") {
+                console.log("preenchido")
+                labelPosition.classList.toggle('inputNotNull')
+
+            } else { console.log('não preenchido') }
         }
         function InputCod(input) {
             var labelPosition = document.getElementById('cod_label')
+            input.setAttribute("maxlength", "5");
             if (input.value != "") {
-             labelPosition.classList.toggle('inputNotNull')
+                labelPosition.classList.toggle('inputNotNull')
             }
         }
         function InputProd(input) {
             var labelPosition = document.getElementById('prod_label')
             if (input.value != "") {
-             labelPosition.classList.toggle('inputNotNull')
+                labelPosition.classList.toggle('inputNotNull')
             }
         }
         function InputDesc(input) {
             var labelPosition = document.getElementById('desc_label')
             if (input.value != "") {
-             labelPosition.classList.toggle('inputNotNull')
+                labelPosition.classList.toggle('inputNotNull')
+            }
+        }
+        function InputData(input) {
+            var labelPosition = document.getElementById('data_label')
+            if (input.value != "") {
+                labelPosition.classList.toggle('inputNotNull')
+            }
+        }
+        function datalabelclick() {
+            var labelPosition = document.getElementById('data_label')
+            labelPosition.classList.toggle('inputNotNull')
+        }
+        function InputPrec(input) {
+            var labelPosition = document.getElementById('prec_label')
+            if (input.value != "") {
+                labelPosition.classList.toggle('inputNotNull')
             }
         }
 
-        
-        
+
+
     </script>
 </head>
 
 <body>
+    <div id="center">
+        <div id="componentes">
+            <div id="titlo">
+                <h1>Cadastrar produto</h1>
+            </div>
+            <form action="controllers/incluir.php" method="post">
+                <div class="input-group">
 
-    <form action="controllers/incluir.php" method="post">
-        <div class="input-group">
-            <!-- value="<?= $id ?>" -->
-            <input type="text" name="id" class="input-group_input" onfocus="InputId(this)" onfocusout="InputId(this)" > 
-            <label for="id" id="id_label" class="input-group_label">ID</label>
+                    <input type="text" name="id" id="id" class="input-group_input" onfocus="InputId(this)"
+                        onfocusout="InputId(this)" value="<?= $id ?>">
+                    <label for="id" id="id_label" class="input-group_label">ID</label>
 
-        </div>
-        <br>
-        <div class="input-group">
-            <input type="number" name="codigo" class="input-group_input" onfocus="InputCod(this)" onfocusout="InputCod(this)">
-            <label for="codigo" id="cod_label" class="input-group_label">Código</label>
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="number" name="codigo" class="input-group_input" onfocus="InputCod(this)"
+                        onfocusout="InputCod(this)">
+                    <label for="codigo" id="cod_label" class="input-group_label">Código</label>
 
-        </div>
-        <br>
-        <div class="input-group">
-            <input type="text" name="produto" class="input-group_input" onfocus="InputProd(this)" onfocusout="InputProd(this)" >
-            <label for="produto" id="prod_label" class="input-group_label">Produto</label>
-        </div>
-        <br> 
-        <div class="input-group">
-            <textarea name="descricao" cols="30" rows="3" class="input-group_input" onfocus="InputDesc(this)" onfocusout="InputDesc(this)"></textarea>
-            <label for="descricao" id="desc_label" class="input-group_label">Descrição</label>
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="text" name="produto" class="input-group_input" onfocus="InputProd(this)"
+                        onfocusout="InputProd(this)">
+                    <label for="produto" id="prod_label" class="input-group_label">Produto</label>
+                </div>
+                <br>
+                <div class="input-group">
+                    <textarea name="descricao" cols="30" rows="3" class="input-group_input" onfocus="InputDesc(this)"
+                        onfocusout="InputDesc(this)"></textarea>
+                    <label for="descricao" id="desc_label" class="input-group_label">Descrição</label>
 
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="date" name="data" class="input-group_input" onfocus="InputData(this)"
+                        onfocusout="InputData(this)">
+                    <label for="data" id="data_label" class="input-group_label" onclick="datalabelclick()">Data</label>
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="number" id="valor" name="valor" class="input-group_input" onfocus="InputPrec(this)"
+                        onfocusout="InputPrec(this)">
+                    <label for="valor" id="prec_label" class="input-group_label">Preço</label>
+
+                </div>
+                <br>
+                <input type="submit" id="ok" value="Ok">&nbsp;&nbsp;
+                <input type="reset" id="reset" value="Limpar" name="vlimpar">
+            </form>
         </div>
-        <div class="input-group">
-            <input type="date" name="data" class="input-group_input" onfocus="InputData(this)" onfocusout="InputData(this)">
-            <label for="descricao" id="desc_label" class="input-group_label">Data</label>
-        </div>
-        <input type="number" id="valor" placeholder="Preço" name="valor">
-        <input type="submit" id="ok" value="Ok">&nbsp;&nbsp;
-        <input type="reset" id="reset" value="Limpar" name="vlimpar">
-    </form>
 </body>
+</div>
 
 </html>
