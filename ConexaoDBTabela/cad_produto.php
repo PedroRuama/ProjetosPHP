@@ -89,7 +89,28 @@
                 labelPosition.classList.toggle('inputNotNull')
             }
         }
-
+        
+        String.prototype.reverse = function () {
+            return this.split('').reverse().join('');
+        };
+        
+        function mascaraMoeda(campo, evento) {
+            var tecla = (!evento) ? window.event.keyCode : evento.which;
+            var valor = campo.value.replace(/[^\d]+/gi,'').reverse();
+            var resultado = "";
+            var mascara = "##.###.###,##".reverse();
+            for (var x = 0, y = 0; x < mascara.length && y < valor.length;) {
+                if (mascara.charAt(x) != '#') {
+                    resultado += mascara.charAt(x);
+                    x++;
+                } else {
+                    resultado += valor.charAt(y);
+                    y++;
+                    x++;
+                }
+            }
+            campo.value = resultado.reverse();
+        }
 
 
     </script>
@@ -98,11 +119,13 @@
 <body>
     <div id="center">
         <div id="componentes">
-
             <div id="titlo">
-                <h1>Cadastrar produto</h1>
+               
             </div>
+            
             <form action="controllers/incluir.php" method="post" id="forms">
+                <h1>Cadastrar produto</h1>
+                <br><br>
                 <div class="aling">
 
                     <div class="input-group" id="div_prod">
@@ -113,44 +136,57 @@
 
                 </div>
                 <br>
+                <br>
                 <div class="aling">
                     <div class="input-group" id="div_id">
-                        <input type="text" name="id" id="id" class="input-group_input" onfocus="InputId(this)" onfocusout="InputId(this)" value="<?= $id ?>">
+                        <input type="text" name="id" id="id" class="input-group_input" onfocus="InputId(this)" 
+                            onfocusout="InputId(this)" value="<?= $id ?>" maxlength="3">
                         <label for="id" id="id_label" class="input-group_label">ID</label>
     
                     </div>
-                    <br>
+                    
                     <div class="input-group" id="div_cod">
-                        <input type="text" name="codigo" id="codigo" class="input-group_input" onfocus="InputCod(this)" onfocusout="InputCod(this)">
+                        <input type="text" name="codigo" id="codigo" class="input-group_input" 
+                            onfocus="InputCod(this)" onfocusout="InputCod(this)" maxlength="5">
                         <label for="codigo" id="cod_label" class="input-group_label">Código</label>
     
                     </div>
-
                 </div>
                 <br>
                 <br>
-                <div class="input-group" id="div">
+                <div class="input-group" id="div_desc">
                     <textarea name="descricao" cols="30" rows="3" class="input-group_input" id="descricao"onfocus="InputDesc(this)"
                         onfocusout="InputDesc(this)"></textarea>
                     <label for="descricao" id="desc_label" class="input-group_label">Descrição</label>
 
                 </div>
                 <br>
-                <div class="input-group" id="div_data">
-                    <input type="date" name="data" class="input-group_input" onfocus="InputData(this)"
-                        onfocusout="InputData(this)">
-                    <label for="data" id="data_label" class="input-group_label" onclick="datalabelclick()">Data</label>
-                </div>
                 <br>
-                <div class="input-group" id="div_prec">
-                    <input type="number" id="valor" name="valor" class="input-group_input" onfocus="InputPrec(this)"
-                        onfocusout="InputPrec(this)">
-                    <label for="valor" id="prec_label" class="input-group_label">Preço</label>
+
+                <div class="aling">
+
+                    <div class="input-group" id="div_data">
+                        <input type="date" name="data" class="input-group_input" onfocus="InputData(this)"
+                            onfocusout="InputData(this)">
+                        <label for="data" id="data_label" class="input-group_label" onclick="datalabelclick()">Data</label>
+                    </div>
+                    
+                    <div class="input-group" id="div_prec">
+                        <input  id="valor" name="valor" class="input-group_input" onfocus="InputPrec(this)"
+                            onfocusout="InputPrec(this)" oninput="mascaraMoeda(this, event)">
+                        <label for="valor" id="prec_label" class="input-group_label">Preço</label>
+    
+                    </div>
 
                 </div>
                 <br>
-                <input type="submit" id="ok" value="Ok">&nbsp;&nbsp;
-                <input type="reset" id="reset" value="Limpar" name="vlimpar">
+                <input type="submit" class="btn" id="ok" value="Ok">&nbsp;&nbsp;
+
+                <div class="aling">
+                    <a href="index.php" id="cancel"><button type="button"  class="btn">Cancelar</button></a>
+                    <input type="reset" id="reset" class="btn" value="Limpar" name="vlimpar">
+
+                </div>
             </form>
         </div>
 </body>

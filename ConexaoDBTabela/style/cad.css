@@ -2,7 +2,9 @@ body {
     background-color: rgb(238, 169, 140);
     font-family: Arial;
 }
-
+a{
+    text-decoration: none;
+}
 
 
 
@@ -28,6 +30,7 @@ body {
     transition: outline-color 500ms;
     display: flex;
     overflow: hidden;
+    width: 100%;
 
 
 }
@@ -112,20 +115,19 @@ body {
 h1 {
     text-align: center;
     background-color: rgb(240, 88, 33);
-    padding: 10px;
+    padding: 15px;
+    margin: 0;
     border-radius: 10px;
-    width: 30vw;
+    color: whitesmoke;
+   
 }
 
-#forms{
-    width: 60%;
-}
 form {
     padding: 20px;
     border-radius: 10px;
     display: inline-flex;
     flex-direction: column;
-    width: 100%;
+    
     background-color: whitesmoke;
     
 
@@ -138,17 +140,43 @@ form {
 }
 
 #div_id{
-    width: 30%;
-    
-    
+    width: 30%;     
 }
-
 #div_cod{
-    width: 40%;
- 
-  
+    width: 50%;
+}
+#div_prod{
+    width:100%;
+}
+#div_data{
+    width: 60%;
+}#div_prec{
+    width: 30%;
 }
 
-#div_prod{
-    width: 40%;
+.btn{
+    background-color:rgb(240, 88, 33);;
+    padding: 5px;
+    color: white;
+    border-radius: 5px; 
+    border: none; 
+    transition: 0.5s;
+    width: 100%;
+    border: 1px solid rgb(240, 88, 33);
+}
+
+.btn:hover{
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
+    
+}
+#cancel{
+    width: 70%;
+}
+
+
+
+#reset{
+    width: 20%;
 }
