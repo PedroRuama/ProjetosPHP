@@ -1,5 +1,4 @@
-
-body{
+body {
     background-color: rgb(238, 169, 140);
     font-family: Arial;
 }
@@ -11,10 +10,14 @@ body{
 
 
 
-.input-group{
+.input-group {
     position: relative;
+    display: flex;
+
 }
-.input-group_input{
+
+.input-group_input {
+
     font: inherit;
     color: rgb(43, 41, 41);
     padding: 10px;
@@ -23,37 +26,43 @@ body{
     outline: 2px solid rgb(148, 138, 138);
     background-color: transparent;
     transition: outline-color 500ms;
-    
+    display: flex;
+    overflow: hidden;
+
+
 }
 
-.input-group_input:is(:focus){
+.input-group_input:is(:focus) {
     outline-color: orangered;
 }
-.input-group_label{
+
+.input-group_label {
     position: absolute;
     top: 0;
     left: 0;
     translate: 10px 10px;
     font-size: 18px;
     transition: 500ms;
-    
+
+
 }
 
-.input-group_input:focus +
+.input-group_input:focus+
 .input-group_label,
-.input-group_input:valid
+.input-group_input:valid+
 
 
-
-.input-group_label:is(:focus, :valid){ 
+.input-group_label:is(:focus, :valid) {
     padding-inline: 5px;
     translate: 10px -10px;
     scale: 0.8;
     width: auto;
+
     background-color: whitesmoke;
-    
+
 }
-.inputNotNull{
+
+.inputNotNull {
     position: absolute;
     top: 0;
     left: 0;
@@ -63,9 +72,10 @@ body{
     width: auto;
     scale: 0.8;
     background-color: whitesmoke;
+
 }
 
-#data_label{
+#data_label {
     width: 100px;
     background-color: whitesmoke;
 }
@@ -78,33 +88,67 @@ body{
 
 
 
-#center{
+#center {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    
-}
-#componentes{
-    
-    width: 40vw;
-    border-radius: 10px;
-    padding: 8px;
 
 }
-h1{
+
+#componentes {
+    width: 40vw;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+
+}
+
+
+h1 {
     text-align: center;
     background-color: rgb(240, 88, 33);
     padding: 10px;
     border-radius: 10px;
+    width: 30vw;
 }
 
-form{
-    padding: 15px;
-    flex-direction: column;
-    display: flex;
-    flex-wrap: wrap;
+#forms{
+    width: 60%;
+}
+form {
+    padding: 20px;
     border-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
     background-color: whitesmoke;
+    
+
+}
+
+.aling{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#div_id{
+    width: 30%;
+    
+    
+}
+
+#div_cod{
+    width: 40%;
+ 
+  
+}
+
+#div_prod{
+    width: 40%;
 }
