@@ -48,4 +48,33 @@ function trOn(tr) {
 }
 
 
+function buscar() {
+    var buscar = document.getElementById("pesquisar").value//todos os caracteres pra minusculo
+    console.log("click")
+    
+    for (var i = 0; i < tbody.childNodes.length; i++) {
+        console.log('1° for')
+        var achou = false
+        var tr = tbody.childNodes[3]
+        console.log(tr)
+        var td = tr.getElementsByTagName("td")[2]
+        for (var j = 0; j < td.length; j++) {
+            console.log('2° for')
+            var value = td[j].childNodes[0];
+
+            console.log(value);
+
+            if(value.indexOf(buscar) >= 0){
+                achou = true;
+            }
+        }
+        if (achou) {
+            tr.style.display ="table-row";
+        } else{}
+        
+    }
+
+
+}
+
 

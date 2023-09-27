@@ -1,7 +1,7 @@
 
 <?php
         
-    //executa a query com base na conexão
+  
     include_once('controllers/conexao.php');
     
 
@@ -25,9 +25,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja dataBase</title>
     <link rel="stylesheet" href="style/index.css">
-    <script src="scripts/index.js"></script>
 
 </head>
+    <script src="scripts/index.js"></script>
 <body>
     <div class="center">
         <div id="opacity"> .</div>
@@ -35,7 +35,14 @@
             <img src="imgs/backgrund_image2.jpg" alt="fundo salgadinhos">
         </div>
         <h1>Produtos Cadastrados</h1>
+        <input type="text" placeholder="pesquisar" id="pesquisar" onkeyup="buscar()">
+
         <div id="componentes">
+
+
+            
+
+
             <div id="table">
                 
                 <table class="tabela_dados">
@@ -48,19 +55,26 @@
                         <th>EXIBIR</th>
                         
     
-                    </tr>
-                    <?php while($dados = mysqli_fetch_array($query)){ ?>
-                        <tr onclick="trOn(this)">
-                        <td id="select"><?= $dados['id']?></td>
-                        <td><?= $dados['codigo'] ?></td>
-                        <td><?= $dados['produto']?></td>
-                        <!-- <td><?= $dados['descricao']?></td> -->
-                        <td><?= $dados['data']?></td>
-                        <td>R$<?= $dados['valor']?></td>
-                        <td><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
-                                            <!-- ? envia a variavel para outra tela -->
-                        </tr>
-                        <?php } ?>
+                    </tr>                     
+                    <tbody id="tbody">
+
+                        <?php while($dados = mysqli_fetch_array($query)){ ?>
+                            <tr onclick="trOn(this)">
+                            <td id="select"><?= $dados['id']?></td>
+                            <td><?= $dados['codigo'] ?></td>
+                            <td><?= $dados['produto']?></td>
+                            <!-- <td><?= $dados['descricao']?></td> -->
+                            <td><?= $dados['data']?></td>
+                            <td>R$<?= $dados['valor']?></td>
+                            <td><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
+                                                <!-- ? envia a variavel para outra tela -->
+                            </tr>
+                            <?php } ?>
+                        
+
+                    </tbody>
+                    
+
                     
                 </table>  
             </div>
