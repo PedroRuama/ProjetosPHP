@@ -47,32 +47,50 @@ function trOn(tr) {
 
 }
 
+function confirmExcluir(btn) {
+   
+    if (confirm("Certesa que deseja excluir o(s) produto(s) cadastrados?")) {
+      btn.type = "submit"
+    } else {}
+    document.getElementById("demo").innerHTML = txt;
+  }
+
+
 
 function buscar() {
+    console.log("click");
     var buscar = document.getElementById("pesquisar").value//todos os caracteres pra minusculo
-    console.log("click")
-    
-    for (var i = 0; i < tbody.childNodes.length; i++) {
-        console.log('1° for')
-        var achou = false
-        var tr = tbody.childNodes[3]
-        console.log(tr)
-        var td = tr.getElementsByTagName("td")[2]
-        for (var j = 0; j < td.length; j++) {
-            console.log('2° for')
-            var value = td[j].childNodes[0];
+    buscar = buscar.toLowerCase()
 
-            console.log(value);
-
-            if(value.indexOf(buscar) >= 0){
-                achou = true;
-            }
+    console.log(buscar);
+    // var y = document.getElementsByClassName("tdValue");
+    var x = document.getElementsByClassName("trValue");    
+   
+    for (var j = 0; j < x.length; j++) {
+        // var value = td[j].childNodes[0];
+        if(!x[j].innerHTML.toLowerCase().includes(buscar)){
+            x[j].style.display = "none";
         }
-        if (achou) {
-            tr.style.display ="table-row";
-        } else{}
-        
+        else{
+            x[j].style.display = "flex";
+        }
     }
+    
+   
+
+    // console.log(tbody.childNodes.length);
+    // for (var i = 0; i < tbody.childNodes.length; i++) {
+        
+    //    //    console.log(tbody.childNodes.length);
+    //     var achou = false
+    //     var x = document.getElementsByClassName("tdValue");
+    //     var y = document.getElementsByClassName("trValue");
+    //     // var tr = tbody.childNodes[2]
+    //     // var td = tr.getElementsByTagName("td")
+        
+        
+        
+    // }
 
 
 }

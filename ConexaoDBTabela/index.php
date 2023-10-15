@@ -35,13 +35,14 @@
             <img src="imgs/backgrund_image2.jpg" alt="fundo salgadinhos">
         </div>
         <h1>Produtos Cadastrados</h1>
-        <input type="text" placeholder="pesquisar" id="pesquisar" onkeyup="buscar()">
+        <div class="input-group" id="div_busc">
+            <input type="text" name="busc" id="busc" class="input-group_input" onkeyup="buscar()" onfocus="InputProd(this)" onfocusout="InputProd(this)">
+            <label for="pesquisar" id="busc_label" class="input-group_label">Pesquisar na tabela</label>
+            
+        </div>
+        
 
         <div id="componentes">
-
-
-            
-
 
             <div id="table">
                 
@@ -59,15 +60,15 @@
                     <tbody id="tbody">
 
                         <?php while($dados = mysqli_fetch_array($query)){ ?>
-                            <tr onclick="trOn(this)">
-                            <td id="select"><?= $dados['id']?></td>
-                            <td><?= $dados['codigo'] ?></td>
-                            <td><?= $dados['produto']?></td>
-                            <!-- <td><?= $dados['descricao']?></td> -->
-                            <td><?= $dados['data']?></td>
-                            <td>R$<?= $dados['valor']?></td>
-                            <td><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
-                                                <!-- ? envia a variavel para outra tela -->
+                            <tr class="trValue" onclick="trOn(this)">
+                                <td class="tdValue" id="select"><?= $dados['id']?></td>
+                                <td class="tdValue"><?= $dados['codigo'] ?></td>
+                                <td class="tdValue"><?= $dados['produto']?></td>
+                                <!-- <td class="tdValue"><?= $dados['descricao']?></td> -->
+                                <td class="tdValue"><?= $dados['data']?></td>
+                                <td class="tdValue">R$<?= $dados['valor']?></td>
+                                <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
+                                                    <!-- ? envia a variavel para outra tela -->
                             </tr>
                             <?php } ?>
                         
@@ -83,7 +84,7 @@
                         
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
                     <input type="txt" name="Ids" id="inputIds" style="display: none">
-                    <input class="acoes" id="excluir" type="submit" value="Excluir" disabled>
+                    <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
                 </form>
                
                 <!-- 
