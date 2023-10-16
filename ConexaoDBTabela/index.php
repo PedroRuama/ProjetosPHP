@@ -26,8 +26,10 @@
     <title>Loja dataBase</title>
     <link rel="stylesheet" href="style/index.css">
 
+    
 </head>
     <script src="scripts/index.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <body>
     <div class="center">
         <div id="opacity"> .</div>
@@ -35,29 +37,27 @@
             <img src="imgs/backgrund_image2.jpg" alt="fundo salgadinhos">
         </div>
         <h1>Produtos Cadastrados</h1>
-        <div class="input-group" id="div_busc">
-            <input type="text" name="busc" id="busc" class="input-group_input" onkeyup="buscar()" onfocus="InputProd(this)" onfocusout="InputProd(this)">
-            <label for="pesquisar" id="busc_label" class="input-group_label">Pesquisar na tabela</label>
-            
-        </div>
         
-
+        
+        <div class="input-group" id="div_busc">
+            <input type="text" name="busc" id="busc" class="input-group_input" onkeyup="buscar()" onfocus="InputProd(this)" onfocusout="InputProd(this)" placeholder="    Pesquisar">
+            <img src="imgs/lupa.png" alt="lupa" id="lupa">
+        </div>
+        <br>
         <div id="componentes">
 
             <div id="table">
                 
                 <table class="tabela_dados">
-                    <tr>
-                        <th>ID</th>
-                        <th>CODIGO</th>
-                        <th>PRODUTO</th>
-                        <th>DATA</th>
-                        <th>VALOR</th>
-                        <th>EXIBIR</th>
-                        
-    
-                    </tr>                     
                     <tbody id="tbody">
+                        <tr>
+                            <th>ID</th>
+                            <th>CODIGO</th>
+                            <th>PRODUTO</th>
+                            <th>DATA</th>
+                            <th>VALOR</th>
+                            <th>EXIBIR</th>
+                        </tr>                     
 
                         <?php while($dados = mysqli_fetch_array($query)){ ?>
                             <tr class="trValue" onclick="trOn(this)">

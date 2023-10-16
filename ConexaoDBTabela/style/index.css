@@ -84,12 +84,13 @@ th{
 }
 
 td{
-    
+    flex-wrap: wrap;
+    width: auto;
     
 }
 
 tr{
-   
+    
     background-color: white;
 
 }
@@ -177,11 +178,13 @@ tr.colorir {
 
     font: inherit;
     color: rgb(43, 41, 41);
-    padding: 10px;
+    padding: 5px;
     border: none;
     border-radius: 4px;
     outline: 2px solid rgb(148, 138, 138);
-    background-color: transparent;
+    background-color: whitesmoke;
+    
+   
     transition: outline-color 500ms;
     display: flex;
     overflow: hidden;
@@ -194,41 +197,36 @@ tr.colorir {
     outline-color: orangered;
 }
 
-.input-group_label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    translate: 10px 10px;
-    font-size: 18px;
-    transition: 500ms;
 
-
+#div_busc{
+    
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 55%;
+   
+}
+#busc{
+    width: 250px;
+    height: 20px;
+    display: flex;
 }
 
-.input-group_input:focus+
-.input-group_label,
-.input-group_input:valid+
-
-
-.input-group_label:is(:focus, :valid) {
-    padding-inline: 5px;
-    translate: 10px -10px;
-    scale: 0.8;
-    width: auto;
-
-    background-color: whitesmoke;
-
+#lupa{
+    width: 50px;
+    display: flex;
+    object-fit: cover;
+    position: absolute;
+    transition: 1s;
+   
 }
 
-.inputNotNull {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 500ms;
-    padding-inline: 5px;
-    translate: 10px -10px;
-    width: auto;
-    scale: 0.8;
-    background-color: whitesmoke;
+#busc:focus+
+#lupa,
+#lupa:is(:focus) {
+    translate: 210px;
+}
 
+#busc::placeholder {
+    translate: 20px;
 }

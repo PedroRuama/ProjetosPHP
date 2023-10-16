@@ -59,7 +59,7 @@ function confirmExcluir(btn) {
 
 function buscar() {
     console.log("click");
-    var buscar = document.getElementById("pesquisar").value//todos os caracteres pra minusculo
+    var buscar = document.getElementById("busc").value//todos os caracteres pra minusculo
     buscar = buscar.toLowerCase()
 
     console.log(buscar);
@@ -72,7 +72,7 @@ function buscar() {
             x[j].style.display = "none";
         }
         else{
-            x[j].style.display = "flex";
+            x[j].style.removeProperty("display");
         }
     }
     
