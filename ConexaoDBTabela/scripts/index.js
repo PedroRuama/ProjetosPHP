@@ -4,7 +4,11 @@ let i = 0 //linhas atiivas
 Selecionado = new Array();
 
 function trOn(tr) {
+    var btnEditar = document.getElementById('editar');
     var btnExcluir = document.getElementById('excluir');
+    
+    console.log(btnEditar);
+
     var trOn = tr.classList.toggle('colorir');  //colorir linha tr
 
     //id(td) da tr selecionada:
@@ -36,23 +40,36 @@ function trOn(tr) {
     if (i > 0) { //liga e desliga o btn excluir de acordo com o numero de linhas ligadas
         btnExcluir.style = "opacity: 100%; cursor: pointer;";
         btnExcluir.disabled = false;
-    } else {
+    } 
+    
+    else {
         btnExcluir.style = "opacity: 30%;  cursor: not-allowed;";
         btnExcluir.disabled = true;
     }
 
+    
+    if (i == 1 ) { //liga e desliga o btn editar de acordo com o numero de linhas ligadas
+        btnEditar.style = "opacity: 100%; cursor: pointer;";
+        btnEditar.disabled = false;
+        btnEditar.type = "submit";
+    }
+    else{
+        btnEditar.style = "opacity: 30%;  cursor: not-allowed;";
+        btnEditar.disabled = true;
+    }
 
-    let InputSub = document.getElementById("inputIds");
-    InputSub.value = Selecionado;
+    
+    let Input_excluir = document.getElementById("inputIds_excluir");
+    Input_excluir.value = Selecionado;
 
+    let Input_editar = document.getElementById("inputIds_editar");
+    Input_editar.value = Selecionado;
 }
-
 function confirmExcluir(btn) {
    
-    if (confirm("Certesa que deseja excluir o(s) produto(s) cadastrados?")) {
+    if (confirm("Certeza que deseja excluir o(s) produto(s) selecionado(s)?")) {
       btn.type = "submit"
     } else {}
-    document.getElementById("demo").innerHTML = txt;
   }
 
 
@@ -94,5 +111,3 @@ function buscar() {
 
 
 }
-
-

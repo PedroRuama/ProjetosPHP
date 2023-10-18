@@ -2,7 +2,7 @@
     <?php
         include_once('conexao.php');
 
-        $postId = $_POST['Ids'];
+        $postId = $_POST['IdsExcluir'];
         $id = explode(",", $postId); //mesma coisa que o split
        
         while(sizeOf($id) != 0){ // deleta um por um
@@ -14,8 +14,7 @@
             array_shift($id); //dropa o primeiro item da arrays
         }
         ?>
-        <p>Registro deletado com sucesso</p>
-        <button><a href="../index.php">Voltar</a></button>
+        <script>window.location.href = "../index.php";</script>
 
      <?php
         

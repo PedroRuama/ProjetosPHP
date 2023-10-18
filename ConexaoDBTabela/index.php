@@ -5,14 +5,25 @@
     include_once('controllers/conexao.php');
     
 
-    //executa a query com base na conexão
+    //executa a query com base na conexão e o comando
     $query = mysqli_query($conexao, "select * from produtos");
 
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }
     
-    //retorna uma matriz que corresponde a linha - ponteiro
+
+
+
+    // Validando a existencia de um registro:
+
+    // $resultado= @mysqli_query($conexao, $sqlconsulta);
+    // $num = @mysqli_num_rows($resultado);
+    // if($num == 0){
+    //     echo "Código não localizado!!";
+    // }
+
+
 
 ?>
 
@@ -40,6 +51,7 @@
         
         
         <div class="input-group" id="div_busc">
+            
             <input type="text" name="busc" id="busc" class="input-group_input" onkeyup="buscar()" onfocus="InputProd(this)" onfocusout="InputProd(this)" placeholder="    Pesquisar">
             <img src="imgs/lupa.png" alt="lupa" id="lupa">
         </div>
@@ -64,10 +76,11 @@
                                 <td class="tdValue" id="select"><?= $dados['id']?></td>
                                 <td class="tdValue"><?= $dados['codigo'] ?></td>
                                 <td class="tdValue"><?= $dados['produto']?></td>
-                                <!-- <td class="tdValue"><?= $dados['descricao']?></td> -->
                                 <td class="tdValue"><?= $dados['data']?></td>
                                 <td class="tdValue">R$<?= $dados['valor']?></td>
-                                <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td>
+                                <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td>
+
+                                <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
                                                     <!-- ? envia a variavel para outra tela -->
                             </tr>
                             <?php } ?>
@@ -83,8 +96,13 @@
                 <a href="cad_produto.php"> <button class="acoes" id="cad"> CADASTRAR </button> </a>
                         
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
-                    <input type="txt" name="Ids" id="inputIds" style="display: none">
+                    <input type="txt" name="IdsExcluir" id="inputIds_excluir" style="display: none">
                     <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
+                </form>
+
+                <form action="editar_cad.php" name="editarProduto" method="post"> 
+                    <input type="txt" name="IdEditar" id="inputIds_editar" style="display: none">
+                    <input class="acoes" id="editar" type="button" value="Editar" disabled>
                 </form>
                
                 <!-- 

@@ -4,7 +4,7 @@ body{
     padding: 0px;
 }
 h1{
-    color: white;
+    color: black;
 }
 a{
     text-decoration: none;
@@ -14,7 +14,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
     flex-direction: column;
@@ -31,8 +31,8 @@ a{
     
 }
 #back_img{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: absolute;
     z-index: -2;
     display: flex;
@@ -41,6 +41,7 @@ img{
     display: flex;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     
 }
 
@@ -57,7 +58,7 @@ img{
 
 #componentes{
     display: flex;
-
+    
     
 }
 
@@ -114,19 +115,20 @@ tr.colorir {
 #table{
     height: auto;
     width: auto;
-    
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+    
    
 }
 .tabela_dados{
     text-align: center;
     height: 100%;
-    
+    transition: 500ms;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
+    
 }
 
 .dados{
@@ -148,21 +150,19 @@ tr.colorir {
     border-radius: 8px;
     font-weight: bold;
     border: none;
-    width: auto;
-
-
+    width: 100px;
+    transition: 0.5s;
 }
+
+.acoes:disabled {
+    opacity: 30%;
+    cursor: not-allowed;
+} 
 
 #cad{
     cursor: pointer;
    
 }
-#excluir{
-    transition: 0.5s;
-    opacity: 30%;
-    cursor: not-allowed;
-}
-
 
 
 
@@ -203,7 +203,8 @@ tr.colorir {
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 55%;
+    width: 650px;
+    
    
 }
 #busc{
@@ -218,6 +219,7 @@ tr.colorir {
     object-fit: cover;
     position: absolute;
     transition: 1s;
+    filter: grayscale(100%);
    
 }
 
@@ -225,8 +227,11 @@ tr.colorir {
 #lupa,
 #lupa:is(:focus) {
     translate: 210px;
+    filter: grayscale(0%);
 }
 
 #busc::placeholder {
     translate: 20px;
 }
+
+
