@@ -2,25 +2,13 @@
 body{
     margin: 0;
     padding: 0px;
-}
-h1{
-    color: black;
-}
-a{
-    text-decoration: none;
-    color: orangered;
-}
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    background-image: url("../imgs/backgrund_image4.jpg");
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
     width: 100vw;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-    
+    height: 100vh;
 }
-
 #opacity{
     width: 100vw;
     height: 100vh;
@@ -30,6 +18,45 @@ a{
     opacity: 0.8;
     
 }
+h1{
+    color: white;
+    margin: 0;
+    display: flex;
+    padding: 30px;
+}
+#logo{
+    width: 120px;
+    height: 70px;
+   
+    display: flex;
+    object-fit: contain;
+   
+   
+    
+    
+    
+}
+#logo-title-div{
+    display: flex;
+    width: 650px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    
+}
+
 #back_img{
     height: 100%;
     width: 100%;
@@ -78,7 +105,7 @@ th{
     text-align: center;
     /* display: flex; */
     color: white;
-    background-color: rgb(206, 89, 21);
+    background-color: rgb(199, 21, 21);
     
     /* align-items: center;
     justify-content: center; */
@@ -102,22 +129,23 @@ tr:nth-child(even) {
 } 
 tr:hover{
     transition: 0.5s;
-    background-color: rgb(233, 162, 120);
+    background-color: rgb(233, 120, 120);
 }
 
 tr.colorir {
     transition: 0.3s;
-    background-color:rgb(228, 162, 62);
+    background-color:rgb(95, 230, 83);
     
 }
 
 
 #table{
-    height: auto;
+    max-height: 400px;
     width: auto;
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+    
     
    
 }
@@ -146,7 +174,7 @@ tr.colorir {
     padding: 10px;
     margin: 15px;
     background-color: whitesmoke;
-    color: orangered;
+    color:red;
     border-radius: 8px;
     font-weight: bold;
     border: none;
@@ -194,7 +222,7 @@ tr.colorir {
 }
 
 .input-group_input:is(:focus) {
-    outline-color: orangered;
+    outline-color: rgb(224, 49, 49);
 }
 
 

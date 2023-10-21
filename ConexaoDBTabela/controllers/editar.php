@@ -16,6 +16,7 @@
         $resultado = @mysqli_query($conexao, $update);
         if(!$resultado){
             die('Query Inválida:'.@mysqli_error($conexao));
+            
         } else {?>
             <script>window.location.href = "../index.php";</script>
             <?php

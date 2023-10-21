@@ -27,9 +27,7 @@
 <body>
     <div id="center">
         <div id="opacity"> .</div>
-        <div id="back_img">
-            <img src="imgs/backgrund_image2.jpg" alt="fundo salgadinhos">
-        </div>
+      
         <div id="componentes">
             <div id="titlo">
                

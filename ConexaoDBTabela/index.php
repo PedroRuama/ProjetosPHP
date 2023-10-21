@@ -34,7 +34,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja dataBase</title>
+    <title>Loja ElmaChips</title>
     <link rel="stylesheet" href="style/index.css">
 
     
@@ -42,12 +42,13 @@
     <script src="scripts/index.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <body>
+    <div id="opacity"> .</div>
     <div class="center">
-        <div id="opacity"> .</div>
-        <div id="back_img">
-            <img src="imgs/backgrund_image2.jpg" alt="fundo salgadinhos">
+        <div id="logo-title-div">
+            <img src="imgs/elma_logo.png" alt="logo" id="logo">
+           
+            <h1>Produtos Cadastrados</h1>
         </div>
-        <h1>Produtos Cadastrados</h1>
         
         
         <div class="input-group" id="div_busc">

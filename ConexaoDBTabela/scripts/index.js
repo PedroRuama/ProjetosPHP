@@ -1,3 +1,17 @@
+
+
+window.onload = function () {
+    //carregar junto com apagina
+    var tabela = document.getElementById("table")
+    var cadastros = document.getElementsByTagName("tr")
+    if(cadastros.length > 8){
+        tabela.style.overflowY = "scroll";
+    }else{
+        tabela.style.removeProperty("overflowY");
+        
+    }
+}
+
 //selecão da linha: 
 let i = 0 //linhas atiivas
 
@@ -27,7 +41,7 @@ function trOn(tr) {
     else {
         tr.classList.remove('colorir');
         i = i - 1
-
+        
         console.log('trOff');
         console.log("linhas ativas: ", i)
         let index = Selecionado.indexOf(idSelec) //busca se existe e a posiçao do item na array
@@ -46,7 +60,7 @@ function trOn(tr) {
         btnExcluir.style = "opacity: 30%;  cursor: not-allowed;";
         btnExcluir.disabled = true;
     }
-
+    
     
     if (i == 1 ) { //liga e desliga o btn editar de acordo com o numero de linhas ligadas
         btnEditar.style = "opacity: 100%; cursor: pointer;";
@@ -95,7 +109,7 @@ function buscar() {
     
    
 
-    // console.log(tbody.childNodes.length);
+    
     // for (var i = 0; i < tbody.childNodes.length; i++) {
         
     //    //    console.log(tbody.childNodes.length);
