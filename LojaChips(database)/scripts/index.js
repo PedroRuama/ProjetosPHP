@@ -28,6 +28,7 @@ function trOn(tr) {
     //id(td) da tr selecionada:
     var td = tr.getElementsByTagName("td")[0]; //[0]= id  [2]=nome
     var idSelec = td.innerHTML;
+    
 
     if (trOn) {
         console.log('trOn');

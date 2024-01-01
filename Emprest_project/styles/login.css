@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    background-color:  rgb(106, 111, 173);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    color: black;
+}
+h3{
+   color: #071A5F; 
+}
+#align{
+    display: flex;
+    background-color: rgb(106, 111, 173);
+    height: 100vh;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+}
+ #bemvindo{
+    background-color: #071A5F;
+    width: 40%;
+    height: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white;
+    flex-direction: column;
+   
+    /* font-size: 40px; */
+    
+} 
+#txt_bv{
+    font-size: 30px;
+    border:  2px solid white;
+    padding: 15px;
+    border-radius: 20px;
+}
+#div_form{
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    height: 60%;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#txt_adm{
+    font-size: 30px;
+    color:#071A5F;
+    
+}
+
+form{
+    
+    font-size: 20px;
+}
+input{
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    width: 80%;
+    background-color: rgb(217, 217, 217);
+    
+
+}
+
+#div_enviar{
+   
+    width: 100;
+    justify-content: center;
+    display: flex;
+}
+#erro{
+    color: red;
+    font-size: 15px;
+}
+#enviar{
+    background-color: #071A5F;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    
+    transition: 1s;
+    
+}
+#enviar:hover{
+    background-color: white;
+    color:  #071A5F;
+    border: solid 2px #071A5F;
+   
+    
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}

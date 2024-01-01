@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+a{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+/* ------------------------------------nav-------------------------------- */
+
+.navbar{
+    display: flex;
+    background-color:#071A5F;
+    width: 100%;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a{
+    padding: .5rem 1.2rem;
+    font-size: 100%;
+    transition: 0.5s;
+
+}
+
+nav a:hover{
+    border-bottom: solid 1.9px #f5f5f5;
+    
+}
+
+.itens{
+    list-style-type: none;
+    display: flex;
+    padding-right: 10rem;
+}
+
+
+.btn-nav{
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    color: #071A5F;
+    font-size: 100%;
+    border: solid 1.75px #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    transition: 0.5s;
+}
+
+.btn-nav:hover{
+    background-color: #071A5F;
+    color: #f5f5f5;  
+   
+}
+
+/* ------------------------------------nav-------------------------------- */
+
+.container{
+    display: flex;
+    margin: 3rem;
+    
+}
+
+h1{
+    color: #071A5F;
+    font-size: 3.3rem;
+    padding: 0 2rem;
+    
+}
+h3{
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    color: #808080;
+}
+
+.con-title{
+    width: 50%;
+}
+
+.img_div{
+    width: 100%;
+    
+    
+}
+.img{
+    width: 120%;
+    
+    
+}
+
+.con-warning{
+    width: 60%; 
+}
+
+.avisos_div{
+    width: 100%;
+    height: 2.2rem;
+    
+}
+
+.avisos{
+    height: 100%;
+    display: flex;
+    margin: 1rem 0;
+    
+}
+
+.iconAviso{
+    height: 100%;
+    padding-right: 1rem;
+}
+
+#aviso_label{
+    color: #CA1717;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#atencao_label{
+    color: #bdae29;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.dados_aviso{
+    height: 100%;
+    width: 70%;
+    background-color: #ff8888;
+    border-radius: 10px;
+    border: solid 2px #CA1717;
+    display: flex;
+    align-items: center;
+    font-size: 100%;
+    padding: 0 1rem;
+    justify-content: space-between;
+    
+}
+
+
+.atencao_div{
+    margin: 4rem 0;
+    width: 100%;
+    height: 2.2rem;
+}
+
+.dados_atencao{
+    height: 20rem ;
+    width: 70%;
+    background-color: #f5e661;
+    border-radius: 10px;
+    border: solid 2px #e4d232;
+    display: flex;
+    
+    font-size: 100%;
+    padding: 1rem;
+}
+
+#seta{
+    height: 60%;
+    rotate: 100px;
+}
