@@ -29,11 +29,11 @@
             <div class="navbar">
             
                 <ul class="itens">
-                    <li><a href="inicial.php" >Página inicial </a></li>
-                    <li><a href="#" >Estatísticas</a></li>
-                    <li><a href="#" >Gerenciar Cadastros</a></li>                    
+                    <a href="inicial.php" ><li class="btn">Página inicial </li></a>
+                    <a href="#" ><li class="btn">Estatísticas</li></a>
+                    <a href="gerenciar.php" ><li class="btn">Gerenciar Cadastros</li></a>                    
                 </ul>
-                <button class="btn-nav">Adicionar Cadastro</button>
+                <a href="#" ><button class="btn">Adicionar Cadastro</button></a>
                 
             </div>
         </nav>

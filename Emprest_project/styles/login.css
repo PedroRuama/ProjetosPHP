@@ -1,6 +1,6 @@
 body{
     display: flex;
-    background-color:  rgb(106, 111, 173);
+    background-color:   #e4e4e4;
     justify-content: center;
     align-items: center;
     font-family: Arial;
@@ -11,13 +11,13 @@ h3{
 }
 #align{
     display: flex;
-    background-color: rgb(106, 111, 173);
+    
     height: 100vh;
     width: 60vw;
     justify-content: center;
     align-items: center;
 }
- #bemvindo{
+#bemvindo{
     background-color: #071A5F;
     width: 40%;
     height: 60%;
@@ -30,6 +30,7 @@ h3{
     border-bottom-left-radius: 20px;
     color: white;
     flex-direction: column;
+    box-shadow: 10px 5px 16px 0px rgba(0,0,0,0.8);
    
     /* font-size: 40px; */
     
@@ -46,6 +47,7 @@ h3{
     padding: 20px;
     height: 60%;
     width: 60%;
+    box-shadow: 10px 5px 16px 0px rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
     border-top-right-radius: 20px;
@@ -61,6 +63,7 @@ form{
     
     font-size: 20px;
 }
+
 input{
     border-radius: 10px;
     padding: 15px;
