@@ -90,7 +90,13 @@
             </div>
 
         </div>
-
+         
+        <?php
+            //finaliza a conexao
+            mysqli_close($conexao);
+        ?>
+        
+                               
 
 
 

@@ -108,3 +108,135 @@ a{
 }
 
 /* ------------------------------------nav-------------------------------- */
+
+
+.container{
+    display: flex;
+    margin: 3rem;
+    
+}
+
+h1{
+    color: #071A5F;
+    font-size: 3rem;
+    padding: 0 2rem;
+    
+}
+h3{
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    color: #808080;
+}
+
+.con-title{
+    width: 50%;
+}
+
+
+
+
+
+
+#componentes{
+    display: flex;
+    padding: 2rem;
+}
+
+
+
+#table{
+    max-height: 400px;
+    width: auto;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    
+    
+   
+}
+
+table,td,th {
+    
+    border-collapse: collapse;
+}
+    
+th, td{
+    
+    padding: 14px 16px;
+    text-align: center;
+}
+
+
+
+th{
+    text-align: center;
+    /* display: flex; */
+    color: white;
+    background-color: #071A5F   ;
+    
+    /* align-items: center;
+    justify-content: center; */
+}
+
+td{
+    flex-wrap: wrap;
+    width: auto;
+    
+}
+
+tr{
+    
+    background-color: white;
+
+}
+
+/* linha sim linha não, cor */
+tr:nth-child(even) {
+    background-color: #ebeaea;
+} 
+tr:hover{
+    transition: 0.5s;
+    background-color: rgb(120, 141, 233);
+}
+
+tr.colorir {
+    transition: 0.3s;
+    background-color:rgb(95, 230, 83);
+    
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.tabela_dados{
+    text-align: center;
+    height: 100%;
+    transition: 500ms;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    
+}
+
+.dados{
+    align-self: center;
+    
+}
