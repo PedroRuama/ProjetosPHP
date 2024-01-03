@@ -90,11 +90,10 @@ function confirmExcluir(btn) {
 
 
 function buscar() {
-    console.log("click");
     var buscar = document.getElementById("busc").value//todos os caracteres pra minusculo
     buscar = buscar.toLowerCase()
 
-    console.log(buscar);
+   
     // var y = document.getElementsByClassName("tdValue");
     var x = document.getElementsByClassName("trValue");    
    
@@ -110,19 +109,15 @@ function buscar() {
     
    
 
+    var lupa = document.getElementById("lupa")
     
-    // for (var i = 0; i < tbody.childNodes.length; i++) {
-        
-    //    //    console.log(tbody.childNodes.length);
-    //     var achou = false
-    //     var x = document.getElementsByClassName("tdValue");
-    //     var y = document.getElementsByClassName("trValue");
-    //     // var tr = tbody.childNodes[2]
-    //     // var td = tr.getElementsByTagName("td")
-        
-        
-        
-    // }
-
+   if (buscar != "") {
+       lupa.style.translate = "210px"
+       lupa.style.filter = "grayscale(0%);"
+    } else{
+        lupa.style.translate = "0px"
+        console.log('out');
+    }
+    console.log('x');
 
 }

@@ -24,6 +24,8 @@
     <script src="scripts/gerenciar.js"></script>
 </head>
 <body>
+
+    
     <nav>
         <div class="navbar">
         
@@ -36,62 +38,72 @@
             
         </div>
     </nav>
-    
-    <div class="container">
-        <div class="con-title">
-            <h1>Gerenciar</h1>
-            <h3>Painel de Controle</h3>
-            
+
+    <div class="aling">
+        
+        <div class="container-top">
+            <div class="con-title">
+                <h1>Gerenciar</h1>
+                <h3>Painel de Controle</h3>
+            </div>
         </div>
-    </div>
-
-    <div id="componentes">
-
-        <div id="table">
+        
+        <div class="div_pesquisa">
+            <div class="input-group" id="div_busc">
+                <input type="text" name="busc" id="busc" class="input-group_input" 
+                onkeyup="buscar()"   placeholder="       Pesquisar">
+                <img src="icons/lupa.png" alt="lupa" id="lupa">
+            </div>
+            <img src="icons/filtro2.png" alt="filtro" class="icon">
+        </div>
+        <div id="componentes">
             
-            <table class="tabela_dados">
-                <tbody id="tbody">
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>NASC</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                        
-                    </tr>                     
-
-                    <?php while($dados = mysqli_fetch_array($query)){ ?>
-                        <tr class="trValue" onclick="trOn(this)">
-                            <td class="tdValue" id="select"><?= $dados['id']?></td>
-                            <td class="tdValue"><?= $dados['nome'] ?></td>
-                            <td class="tdValue"><?= $dados['Nasc']?></td>
+            <div id="table">
+                
+                <table class="tabela_dados">
+                    <tbody id="tbody">
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>NASC</th>
+                            <th>-------</th>
+                            <th>-------</th>
+                            <th>-------</th>
+                            <th>-------</th>
+                            <th>-------</th>
+                            <th>-------</th>
+                            <th>-------</th>
                             
-                            <!-- <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td> -->
-                            <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
-                                                <!-- ? envia a variavel para outra tela -->
-                        </tr>
-                        <?php } ?>
+                        </tr>                     
+
+                        <?php while($dados = mysqli_fetch_array($query)){ ?>
+                            <tr class="trValue" onclick="trOn(this)">
+                                <td class="tdValue" id="select"><?= $dados['id']?></td>
+                                <td class="tdValue"><?= $dados['nome'] ?></td>
+                                <td class="tdValue"><?= $dados['Nasc']?></td>
+                                
+                                <!-- <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td> -->
+                                <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
+                                                    <!-- ? envia a variavel para outra tela -->
+                            </tr>
+                            <?php } ?>
+                        
+
+                    </tbody>
                     
 
-                </tbody>
-                
-
-                
-            </table>  
+                    
+                </table>  
+            </div>
+            
+            
         </div>
-        
-        
-    </div>
 
-    <?php
-        //finaliza a conexao
-        mysqli_close($conexao);
-    ?>
+        <?php
+            //finaliza a conexao
+            mysqli_close($conexao);
+        ?>
+    </div>
     
 
        
