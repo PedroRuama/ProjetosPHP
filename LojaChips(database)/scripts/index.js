@@ -85,7 +85,8 @@ function confirmExcluir(btn) {
     if (confirm("Certeza que deseja excluir o(s) produto(s) selecionado(s)?")) {
       btn.type = "submit"
     } else {}
-  }
+}
+
 
 
 
@@ -108,9 +109,7 @@ function buscar() {
         }
     }
     
-   
 
-    
     // for (var i = 0; i < tbody.childNodes.length; i++) {
         
     //    //    console.log(tbody.childNodes.length);

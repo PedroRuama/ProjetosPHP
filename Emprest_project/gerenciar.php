@@ -89,14 +89,39 @@
                             <?php } ?>
                         
 
-                    </tbody>
-                    
-
-                    
+                    </tbody>  
                 </table>  
             </div>
             
-            
+            <div id='box_acoes'>
+                <div>
+                    <a href="cad_produto.php"> <button class="acoes" id="cad"> Adicionar Cadastro </button> </a>
+    
+                    <form action="editar_cad.php" name="editarProduto" method="post"> 
+                        <input type="txt" name="IdEditar" id="inputIds_editar" style="display: none">
+                        <input class="acoes" id="editar" type="button" value="Ver Detalhes" disabled>
+                    </form>
+
+                </div>
+                <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
+                    <input type="txt" name="IdsExcluir" id="inputIds_excluir" style="display: none">
+                    <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
+                </form>
+               
+                <!-- 
+                <button class="acoes"></button>
+                <button class="acoes"></button>
+                <button class="acoes"></button> 
+                -->
+            </div>
+            <div style="color: #071A5F; cursor:default">
+                Pré-View
+                <div Id="preView">
+                    <div id="title"><p id="p_title"> </p> </div>
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                </div>
+            </div>
         </div>
 
         <?php

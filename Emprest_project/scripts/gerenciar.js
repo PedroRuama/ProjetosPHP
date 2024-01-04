@@ -21,7 +21,12 @@ function trOn(tr) {
     var btnEditar = document.getElementById('editar');
     var btnExcluir = document.getElementById('excluir');
     
-    console.log(btnEditar);
+    
+    var preView = document.getElementById("preView");
+    var TpreView = document.getElementById("p_title");
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    
 
     var trOn = tr.classList.toggle('colorir');  //colorir linha tr
 
@@ -67,10 +72,23 @@ function trOn(tr) {
         btnEditar.style = "opacity: 100%; cursor: pointer;";
         btnEditar.disabled = false;
         btnEditar.type = "submit";
+       
+        preView.style = "opacity: 100%;"
+        TpreView.innerHTML = tr.getElementsByTagName("td")[1].innerHTML
+        p1.innerHTML =  "Id: " + tr.getElementsByTagName("td")[0].innerHTML
+        p2.innerHTML =  "Nasc: " + tr.getElementsByTagName("td")[2].innerHTML
+        
     }
     else{
         btnEditar.style = "opacity: 30%;  cursor: not-allowed;";
         btnEditar.disabled = true;
+
+
+
+        preView.style = "opacity: 20%;"
+        TpreView.innerHTML = ""
+        p1.innerHTML =  ""
+        p2.innerHTML =  ""
     }
 
     
