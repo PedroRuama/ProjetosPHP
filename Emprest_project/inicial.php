@@ -33,7 +33,7 @@
                     <a href="#" ><li class="btn">Estatísticas</li></a>
                     <a href="gerenciar.php" ><li class="btn">Gerenciar Cadastros</li></a>                    
                 </ul>
-                <a href="#" ><button class="btn">Adicionar Cadastro</button></a>
+                <a href="cad.php" class="btn">Adicionar Cadastro</a>
                 
             </div>
         </nav>

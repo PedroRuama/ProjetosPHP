@@ -54,7 +54,10 @@ a{
 .btn:hover {
     color: #f5f5f5;
     transition-delay: 0.3s;
+   
+    
 }
+
 
 .btn:hover::before {
     width: 100%;

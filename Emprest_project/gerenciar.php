@@ -4,18 +4,19 @@
     //executa a query com base na conexão
     include_once('controllers/conexao.php');
     
-
+    
     //executa a query com base na conexão
     $query = mysqli_query($conexao, "select * from teste");
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }
 
+   
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,7 @@
                 <a href="#" ><li class="btn">Estatísticas</li></a>
                 <a href="gerenciar.php" ><li class="btn">Gerenciar Cadastros</li></a>                    
             </ul>
-            <a href="#" ><button class="btn">Adicionar Cadastro</button></a>
+            <a href="cad.php"><button class="btn">Adicionar Cadastro</button></a>
             
         </div>
     </nav>
@@ -95,7 +96,7 @@
             
             <div id='box_acoes'>
                 <div>
-                    <a href="cad_produto.php"> <button class="acoes" id="cad"> Adicionar Cadastro </button> </a>
+                    <a href="cad.php"> <button class="acoes" id="cad"> Adicionar Cadastro </button> </a>
     
                     <form action="editar_cad.php" name="editarProduto" method="post"> 
                         <input type="txt" name="IdEditar" id="inputIds_editar" style="display: none">
@@ -103,6 +104,14 @@
                     </form>
 
                 </div>
+                
+                <!-- <form  name="form_preView" id="form_preView" method="post"> 
+                    <input type="txt" name="IdPreView" id="inputIds_preView" value="select" style="display: block">
+                    <input class="acoes" id="preView_sub" type="submit" style="display: block">
+                </form> -->
+               
+                    
+                
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
                     <input type="txt" name="IdsExcluir" id="inputIds_excluir" style="display: none">
                     <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
@@ -124,7 +133,7 @@
             </div>
         </div>
 
-        <?php
+        <?php        
             //finaliza a conexao
             mysqli_close($conexao);
         ?>
