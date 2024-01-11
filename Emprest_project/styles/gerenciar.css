@@ -163,7 +163,7 @@ h3{
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
-    
+    overflow-y: scroll;
     
     
 }
@@ -439,3 +439,5 @@ tr.colorir {
     padding: 0 1rem;
     cursor: default;
 }
+
+
