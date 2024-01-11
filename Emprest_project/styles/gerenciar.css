@@ -244,6 +244,8 @@ tr.colorir {
     transition: 500ms;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    table-layout: fixed;
     /* align-items: center; */
     
 }
