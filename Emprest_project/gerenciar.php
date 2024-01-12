@@ -87,7 +87,7 @@
                                 <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
                                                     <!-- ? envia a variavel para outra tela -->
                             </tr>
-                            <?php } ?>
+                        <?php } ?>
                         
 
                     </tbody>  
