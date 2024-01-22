@@ -281,6 +281,11 @@ form{
     background-color: #dfdfdf;
    cursor: not-allowed;
 }
+.disabili{
+    color:#808080;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 .inputGroup :is(textarea:focus) {
     border-color: rgb(150, 150, 200);
     border-bottom: 2px solid #071A5F;
@@ -466,17 +471,17 @@ input::-webkit-inner-spin-button {
     margin-right: 1.5rem;
 }
 #inp-dataEmp{
-    width: 25%;
+    width: 23%;
     margin-left: 1.5rem;
     margin-right: 2rem;  
 }
 #inp-dataDev{
-    width: 25%;
+    width: 23%;
       
 }
 
 #inp-juros{
-    width: 15%;
+    width: 13%;
     height: 3rem;
 }
 #inp-obs{
@@ -527,9 +532,6 @@ input::-webkit-inner-spin-button {
     border: solid 2px #071A5F;
     transition: 0.5s;
 }
-
-
-
 
 
 

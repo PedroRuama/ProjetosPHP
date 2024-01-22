@@ -1,7 +1,7 @@
 <?php
     include_once("controllers/conexao.php");
     
-    $query = mysqli_query($conexao, "select id from teste order by id desc limit 1");
+    $query = mysqli_query($conexao, "select id from pessoas order by id desc limit 1");
 
     $ultimo_cad = mysqli_fetch_array($query);
     $id = $ultimo_cad['id'] + 1;
@@ -43,13 +43,13 @@
                 <form action="controllers/incluir.php" method="post">
                     <div  class="aling">
                         <div class="inputGroup" id="inp-id">
-                            <input type="search" required name="id" autocomplete="off" value="<?= $id ?>"  disabled >
+                            <input type="search" required name="id" autocomplete="off" value="<?= $id ?>"  disabled  class="disabili">
                             <label for="id"> Id</label>
                         </div>
                       
                         <div class="inputGroup" id="inp-nome">
                             <input type="search" required autocomplete="off" name="nome" class="obrigatorio">
-                            <label for="name">Name </label>
+                            <label for="name">Nome </label>
                             
                         </div>
                         <div class="inputGroup" id="inp-sobrenome">
@@ -102,35 +102,35 @@
                             <label for="">% Juros</label>
                         </div>
                         <div class="inputGroup" id="inp-dataEmp">
-                            <input type="date" required autocomplete="off" name="data_emp" class="obrigatorio" id="data_emp">
+                            <input type="date" required autocomplete="off" name="data_emp" class="obrigatorio" id="data_emp" oninput="dev()">
                             <label for="">Data Emprestimo</label>
                         </div>  
                                               
                         <div class="inputGroup" id="inp-dataDev">
-                            <input type="date" required autocomplete="off" name="data_dev" class="obrigatorio" id="data_dev">
+                            <input type="date" required autocomplete="off" name="data_dev" class="obrigatorio" id="data_dev" oninput="dev()">
                             <label for="">Data Devolução</label>
                         </div>
                     </div>
                     <div class="aling">
-                        <div class="inputGroup" id="inp-valEmp" class="obrigatorio">
-                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_dev" disabled  id="val_dev">
+                        <div class="inputGroup" id="inp-valEmp">
+                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_dev" disabled required id="val_dev" class="disabili">
                             <label for="">R$ Devolução</label>
                         </div>  
 
                         <div class="div_checkbox">
                             <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
-                                <input type="checkbox" id="inp-divida" name="divida" value="Bike" checked>
+                                <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label_check" id="quitado_label" onclick="check(this)" >QUITADO
-                                <input type="checkbox" id="inp-quitado" name="quitado" value="Bike">
+                                <input type="checkbox" id="inp-quitado" name="situacao" value="Quitado">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="inputGroup">
                             <p id="pagamento">Forma de pagamento</p> 
-                            <select name="pagamento" id="">
-                                <option value="Debito"></option>
+                            <select name="pagamento" >
+                                <option value="vazio"></option>
                                 <option value="Debito">Debito</option>
                                 <option value="Credito">Credito</option>
                                 <option value="Pix">Pix</option>
@@ -144,14 +144,14 @@
                     <div class="hr"></div>
                     <div class="aling" id="aling_obs">
                         <div class="inputGroup" id="inp-obs">
-                            <textarea name="detalhes" id="" cols="30" rows="10" required></textarea>
+                            <textarea name="detalhes" id="detalhes" cols="30" rows="10" required></textarea>
                             <label for="">Detalhes/Observações</label>
                         </div>
                     </div>
                     <div class="hr"></div>
                     <div class="btns">
                         <button type="submit" onclick="Submit()">Enviar</button>
-                        <button type="button" onclick="data()">data</button>
+                       
                         <button type="reset"> Limpar Tudo</button>
                         
                     </div>

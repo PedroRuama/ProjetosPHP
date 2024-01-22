@@ -6,7 +6,7 @@
     
     
     //executa a query com base na conexão
-    $query = mysqli_query($conexao, "select * from teste");
+    $query = mysqli_query($conexao, "select * from pessoas");
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }

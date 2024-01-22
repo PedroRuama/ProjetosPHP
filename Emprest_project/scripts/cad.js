@@ -5,14 +5,21 @@ function Submit() {
         const element = inputs[index];
 
         if (element.className != 'obrigatorio' && element.value == '') {
-            // element.removeAttribute("required")
+            
             console.log('removido');
             element.value = "vazio"
 
-        } else { }
-
-
+        } 
+        if (element.disabled) {
+            element.removeAttribute("disabled")
+        }
+        if (document.getElementById("detalhes").value == "") {
+            document.getElementById("detalhes").value = "vazio"
+        }
+      
     }
+    
+    
 }
 
 
@@ -56,27 +63,48 @@ function check(x) {
 }
 
 function dev() {
-    var valor = document.getElementById('val_emp').value
-    var juros = document.getElementById('juros').value
+    var valor = parseInt(document.getElementById('val_emp').value.replace(/\D/g, '')); //capital   replace tira os .
+    var i = parseInt(document.getElementById('juros').value) / 100; //taxa de juros
+    
+    
+    var data_emp = document.getElementById('data_emp').value
+    var data_dev = document.getElementById('data_dev').value
+    let data1 = new Date(`${data_emp}`)
+    let data2 = new Date(`${data_dev}`)
+    
+    let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
+    let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
+    
+    
+    var juros = valor * i * quantidadeDeMeses//juros
+
+     
+
+    // console.log('-------------------------------------')
+    // console.log('capital: ' + valor)
+    // console.log('taxa: ' + i)
+    // console.log("tempo: " + quantidadeDeMeses);
+    // console.log('juros: ' + juros)
+  
+
+
     var dev = document.getElementById('val_dev')
-
-    console.log('valor: ' + valor)
-    console.log('juros: ' + juros)
-
-    dev.value = valor * juros
+    
+    dev.value = valor + juros //montante
 
 }
 
 
 function data() {
-    var emp = document.getElementById('data_emp').value
-    var dev = document.getElementById('data_dev').value
-    let data1 = new Date(`${emp}`)
-    let data2 = new Date(`${dev}`)
-
-    console.log("data 1: " + emp);
-    console.log("data 2: " + dev);
+   
 }
+
+
+
+
+
+
+
 
 function jurosmascara(i) {
     const v = i.value;
@@ -92,7 +120,7 @@ function jurosmascara(i) {
 function mascaraTel(i) {
     const v = i.value;
         
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+    if(isNaN(v[v.length-1])){ 
         i.value = v.substring(0, v.length-1);
         return;
     }
