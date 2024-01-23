@@ -1,3 +1,28 @@
+window.onload = function () {
+    //carregar junto com a pagina
+    var situacao = document.getElementById("situacao").value
+    
+    var inp1 = document.getElementById('inp-divida');
+    var inp2 = document.getElementById('inp-quitado');
+    if (situacao == 'Em Divida') {
+        inp1.checked = true
+    }
+
+    if (situacao == 'Quitado') {
+        inp2.checked = true
+    }
+
+    var options = document.getElementsByTagName('option')
+    var  pag = document.getElementById('pag').value
+   for (let index = 0; index < options.length; index++) {
+    const option = options[index];
+    if (option.value == pag) {
+        option.selected = true
+    }
+    
+   }
+   
+}
 
 var inputs = document.getElementsByTagName('input')
 
@@ -19,10 +44,8 @@ function Submit() {
         }
       
     }
-    var val_emp = document.getElementById('val_emp')
-    val_emp.value = val_emp.value.replace(/\D/g, '')
     
-    var options
+    
 }
 
 
@@ -53,10 +76,10 @@ function mascaraMoeda(campo, evento) {
 
 
 function check(x) {
-    var check1 = document.getElementById('divida_label');
-    var check2 = document.getElementById('quitado_label');
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
+    var check1 = document.getElementById('divida_label');
+    var check2 = document.getElementById('quitado_label');
     if (check1 == x) {
         inp2.checked = false
     }
@@ -144,4 +167,13 @@ function mascaraCpf(i) {
     if (v.length == 11) i.value += "-";
 
     
+}
+
+
+
+function confirmExcluir(btn) {
+    var excluir = document.getElementById('excluir')
+    if (confirm("Certeza que deseja excluir?")) {
+        btn.type = "submit"
+    } else {}
 }

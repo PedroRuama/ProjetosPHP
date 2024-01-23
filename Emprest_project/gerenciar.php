@@ -66,14 +66,12 @@
                         <tr>
                             <th>ID</th>
                             <th>NOME</th>
-                            <th>NASC</th>
-                            <th>-------</th>
-                            <th>-------</th>
-                            <th>-------</th>
-                            <th>-------</th>
-                            <th>-------</th>
-                            <th>-------</th>
-                            <th>-------</th>
+                            <th>TELEFONE</th>
+                            <th>EMPRESTIMO</th>
+                            <th>DATA DO <br> EMPRESTIMO</th>
+                            <th>DATA DA <br> DEVOLUÇÃO</th>
+                            <th>SITUAÇÃO</th>
+                            
                             
                         </tr>                     
 
@@ -81,7 +79,12 @@
                             <tr class="trValue" onclick="trOn(this)">
                                 <td class="tdValue" id="select"><?= $dados['id']?></td>
                                 <td class="tdValue"><?= $dados['nome'] ?></td>
-                                <td class="tdValue"><?= $dados['Nasc']?></td>
+                                <td class="tdValue"><?= $dados['tel'] ?></td>
+                                <td class="tdValue"><?= $dados['val_emp'] ?></td>
+                                <td class="tdValue"><?= $dados['data_emp'] ?></td>
+                                <td class="tdValue"><?= $dados['data_dev'] ?></td>
+                                <td class="tdValue"><?= $dados['situacao'] ?></td>
+                                
                                 
                                 <!-- <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td> -->
                                 <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
@@ -98,30 +101,17 @@
                 <div>
                     <a href="cad.php"> <button class="acoes" id="cad"> Adicionar Cadastro </button> </a>
     
-                    <form action="editar_cad.php" name="editarProduto" method="post"> 
-                        <input type="txt" name="IdEditar" id="inputIds_editar" style="display: none">
+                    <form action="vermais.php" name="editarProduto" method="get"> 
+                        <input type="txt" name="IdView" id="inputIds_editar" style="display: none">
                         <input class="acoes" id="editar" type="button" value="Ver Detalhes" disabled>
                     </form>
 
                 </div>
-                
-                <!-- <form  name="form_preView" id="form_preView" method="post"> 
-                    <input type="txt" name="IdPreView" id="inputIds_preView" value="select" style="display: block">
-                    <input class="acoes" id="preView_sub" type="submit" style="display: block">
-                </form> -->
                
-                    
-                
                 <form action="controllers/excluir.php" name="deleteProduto" method="post"> 
                     <input type="txt" name="IdsExcluir" id="inputIds_excluir" style="display: none">
                     <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
                 </form>
-               
-                <!-- 
-                <button class="acoes"></button>
-                <button class="acoes"></button>
-                <button class="acoes"></button> 
-                -->
             </div>
             <div style="color: #071A5F; cursor:default">
                 Pré-View

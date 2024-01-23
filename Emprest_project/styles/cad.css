@@ -248,6 +248,10 @@ form{
     color: #071A5F;
    
 }
+
+
+
+
 .inputGroup :is(input:disabled)~label {
     transform: translateY(-50%) scale(.8);
     margin: 0em;
@@ -258,6 +262,44 @@ form{
     color: #808080  ;
    
 }
+
+
+#inp-dataEmp :is(input:focus, input:valid)~label{
+    background-color: #f5f5f5;
+    padding: 0 0.5rem;
+    top: 0;
+}
+#inp-dataDev :is(input:focus, input:valid)~label{
+    background-color: #f5f5f5;
+    padding: 0 0.5rem;
+    top: 0;
+}
+
+#inp-dataEmp :is(input:disabled)~label{
+    background-color: transparent;
+    padding: 0 0.5rem;
+    top: 0;
+}
+#inp-dataDev :is(input:disabled)~label{
+    background-color: transparent;
+    padding: 0 0.5rem;
+    top: 0;
+}
+
+
+
+
+.inputGroup :is(textarea:disabled)~label {
+    transform: translateY(-50%) scale(.8);
+    margin: 0em;
+    margin-left: 1.3em;
+    top: 0;
+    padding: 0.4em;
+    background-color: transparent;
+    color: #808080  ;
+   
+}
+
 
 
 
@@ -278,9 +320,14 @@ form{
     border-bottom: 2px solid #071A5F;
 }
 .inputGroup :is(input:disabled) {
-    background-color: #dfdfdf;
+   background-color: #dfdfdf;
    cursor: not-allowed;
 }
+.inputGroup :is(textarea:disabled) {
+    background-color: #dfdfdf;
+    cursor: not-allowed;
+ }
+
 .disabili{
     color:#808080;
     cursor: not-allowed;
@@ -533,8 +580,22 @@ input::-webkit-inner-spin-button {
     transition: 0.5s;
 }
 
+#excluir{
+    border: solid 2px #CA1717;
+    background-color: #CA1717;
+}
 
 
+#excluir:hover{
+    border: solid 2px #CA1717;
+    background-color: #CA1717;
+    color: #f5f5f5;
+}
+
+#forms_ex{
+    position: absolute;
+    display: flex;      
+}
 
 
 
