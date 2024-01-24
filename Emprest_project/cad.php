@@ -116,17 +116,31 @@
                             <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_dev" disabled required id="val_dev" class="disabili">
                             <label for="">R$ Devolução</label>
                         </div>  
-
-                        <div class="div_checkbox">
-                            <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
-                                <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
-                                <span class="checkmark"></span>
-                            </label>
+                        
+                        <div class="div_checkbox" >
+                            <div style="display: flex;">
+                                <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
+                                    <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="inputGroup">
+                                    <p id="pagamento">Parcelas</p> 
+                                    <select name="parcela" >
+                                        <option value="1x">1x</option>
+                                        <option value="2x">2x</option>
+                                        <option value="3x">3x</option>
+                                        <option value="6x">6x</option>
+                                        <option value="12x">12x</option>
+                                        
+                                    </select>
+                                </div> 
+                            </div>
                             <label class="label_check" id="quitado_label" onclick="check(this)" >QUITADO
                                 <input type="checkbox" id="inp-quitado" name="situacao" value="Quitado">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
+                       
                         <div class="inputGroup">
                             <p id="pagamento">Forma de pagamento</p> 
                             <select name="pagamento" >
@@ -149,7 +163,7 @@
                         </div>
                     </div>
                     <div class="hr"></div>
-                    <div class="btns">
+                    <div class="btn">
                         <button type="submit" onclick="Submit()">Enviar</button>
                        
                         <button type="reset"> Limpar Tudo</button>
@@ -157,6 +171,7 @@
                     </div>
                    
                 </form>
+                
             </div>  
         
         </div>

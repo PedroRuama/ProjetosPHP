@@ -333,15 +333,25 @@ form{
     cursor: not-allowed;
     pointer-events: none;
 }
+#disabili{
+    color:#808080;
+    cursor: not-allowed;
+   
+    padding: 0 1rem;
+    border-radius: 10px;
+    
+    pointer-events: none;
+}
 .inputGroup :is(textarea:focus) {
     border-color: rgb(150, 150, 200);
     border-bottom: 2px solid #071A5F;
 }
 
 .inputGroup select{
-    font-size: 100%;
+    font-size: 95%;
     outline: none;
     display: flex;
+    color: #5f5f5f;
     border: 1px solid rgb(200, 200, 200);
     background-color: transparent;
     border-radius: 5px;
@@ -350,6 +360,7 @@ form{
     box-shadow: 0px 8px 16px -18px;
     width: auto;
 }
+
 
 .aling{
     display: flex;
@@ -376,7 +387,7 @@ form{
 
 
 .div_checkbox{
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -461,7 +472,7 @@ form{
     color: #f32121;
     font-weight: bold;
     padding-left: 2rem; 
-    
+    padding-right: 1rem; 
 }
 
 #quitado_label{
@@ -554,12 +565,14 @@ input::-webkit-inner-spin-button {
 }
 
 .btns{
-    
     width: 100%;
     height: 5rem;
-    justify-content: center;
     display: flex;
     justify-content: space-between;
+}
+#btns1{
+    display: flex;  
+    justify-content: start;
 }
 
 .btns button{
@@ -583,6 +596,7 @@ input::-webkit-inner-spin-button {
 #excluir{
     border: solid 2px #CA1717;
     background-color: #CA1717;
+    
 }
 
 
@@ -594,7 +608,12 @@ input::-webkit-inner-spin-button {
 
 #forms_ex{
     position: absolute;
-    display: flex;      
+    display: flex;     
+    width: auto; 
+    right: 1rem;
+    flex-direction: row;
+    bottom: 2.7%;
+    z-index: 0;
 }
 
 

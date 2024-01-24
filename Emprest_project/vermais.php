@@ -122,12 +122,24 @@
                             <label for="">R$ Devolução</label>
                         </div>  
 
-                        <div class="div_checkbox">
-                            <label class="label_check" id="divida_label" onclick="check(this)">EM DIVIDA
-                                <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" >
-                                <span class="checkmark"></span>
-                            </label>
-
+                        <div class="div_checkbox" id="disabili">
+                            <div style="display: flex;">
+                                <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
+                                    <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="inputGroup">
+                                    <p id="pagamento">Parcelas</p> 
+                                    <select name="parcela"  >
+                                        <option value="1x">1x</option>
+                                        <option value="2x">2x</option>
+                                        <option value="3x">3x</option>
+                                        <option value="6x">6x</option>
+                                        <option value="12x">12x</option>
+                                        
+                                    </select>
+                                </div> 
+                            </div>
                             <input type="text" id="situacao" value="<?= $dados['situacao']?>" style="display: none">
 
                             <label class="label_check" id="quitado_label" onclick="check(this)" >QUITADO
@@ -135,6 +147,7 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
+                        
                         <div class="inputGroup">
                             <p id="pagamento">Forma de pagamento</p> 
                             <input type="text" id="pag" value="<?= $dados['pagamento']?>" style="display: none">
@@ -158,10 +171,10 @@
                         </div>
                     </div>
                     <div class="hr"></div>
-                    <div class="btns">
+                    <div class="btns" id="btn1">
                         <button type="submit" onclick="Submit()">Enviar</button>
                        
-                    
+                        <button type="submit" onclick="editar()">Editar Dados</button>
                       
                         
                     </div>
