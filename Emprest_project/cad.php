@@ -123,17 +123,39 @@
                                     <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
                                     <span class="checkmark"></span>
                                 </label>
-                                <div class="inputGroup">
-                                    <p id="pagamento">Parcelas</p> 
-                                    <select name="parcela" >
-                                        <option value="1x">1x</option>
-                                        <option value="2x">2x</option>
-                                        <option value="3x">3x</option>
-                                        <option value="6x">6x</option>
-                                        <option value="12x">12x</option>
-                                        
-                                    </select>
-                                </div> 
+                                <div class="div_img" onclick="divParcelas()">
+                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela">
+                                    <div id="div_parcelas">
+                                        <div class="inputGroup">
+                                            <p class="label_select">Nº Parcelas</p> 
+                                            <select name="parcela">
+                                                <option value="1x">1x</option>
+                                                <option value="2x">2x</option>
+                                                <option value="3x">3x</option>
+                                                <option value="6x">6x</option>
+                                                <option value="12x">12x</option>
+                                            </select>
+                                        </div> 
+                                        <div class="inputGroup">
+                                            <p class="label_select"> Nº Pagas</p> 
+                                            <select name="par_pagas">
+                                                <option value="0x">0x</option>
+                                                <option value="1x">1x</option>
+                                                <option value="2x">2x</option>
+                                                <option value="3x">3x</option>
+                                                <option value="4x">4x</option>
+                                                <option value="5x">5x</option>
+                                                <option value="6x">6x</option>
+                                                <option value="7x">7x</option>
+                                                <option value="8x">8x</option>
+                                                <option value="9x">9x</option>
+                                                <option value="10x">10x</option>
+                                                <option value="11x">11x</option>
+                                                <option value="12x">12x</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                             </div>
                             </div>
                             <label class="label_check" id="quitado_label" onclick="check(this)" >QUITADO
                                 <input type="checkbox" id="inp-quitado" name="situacao" value="Quitado">
@@ -142,7 +164,7 @@
                         </div>
                        
                         <div class="inputGroup">
-                            <p id="pagamento">Forma de pagamento</p> 
+                            <p class="label_select">Forma de pagamento</p> 
                             <select name="pagamento" >
                                 <option value="vazio"></option>
                                 <option value="Debito">Debito</option>
@@ -163,7 +185,7 @@
                         </div>
                     </div>
                     <div class="hr"></div>
-                    <div class="btn">
+                    <div class="btns">
                         <button type="submit" onclick="Submit()">Enviar</button>
                        
                         <button type="reset"> Limpar Tudo</button>

@@ -51,8 +51,46 @@ p{
 
 img{
     height: 50%;
+    transition: 0.5s;
     rotate: 180deg;
 }
+
+.div_img{
+    width: 1.5rem;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.div_img img{
+    cursor: pointer;
+    height: 100%;
+}
+
+#img_parcela{
+    rotate: 90deg;
+}
+
+
+
+#div_parcelas{
+    height:4rem;
+    width: 10rem;
+    display: flex;
+    margin-top: 1.5rem;
+    z-index: 10;
+    transition: 0.5s;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    background-color: #e4e4e4;
+    border: solid 1px #808080;
+    border-radius: 5px;
+
+}
+
 
 #cancelar_div{
     height: 100%;
@@ -330,16 +368,13 @@ form{
 
 .disabili{
     color:#808080;
-    cursor: not-allowed;
+    
     pointer-events: none;
 }
 #disabili{
     color:#808080;
-    cursor: not-allowed;
-   
     padding: 0 1rem;
     border-radius: 10px;
-    
     pointer-events: none;
 }
 .inputGroup :is(textarea:focus) {
@@ -351,7 +386,7 @@ form{
     font-size: 95%;
     outline: none;
     display: flex;
-    color: #5f5f5f;
+    
     border: 1px solid rgb(200, 200, 200);
     background-color: transparent;
     border-radius: 5px;
@@ -387,7 +422,7 @@ form{
 
 
 .div_checkbox{
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -557,7 +592,7 @@ input::-webkit-inner-spin-button {
     top: 5px;
 }
 
-#pagamento{
+.label_select{
     color: #808080;
     margin: 0;
     padding: 0;
@@ -565,15 +600,12 @@ input::-webkit-inner-spin-button {
 }
 
 .btns{
-    width: 100%;
+    width: 40%;
     height: 5rem;
     display: flex;
     justify-content: space-between;
 }
-#btns1{
-    display: flex;  
-    justify-content: start;
-}
+
 
 .btns button{
     

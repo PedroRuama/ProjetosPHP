@@ -21,7 +21,12 @@ window.onload = function () {
     }
     
    }
-   
+   for (let index = 0; index < inputs.length; index++) {
+        const element = inputs[index];
+        if (element.className != 'obrigatorio' && element.value == 'vazio') {
+            element.value = ""
+        } 
+    }
 }
 
 var inputs = document.getElementsByTagName('input')
@@ -172,8 +177,39 @@ function mascaraCpf(i) {
 
 
 function confirmExcluir(btn) {
-    var excluir = document.getElementById('excluir')
     if (confirm("Certeza que deseja excluir?")) {
         btn.type = "submit"
     } else {}
+}
+
+function editar() {
+    for (let index = 0; index < inputs.length; index++) {
+        const element = inputs[index];
+
+        if (element.disabled) {
+            element.removeAttribute("disabled")
+        }      
+    }
+    document.getElementById("detalhes").disabled = false
+    document.getElementById("disabili").style.pointerEvents = 'all'
+    document.getElementById("pagamento").disabled = false
+}
+
+
+
+
+var i = 1;
+function divParcelas(){
+    var img = document.getElementById('img_parcela')
+    var div_parcelas = document.getElementById('div_parcelas')
+    i = i*(-1)
+    console.log(i);
+    if (i < 0) {
+        img.style = 'rotate: 270deg;'
+        div_parcelas.style.display= 'flex'
+    }
+    else{
+        img.style = 'rotate: 90deg;'
+        div_parcelas.style.display= 'none'
+    }
 }

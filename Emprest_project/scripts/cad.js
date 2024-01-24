@@ -145,3 +145,20 @@ function mascaraCpf(i) {
 
     
 }
+
+
+var i = 1;
+function divParcelas(){
+    var img = document.getElementById('img_parcela')
+    var div_parcelas = document.getElementById('div_parcelas')
+    i = i*(-1)
+    console.log(i);
+    if (i < 0) {
+        img.style = 'rotate: 270deg;'
+        div_parcelas.style.display= 'flex'
+    }
+    else{
+        img.style = 'rotate: 90deg;'
+        div_parcelas.style.display= 'none'
+    }
+}
