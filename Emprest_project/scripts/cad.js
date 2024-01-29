@@ -131,6 +131,22 @@ function mascaraTel(i) {
     if (v.length == 10) i.value += "-";
 }
 
+
+
+function mascaraRg(i) {
+    const v = i.value;
+        
+    if(isNaN(v[v.length-1])){ 
+        i.value = v.substring(0, v.length-1);
+        return;
+    }
+    
+    i.setAttribute("maxlength", "13");
+    
+    if (v.length == 2 || v.length == 6 ) i.value += ".";
+    if (v.length == 10) i.value += "-";
+}
+
 function mascaraCpf(i) {
     const v = i.value;
         
@@ -156,9 +172,11 @@ function divParcelas(){
     if (i < 0) {
         img.style = 'rotate: 270deg;'
         div_parcelas.style.display= 'flex'
+       
     }
     else{
         img.style = 'rotate: 90deg;'
         div_parcelas.style.display= 'none'
+       
     }
 }

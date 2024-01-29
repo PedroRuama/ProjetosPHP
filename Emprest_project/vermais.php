@@ -26,7 +26,7 @@
 
                 <div  id="cancelar_div">
                     <img src="icons/seta-azul.png" alt="voltar" id="seta-azul"> 
-                    <p>Cancelar Cadastro</p>
+                    <p>Voltar</p>
 
                 </div>
 
@@ -36,11 +36,11 @@
    
     <div class="container">
         <div id="title">
-            <h1>Cadastrar</h1>
+            <h1> Dados <?= $dados['nome']?></h1>
         </div>
         <div class="cad">
             <div class="forms_div">
-                <form action="controllers/incluir.php" method="post">
+                <form action="controllers/editar.php" method="post">
                     <div  class="aling">
                         <div class="inputGroup" id="inp-id">
                             <input type="search" required name="id" autocomplete="off" value="<?= $id ?>"  disabled  class="disabili">
@@ -65,7 +65,7 @@
                         </div>
                       
                         <div class="inputGroup" id="inp-rg">
-                            <input type="search" required name="rg" autocomplete="off"  value="<?= $dados['rg']?>" disabled>
+                            <input type="search" required name="rg" autocomplete="off"  oninput="mascaraRg(this)"  value="<?= $dados['rg']?>" disabled>
                             <label for="">RG</label>
                         </div>
                         <div class="inputGroup" id="inp-tel">
@@ -122,18 +122,18 @@
                             <label for="">R$ Devolução</label>
                         </div>  
 
-                        <div class="div_checkbox" id="disabili">
+                        <div class="div_checkbox">
                             <div style="display: flex;">
                                 <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
                                     <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
                                     <span class="checkmark"></span>
                                 </label>
-                                <div class="div_img" onclick="divParcelas()">
-                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela">
+                                <div class="div_img">
+                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela"  onclick="divParcelas()">
                                     <div id="div_parcelas">
                                         <div class="inputGroup">
                                             <p class="label_select">Nº Parcelas</p> 
-                                            <select name="parcela">
+                                            <select name="parcelas"  id="SelecParcelas">
                                                 <option value="1x">1x</option>
                                                 <option value="2x">2x</option>
                                                 <option value="3x">3x</option>
@@ -141,9 +141,11 @@
                                                 <option value="12x">12x</option>
                                             </select>
                                         </div> 
+                                        <input type="text" id="parcelas" value="<?= $dados['parcelas']?>" style="display: none">
+                                        <input type="text" id="parcelas_pagas" value="<?= $dados['parcelas_pagas']?>" style="display: none">
                                         <div class="inputGroup">
                                             <p class="label_select"> Nº Pagas</p> 
-                                            <select name="par_pagas">
+                                            <select name="parcelas_pagas" id="SelecParcelas_pagas">
                                                 <option value="0x">0x</option>
                                                 <option value="1x">1x</option>
                                                 <option value="2x">2x</option>
@@ -173,8 +175,8 @@
                         
                         <div class="inputGroup">
                             <p class="label_select">Forma de pagamento</p> 
-                            <input type="text" id="pag" value="<?= $dados['pagamento']?>" style="display: none">
-                            <select name="pagamento" id="pagamento" disabled>
+                            <input type="text" id="pagamento" value="<?= $dados['pagamento']?>" style="display: none">
+                            <select name="pagamento" id="pag" disabled>
                                 <option value="vazio"></option>
                                 <option value="Debito">Debito</option>
                                 <option value="Credito">Credito</option>
@@ -189,12 +191,12 @@
                     <div class="hr"></div>
                     <div class="aling" id="aling_obs">
                         <div class="inputGroup" id="inp-obs">
-                            <textarea name="detalhes" id="detalhes" cols="30" rows="10" required disabled></textarea>
+                            <textarea name="detalhes" id="detalhes" cols="30" rows="10" required disabled><?= $dados['detalhes']?></textarea>
                             <label for="">Detalhes/Observações</label>
                         </div>
                     </div>
                     <div class="hr"></div>
-                    <div class="btns">
+                    <div class="btns1">
                         <button type="button" onclick="editar()">Editar Dados</button>
                         <button type="submit" onclick="Submit()">Salvar</button>
                     </div>

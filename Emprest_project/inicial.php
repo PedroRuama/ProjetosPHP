@@ -7,7 +7,7 @@
     
 
     //executa a query com base na conexão
-    $query = mysqli_query($conexao, "select * from teste");
+    $query = mysqli_query($conexao, "select * from pessoas");
     $aviso = mysqli_query($conexao, "select * from teste");
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
@@ -55,9 +55,11 @@
                         <div class="avisos">
                             <img src="icons/aviso.png" alt=""  class="iconAviso">
                             <div class="dados_aviso">
-                                <?= $dados['id']?>
-                                <?= $dados['nome']?>
-                                <?= $dados['Nasc']?>
+                                <div class="divider"><?= $dados['nome']?></div>
+                                <div class="divider"><?= $dados['tel']?></div>
+                                <div class="divider"><?= $dados['data_dev']?></div>
+                                <div class="divider">R$<?= $dados['val_dev']?></div>
+                               
                                 <!-- <img src="icons/seta-direita.png" alt="" class="iconAviso" id="seta"> -->
                             </div>
 
@@ -70,13 +72,17 @@
                         <div class="avisos">
                             <img src="icons/ponto-de-exclamacao.png" alt=""  class="iconAviso">
                             <div class="dados_atencao">
-                                <?php while( $teste= mysqli_fetch_array($aviso)){ 
-                                       echo $teste['id'];
-                                       echo $teste['nome'];
-                                       echo $teste['Nasc'];
-                                       echo '<br> <br>';
-                                    }
-                                ?>
+                                <?php while( $teste= mysqli_fetch_array($aviso)){ ?>
+
+                                    <div class="row_atencao">
+                                        <div class="divider_"><?= $teste['id']?></div>
+                                        <div class="divider_"><?= $teste['nome']?></div>
+                                        <div class="divider_"><?= $teste['Nasc']?></div>
+
+                                    </div>
+                                    
+                                 <?php } ?>
+                                
 
 
                                 

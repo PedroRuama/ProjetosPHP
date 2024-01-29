@@ -4,12 +4,12 @@
         var tabela = document.getElementById("table")
         var cadastros = document.getElementsByTagName("tr")
 
-        if(cadastros.length > 8){
-            tabela.style.overflowY = "scroll";
-        }else{
-            tabela.style.removeProperty("overflowY");
+        // if(cadastros.length > 8){
+        //     tabela.style.overflowY = "scroll";
+        // }else{
+        //     tabela.style.removeProperty("overflowY");
             
-        }
+        // }
 
 
        
@@ -38,6 +38,9 @@
         var TpreView = document.getElementById("p_title");
         var p1 = document.getElementById("p1");
         var p2 = document.getElementById("p2");
+        var p2 = document.getElementById("p2");
+        
+        var situ =  document.getElementsByClassName('situ');
         
        
     
@@ -50,15 +53,14 @@
             Selecionado.push(idSelec) //adiciona o item selecionada á array
             // console.log(Selecionado)
             RowSelect.push(DadosRow)
-            console.log("----------------------------------");
-            console.log(RowSelect)
+            
         }
         else {
             tr.classList.remove('colorir');
             i = i - 1
             
             // console.log('trOff');
-            console.log("linhas ativas: ", i)
+           
             let index = Selecionado.indexOf(idSelec) //busca se existe e a posiçao do item na array
             let index2 = RowSelect.indexOf(DadosRow) 
           
@@ -88,8 +90,11 @@
             
             preView.style = "opacity: 100%;"
             TpreView.innerHTML = RowSelect[0][1].innerHTML
-            p1.innerHTML =   RowSelect[0][0].innerHTML
-            p2.innerHTML =   RowSelect[0][2].innerHTML
+            p1.innerHTML =   'Telefone:  ' +RowSelect[0][2].innerHTML
+            p2.innerHTML =   'Valor do Emprestimo: '+ RowSelect[0][3].innerHTML
+            p3.innerHTML =   'Divida/Quitado:  '+ RowSelect[0][6].innerHTML
+
+        
             
         }
         else{
@@ -102,6 +107,7 @@
             TpreView.innerHTML = ""
             p1.innerHTML =  ""
             p2.innerHTML =  ""
+            p3.innerHTML =  ""
         }
 
         let Input_excluir = document.getElementById("inputIds_excluir");
@@ -127,7 +133,6 @@
         var buscar = document.getElementById("busc").value//todos os caracteres pra minusculo
         buscar = buscar.toLowerCase()
 
-    
         // var y = document.getElementsByClassName("tdValue");
         var x = document.getElementsByClassName("trValue");    
     
@@ -143,15 +148,15 @@
         
     
 
-        var lupa = document.getElementById("lupa")
+    var lupa = document.getElementById("lupa")
         
-    if (buscar != "") {
+    if (buscar != " ") {
         lupa.style.translate = "210px"
         lupa.style.filter = "grayscale(0%);"
-        } else{
-            lupa.style.translate = "0px"
-            console.log('out');
-        }
-        console.log('x');
-
+    } else{
+        lupa.style.translate = "0px"
+        console.log('out');
     }
+    console.log('x');
+
+}

@@ -12,15 +12,36 @@ window.onload = function () {
         inp2.checked = true
     }
 
-    var options = document.getElementsByTagName('option')
-    var  pag = document.getElementById('pag').value
-   for (let index = 0; index < options.length; index++) {
-    const option = options[index];
-    if (option.value == pag) {
-        option.selected = true
-    }
-    
+    var forma_pag = document.getElementsByTagName('option')
+    var  pag = document.getElementById('pagamento').value
+   for (let index = 0; index < forma_pag.length; index++) {
+        const option = forma_pag[index];
+        if (option.value == pag) {
+            option.selected = true
+        }
    }
+
+   var SelecParcelas = document.getElementById('SelecParcelas')
+   var parcelas = document.getElementById('parcelas').value
+   for (let index = 0; index < SelecParcelas.length; index++) {
+        const par = SelecParcelas[index];
+        if (par.value == parcelas) {
+            par.selected = true
+        } 
+   }
+   
+   var SelecParcelas_pagas = document.getElementById('SelecParcelas_pagas')
+   var parcelas_pagas = document.getElementById('parcelas_pagas').value
+   for (let index = 0; index < SelecParcelas_pagas.length; index++) {
+        const pag = SelecParcelas_pagas[index];
+        if (pag.value == parcelas_pagas) {
+            pag.selected = true
+        } 
+   }
+
+
+
+
    for (let index = 0; index < inputs.length; index++) {
         const element = inputs[index];
         if (element.className != 'obrigatorio' && element.value == 'vazio') {
@@ -43,11 +64,15 @@ function Submit() {
         } 
         if (element.disabled) {
             element.removeAttribute("disabled")
+            
         }
         if (document.getElementById("detalhes").value == "") {
             document.getElementById("detalhes").value = "vazio"
         }
-      
+        document.getElementById("detalhes").removeAttribute("disabled");
+        document.getElementById("pagamento").removeAttribute("disabled");
+        var val_emp = document.getElementById('val_emp')
+        val_emp.value = val_emp.value.replace(/\D/g, '')
     }
     
     
@@ -159,6 +184,20 @@ function mascaraTel(i) {
     if (v.length == 10) i.value += "-";
 }
 
+function mascaraRg(i) {
+    const v = i.value;
+        
+    if(isNaN(v[v.length-1])){ 
+        i.value = v.substring(0, v.length-1);
+        return;
+    }
+    
+    i.setAttribute("maxlength", "13");
+    
+    if (v.length == 2 || v.length == 6 ) i.value += ".";
+    if (v.length == 10) i.value += "-";
+}
+
 function mascaraCpf(i) {
     const v = i.value;
         
@@ -191,8 +230,9 @@ function editar() {
         }      
     }
     document.getElementById("detalhes").disabled = false
-    document.getElementById("disabili").style.pointerEvents = 'all'
-    document.getElementById("pagamento").disabled = false
+    // document.getElementById("disabili").style.pointerEvents = 'all'
+    document.getElementById("pag").disabled = false
+    
 }
 
 
@@ -207,9 +247,11 @@ function divParcelas(){
     if (i < 0) {
         img.style = 'rotate: 270deg;'
         div_parcelas.style.display= 'flex'
+       
     }
     else{
         img.style = 'rotate: 90deg;'
         div_parcelas.style.display= 'none'
+       
     }
 }

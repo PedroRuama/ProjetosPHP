@@ -247,9 +247,11 @@ tr.colorir {
     display: flex;
     flex-direction: column;
     width: 100%;
+    
     table-layout: fixed;
     /* align-items: center; */
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 .dados{
@@ -406,11 +408,12 @@ tr.colorir {
 
 
 #preView{
-    height: 70%;
+  
     width: 15rem;
     transition: 1s;
     border-radius: 10px;
     display: flex;
+    
     flex-direction: column;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
     opacity: 20%;
@@ -421,6 +424,14 @@ tr.colorir {
    padding: 1rem;
    cursor: default;
    display: flex;
+}
+#p1{
+    background-color: #ebeaea;
+}
+
+#p3{
+    background-color: #ebeaea;
+    border-radius: 0 0 10px 10px;
 }
 
 #title{
@@ -433,6 +444,7 @@ tr.colorir {
     /* background-color: rgb(83, 230, 144); */
     border-radius: 10px 10px 0 0;
     align-items: center;
+    padding: 0.5rem 0;
     text-transform: uppercase;
     cursor: default;
 }
@@ -440,6 +452,25 @@ tr.colorir {
 #title p{
     padding: 0 1rem;
     cursor: default;
+   
 }
 
+.situacao{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
+#divida{
+    background-color: #CA1717;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50px;
+}
+
+#quitado{
+    background-color: #008000;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50px;
+}

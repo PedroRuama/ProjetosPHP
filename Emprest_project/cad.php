@@ -65,7 +65,7 @@
                         </div>
                       
                         <div class="inputGroup" id="inp-rg">
-                            <input type="search" required name="rg" autocomplete="off" >
+                            <input type="search" required name="rg" autocomplete="off"   oninput="mascaraRg(this)" >
                             <label for="">RG</label>
                         </div>
                         <div class="inputGroup" id="inp-tel">
@@ -123,12 +123,12 @@
                                     <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
                                     <span class="checkmark"></span>
                                 </label>
-                                <div class="div_img" onclick="divParcelas()">
-                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela">
+                                <div class="div_img" >
+                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela" onclick="divParcelas()">
                                     <div id="div_parcelas">
                                         <div class="inputGroup">
                                             <p class="label_select">Nº Parcelas</p> 
-                                            <select name="parcela">
+                                            <select name="parcelas">
                                                 <option value="1x">1x</option>
                                                 <option value="2x">2x</option>
                                                 <option value="3x">3x</option>
@@ -138,7 +138,7 @@
                                         </div> 
                                         <div class="inputGroup">
                                             <p class="label_select"> Nº Pagas</p> 
-                                            <select name="par_pagas">
+                                            <select name="parcelas_pagas">
                                                 <option value="0x">0x</option>
                                                 <option value="1x">1x</option>
                                                 <option value="2x">2x</option>

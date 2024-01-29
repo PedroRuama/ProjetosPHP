@@ -10,8 +10,7 @@
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }
-
-   
+    
 ?>
 
 
@@ -52,7 +51,7 @@
         <div class="div_pesquisa">
             <div class="input-group" id="div_busc">
                 <input type="text" name="busc" id="busc" class="input-group_input" 
-                onkeyup="buscar()"   placeholder="       Pesquisar">
+                onkeyup="buscar()"   placeholder="       Pesquisar ">
                 <img src="icons/lupa.png" alt="lupa" id="lupa">
             </div>
             <img src="icons/filtro2.png" alt="filtro" class="icon">
@@ -74,16 +73,33 @@
                             
                             
                         </tr>                     
+                       
 
                         <?php while($dados = mysqli_fetch_array($query)){ ?>
                             <tr class="trValue" onclick="trOn(this)">
                                 <td class="tdValue" id="select"><?= $dados['id']?></td>
                                 <td class="tdValue"><?= $dados['nome'] ?></td>
                                 <td class="tdValue"><?= $dados['tel'] ?></td>
-                                <td class="tdValue"><?= $dados['val_emp'] ?></td>
-                                <td class="tdValue"><?= $dados['data_emp'] ?></td>
-                                <td class="tdValue"><?= $dados['data_dev'] ?></td>
-                                <td class="tdValue"><?= $dados['situacao'] ?></td>
+                                <td class="tdValue">R$<?= $dados['val_emp'] ?></td>
+                                <td class="tdValue"><?=  date('d/m/Y', strtotime($dados['data_emp'])) ?></td>
+                                <td class="tdValue"><?= date('d/m/Y', strtotime($dados['data_dev']))?></td>
+                                <td class="tdValue">
+                                    <div class="situacao">
+                                    <?php
+                                       
+                                        if( $dados['situacao'] == 'Em Divida'){
+                                            echo '<div id="divida" class="situ"></div>';
+                                        }
+                                        if( $dados['situacao'] == 'Quitado'){
+                                            echo '<div id="quitado" class="situ"></div>';
+                                        }
+                                   
+                                    
+                                    ?>
+                                        
+
+                                    </div>
+                                </td>
                                 
                                 
                                 <!-- <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td> -->
@@ -119,6 +135,7 @@
                     <div id="title"><p id="p_title"> </p> </div>
                     <p id="p1"></p>
                     <p id="p2"></p>
+                    <p id="p3"></p>
                 </div>
             </div>
         </div>

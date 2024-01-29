@@ -179,14 +179,15 @@ h3{
 
 .dados_aviso{
     height: 100%;
-    width: 70%;
-    background-color: #ff8888;
+    width: 80%;
+   
     border-radius: 10px;
     border: solid 2px #CA1717;
     display: flex;
+    overflow: hidden;
     align-items: center;
     font-size: 100%;
-    padding: 0 1rem;
+   
     justify-content: space-between;
     
 }
@@ -199,18 +200,56 @@ h3{
 }
 
 .dados_atencao{
-    height: 20rem ;
+    height: 15rem;
     width: 70%;
     background-color: #f5e661;
     border-radius: 10px;
     border: solid 2px #e4d232;
     display: flex;
-    
+    flex-direction: column;
     font-size: 100%;
-    padding: 1rem;
+    overflow: hidden;
+    
 }
 
 #seta{
     height: 60%;
     rotate: 100px;
 }
+
+.divider{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8888;
+    border: 1px solid #CA1717;
+   
+}
+.divider_{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+   
+}
+.row_atencao{
+    background-color: aqua;
+    height: 3rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.row_atencao:nth-child(even){
+    background-color: #c1ffd4;
+}
+
+
+.divider:nth-child(even) {
+    background-color: #ffc1c1;
+} 
