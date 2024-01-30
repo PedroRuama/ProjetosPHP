@@ -171,6 +171,7 @@
                                 <option value="Credito">Credito</option>
                                 <option value="Pix">Pix</option>
                                 <option value="Transferencia">Trasferencia</option>
+                                <option value="Dinheiro">Dinheiro</option>
                                 
                             </select>
                             

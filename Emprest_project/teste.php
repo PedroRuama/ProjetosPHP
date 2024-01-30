@@ -11,7 +11,8 @@
     date_default_timezone_set('America/Sao_Paulo');
 
     // Obtém a data atual
-    $dataAtual = date('Y-m-d');
+    echo  $dataAtual = date('Y-m-d');
+    echo '<br>';
     echo $dados['data_dev'];
     echo '<br>';
 
@@ -21,5 +22,25 @@
 
     // Exibe a data formatada
     echo "Data formatada: $dataFormatada";
+   echo '<br>';
+   echo '<br>';
+   echo '<br>';
+
+
+
+
+
+   
+    $data1 = new DateTime($dataAtual);
+    $data2 = new DateTime($dados['data_dev']);
+
+    // Calcula a diferença em dias
+    $diferenca = $data1->diff($data2);
+
+    // Obtém a diferença em dias
+    $dias = $diferenca->days;
+
+    echo "Diferença em dias: $dias dias";
+
 
 ?>

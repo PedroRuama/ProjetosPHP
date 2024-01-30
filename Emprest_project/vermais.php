@@ -125,7 +125,7 @@
                         <div class="div_checkbox">
                             <div style="display: flex;">
                                 <label class="label_check"  id="divida_label" onclick="check(this)">EM DIVIDA
-                                    <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" checked>
+                                    <input type="checkbox" id="inp-divida" name="situacao" value="Em Divida" >
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="div_img">
