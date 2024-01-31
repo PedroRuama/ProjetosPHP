@@ -69,12 +69,16 @@ function Submit() {
         if (document.getElementById("detalhes").value == "") {
             document.getElementById("detalhes").value = "vazio"
         }
-        document.getElementById("detalhes").removeAttribute("disabled");
-        document.getElementById("pagamento").removeAttribute("disabled");
+        document.getElementById("detalhes").disabled = false
+        document.getElementById("pag").disabled = false;
         var val_emp = document.getElementById('val_emp')
         val_emp.value = val_emp.value.replace(/\D/g, '')
     }
-    
+    var inp1 = document.getElementById('inp-divida');
+    var inp2 = document.getElementById('inp-quitado');
+    if(inp1.checked == false && inp2.checked == false){
+        inp1.checked = true
+    }
     
 }
 
@@ -232,6 +236,7 @@ function editar() {
     document.getElementById("detalhes").disabled = false
     // document.getElementById("disabili").style.pointerEvents = 'all'
     document.getElementById("pag").disabled = false
+    // document.getElementById("btn_salvar").disabled = false
     
 }
 

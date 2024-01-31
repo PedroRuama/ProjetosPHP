@@ -1,31 +1,35 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Arial;
-  
+
 }
 
-body{
+body {
     background-color: #f5f5f5;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
+    
 }
-.pontos{
+
+.pontos {
     width: 1rem;
     font-size: 1.7rem;
     color: #808080;
     position: absolute;
 }
+
 /* ------------------------------------nav-------------------------------- */
 
-.navbar{
+.navbar {
     display: flex;
     z-index: -3;
     width: 100%;
     height: 3.5rem;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: space-around;
 }
@@ -85,18 +89,18 @@ a{
     transition-delay: 0.4s;
     color: aliceblue;
 }
- 
 
 
 
-.itens{
+
+.itens {
     list-style-type: none;
     display: flex;
     padding-right: 10rem;
 }
 
 
-.btn-nav{
+.btn-nav {
     background-color: #f5f5f5;
     padding: 0.5rem;
     color: #071A5F;
@@ -107,142 +111,166 @@ a{
     transition: 0.5s;
 }
 
-.btn-nav:hover{
+.btn-nav:hover {
     background-color: #071A5F;
-    color: #f5f5f5;  
-   
+    color: #f5f5f5;
+
 }
 
 /* ------------------------------------nav-------------------------------- */
 
-.container{
+.container {
     display: flex;
     margin: 3rem;
     transition: 1s;
-    
+
 }
 
-h1{
+h1 {
     color: #071A5F;
     font-size: 3rem;
     padding: 0 2rem;
-    
+
 }
-h3{
+
+h3 {
     padding: 0 2rem;
     font-size: 1.7rem;
     color: #808080;
 }
 
-.con-title{
+.con-title {
     width: 50%;
 }
 
-.img_div{
+.img_div {
     width: 90%;
-    
-    
-}
-.img{
-    width: 120%;
-    
-   
-    
-    
+
+
 }
 
-#img_aviso_tr{
+.img {
+    width: 120%;
+
+
+
+
+}
+
+#img_aviso_tr {
     filter: opacity(0%);
 }
 
-.con-warning{
-    width: 60%; 
+.con-warning {
+    width: 70%;
 }
 
-.avisos_div{
+.avisos_div {
     width: 100%;
     height: 2.2rem;
-    
+    margin-bottom: 1rem;
 }
 
 
-.avisos{
+.avisos {
     height: 100%;
     display: flex;
-    margin-bottom: 1rem ;
-    
+
 }
-#avisos_tr{
-    height: 100%;
+
+
+.avisos_ {
     display: flex;
-    
+}
+
+#avisos_tr {
+
+    display: flex;
+
     margin-top: 1rem;
-    
+
 }
 
-.iconAviso{
-    height: 100%;
+#avisos_tr_div {
+    margin-bottom: 0;
+}
+
+
+#avisos_tr_div2 {
+    margin-bottom: 0;
+}
+
+.iconAviso {
+    height: 2.2rem;
     padding-right: 1rem;
 }
 
 
-#aviso_label{
+#aviso_label {
     color: #CA1717;
     font-weight: bold;
     font-size: 100%;
 }
 
-#atencao_label{
+#atencao_label {
     color: #bdae29;
     font-weight: bold;
     font-size: 100%;
 }
 
-.dados_aviso{
+.dados_aviso {
     height: 100%;
     width: 80%;
-   
     border-radius: 10px;
     border: solid 2px #CA1717;
     display: flex;
     overflow: hidden;
-    
     font-size: 100%;
-   
     justify-content: space-between;
-    
+
 }
-#tr{
+
+#tr {
     border: none;
 }
 
 
-.atencao_div{
+.atencao_div {
     margin: 4rem 0;
     width: 100%;
     height: 2.2rem;
 }
 
-.dados_atencao{
-    
-    height: 15rem;
+.dados_atencao {
+
+    height: 100%;
     width: 80%;
-    background-color: #f5e661;
     border-radius: 10px;
     border: solid 2px #e4d232;
     display: flex;
     flex-direction: column;
     font-size: 100%;
     overflow: hidden;
-    
+
 }
 
-#seta{
-    height: 60%;
-    rotate: 100px;
+
+#seta { 
+    height: 100%;
+    width: 40%;
+    padding: 0 0.5rem;
+    object-fit: contain;
+    filter: grayscale(200%) invert(100%);
+    rotate: 90deg;
+    transition: 0.3s;
 }
 
-.divider{
+#seta:hover{
+    rotate: 0deg;
+    filter: grayscale(70%) invert(0);
+}
+
+.divider {
     height: 100%;
     width: 100%;
     display: flex;
@@ -250,9 +278,10 @@ h3{
     align-items: center;
     background-color: #ff8888;
     border: 1px solid #CA1717;
-   
+
 }
-.divider_tr{
+
+.divider_tr {
     height: 100%;
     width: 100%;
     display: flex;
@@ -260,34 +289,31 @@ h3{
     align-items: end;
     color: #cfcfcf;
     text-align: center;
-    
-    
-   
+
+
+
 }
-.divider_{
+
+.divider_ {
     height: 100%;
     width: 100%;
-    border-bottom: 2px solid #e4d232;
-    border-top: 2px solid #e4d232;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-  
-   
+
 }
-.row_atencao{
-  
-    height: 3rem;
+
+.row_atencao {
+    background-color: #fff492;
+    border-bottom: 2px solid #e4d232;
+    height: 2.5rem;
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-.row_atencao:nth-child(even){
-    background-color: #fffec1;
-}
-
 
 .divider:nth-child(even) {
     background-color: #ffc1c1;
-} 
+}

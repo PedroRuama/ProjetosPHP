@@ -1,6 +1,11 @@
 <?php
     include_once("controllers/conexao.php");
     $id = $_GET['IdView'];
+
+
+
+
+    
     $query = mysqli_query($conexao, "select * from pessoas where id = $id");
 
     $dados = mysqli_fetch_array($query);
@@ -182,6 +187,7 @@
                                 <option value="Credito">Credito</option>
                                 <option value="Pix">Pix</option>
                                 <option value="Transferencia">Trasferencia</option>
+                                <option value="Dinheiro">Dinheiro</option>
                                 
                             </select>
                             
@@ -198,7 +204,7 @@
                     <div class="hr"></div>
                     <div class="btns1">
                         <button type="button" onclick="editar()">Editar Dados</button>
-                        <button type="submit" onclick="Submit()">Salvar</button>
+                        <button type="submit" onclick="Submit()" id="btn_salvar">Salvar</button>
                     </div>
                     
                 </form>
@@ -211,5 +217,9 @@
         
         </div>
     </div>
+    <?php        
+        //finaliza a conexao
+        mysqli_close($conexao);
+    ?>
 </body>
 </html>

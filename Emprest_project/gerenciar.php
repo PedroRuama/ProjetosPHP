@@ -3,10 +3,22 @@
     
     //executa a query com base na conexão
     include_once('controllers/conexao.php');
+
+    $select = 0;
     
-    
-    //executa a query com base na conexão
-    $query = mysqli_query($conexao, "select * from pessoas");
+    switch ($select) {
+        case 0:
+            $query = mysqli_query($conexao, "select * from pessoas");
+            break;
+        case 1:
+            echo "i equals 1";
+            break;
+        case 2:
+            echo "i equals 2";
+            break;
+    }
+
+
     if (!$query){
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }
@@ -49,6 +61,7 @@
         </div>
         
         <div class="div_pesquisa">
+            <div ><h3 id="nome_tabela">nome da tabela</h3></div>
             <div class="input-group" id="div_busc">
                 <input type="text" name="busc" id="busc" class="input-group_input" 
                 onkeyup="buscar()"   placeholder="       Pesquisar ">
@@ -101,8 +114,6 @@
                                     </div>
                                 </td>
                                 
-                                
-                                <!-- <td class="tdValue"><a href="<?= $dados['descricao']?>"  target="_blank">Comprar</a></td> -->
                                 <!-- <td class="tdValue"><a href="detalhes.php?id=<?= $dados['id']?>">detalhes</a></td> -->
                                                     <!-- ? envia a variavel para outra tela -->
                             </tr>

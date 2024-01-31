@@ -158,7 +158,7 @@ h3{
 
 #table{
     
-    max-height: 400px;
+    max-height: 25rem;
     
     display: flex;
     border-radius: 10px;
@@ -346,6 +346,9 @@ tr.colorir {
     translate: 20px;
 }
 
+
+
+/* input buscar: ------------------------------ */
 
 
 

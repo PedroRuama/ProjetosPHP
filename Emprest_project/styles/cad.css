@@ -241,6 +241,7 @@ form{
     min-height: 2.8rem;    
     box-shadow: 0px 8px 16px -18px;
     width: 100%;
+   
     
 }
 .inputGroup textarea {
@@ -255,6 +256,7 @@ form{
     max-height: 6rem;
     font-size: 100%;
     border-radius: 5px; 
+
 }
 
 #aling_obs{
@@ -629,6 +631,11 @@ button{
     text-transform: uppercase;
     border: solid 2px #071A5F;
     transition: 0.5s;
+}
+
+button:disabled{
+    opacity: 40%;
+    cursor: not-allowed;
 }
 
 #excluir{

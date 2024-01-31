@@ -21,7 +21,7 @@
     $dataFormatada = date('d/m/Y', strtotime($dados['data_dev']));
 
     // Exibe a data formatada
-    echo "Data formatada: $dataFormatada";
+   echo "Data formatada: $dataFormatada";
    echo '<br>';
    echo '<br>';
    echo '<br>';
