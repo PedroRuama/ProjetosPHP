@@ -28,13 +28,17 @@
         val_emp=$val_emp, data_emp='$data_emp', juros=$juros, data_dev='$data_dev', val_dev=$val_dev, sobrenome='$sobrenome', 
         detalhes='$detalhes', pagamento='$pagamento', situacao='$situacao', parcelas='$parcelas', parcelas_pagas='$parcelas_pagas' where id=$id";
 
+        $select = $_POST['select'];
+        $valmin = $_POST['rangeMin'];
+        $valmax = $_POST['rangeMax'];
+
         //executando instrução SQL
         $resultado = @mysqli_query($conexao, $update);
         if(!$resultado){
             die('Query Inválida:'.@mysqli_error($conexao));
             
         } else {?>
-            <script>window.location.href = "../gerenciar.php";</script>
+            <script>window.location.href = "../gerenciar.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>"</script>
             <?php
         }
         mysqli_close($conexao);

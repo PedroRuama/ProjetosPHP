@@ -3,7 +3,6 @@
     //executa a query com base na conexão
     include_once('controllers/conexao.php');
 
-
     //executa a query com base na conexão
     $query = mysqli_query($conexao, "select * from pessoas");
     $aviso = mysqli_query($conexao, "select * from pessoas");
@@ -11,8 +10,10 @@
         die('Query Invalida: ' . @mysqli_error($conexao)); //mostra o erro 
     }
     date_default_timezone_set('America/Sao_Paulo');
-
-
+    
+    $select = $_GET['select'];
+    $valmin = $_GET['rangeMin'];
+    $valmax = $_GET['rangeMax'];
 
     $i = 0;
     $z = 0;
@@ -37,17 +38,17 @@
         <div class="navbar">
 
             <ul class="itens">
-                <a href="inicial.php">
+                <a href="inicial.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
                     <li class="btn">Página inicial </li>
                 </a>
                 <a href="#">
                     <li class="btn">Estatísticas</li>
                 </a>
-                <a href="gerenciar.php">
+                <a href="gerenciar.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
                     <li class="btn">Gerenciar Cadastros</li>
                 </a>
             </ul>
-            <a href="cad.php" class="btn">Adicionar Cadastro</a>
+            <a href="cad.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>" class="btn">Adicionar Cadastro</a>
 
         </div>
     </nav>
@@ -127,6 +128,7 @@
                             <div class="divider_tr">Nome</div>
                             <div class="divider_tr">Telefone</div>
                             <div class="divider_tr">Data devolução</div>
+                            <div class="divider_tr">Valor devolução</div>
                         </div>
                     </div>
                 </div>
@@ -155,9 +157,10 @@
                                     img_atencao.removeAttribute('style')
                                 </script>
                                 <div class="row_atencao">
-                                    <div class="divider_"><?= $dados['id'] ?></div>
                                     <div class="divider_"><?= $dados['nome'] ?></div>
+                                    <div class="divider_"><?= $dados['tel'] ?></div>
                                     <div class="divider_"><?= date('d/m/Y', strtotime($dados['data_dev'])) ?></div>
+                                    <div class="divider_">R$<?= $dados['val_dev'] ?></div>
                                 </div>
                         <?php }
                         } 

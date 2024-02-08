@@ -92,7 +92,7 @@ function trOn(tr) {
         TpreView.innerHTML = RowSelect[0][1].innerHTML
         p1.innerHTML = 'Telefone:  ' + RowSelect[0][2].innerHTML
         p2.innerHTML = 'Valor do Emprestimo: ' + RowSelect[0][3].innerHTML
-        p3.innerHTML = 'Divida/Quitado:  ' + RowSelect[0][6].innerHTML
+        p3.innerHTML = 'Divida/Quitado:  ' + RowSelect[0][7].innerHTML
 
 
 
@@ -120,6 +120,9 @@ function trOn(tr) {
     // Input_preView.value = Selecionado;
 
 }
+
+
+
 function confirmExcluir(btn) {
 
     if (confirm("Certeza que deseja excluir o(s) produto(s) selecionado(s)?")) {
@@ -145,15 +148,15 @@ function buscar() {
 
         // var value = td[j].childNodes[0];
         // console.log('td do tr: '+ x[j].getElementsByTagName('td')[4].innerHTML.toLowerCase() );
-        let index = 0; 
-        
-        while(index < x[j].getElementsByTagName('td').length -1) {
+        let index = 0;
 
-            
+        while (index < x[j].getElementsByTagName('td').length - 1) {
+
+
             if (x[j].getElementsByTagName('td')[index].innerHTML.toLowerCase().includes(buscar)) {
                 x[j].style.removeProperty("display");
 
-                index =  x[j].getElementsByTagName('td').length-1
+                index = x[j].getElementsByTagName('td').length - 1
                 console.log(index);
             } else {
                 x[j].style.display = 'none'
@@ -184,3 +187,39 @@ function buscar() {
     }
 
 }
+
+function filtro(i) {
+    var filtro_icon = document.getElementById('icon_filtro')
+    var cancel_filtro = document.getElementById('btn_CancelarFiltro')
+    var div_filtro = document.getElementById('div_filtro')
+    var select_val = document.getElementById('select_table').value
+    var radios = div_filtro.getElementsByClassName('radio')
+    
+    var val_min =  document.getElementById('valMin').value
+    var val_max =  document.getElementById('valMax').value
+    var rangeMin = document.getElementById('rangeMin');
+    var rangeMax = document.getElementById('rangeMax');
+
+    if (i == filtro_icon) {
+        console.log('icon filtro click');
+        div_filtro.style.display = 'flex'
+
+        for (let index = 0; index < radios.length; index++) {
+            const element = radios[index];
+            if (element.value == select_val) {
+                element.checked = true;
+            }
+          
+        }
+        rangeMin.value = val_min
+        rangeMax.value = val_max
+    }
+
+    if (i == cancel_filtro) {
+        console.log('cancelar click');
+        div_filtro.style.display = 'none'
+    }
+
+
+}
+

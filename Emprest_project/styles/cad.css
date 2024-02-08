@@ -75,7 +75,7 @@ img{
 
 
 #div_parcelas{
-    height:4rem;
+    height:7rem;
     width: 10rem;
     margin-top: 1.5rem;
     z-index: 10;
@@ -88,9 +88,35 @@ img{
     background-color: #e4e4e4;
     border: solid 1px #ff8888;
     border-radius: 5px;
+    flex-wrap: wrap;
+    
 
 }
 
+#label_valparcela{
+    width: 10rem;
+    margin-top: 0.5rem;
+   
+}
+#label_diapag{
+    margin-top: 0.5rem;
+   
+    display: flex;
+    justify-content: end;
+   
+}
+
+#val_parcela{
+    height: 2rem;
+    width: 6rem;
+   
+}
+
+#val_parcela_label{
+   background-color: transparent;
+    width: 6rem;
+   
+}
 
 #cancelar_div{
     height: 100%;
@@ -564,6 +590,11 @@ input::-webkit-inner-spin-button {
 #inp-valEmp{
     width: 25%;
     margin-right: 1.5rem;
+}
+#dia_pag{
+    
+    width: 2.5rem;
+    margin-left: 1.5rem;
 }
 #inp-dataEmp{
     width: 23%;

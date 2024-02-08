@@ -75,11 +75,14 @@ function dev() {
     let data1 = new Date(`${data_emp}`)
     let data2 = new Date(`${data_dev}`)
     
+    // console.log(data2.getDay());
+
     let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
     
     
     var juros = valor * i * quantidadeDeMeses//juros
+    
 
      
 
@@ -88,12 +91,23 @@ function dev() {
     // console.log('taxa: ' + i)
     // console.log("tempo: " + quantidadeDeMeses);
     // console.log('juros: ' + juros)
-  
+    
+    var parcelas = parseInt(document.getElementById('parcelas').value.replace("x"))
 
+    
 
     var dev = document.getElementById('val_dev')
+    var valParcela = document.getElementById('val_parcela')
     
     dev.value = valor + juros //montante
+
+    // var mont2 = valor*Math.pow(1+i, quantidadeDeMeses)
+
+    // console.log("juros compostos: "+ mont2);
+
+
+
+    valParcela.value =  dev.value/parcelas
 
 }
 
