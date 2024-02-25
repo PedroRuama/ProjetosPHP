@@ -22,11 +22,13 @@
         $situacao = $_POST['situacao'];
         $parcelas = $_POST['parcelas'];
         $parcelas_pagas = $_POST['parcelas_pagas'];
+        $diapag = $_POST['diapag'];
+        $val_parcela = $_POST['val_parcela'];
 
         //criando insert
         $update = "update pessoas set nome='$nome', cpf='$cpf', rg='$rg', ende='$ende', tel='$tel', email='$email', social='$social', 
         val_emp=$val_emp, data_emp='$data_emp', juros=$juros, data_dev='$data_dev', val_dev=$val_dev, sobrenome='$sobrenome', 
-        detalhes='$detalhes', pagamento='$pagamento', situacao='$situacao', parcelas='$parcelas', parcelas_pagas='$parcelas_pagas' where id=$id";
+        detalhes='$detalhes', pagamento='$pagamento', situacao='$situacao', parcelas='$parcelas', parcelas_pagas='$parcelas_pagas', diapag=$diapag, val_parcela=$val_parcela where id=$id";
 
         $select = $_POST['select'];
         $valmin = $_POST['rangeMin'];

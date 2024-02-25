@@ -41,6 +41,7 @@ if (!$query) {
     <title>Gerenciar Cadastros</title>
     <link rel="stylesheet" href="styles/gerenciar.css">
     <script src="scripts/gerenciar.js"></script>
+    <link rel="icon" href="icons/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -53,7 +54,7 @@ if (!$query) {
                 <a href="inicial.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
                     <li class="btn">Página inicial </li>
                 </a>
-                <a href="gerenciar.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
+                <a href="estatisticas.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
                     <li class="btn">Estatísticas</li>
                 </a>
                 <a href="gerenciar.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>">
@@ -232,22 +233,56 @@ if (!$query) {
                             <th>NOME</th>
                             <th>TELEFONE</th>
                             <th>EMPRESTIMO</th>
-                            <th>DATA DO <br> EMPRESTIMO</th>
-                            <th>DATA DA <br> DEVOLUÇÃO</th>
                             <th>PARCELAS</th>
+                            <th>DATA DO <br> EMPRESTIMO</th>
+                            <th>PRÓXIMO <br> PAGAMENTO</th>
                             <th></th>
                         </tr>
 
 
-                        <?php while ($dados = mysqli_fetch_array($query)) { ?>
+                        <?php while ($dados = mysqli_fetch_array($query)) { 
+                            
+                            $x = 0;
+                            $dataDev = $dados['data_dev'];
+                            $datas_parcelas= [];
+                            while ($x < $dados['parcelas']) {
+                                $dataParcela = new DateTime("$dataDev");
+                                $dataParcela->modify("-$x month");
+
+                                $novoAno = $dataParcela->format('Y');
+                                $novoMes = $dataParcela->format('m');
+                                $novoDia = $dataParcela->format('d');
+
+                                $newData = "$novoAno-$novoMes-$novoDia";
+                                $datas_parcelas[] = $newData;
+                                $x++;
+                                
+                            }
+                        
+                            $y = 1;
+                            while ($y <= $dados['parcelas_pagas']) {
+                                array_pop($datas_parcelas);
+                                $y++;                     
+                            }
+
+                            
+                                            
+                                $dataAtual = new DateTime(date('Y-m-d'));
+                                $data_par = new DateTime(end($datas_parcelas));
+                                $diferenca = $dataAtual->diff($data_par);
+                                $dias = $diferenca->days;
+                            ?>  
+
+
+
                             <tr class="trValue" onclick="trOn(this)">
                                 <td class="tdValue" id="select" style="display:none;"><?= $dados['id']?></td>
                                 <td class="tdValue"><?= $dados['nome'] ?></td>
                                 <td class="tdValue"><?= $dados['tel'] ?></td>
-                                <td class="tdValue">R$<?= $dados['val_emp'] ?></td>
+                                <td class="tdValue">R$<?= $dados['val_emp'] ?> <br>(parc.: <?= $dados['val_parcela']?>)</td>
+                                <td class="tdValue" ><?= $dados['parcelas_pagas']?>x de <?= $dados['parcelas']?>x</td>
                                 <td class="tdValue"><?= date('d/m/Y', strtotime($dados['data_emp'])) ?></td>
-                                <td class="tdValue"><?= date('d/m/Y', strtotime($dados['data_dev'])) ?></td>
-                                <td class="tdValue" ><?= $dados['parcelas_pagas']?> de <?= $dados['parcelas']?></td>
+                                <td class="tdValue"><?= date('d/m/Y', strtotime(end($datas_parcelas)))?></td>
                                 <td class="tdValue">
                                     <div class="situacao">
                                         <?php
@@ -292,6 +327,9 @@ if (!$query) {
                 </div>
 
                 <form action="controllers/excluir.php" name="deleteProduto" method="post">
+                    <input type="txt" name="select" id="select_table" value="<?= $select ?>" style="display: none">
+                    <input type="txt" name="rangeMin" value="<?= $valmin ?>" style="display: none">
+                    <input type="txt" name="rangeMax" value="<?= $valmax ?>" style="display: none">
                     <input type="txt" name="IdsExcluir" id="inputIds_excluir" style="display: none">
                     <input class="acoes" onclick="confirmExcluir(this)" id="excluir" type="button" value="Excluir" disabled>
                 </form>

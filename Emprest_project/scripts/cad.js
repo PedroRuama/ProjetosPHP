@@ -74,8 +74,8 @@ function dev() {
     var data_dev = document.getElementById('data_dev').value
     let data1 = new Date(`${data_emp}`)
     let data2 = new Date(`${data_dev}`)
+    var [ano, mes, diaDev] = data_dev.split('-');
     
-    // console.log(data2.getDay());
 
     let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
@@ -84,7 +84,32 @@ function dev() {
     var juros = valor * i * quantidadeDeMeses//juros
     
 
-     
+    
+    var select_parcelas = document.getElementById('parcelas')
+    var select_parcelaspagas = document.getElementById('SelecParcelas_pagas')
+    var select_parcelasOp = select_parcelas.getElementsByTagName('option')
+    var select_parcelasPgs = select_parcelaspagas.getElementsByTagName('option')
+    let z = quantidadeDeMeses;
+    let y = quantidadeDeMeses;
+
+
+    for (let index = 11; index > 0; index--) {
+        const element = select_parcelasOp[index];
+        if (element.value == z) {
+            element.style.display = 'flex'
+            z--
+        } else { element.style.display = 'none' }
+
+    }
+    for (let index = 11; index > 1; index--) {
+        const elementpg = select_parcelasPgs[index]
+        if (elementpg.value == y) {
+            elementpg.style.display = 'flex'
+            y--
+            console.log(z);
+        } else { elementpg.style.display = 'none' }
+
+    }
 
     // console.log('-------------------------------------')
     // console.log('capital: ' + valor)
@@ -98,16 +123,12 @@ function dev() {
 
     var dev = document.getElementById('val_dev')
     var valParcela = document.getElementById('val_parcela')
+    var diaPag = document.getElementById('dia_pag')
     
     dev.value = valor + juros //montante
+    valParcela.value =  parseFloat(dev.value/parcelas).toFixed(2)
 
-    // var mont2 = valor*Math.pow(1+i, quantidadeDeMeses)
-
-    // console.log("juros compostos: "+ mont2);
-
-
-
-    valParcela.value =  dev.value/parcelas
+    diaPag.value = parseInt([diaDev])
 
 }
 

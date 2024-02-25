@@ -21,9 +21,10 @@ $dados = mysqli_fetch_array($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadasrto</title>
+    <title>Detalhes</title>
     <link rel="stylesheet" href="styles/cad.css">
     <script src="scripts/vermais.js"></script>
+    <link rel="icon" href="icons/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -136,33 +137,50 @@ $dados = mysqli_fetch_array($query);
                                     <div id="div_parcelas">
                                         <div class="inputGroup">
                                             <p class="label_select">Nº Parcelas</p>
-                                            <select name="parcelas" id="SelecParcelas">
-                                                <option value="1x">1x</option>
-                                                <option value="2x">2x</option>
-                                                <option value="3x">3x</option>
-                                                <option value="6x">6x</option>
-                                                <option value="12x">12x</option>
+                                            <select name="parcelas" id="SelecParcelas" oninput="dev()">
+                                                <option value="1">1x</option>
+                                                <option style="display: none" value="2" >2x</option>
+                                                <option style="display: none" value="3" >3x</option>
+                                                <option style="display: none" value="4" >4x</option>
+                                                <option style="display: none" value="5" >5x</option>
+                                                <option style="display: none" value="6">6x</option>
+                                                <option style="display: none" value="7">7x</option>
+                                                <option style="display: none" value="8">8x</option>
+                                                <option style="display: none" value="9">9x</option>
+                                                <option style="display: none" value="10">10x</option>
+                                                <option style="display: none" value="11">11x</option>
+                                                <option style="display: none" value="12">12x</option>
                                             </select>
                                         </div>
                                         <input type="text" id="parcelas" value="<?= $dados['parcelas'] ?>" style="display: none">
                                         <input type="text" id="parcelas_pagas" value="<?= $dados['parcelas_pagas'] ?>" style="display: none">
                                         <div class="inputGroup">
                                             <p class="label_select"> Nº Pagas</p>
-                                            <select name="parcelas_pagas" id="SelecParcelas_pagas">
-                                                <option value="0x">0x</option>
-                                                <option value="1x">1x</option>
-                                                <option value="2x">2x</option>
-                                                <option value="3x">3x</option>
-                                                <option value="4x">4x</option>
-                                                <option value="5x">5x</option>
-                                                <option value="6x">6x</option>
-                                                <option value="7x">7x</option>
-                                                <option value="8x">8x</option>
-                                                <option value="9x">9x</option>
-                                                <option value="10x">10x</option>
-                                                <option value="11x">11x</option>
-                                                <option value="12x">12x</option>
+                                            <select name="parcelas_pagas" id="SelecParcelas_pagas"  oninput="dev()">
+                                                <option value="0">0x</option>
+                                                <option value="1">1x</option>
+                                                <option style="display: none" value="2">2x</option>
+                                                <option style="display: none" value="3">3x</option>
+                                                <option style="display: none" value="4">4x</option>
+                                                <option style="display: none" value="5">5x</option>
+                                                <option style="display: none" value="6">6x</option>
+                                                <option style="display: none" value="7">7x</option>
+                                                <option style="display: none" value="8">8x</option>
+                                                <option style="display: none" value="9">9x</option>
+                                                <option style="display: none" value="10">10x</option>
+                                                <option style="display: none" value="11">11x</option>
+                                                <option style="display: none" value="12">12x</option>
                                             </select>
+                                        </div>
+                                        <div class="inputGroup" id="inp-valEmp">
+                                            <p class="label_select" id="label_valparcela"> R$ da parcela</p>
+                                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_parcela" id="val_parcela" class="disabili">
+                                            
+                                        </div>
+                                        <div class="inputGroup">
+                                            <p class="label_select" id="label_diapag"> Todo dia</p>
+                                            <input type="search" required autocomplete="off"  name="diapag" id="dia_pag"  class="disabili">
+                                            
                                         </div>
                                     </div>
                                 </div>

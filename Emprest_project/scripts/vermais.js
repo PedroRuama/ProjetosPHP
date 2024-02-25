@@ -13,42 +13,44 @@ window.onload = function () {
     }
 
     var forma_pag = document.getElementsByTagName('option')
-    var  pag = document.getElementById('pagamento').value
-   for (let index = 0; index < forma_pag.length; index++) {
+    var pag = document.getElementById('pagamento').value
+    for (let index = 0; index < forma_pag.length; index++) {
         const option = forma_pag[index];
         if (option.value == pag) {
             option.selected = true
         }
-   }
+    }
 
-   var SelecParcelas = document.getElementById('SelecParcelas')
-   var parcelas = document.getElementById('parcelas').value
-   for (let index = 0; index < SelecParcelas.length; index++) {
+    var SelecParcelas = document.getElementById('SelecParcelas')
+    var parcelas = document.getElementById('parcelas').value
+    for (let index = 0; index < SelecParcelas.length; index++) {
         const par = SelecParcelas[index];
         if (par.value == parcelas) {
             par.selected = true
-        } 
-   }
-   
-   var SelecParcelas_pagas = document.getElementById('SelecParcelas_pagas')
-   var parcelas_pagas = document.getElementById('parcelas_pagas').value
-   for (let index = 0; index < SelecParcelas_pagas.length; index++) {
+        }
+    }
+    
+    var SelecParcelas_pagas = document.getElementById('SelecParcelas_pagas')
+    var parcelas_pagas = document.getElementById('parcelas_pagas').value
+    for (let index = 0; index < SelecParcelas_pagas.length; index++) {
         const pag = SelecParcelas_pagas[index];
         if (pag.value == parcelas_pagas) {
             pag.selected = true
-        } 
-   }
+        }
+    }
 
 
 
 
-   for (let index = 0; index < inputs.length; index++) {
+    for (let index = 0; index < inputs.length; index++) {
         const element = inputs[index];
         if (element.className != 'obrigatorio' && element.value == 'vazio') {
             element.value = ""
-        } 
+        }
     }
+    dev()
 }
+
 
 var inputs = document.getElementsByTagName('input')
 
@@ -57,14 +59,14 @@ function Submit() {
         const element = inputs[index];
 
         if (element.className != 'obrigatorio' && element.value == '') {
-            
+
             console.log('removido');
             element.value = "vazio"
 
-        } 
+        }
         if (element.disabled) {
             element.removeAttribute("disabled")
-            
+
         }
         if (document.getElementById("detalhes").value == "") {
             document.getElementById("detalhes").value = "vazio"
@@ -76,10 +78,10 @@ function Submit() {
     }
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
-    if(inp1.checked == false && inp2.checked == false){
+    if (inp1.checked == false && inp2.checked == false) {
         inp1.checked = true
     }
-    
+
 }
 
 
@@ -125,33 +127,85 @@ function check(x) {
 function dev() {
     var valor = parseInt(document.getElementById('val_emp').value.replace(/\D/g, '')); //capital   replace tira os .
     var i = parseInt(document.getElementById('juros').value) / 100; //taxa de juros
-    
-    
+
+
     var data_emp = document.getElementById('data_emp').value
     var data_dev = document.getElementById('data_dev').value
     let data1 = new Date(`${data_emp}`)
     let data2 = new Date(`${data_dev}`)
-    
+    var [ano, mes, diaDev] = data_dev.split('-');
+
     let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
-    
-    
+
     var juros = valor * i * quantidadeDeMeses//juros
 
-     
+    var select_parcelas = document.getElementById('SelecParcelas')
+    var select_parcelaspagas = document.getElementById('SelecParcelas_pagas')
+    var select_parcelasOp = select_parcelas.getElementsByTagName('option')
+    var select_parcelasPgs = select_parcelaspagas.getElementsByTagName('option')
+    let z = quantidadeDeMeses;
+    let y = quantidadeDeMeses;
+    
+   
+    for (let index = 11; index > 0; index--) {
+        const element = select_parcelasOp[index];
+        if (element.value == z) {
+            element.style.display = 'flex'
+            z--
+        } else { element.style.display = 'none' }
 
-    // console.log('-------------------------------------')
-    // console.log('capital: ' + valor)
-    // console.log('taxa: ' + i)
-    // console.log("tempo: " + quantidadeDeMeses);
-    // console.log('juros: ' + juros)
-  
+    }
+    for (let index = 11; index > 1; index--) {
+        const elementpg = select_parcelasPgs[index]
+        if (elementpg.value == y) {
+            elementpg.style.display = 'flex'
+            y--
+           
+        } else { elementpg.style.display = 'none' }
 
+    }
+    
+    
+    
+    
 
+    
+    
+
+    var parcelasSelc = parseInt(select_parcelas.value)
+    
     var dev = document.getElementById('val_dev')
+    var valParcela = document.getElementById('val_parcela')
+    var diaPag = document.getElementById('dia_pag')
     
     dev.value = valor + juros //montante
+    valParcela.value = parseFloat(dev.value / parcelasSelc).toFixed(2)
+    diaPag.value = parseInt([diaDev])
+    
+    var inp1 = document.getElementById('inp-divida');
+    var inp2 = document.getElementById('inp-quitado');
 
+    var situacao = document.getElementById("situacao").value
+
+    if (select_parcelas.value == select_parcelaspagas.value) {
+        inp1.checked = false
+        inp2.checked = true
+    }
+    if(select_parcelas.value != select_parcelaspagas.value && situacao == 'Em Divida'){ 
+        inp2.checked = false
+        inp1.checked = true
+    }
+    
+     
+    // console.log(select_parcelas.value);
+    // console.log(select_parcelaspagas.value);
+    
+    
+    
+   
+    
+    
 }
 
 
@@ -165,56 +219,56 @@ function dev() {
 
 function jurosmascara(i) {
     const v = i.value;
-        
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-        i.value = v.substring(0, v.length-1);
+
+    if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+        i.value = v.substring(0, v.length - 1);
         return;
     }
-        
+
 }
 
 
 function mascaraTel(i) {
     const v = i.value;
-        
-    if(isNaN(v[v.length-1])){ 
-        i.value = v.substring(0, v.length-1);
+
+    if (isNaN(v[v.length - 1])) {
+        i.value = v.substring(0, v.length - 1);
         return;
     }
-    
+
     i.setAttribute("maxlength", "15");
-    if (v.length == 1 ) i.value = "(" + i.value;
-    if (v.length == 3 ) i.value += ") ";
+    if (v.length == 1) i.value = "(" + i.value;
+    if (v.length == 3) i.value += ") ";
     if (v.length == 10) i.value += "-";
 }
 
 function mascaraRg(i) {
     const v = i.value;
-        
-    if(isNaN(v[v.length-1])){ 
-        i.value = v.substring(0, v.length-1);
+
+    if (isNaN(v[v.length - 1])) {
+        i.value = v.substring(0, v.length - 1);
         return;
     }
-    
+
     i.setAttribute("maxlength", "13");
-    
-    if (v.length == 2 || v.length == 6 ) i.value += ".";
+
+    if (v.length == 2 || v.length == 6) i.value += ".";
     if (v.length == 10) i.value += "-";
 }
 
 function mascaraCpf(i) {
     const v = i.value;
-        
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-        i.value = v.substring(0, v.length-1);
+
+    if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+        i.value = v.substring(0, v.length - 1);
         return;
     }
-    
+
     i.setAttribute("maxlength", "14");
     if (v.length == 3 || v.length == 7) i.value += ".";
     if (v.length == 11) i.value += "-";
 
-    
+
 }
 
 
@@ -222,7 +276,7 @@ function mascaraCpf(i) {
 function confirmExcluir(btn) {
     if (confirm("Certeza que deseja excluir?")) {
         btn.type = "submit"
-    } else {}
+    } else { }
 }
 
 function editar() {
@@ -231,32 +285,32 @@ function editar() {
 
         if (element.disabled) {
             element.removeAttribute("disabled")
-        }      
+        }
     }
     document.getElementById("detalhes").disabled = false
     // document.getElementById("disabili").style.pointerEvents = 'all'
     document.getElementById("pag").disabled = false
     // document.getElementById("btn_salvar").disabled = false
-    
+
 }
 
 
 
 
 var i = 1;
-function divParcelas(){
+function divParcelas() {
     var img = document.getElementById('img_parcela')
     var div_parcelas = document.getElementById('div_parcelas')
-    i = i*(-1)
+    i = i * (-1)
     console.log(i);
     if (i < 0) {
         img.style = 'rotate: 270deg;'
-        div_parcelas.style.display= 'flex'
-       
+        div_parcelas.style.display = 'flex'
+
     }
-    else{
+    else {
         img.style = 'rotate: 90deg;'
-        div_parcelas.style.display= 'none'
-       
+        div_parcelas.style.display = 'none'
+
     }
 }
