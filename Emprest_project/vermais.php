@@ -24,7 +24,7 @@ $dados = mysqli_fetch_array($query);
     <title>Detalhes</title>
     <link rel="stylesheet" href="styles/cad.css">
     <script src="scripts/vermais.js"></script>
-    <link rel="icon" href="icons/caixa.png" type="image/png">
+    <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -34,7 +34,7 @@ $dados = mysqli_fetch_array($query);
             <a href="gerenciar.php?select=<?= $select?>&rangeMin=<?= $valmin?>&rangeMax=<?= $valmax?>" class="btn">
 
                 <div id="cancelar_div">
-                    <img src="icons/seta-azul.png" alt="voltar" id="seta-azul">
+                    <img src="iconsEmp/seta-azul.png" alt="voltar" id="seta-azul">
                     <p>Voltar</p>
 
                 </div>
@@ -133,7 +133,7 @@ $dados = mysqli_fetch_array($query);
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="div_img">
-                                    <img src="icons/seta-direita.png" alt="seta" id="img_parcela" onclick="divParcelas()">
+                                    <img src="iconsEmp/seta-direita.png" alt="seta" id="img_parcela" onclick="divParcelas()">
                                     <div id="div_parcelas">
                                         <div class="inputGroup">
                                             <p class="label_select">Nº Parcelas</p>

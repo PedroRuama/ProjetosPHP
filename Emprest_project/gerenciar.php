@@ -41,7 +41,7 @@ if (!$query) {
     <title>Gerenciar Cadastros</title>
     <link rel="stylesheet" href="styles/gerenciar.css">
     <script src="scripts/gerenciar.js"></script>
-    <link rel="icon" href="icons/caixa.png" type="image/png">
+    <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -83,9 +83,9 @@ if (!$query) {
             <div id="div_buscInp">
                 <div class="input-group" id="div_busc">
                     <input type="text" name="busc" id="busc" class="input-group_input" onkeyup="buscar()" placeholder="       Pesquisar ">
-                    <img src="icons/lupa.png" alt="lupa" id="lupa">
+                    <img src="iconsEmp/lupa.png" alt="lupa" id="lupa">
                 </div>
-                <img src="icons/filtro2.png" alt="filtro" class="icon" id="icon_filtro" onclick="filtro(this)">
+                <img src="iconsEmp/filtro2.png" alt="filtro" class="icon" id="icon_filtro" onclick="filtro(this)">
                 <!-- <div class="situacao_busc">
                     <a href="gerenciar.php?select=1"><div id="divida" class="situ"></div></a>
                     <a href="gerenciar.php?select=2"><div id="quitado" class="situ"></div></a>
@@ -264,13 +264,17 @@ if (!$query) {
                                 array_pop($datas_parcelas);
                                 $y++;                     
                             }
+                            if ($dados['parcelas'] == $dados['parcelas_pagas']) {                        
+                                $datas_parcelas[] = $dados['data_dev'];
+
+                            }
 
                             
                                             
-                                $dataAtual = new DateTime(date('Y-m-d'));
-                                $data_par = new DateTime(end($datas_parcelas));
-                                $diferenca = $dataAtual->diff($data_par);
-                                $dias = $diferenca->days;
+                            $dataAtual = new DateTime(date('Y-m-d'));
+                            $data_par = new DateTime(end($datas_parcelas));
+                            $diferenca = $dataAtual->diff($data_par);
+                            $dias = $diferenca->days;
                             ?>  
 
 

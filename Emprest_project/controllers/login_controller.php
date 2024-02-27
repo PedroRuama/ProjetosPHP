@@ -4,6 +4,10 @@
             header("Location: ../inicial.php?select=1&rangeMin=0&rangeMax=10000");
             die();
         }
+        if($_POST['login'] == 'ruama' &  $_POST['senha'] == '2426'){
+            header("Location: ../inicial.php?select=1&rangeMin=0&rangeMax=10000");
+            die();
+        }
         else{
             header("Location: ../index.php?user=1");      
         }

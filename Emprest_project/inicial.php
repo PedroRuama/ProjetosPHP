@@ -28,7 +28,7 @@ $z = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="stylesheet" href="styles/inicial.css">
-    <link rel="icon" href="icons/caixa.png" type="image/png">
+    <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -69,7 +69,7 @@ $z = 0;
 
             <div class="avisos_divtr" id="avisos_tr_div" style="display:none">
                 <div class="avisos" id="avisos_tr">
-                    <img src="icons/aviso.png" alt="" class="iconAviso" id="img_aviso_tr">
+                    <img src="iconsEmp/aviso.png" alt="" class="iconAviso" id="img_aviso_tr">
                     <div class="dados_aviso" id="tr">
                         <div class="divider_tr">Nome</div>
                         <!-- <div class="divider_tr">Telefone</div> -->
@@ -133,7 +133,7 @@ $z = 0;
                     </script>
                     <div class="avisos_div">
                         <div class="avisos">
-                            <img src="icons/aviso.png" alt="" class="iconAviso">
+                            <img src="iconsEmp/aviso.png" alt="" class="iconAviso">
                             <div class="dados_aviso">
                                 <div class="divider"><?= $dados['nome'] ?></div>
                                 <!-- <div class="divider"><?= $dados['tel'] ?></div> -->
@@ -143,7 +143,7 @@ $z = 0;
                                 <div class="divider"><?= date('d/m/Y', strtotime(end($datas_parcelas))) ?></div>
 
                             </div>
-                            <a href="vermais.php?IdView=<?= $dados['id'] ?>&select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>"><img src="icons/seta-direita.png" alt="" class="iconAviso" id="seta"></a>
+                            <a href="vermais.php?IdView=<?= $dados['id'] ?>&select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>"><img src="iconsEmp/seta-direita.png" alt="" class="iconAviso" id="seta"></a>
                         </div>
                     </div>
             <?php }
@@ -157,7 +157,7 @@ $z = 0;
 
                 <div class="avisos_divtr" id="avisos_tr_div2" style="display:none">
                     <div class="avisos" id="avisos_tr">
-                        <img src="icons/aviso.png" alt="" class="iconAviso" id="img_aviso_tr">
+                        <img src="iconsEmp/aviso.png" alt="" class="iconAviso" id="img_aviso_tr">
                         <div class="dados_aviso" id="tr">
                             <div class="divider_tr">Nome</div>
                             <div class="divider_tr">Parcelas</div>
@@ -168,7 +168,7 @@ $z = 0;
                     </div>
                 </div>
                 <div class="avisos_">
-                    <img src="icons/ponto-de-exclamacao.png" alt="" class="iconAviso" id="img_atencao" style='display: none;'>
+                    <img src="iconsEmp/ponto-de-exclamacao.png" alt="" class="iconAviso" id="img_atencao" style='display: none;'>
                     <div class="dados_atencao" style='display: none;' id="div_dados">
                         <?php while ($dados = mysqli_fetch_array($aviso)) {
 

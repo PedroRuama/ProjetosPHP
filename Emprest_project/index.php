@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Emprest</title>
         <link rel="stylesheet" href="styles/login.css"/>
-        <link rel="icon" href="icons/caixa.png" type="image/png">
+        <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
     </head>
     <body>
         <div id="align">

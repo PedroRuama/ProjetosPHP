@@ -43,7 +43,7 @@ $valmax = $_GET['rangeMax'];
 
 
 if($Total_Cad['total_cad'] == 0){
-    $Total_Cad['total_cad'] = 1;
+    $Total_Cad['total_cad'] = 1.1;
 }
 
 $i = 0;
@@ -63,7 +63,7 @@ $somaJuros = 0;
     <title>Estatísticas</title>
     <link rel="stylesheet" href="styles/estatisticas.css">
     <script src="scripts/estatisticas.js"></script>
-    <link rel="icon" href="icons/caixa.png" type="image/png">
+    <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
 </head>
 
 <body>
@@ -161,13 +161,17 @@ $somaJuros = 0;
                      <div>
                             <h5>Total de Cadastros</h5>
                             <p>
-                                <?= $Total_Cad['total_cad'];?>
+                                <?php
+                                    if ($Total_Cad['total_cad'] == 1.1) {
+                                        echo 0;
+                                    } else{ echo $Total_Cad['total_cad'];}
+                                ?>
                                 
 
                             </p>
                         </div>
                         <div class="imgIc_div">
-                            <img src="icons/tabela-de-edicao2.png" id="EditCaixa" onclick="editCaixa()" class="imgIc">
+                            <img src="iconsEmp/tabela-de-edicao2.png" id="EditCaixa" onclick="editCaixa()" class="imgIc">
                         </div>
                     </div>
                     
