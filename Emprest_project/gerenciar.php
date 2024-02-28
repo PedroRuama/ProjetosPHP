@@ -238,10 +238,7 @@ if (!$query) {
                             <th>PRÓXIMO <br> PAGAMENTO</th>
                             <th></th>
                         </tr>
-
-
                         <?php while ($dados = mysqli_fetch_array($query)) { 
-                            
                             $x = 0;
                             $dataDev = $dados['data_dev'];
                             $datas_parcelas= [];
@@ -258,7 +255,6 @@ if (!$query) {
                                 $x++;
                                 
                             }
-                        
                             $y = 1;
                             while ($y <= $dados['parcelas_pagas']) {
                                 array_pop($datas_parcelas);
@@ -268,16 +264,11 @@ if (!$query) {
                                 $datas_parcelas[] = $dados['data_dev'];
 
                             }
-
-                            
-                                            
                             $dataAtual = new DateTime(date('Y-m-d'));
                             $data_par = new DateTime(end($datas_parcelas));
                             $diferenca = $dataAtual->diff($data_par);
                             $dias = $diferenca->days;
                             ?>  
-
-
 
                             <tr class="trValue" onclick="trOn(this)">
                                 <td class="tdValue" id="select" style="display:none;"><?= $dados['id']?></td>

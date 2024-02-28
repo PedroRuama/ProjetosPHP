@@ -123,7 +123,7 @@ $z = 0;
 
 
 
-                if ($dias <= 7 && $dados['situacao'] == 'Em Divida' && $dias > 0) {
+                if ($dias <= 7 && $dados['situacao'] == 'Em Divida') {
                     $i = 1;
 
             ?>

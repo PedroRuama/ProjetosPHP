@@ -133,39 +133,29 @@ function dev() {
     var data_dev = document.getElementById('data_dev').value
     let data1 = new Date(`${data_emp}`)
     let data2 = new Date(`${data_dev}`)
-    var [ano, mes, diaDev] = data_dev.split('-');
+    var [ano, mes, diaDev] = data_emp.split('-');
 
     let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
 
-    var juros = valor * i * quantidadeDeMeses//juros
+    var juros = valor * i//juros
 
     var select_parcelas = document.getElementById('SelecParcelas')
+
     var select_parcelaspagas = document.getElementById('SelecParcelas_pagas')
-    var select_parcelasOp = select_parcelas.getElementsByTagName('option')
     var select_parcelasPgs = select_parcelaspagas.getElementsByTagName('option')
-    let z = quantidadeDeMeses;
-    let y = quantidadeDeMeses;
+
     
+
    
-    for (let index = 11; index > 0; index--) {
-        const element = select_parcelasOp[index];
-        if (element.value == z) {
-            element.style.display = 'flex'
-            z--
-        } else { element.style.display = 'none' }
-
-    }
-    for (let index = 11; index > 1; index--) {
+    for (let index = 1; index < 13; index++) {
         const elementpg = select_parcelasPgs[index]
-        if (elementpg.value == y) {
+        if (parseInt(elementpg.value) <= select_parcelas.value) {
             elementpg.style.display = 'flex'
-            y--
            
-        } else { elementpg.style.display = 'none' }
+        } else { elementpg.style.display = 'none'}
 
     }
-    
     
     
     
@@ -174,6 +164,21 @@ function dev() {
     
 
     var parcelasSelc = parseInt(select_parcelas.value)
+
+    
+    var mesemp = parseInt([mes])
+    var newAno = parseInt(data1.getFullYear())
+    
+    var newMes = mesemp  + parcelasSelc 
+    if (newMes > 12) {
+        newAno = newAno + 1
+        newMes = newMes - 12; 
+    }
+   
+    var FnewMes = newMes.toString().padStart(2, '0')
+
+    document.getElementById('data_dev').value = `${[newAno]}-${FnewMes}-${[diaDev]}`
+
     
     var dev = document.getElementById('val_dev')
     var valParcela = document.getElementById('val_parcela')

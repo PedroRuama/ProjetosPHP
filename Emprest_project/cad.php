@@ -117,7 +117,7 @@ $valmax = $_GET['rangeMax'];
                         </div>
 
                         <div class="inputGroup" id="inp-dataDev">
-                            <input type="date" required autocomplete="off" name="data_dev" class="obrigatorio" id="data_dev" oninput="dev()">
+                            <input type="date" required autocomplete="off" name="data_dev" id="data_dev" oninput="dev()" disabled class="disabili">
                             <label for="">Data Devolução</label>
                         </div>
                     </div>
@@ -140,17 +140,17 @@ $valmax = $_GET['rangeMax'];
                                             <p class="label_select">Nº Parcelas</p>
                                             <select name="parcelas" id="parcelas" oninput="dev()">
                                                 <option value="1">1x</option>
-                                                <option style="display: none" value="2">2x</option>
-                                                <option style="display: none" value="3">3x</option>
-                                                <option style="display: none" value="4">4x</option>
-                                                <option style="display: none" value="5">5x</option>
-                                                <option style="display: none" value="6">6x</option>
-                                                <option style="display: none" value="7">7x</option>
-                                                <option style="display: none" value="8">8x</option>
-                                                <option style="display: none" value="9">9x</option>
-                                                <option style="display: none" value="10">10x</option>
-                                                <option style="display: none" value="11">11x</option>
-                                                <option style="display: none" value="12">12x</option>
+                                                <option value="2">2x</option>
+                                                <option value="3">3x</option>
+                                                <option value="4">4x</option>
+                                                <option value="5">5x</option>
+                                                <option value="6">6x</option>
+                                                <option value="7">7x</option>
+                                                <option value="8">8x</option>
+                                                <option value="9">9x</option>
+                                                <option value="10">10x</option>
+                                                <option value="11">11x</option>
+                                                <option value="12">12x</option>
                                             </select>
                                         </div>
                                         <div class="inputGroup">
