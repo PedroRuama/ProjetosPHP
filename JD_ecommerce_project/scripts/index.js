@@ -63,5 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateCardsPosition()
     }
-    setInterval(autoNext, 5000)
+    // setInterval(autoNext, 10000)
   });
+
+  function hrefGo() {
+      window.location.href = "routes/produtos.html"
+  }

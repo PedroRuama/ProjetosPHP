@@ -1,8 +1,3 @@
-/* 
-branco: #f5f5f5
-preto: #0f0f0f
-vermelho: #a10000
-*/
 
 *{
     padding: 0;
@@ -87,13 +82,6 @@ a{
     transform: translate(0, -16px);
    
 }
-#input-container2 {
-    width: 90%;
-    display: flex;
-    
-    transform: translate(0, -16px);
-   
-}
 
 #inputBusc {
     width: 80%;
@@ -109,7 +97,7 @@ a{
   
 #inputBusc:focus {
     outline: none;
-    /* box-shadow: -7px -9px 0 0 #a10000; */
+    box-shadow: -7px -9px 0 0 #a10000;
 }
 
 /* -------------------top end------------------------- */
@@ -211,55 +199,40 @@ nav .alingH{
 .user_div p{
    padding: 0 1rem;
 }
+p{
+    padding: 0 1rem;
+ }
 /* -------------------nav end------------------------- */
 
-.img_capa{ 
-   height: 35vh;
-   
-}
 
-.img_capa .img{
-    object-fit: cover;
-    width: 100%;
-    position: relative;
-    filter: brightness(50%);
- 
-}
- 
-/* -------------------destaques start------------------------- */
-.destaques_div{
-   
-    width: 100%;
-    height: 50rem;
-}
 
 .labeldestq_div{
     height: 3rem;
-    font-size: 0.9rem;
-    margin: 1rem;
+    margin-bottom: 2rem;
+    background-color: #dfdede;
     color: #2c2c2c;
-    padding: .5rem;
+    padding: .5rem 1rem;
     text-transform: uppercase;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+
 }
 
 
 
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 20rem;
-    overflow: hidden;
-}
+/* ------------------- grade start------------------------- */
 
-.cards-container {
+
+
+
+.grid-container {
     display: flex;
-    transition: transform 0.5s ease;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaçamento entre os cards */
+    justify-content: space-around;
 }
 
+  
 .card {
     flex: 0 0 8rem; /* Largura fixa dos cards */
     margin: 0 10px;
@@ -298,38 +271,12 @@ nav .alingH{
 }
 
 
-.prev-btn,
-.next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    
-    cursor: pointer;
-}
-
-.prev-btn {
-    left: 10px;
-    height: 2rem;
-}
-
-
-.prev-btn img{
-    rotate: 180deg;
-}
-
-.next-btn {
-    right: 10px;
-    height: 2rem;
-}
-
 .acoesCard{
     background-color: #00a10d;
     height: 2rem;
-    width: 9rem;
     display: flex;
-    position: fixed;
+    width: 9.5rem;
+    position: absolute;
     bottom: 7.5rem;
     padding: 0 0.5rem;
     align-items: center;
@@ -337,143 +284,12 @@ nav .alingH{
     font-weight: bold;
     justify-content: center;
     overflow-y: hidden;
-    z-index: 10;
     transition: 0.3s;
 }
 .card:hover .acoesCard{
     height: 2rem;
 }
-
-
-
-
-/* --------------------- cards end ------------------ */
-
-
-
-.FullImg_div img{
-    filter: brightness(40%);
-    
-}
-.lineFullImg{
-    height: 30rem;
-    width: 80%;
-    border: 2px solid #a10000;
-    position: absolute;
-    z-index: -1;
-    transform: translate(-1rem, 1rem);
-}
-
-.lineFullImg2{
-    height: 30rem;
-    width: 80%;
-    border: 2px solid #a10000;
-    position: absolute;
-    z-index: -1;
-    transform: translate(1.9rem, -1rem);
-}
-
-
-.FullImg_txt{
-    height: 25rem;
-    position: absolute;
-    font-size: 140%;
-    color: #f5f5f5;
-    padding: 2rem;
-    z-index: 2;
-    text-transform: uppercase;
-    display: flex;
-    
-    flex-direction: column;
-    justify-content: space-between;
-
-    
-}
-.FullImg_div button{
-    text-transform: uppercase;
-    border: 2px solid #f5f5f5;
-    padding: 1rem;
-    font-size: 70%;
-    border-radius: 7px;
-    background-color: transparent;
-    color: #f5f5f5;
-    transition: 0.3s;
-
-}
-
-.FullImg_div button:hover{
-    border: 2px solid #0f0f0f;
-    color: #f5f5f5;
-    font-weight: bold;
-    background-color: #0f0f0f;
-
-}
-
-/* -------------------destaques end------------------------- */
-/* 
-.btn{
-    margin: 2rem;
-    padding: 1.5rem;
-    font-size: 100%;
-} */
-
-
-
-
-#verMaisBtn {
-    padding: 1em 2em;
-    border: none;
-    margin: 2rem;
-    border-radius: 5px;
-    background-color: #0f0f0f;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #f5f5f5;
-    transition: all 0.5s;
-    font-size: 15px;
-    position: relative;
-    overflow: hidden;
-    outline: 2px solid #0f0f0f;
-    
-  }
-  
-  #verMaisBtn:hover {
-    color: #0f0f0f;
-    transform: scale(1.1);
-    outline: 2px solid #0f0f0f;
- 
-  }
-  
-  #verMaisBtn::before {
-    content: "";
-    position: absolute;
-    left: -50px;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background-color: #f5f5f5;
-    transform: skewX(45deg);
-    z-index: -1;
-    transition: width 1000ms;
-  }
-  
-  #verMaisBtn:hover::before {
-    width: 250%;
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------grade end------------------------- */
 
 
 
@@ -541,34 +357,3 @@ nav .alingH{
 
 
 
-.labelselct_div{
-    height: 3rem;
-    margin-bottom: 2rem;
-    background-color: #dfdede;
-    color: #2c2c2c;
-    padding: .5rem 1rem;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-
-}
-
-
-
-/* ------------------- grade start------------------------- */
-
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Espaçamento entre os cards */
-    justify-content: space-around;
-}
-
-  
-
-
-
-@media only screen and (min-width: 980px) {
-   
-
- }

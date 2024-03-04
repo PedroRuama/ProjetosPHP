@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles/index.css">
     <script src="scripts/index.js"></script>
 </head>
+
 <body>
     <div class="box_nav">
         <div class="alingV">
@@ -22,15 +24,16 @@
                             <img src="iconsJD/close.png" alt="fachar" class="img">
                         </div>
                     </div>
-                    
-                    
+
+
                     <ul>
-                        <li ><a href="#"> 
-                            <div class="user_div" id="open-btn2"> 
-                                <img src="iconsJD/user.png" alt="user" class="img" id="img_user">
-                                <p> Minha Conta</p> 
-                            </div> 
-                        </a></li>
+                        <li><a href="#">
+                                <div class="user_div" id="open-btn2">
+                                    <img src="iconsJD/user.png" alt="user" class="img" id="img_user">
+                                    <p> Minha Conta</p>
+                                </div>
+                            </a></li>
+                        <li><a href="index.html">Home Page</a></li>
                         <li><a href="#">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
@@ -41,15 +44,15 @@
                     <button id="close-btn2">Voltar</button>
                     <br>
                     <ul>
-                        <li >
-                            <div class="user_div"> 
+                        <li>
+                            <div class="user_div">
                                 <img src="iconsJD/userRed.png" alt="user" class="img" id="img_user">
-                                <p> Minha Conta</p> 
-                            </div> 
+                                <p> Minha Conta</p>
+                            </div>
                         </li>
-                        <li><a href="#">Item 2</a></li>
-                        <li><a href="#">Item 3</a></li>
-                        <li><a href="#">Item 4</a></li>
+                        <li><a href="#">Criar Conta</a></li>
+                        <li><a href="#">Entrar</a></li>
+                        <!-- <li><a href="#">Item 4</a></li> -->
                     </ul>
                 </nav>
 
@@ -64,25 +67,41 @@
         </div>
     </div>
     <div class="img_capa">
-        <img src="imgs/trapper2.jpg" alt="foto_capa" class="img">
+        <img src="imgs/pessoaAndando.jpg" alt="foto_capa" class="img">
     </div>
     <div id="input-container">
         <div class="lineBusc"></div>
-        <input type="text"  autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site...">
+        <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site...">
     </div>
     <div class="destaques_div">
         <div class="labeldestq_div">
-            <h2>novidades</h2>  confira nossos lançamentos!
+            <h2>novidades</h2> confira nossos lançamentos!
         </div>
         <div class="carousel">
             <div class="cards-container">
                 <div class="card">
+                    <a href="">
+                        <div class="acoesCard">
+                            comprar
+                        </div>
+                    </a>
                     <div class="imgCard">
                         <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
                     </div>
                     <br>
                     <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"> Camiseta Preta</p>
+                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
+                </div>
+                <div class="card">
+                    <div class="acoesCard">
+                        <a href="">comprar</a>
+                    </div>
+                    <div class="imgCard">
+                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
+                    </div>
+                    <br>
+                    <p class="nomeP"> Camiseta Preta</p>
+                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
                 </div>
                 <div class="card">
                     <div class="imgCard">
@@ -90,7 +109,7 @@
                     </div>
                     <br>
                     <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"> Camiseta Preta</p>
+                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
                 </div>
                 <div class="card">
                     <div class="imgCard">
@@ -98,17 +117,9 @@
                     </div>
                     <br>
                     <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"> Camiseta Preta</p>
+                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
                 </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                    </div>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"> Camiseta Preta</p>
-                </div>
-                
+
             </div>
             <button class="prev-btn">
                 <img src="iconsJD/seta.png" alt="setaPrev" class="img">
@@ -123,18 +134,18 @@
             <div class="lineFullImg2"></div>
             <div class="FullImg_txt">
                 <h2>em Destaque!</h2>
-                
+
                 <button class="FullBtn">Ver Destaque</button>
             </div>
-            <img src="imgs/cabides.jpg" alt="img_promocional" class="img">
-        </div>
-       
-        <div class="alingV">
-            <button id="verMaisBtn">Mais produtos</button>
-              
+            <img src="imgs/trapper.jpg" alt="img_promocional" class="img2">
         </div>
 
-       <div class="rodape">
+        <div class="alingV">
+            <button id="verMaisBtn" onclick="hrefGo()" >Mais produtos</button>
+
+        </div>
+
+        <div class="rodape">
             <div class="alingH">
                 <div class="alingV">
                     <div class="icon">
@@ -154,10 +165,10 @@
             </div>
             <div class="alingV">
                 <h5>JDONTHATRACK® - Todos os direitos reservados | Rua Dos Perdidos - Nº 340 -Campinas
-                     - SP / São Paulo - CNPJ: 17.267.044/0001-85 </h5>
+                    - SP / São Paulo - CNPJ: 17.267.044/0001-85 </h5>
                 <br>
                 <ul>
-                    <li><a href="#">Sobre nós</a> <img src="iconsJD/setaBranca.png" alt="seta" class="img"> </li>
+                    <li><a href="#">Sobre n</a> <img src="iconsJD/setaBranca.png" alt="seta" class="img"> </li>
                     <li><a href="#">História</a> <img src="iconsJD/setaBranca.png" alt="seta" class="img"></li>
                     <li><a href="#">Fale Conosco</a> <img src="iconsJD/setaBranca.png" alt="seta" class="img"></li>
                     <li><a href="#">Troca/Devolução</a> <img src="iconsJD/setaBranca.png" alt="seta" class="img"></li>
@@ -165,9 +176,9 @@
 
                 </ul>
             </div>
-       </div>
+        </div>
     </div>
 
-    
 </body>
+
 </html>
