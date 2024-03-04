@@ -7,9 +7,11 @@ vermelho: #a10000
 *{
     padding: 0;
     margin: 0;
-    
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
+
+
 body{
     background-color: #f5f5f5;
 }
@@ -22,6 +24,18 @@ a{
 .img{
     height: 100%;
     object-fit: contain;
+}
+.img2{
+    width: 100%;
+    object-fit: cover;
+}
+
+.FullImg_div{
+    height: 30rem;
+    overflow: hidden;
+    margin: 2rem;
+    margin-bottom:6rem;
+    
 }
 
 .icon{
@@ -40,6 +54,7 @@ a{
     flex-direction: column;
    
 }
+
 /* -------------------top start------------------------- */
 .box_nav .alingH{
     height: 7.5rem;
@@ -50,8 +65,7 @@ a{
 
 .box_nav{
     background-color: #0f0f0f;
-    height: 9rem;
-    border-bottom: 3px solid #a10000;
+    height: 11rem;   
 }
 
 .logo_div{  
@@ -59,53 +73,53 @@ a{
    
 }
 
+
 #input-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    transform: translate(-14px, -16px);
+    position: absolute;
+    top: 11rem;
+    transform: translate(0, -16px);
    
 }
 
-
-#line{
+.lineBusc{
     
     border: 2px solid #a10000;
     width: 80%;
-    height: 2rem;
+    height: 1.5rem;
     padding: 0.3rem;
     position: absolute;
     top: 5;
-    transform: translate(-10px, -12px);
+    transform: translate(-10px, -8px);
     transition: .3s linear;
     background-color: transparent;
    
 }
 
-#input {
+#inputBusc {
     width: 80%;
-    height: 2rem;
+    height: 1.2rem;
     padding: 0.5rem;
     transition: .2s linear;
     font-size: 16px;
     letter-spacing: 2px;
     z-index: 1;
     background-color: #dfdede;
-    border: none;
+    border: 2px solid #a10000;
 }
   
-#input:focus {
+#inputBusc:focus {
     outline: none;
-    border: 1px solid #a10000;
-    box-shadow: -10px -12px 0 0 #a10000;
+    box-shadow: -7px -9px 0 0 #a10000;
 }
 
 /* -------------------top end------------------------- */
 
 
 /* -------------------nav start------------------------- */
-
-.sidenav {
+#sidenav{
     height: 100vh;
     width: 0;
     position: fixed;
@@ -116,7 +130,24 @@ a{
     transition: 0.5s;
     z-index: 1000;
 }
-.sidenav ul {
+
+#sidenav2{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+}
+#sidenav2 .user_div{
+    color: #a10000;
+    font-weight: bold;
+}
+
+ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -124,10 +155,9 @@ a{
     padding: 0;
     margin: 0;
 }
-.sidenav li {
+li {
     padding: 1rem 0;
     width: 90%;
-
     text-transform: uppercase;
     border-bottom: 2px solid #a10000;
 }
@@ -140,6 +170,16 @@ a{
     color: #a10000;
     font-weight: bold;
 }
+
+.sidenav button {
+    background-color: transparent;
+    border: none;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    padding: 1rem;
+   
+}
+
 .open-btn {
     position: fixed;
     left: 10px;
@@ -178,6 +218,7 @@ nav .alingH{
 
 .img_capa{ 
    height: 35vh;
+   
 }
 
 .img_capa .img{
@@ -188,6 +229,277 @@ nav .alingH{
  
 }
  
+/* -------------------destaques start------------------------- */
+.destaques_div{
+   
+    width: 100%;
+    height: 50rem;
+}
+
+.labeldestq_div{
+    height: 3rem;
+    font-size: 0.9rem;
+    margin: 1rem;
+    color: #2c2c2c;
+    padding: .5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.cards-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    flex: 0 0 10.5rem; /* Largura fixa dos cards */
+    margin: 0 10px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 16rem;
+    
+   
+}
+
+.imgCard{
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    
+}
+
+.nomeP{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #2c2c2c;
+}
+
+
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+    height: 2rem;
+}
+
+
+.prev-btn img{
+    rotate: 180deg;
+}
+
+.next-btn {
+    right: 10px;
+    height: 2rem;
+}
+
+
+
+.FullImg_div img{
+    filter: brightness(40%);
+}
+.lineFullImg{
+    height: 30rem;
+    width: 80%;
+    border: 2px solid #a10000;
+    position: absolute;
+    z-index: -1;
+    transform: translate(-1rem, 1rem);
+}
+
+.lineFullImg2{
+    height: 30rem;
+    width: 80%;
+    border: 2px solid #a10000;
+    position: absolute;
+    z-index: -1;
+    transform: translate(2rem, -1rem);
+}
+
+
+.FullImg_txt{
+    height: 25rem;
+    position: absolute;
+    font-size: 140%;
+    color: #f5f5f5;
+    padding: 2rem;
+    z-index: 2;
+    text-transform: uppercase;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+.FullImg_div button{
+    text-transform: uppercase;
+    border: 2px solid #f5f5f5;
+    padding: 1rem;
+    font-size: 70%;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #f5f5f5;
+    transition: 0.3s;
+
+}
+
+.FullImg_div button:hover{
+    border: 2px solid #a10000;
+    color: #a10000;
+    font-weight: bold;
+    background-color: #f5f5f5;
+
+}
+
+/* -------------------destaques end------------------------- */
+/* 
+.btn{
+    margin: 2rem;
+    padding: 1.5rem;
+    font-size: 100%;
+} */
+
+
+
+
+#verMaisBtn {
+    padding: 1em 2em;
+    border: none;
+    margin: 2rem;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #f5f5f5;
+    transition: all 0.5s;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #0f0f0f;
+    
+  }
+  
+  #verMaisBtn:hover {
+    color: #0f0f0f;
+    transform: scale(1.1);
+    outline: 2px solid #0f0f0f;
+ 
+  }
+  
+  #verMaisBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f5f5f5;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  #verMaisBtn:hover::before {
+    width: 250%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------rodape start------------------------- */
+.rodape{
+    margin-top: 3rem;
+    background-color: #0f0f0f;
+    height: 25rem;
+    color: #f5f5f5;
+}
+
+.rodape .alingH{
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 0.5;
+    
+}
+.rodape .alingV{
+    
+    display: flex;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    
+    
+}
+.rodape .icon{
+    height: 1.4rem;
+    padding: .3rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.rodape h5{
+    padding-left: 1rem;  
+    text-align: center;
+}
+
+.rodape p{   
+    padding-left: 1rem;  
+    font-size: 90%;
+    padding-bottom: 0.5rem;
+}
+
+.rodape li {
+    padding: 0.5rem;
+    width: 100%;
+    height: 1rem;
+    text-transform: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #a10000;
+}
+
+/* -------------------rodape end------------------------- */
 
 
 

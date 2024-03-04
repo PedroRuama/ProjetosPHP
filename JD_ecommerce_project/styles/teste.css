@@ -1,48 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .sidenav {
-    height: 100vh;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 1000;
-  }
-  .sidenav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .sidenav li {
-    padding: 10px 15px;
-    border-bottom: 1px solid #555;
-  }
-  .sidenav a {
-    color: white;
-    text-decoration: none;
-  }
-  .sidenav a:hover {
-    color: #ccc;
-  }
-  .open-btn {
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 1000;
-  }
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
-    background-color: #333;
-    border: none;
-  }
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
