@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produtos</title>
-    <link rel="stylesheet" href="../styles/index.css">
+    <title>View</title>
+    <link rel="stylesheet" href="../styles/viewprodutos.css">
     <script src="../scripts/produtos.js"></script>
 </head>
 <body>
@@ -31,8 +31,8 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.html">HomePage</a></li>
-                        <li><a href="../produtos.html">Camisetas</a></li>
+                        <li><a href="../index.html">Home Page</a></li>
+                        <li><a href="routes/produtos.html">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -64,67 +64,79 @@
 
         </div>
     </div>
-    <div class="labelselct_div">
-        <p>JDONTHATRACK® </p> <h2>Camisetas</h2>
-    </div>
-    <div id="input-container2">
-        <div class="lineBusc"></div>
-        <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site...">
-    </div>
-    <div class="grid-container">
-        <div class="card">
-            <div class="imgCard">
-                <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
-                    <div class="acoesCard">
-                        comprar
-                    </div>
-                </a>
+    <div class="containerGeral">
+        <div class="alingH" id="containerImgs">
+            <div class="alingV">
+                <div class="miniImg">
+                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
+                </div>
+                <div class="miniImg">
+                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
+                </div>
+                <div class="miniImg">
+                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
+                </div>
             </div>
-            <br>
-            <p class="nomeP"> Camiseta Preta</p>
-            <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
+            <div class="maxImg">
+                <div class="lineFullImg"></div>
+                <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
+                <div class="like"> <img src="../iconsJD/gostar.png" alt="like" class="img"></div>
+            </div>
         </div>
-        <div class="card">
-            <div class="imgCard">
-                <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
-                    <div class="acoesCard">
-                        comprar
-                    </div>
-                </a>
-            </div>
-            <br>
-            <p class="nomeP"> Camiseta Preta</p>
-            <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
-        </div>
-        <div class="card">
-            <div class="imgCard">
-                <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
-                    <div class="acoesCard">
-                        comprar
-                    </div>
-                </a>
-            </div>
-            <br>
-            <p class="nomeP"> Camiseta Preta</p>
-            <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
-        </div>
-        <div class="card">
-            <div class="imgCard">
-                <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
-                    <div class="acoesCard">
-                        comprar
-                    </div>
-                </a>
-            </div>
-            <br>
-            <p class="nomeP"> Camiseta Preta</p>
-            <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
+        <div class="labelselct_div">
+            <p>Nome Sei lá das quantas </p> <h2>R$preço tbm sla</h2>
         </div>
         
+        <div class="compra_div">
+            <form action="">
+                <input type="number" name="quantidade" placeholder="Quantidade" id="quantidade">
+
+                <select name="tamanho" id="">
+                    <option value="p">P</option>
+                    <option value="p" selected>M</option>
+                    <option value="p">G</option>
+                    <option value="p">GG</option>
+                </select>
+
+                <div class="alingH">
+                    <button type="button" class="btn_compra" id="comprar_btn">comprar</button>
+                    <button  type="button" class="btn_compra" id="addsacola_btn">
+                       <img src="../iconsJD/sacola.png" alt="sacola" class="img">
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="descricao">
+            <div class="alingV">
+                <div class="alingH" id="desc_peca">
+                    Descriçao da peça
+                    <div class="icon">
+                        <img src="../iconsJD/seta.png" alt="seta" class="img">
+                    </div>
+                </div>
+                <div class="txt" id="desc_peca_txt">
+                    <p> CAMISETA BAW REGULAR HOUSE TOY<br><br>
+
+                        Camiseta manga curta confeccionada em tecido de algodão. Possui estampa na parte frontal. <br><br>
+                        
+                        P - Comprimento: 25cm/ Torax: 64cm/ Barra: 64cm/ Manga: 22cm/ Cava: 25cm.<br>
+                        M - Comprimento: 26cm/ Torax: 67cm/ Barra: 67cm/ Manga: 23cm/ Cava: 26cm.<br>
+                        G - Comprimento: 27cm/ Torax: 70cm/ Barra: 70cm/ Manga: 24cm/ Cava: 27cm.<br>
+                        GG - Comprimento: 28cm/ Torax: 74cm/ Barra: 73cm/ Manga: 25cm/ Cava: 28cm.<br>
+                        <br>
+                        *MEDIDAS APROXIMADAS.
+                        <br><br>
+                        
+                        *Este anúncio se refere somente a camiseta. Os demais itens contidos na imagem, são vendidos separadamente.
+                        <br><br>
+                        Composição: 100% algodão.
+                       
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="rodape">
         <div class="alingH">

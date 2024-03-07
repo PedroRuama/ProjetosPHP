@@ -23,24 +23,30 @@ a{
 
 .img{
     height: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
     object-fit: contain;
 }
 .img2{
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
     width: 100%;
     object-fit: cover;
 }
 .img3{
-    width: 7.5rem;
-    object-fit: contain;
+    width: 100%;
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.FullImg_div{
-    height: 30rem;
-    overflow: hidden;
-    margin: 2rem;
-    margin-bottom:6rem;
-    
-}
 
 .icon{
     height: 2rem;
@@ -161,13 +167,13 @@ li {
 .sidenav a {
     color: #f5f5f5;
     text-decoration: none;
+    font-size: .8rem;
     
 }
 .sidenav a:hover {
     color: #a10000;
     font-weight: bold;
 }
-
 .sidenav button {
     background-color: transparent;
     border: none;
@@ -176,7 +182,6 @@ li {
     padding: 1rem;
    
 }
-
 .open-btn {
     position: fixed;
     left: 10px;
@@ -187,7 +192,7 @@ li {
     position: absolute;
     top: 1rem;
     right: 10px;
-    height: 2.5rem;
+    height: 2rem;
     width: 2.5rem;
     cursor: pointer;
     padding: 1rem;
@@ -267,9 +272,10 @@ nav .alingH{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 16rem;
+    position: relative;
+    height: 14rem;
     border-top: #2c2c2c 2px solid;
-   
+ 
 }
 .card:hover{
     border-top: #a10000 2px solid;
@@ -281,6 +287,7 @@ nav .alingH{
     width: 100%;
     height: 12rem;
     display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
     justify-content: center;
@@ -305,6 +312,7 @@ nav .alingH{
     transform: translateY(-50%);
     background: none;
     border: none;
+    z-index: 10;
     
     cursor: pointer;
 }
@@ -326,51 +334,73 @@ nav .alingH{
 
 .acoesCard{
     background-color: #00a10d;
-    height: 2rem;
-    width: 9rem;
+    height: 0rem;
+    width: 7rem;
     display: flex;
-    position: fixed;
-    bottom: 7.5rem;
+    transform: translate(0, -2rem);
     padding: 0 0.5rem;
     align-items: center;
     text-transform: uppercase;
+    position: absolute;
+    z-index: 9;
     font-weight: bold;
     justify-content: center;
     overflow-y: hidden;
-    z-index: 10;
     transition: 0.3s;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
+
+
 .card:hover .acoesCard{
     height: 2rem;
+    
 }
-
-
-
 
 /* --------------------- cards end ------------------ */
 
 
+#alingFull{
+    height: 35rem;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.FullImg_div{
+    height: 30rem;
+    
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+   
+
+}
 
 .FullImg_div img{
     filter: brightness(40%);
     
 }
 .lineFullImg{
-    height: 30rem;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     border: 2px solid #a10000;
     position: absolute;
+    top: 0;
     z-index: -1;
-    transform: translate(-1rem, 1rem);
+    
+    transform: translate(-0.7rem, 0.7rem);
 }
 
 .lineFullImg2{
-    height: 30rem;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     border: 2px solid #a10000;
     position: absolute;
+    top: 0;
     z-index: -1;
-    transform: translate(1.9rem, -1rem);
+    transform: translate(0.7rem, -0.7rem);
 }
 
 
@@ -410,14 +440,6 @@ nav .alingH{
 }
 
 /* -------------------destaques end------------------------- */
-/* 
-.btn{
-    margin: 2rem;
-    padding: 1.5rem;
-    font-size: 100%;
-} */
-
-
 
 
 #verMaisBtn {
@@ -432,7 +454,7 @@ nav .alingH{
     cursor: pointer;
     color: #f5f5f5;
     transition: all 0.5s;
-    font-size: 15px;
+    font-size: 0.8rem;
     position: relative;
     overflow: hidden;
     outline: 2px solid #0f0f0f;
@@ -488,11 +510,12 @@ nav .alingH{
 }
 
 .rodape .alingH{
-    height: 8rem;
+    height: 7rem;
+   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
     padding-bottom: 0.5;
     
 }
@@ -500,7 +523,7 @@ nav .alingH{
 
 
 .rodape .alingV{
-    
+    flex-wrap: wrap;
     display: flex;
     padding: 1rem;
     padding-bottom: 0.5rem;
@@ -508,7 +531,7 @@ nav .alingH{
     
 }
 .rodape .icon{
-    height: 1.4rem;
+    height: 1.2rem;
     padding: .3rem 0;
     display: flex;
     align-items: center;
@@ -517,20 +540,24 @@ nav .alingH{
 .rodape h5{
     padding-left: 1rem;  
     text-align: center;
-    font-size: 0.8rem;
+    font-size: .7rem;
+    
 }
 
 .rodape p{   
-    padding-left: 1rem;  
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    padding-left: 2rem;  
+    font-size: 0.7rem;
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    padding-bottom: 0.4rem;
 }
 
 .rodape li {
     padding: 0.5rem;
     width: 100%;
     height: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: none;
     display: flex;
     justify-content: space-between;

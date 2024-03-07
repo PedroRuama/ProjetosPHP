@@ -1,4 +1,5 @@
 
+
 *{
     padding: 0;
     margin: 0;
@@ -18,24 +19,30 @@ a{
 
 .img{
     height: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
     object-fit: contain;
 }
 .img2{
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
     width: 100%;
     object-fit: cover;
 }
 .img3{
-    width: 7.5rem;
-    object-fit: contain;
+    width: 100%;
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.FullImg_div{
-    height: 30rem;
-    overflow: hidden;
-    margin: 2rem;
-    margin-bottom:6rem;
-    
-}
 
 .icon{
     height: 2rem;
@@ -44,8 +51,9 @@ a{
 
 .alingH{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+
 }
 .alingV{
     display: flex;
@@ -64,7 +72,7 @@ a{
 
 .box_nav{
     background-color: #0f0f0f;
-    height: 11rem;   
+    height: 9rem;   
 }
 
 .logo_div{  
@@ -79,6 +87,13 @@ a{
     justify-content: center;
     position: absolute;
     top: 11rem;
+    transform: translate(0, -16px);
+   
+}
+#input-container2 {
+    width: 90%;
+    display: flex;
+    
     transform: translate(0, -16px);
    
 }
@@ -97,7 +112,7 @@ a{
   
 #inputBusc:focus {
     outline: none;
-    box-shadow: -7px -9px 0 0 #a10000;
+    /* box-shadow: -7px -9px 0 0 #a10000; */
 }
 
 /* -------------------top end------------------------- */
@@ -155,7 +170,6 @@ li {
     color: #a10000;
     font-weight: bold;
 }
-
 .sidenav button {
     background-color: transparent;
     border: none;
@@ -164,7 +178,6 @@ li {
     padding: 1rem;
    
 }
-
 .open-btn {
     position: fixed;
     left: 10px;
@@ -175,7 +188,7 @@ li {
     position: absolute;
     top: 1rem;
     right: 10px;
-    height: 2.5rem;
+    height: 2rem;
     width: 2.5rem;
     cursor: pointer;
     padding: 1rem;
@@ -199,97 +212,147 @@ nav .alingH{
 .user_div p{
    padding: 0 1rem;
 }
-p{
-    padding: 0 1rem;
- }
 /* -------------------nav end------------------------- */
 
 
-
-.labeldestq_div{
-    height: 3rem;
-    margin-bottom: 2rem;
-    background-color: #dfdede;
-    color: #2c2c2c;
-    padding: .5rem 1rem;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-
-}
-
-
-
-/* ------------------- grade start------------------------- */
-
-
-
-
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Espaçamento entre os cards */
-    justify-content: space-around;
-}
-
-  
-.card {
-    flex: 0 0 8rem; /* Largura fixa dos cards */
-    margin: 0 10px;
-    padding: 0.5rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 16rem;
-    border-top: #2c2c2c 2px solid;
-   
-}
-.card:hover{
-    border-top: #a10000 2px solid;
-}
-
-
-
-.imgCard{
-    width: 100%;
-    height: 12rem;
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    justify-content: center;
+.containerGeral{
+    margin: 1.3rem;
     
 }
 
-.nomeP{
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    color: #2c2c2c;
-}
-
-.precoP{
-    font-size: 0.8rem;
-}
-
-
-.acoesCard{
-    background-color: #00a10d;
-    height: 2rem;
-    display: flex;
-    width: 9.5rem;
-    position: absolute;
-    bottom: 7.5rem;
-    padding: 0 0.5rem;
+#containerImgs{
     align-items: center;
+    height: 20rem ;
+    position: relative;
+   
+}
+
+.miniImg{
+    height: 6rem;
+    width: 4.5rem;
+    display: flex;
+    margin: 0.5rem;
+}
+ 
+.maxImg{
+    position: relative;
+    height: 100%;
+    width: 80%;
+}
+
+.like{
+    position: absolute;
+    margin: 1rem;
+    height: 1.7rem;
+    top: 0;
+    right: 0;
+}
+
+.lineFullImg{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #a10000;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    
+    transform: translate(0.5rem, -0.6rem);
+}
+
+
+
+.labelselct_div{
+    height: 3rem;
+    font-size: .8rem;
+    color: #2c2c2c;
+    padding: .5rem 0rem;
     text-transform: uppercase;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column; 
+    
+}
+
+select, input{
+   margin: 1rem 1rem 1rem 0rem; 
+   padding: 0.5rem;
+   border: 1px solid #f5f5f5;
+   outline: none;
+   border-top: #a10000 2px solid;
+   color: #2c2c2c;
+   border-radius: 5px;
+
+}
+#quantidade{
+    width: 30%;
+}
+
+.compra_div .alingH{
+    justify-content: space-between;
+}
+
+.btn_compra{
+    padding: 0.7rem;
+    height: 3rem;
+    background-color: #00a10d;
+    border: none;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    display: flex;
     justify-content: center;
-    overflow-y: hidden;
+    align-items: center;
+    font-size: 1rem;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+.btn_compra:hover{
+    background-color: #004b06;
+}
+
+#comprar_btn{
+    width: 70%;
+}
+
+#addsacola_btn{
+    width: 20%;
+    padding: 0.6rem;
+}
+
+.descricao .alingH{
+    height: 1.5rem;
+    border: none;
+   
+    font-size: .8rem;
+    color: #2c2c2c;
+    padding: .5rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    justify-content: space-between;
+   
+}
+
+.descricao .icon{
+    height: 1.2rem;
+    rotate: 90deg;
     transition: 0.3s;
 }
-.card:hover .acoesCard{
-    height: 2rem;
+.txt{
+    color: #2c2c2c;
+    font-size: 0.7rem;
+    border-bottom: 2px solid #0f0f0f;
+    overflow-y: hidden;
+    height:0rem;
+    transition: 1s;
 }
-/* -------------------grade end------------------------- */
+
+.alingH:hover .icon{
+    rotate: -90deg;
+}
+
+.alingH:hover + .txt{
+    height: 16.5rem;
+}
+
+
 
 
 
@@ -304,11 +367,12 @@ p{
 }
 
 .rodape .alingH{
-    height: 8rem;
+    height: 7rem;
+   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
     padding-bottom: 0.5;
     
 }
@@ -316,7 +380,7 @@ p{
 
 
 .rodape .alingV{
-    
+    flex-wrap: wrap;
     display: flex;
     padding: 1rem;
     padding-bottom: 0.5rem;
@@ -324,7 +388,7 @@ p{
     
 }
 .rodape .icon{
-    height: 1.4rem;
+    height: 1.2rem;
     padding: .3rem 0;
     display: flex;
     align-items: center;
@@ -333,20 +397,24 @@ p{
 .rodape h5{
     padding-left: 1rem;  
     text-align: center;
-    font-size: 0.8rem;
+    font-size: .7rem;
+    
 }
 
 .rodape p{   
-    padding-left: 1rem;  
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    padding-left: 2rem;  
+    font-size: 0.7rem;
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    padding-bottom: 0.4rem;
 }
 
 .rodape li {
     padding: 0.5rem;
     width: 100%;
     height: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: none;
     display: flex;
     justify-content: space-between;
@@ -354,6 +422,5 @@ p{
 }
 
 /* -------------------rodape end------------------------- */
-
 
 

@@ -58,12 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function autoNext() {
       cardIndex++;
-      if (cardIndex == cardsContainer.children.length) {
+      if (cardIndex == cardsContainer.children.length - 1) {
         cardIndex = 0;
       }
       updateCardsPosition()
     }
-    // setInterval(autoNext, 10000)
+    // setInterval(autoNext, 8000)
   });
 
   function hrefGo() {
