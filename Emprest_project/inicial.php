@@ -15,9 +15,15 @@ $select = $_GET['select'];
 $valmin = $_GET['rangeMin'];
 $valmax = $_GET['rangeMax'];
 
+if (isset($_GET['login'])) {
+   $login = $_GET['login'];
+} else{$login = 0;}
+
+
 $i = 0;
 $z = 0;
 ?>
+
 
 
 <!DOCTYPE html>
@@ -29,43 +35,48 @@ $z = 0;
     <title>Página Inicial</title>
     <link rel="stylesheet" href="styles/inicial.css">
     <link rel="icon" href="iconsEmp/caixa.png" type="image/png">
+    <script src="scripts/inicial.js"></script>
 </head>
-
 <body>
     <nav>
         <div class="navbar">
 
             <ul class="itens">
-                <a href="inicial.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>">
-                    <li class="btn">Página inicial </li>
+                <a href="inicial.php?login=1&select=1&rangeMin=0&rangeMax=10000" >
+                    <li class="btn" id="InicialMobi" style="display: none;">Página inicial </li>                    
                 </a>
-                <a href="estatisticas.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>">
-                    <li class="btn">Estatísticas</li>
+                <a href="inicial.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>">
+                    <li class="btn" id="Inicial">Página inicial </li>
+                </a>
+                <a href="estatisticas.php?select=<?= $select?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>">
+                    <li class="btn"  id="aEstatisticas">Estatísticas</li>
                 </a>
                 <a href="gerenciar.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>">
-                    <li class="btn">Gerenciar Cadastros</li>
+                    <li class="btn" id="aGerenciar">Gerenciar Cadastros</li>
                 </a>
             </ul>
-            <a href="cad.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>" class="btn">Adicionar Cadastro</a>
+            <a href="cad.php?select=<?= $select ?>&rangeMin=<?= $valmin ?>&rangeMax=<?= $valmax ?>" class="btn" id="aAddCad">Adicionar Cadastro</a>
 
         </div>
     </nav>
-
+        <input type="text" name="login" id="login" value="<?=$login?>" style="display: none;">
 
     <div class="container">
+
         <div class="con-title">
             <h1>Inicial</h1>
             <h3>Notificações e avisos</h3>
+            <h3 id="dataMobi">Data de hoje: <?= date('d/m/Y') ?></h3>
             <br>
             <br>
-            <h3>Data de hoje: <?= date('d/m/Y') ?></h3>
+            <h3 id="dataDesk">Data de hoje: <?= date('d/m/Y') ?></h3>
             <div class="img_div">
                 <img src="imgs/avisos.svg" alt="avisos img" class="img">
             </div>
         </div>
 
         <div class="con-warning">
-            <p id="aviso_label">O prazo de revisão esta chegando na data (7 dias ou menos):</p>
+            <p id="aviso_label">Alerta ao prazo de revisão (7 dias ou menos):</p>
 
             <div class="avisos_divtr" id="avisos_tr_div" style="display:none">
                 <div class="avisos" id="avisos_tr">
@@ -123,9 +134,8 @@ $z = 0;
 
 
 
-                if ($dias <= 7 && $dados['situacao'] == 'Em Divida') {
+                if ($dias <= 7 && $dados['situacao'] == 'Em Divida' || $dataAtual >  $data_par && $dados['situacao'] == 'Em Divida') {
                     $i = 1;
-
             ?>
                     <script>
                         var div_des = document.getElementById('avisos_tr_div')
@@ -204,7 +214,7 @@ $z = 0;
                             $dias = $diferenca->days;
 
 
-                            if ($dias > 7 && $dados['situacao'] == 'Em Divida' && $dias <= 15) {
+                            if ($dias > 7 && $dados['situacao'] == 'Em Divida' && $dias <= 15 &&  $dataAtual < $data_par) {
                                 $z = 1;
                         ?>
                                 <script>

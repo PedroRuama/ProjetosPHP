@@ -27,7 +27,6 @@
             </div>
             <div id="div_form">
                 <form name='login' method="post" action="controllers/login_controller.php">
-                    <div id="txt_adm"> <b>Entre como ADM</b></div> <br><br>
                     <input type="text" name="login" placeholder="Login"> <br><br>
                     <input type="password" name="senha" placeholder="Senha"> <br><br>
                     <?php

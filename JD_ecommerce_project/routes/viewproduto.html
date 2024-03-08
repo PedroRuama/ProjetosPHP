@@ -19,7 +19,7 @@
                         <div class="logo_nav">
                         </div>
                         <div id="close-btn" class="close-btn">
-                            <img src="../iconsJD/close.png" alt="fachar" class="img">
+                            <img src="../iconsJD/close.png" alt="fechar" class="img">
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@
                                 </div>
                             </a></li>
                         <li><a href="../index.html">Home Page</a></li>
-                        <li><a href="routes/produtos.html">Camisetas</a></li>
+                        <li><a href="produtos.html">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -48,9 +48,24 @@
                                 <p> Minha Conta</p>
                             </div>
                         </li>
-                        <li><a href="#">Criar Conta</a></li>
-                        <li><a href="#">Entrar</a></li>
-                        <!-- <li><a href="#">Item 4</a></li> -->
+
+                        <div class="optionsConta" id="login" style="display: none;">
+                            <li><a href="criarconta.html">Criar Conta</a></li>
+                            <li><a href="login.html">Entrar</a></li>
+                        </div>
+
+                        <div class="optionsConta" id="logado" >
+                            <br>
+                            <p>Nome do fulano</p>
+                            <br>
+                            <li><a href="#">Favoritos</a></li>
+                            <li><a href="">Pedidos</a></li>
+                            <li><a href="">Meu Cadastro</a></li>
+                            <br>
+                            <br>
+                            <br>
+                            <li><a href="gerenciar.html">Gerenciar Loja</a></li> 
+                        </div>
                     </ul>
                 </nav>
 
@@ -111,7 +126,7 @@
             <div class="alingV">
                 <div class="alingH" id="desc_peca">
                     Descriçao da peça
-                    <div class="icon">
+                    <div class="icon" id="setaDesc">
                         <img src="../iconsJD/seta.png" alt="seta" class="img">
                     </div>
                 </div>

@@ -92,8 +92,8 @@ $somaJuros = 0;
             <h1>Estatísticas</h1>
             <h3>Caixa e dados</h3>
             <br>
-            <br>
-            <!-- <h3>Data de hoje: <?= date('d/m/Y') ?></h3> -->
+
+            <h3>Data de hoje: <?= date('d/m/Y') ?></h3>
             <div class="img_div">
                 <img src="imgs/estatisticas.svg" alt="avisos img" class="img">
             </div>
@@ -154,7 +154,7 @@ $somaJuros = 0;
             <div class="aling2">
                 <div class="con-infos2">
                     <h2>Em Caixa</h2>
-                    <h4>R$ <?= $caixa ?></h4>
+                    <h4 id="caixaTxt">R$ <?=$caixa?></h4>
                 </div>
                 <div class="con-infos2">
                     <div class="aling">

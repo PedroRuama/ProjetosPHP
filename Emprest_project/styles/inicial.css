@@ -329,3 +329,122 @@ h3 {
 .divider:nth-child(even) {
     background-color: #ffc1c1;
 }
+
+
+
+#dataDesk{
+    display: flex;
+}
+
+#dataMobi{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .btn{
+        font-size: 1rem;
+        
+    }
+    .navbar{
+        justify-content: start;
+    }
+    li{
+        width: 7rem;
+    }
+    
+
+
+    .container{
+        flex-direction: column;
+        margin: 1rem;
+        margin-top: 5rem;
+      
+    }
+
+    .con-title{
+        width: 100%;
+        position: relative;
+    }
+    
+    h1 { 
+        font-size: 2.5rem;
+        padding: 0;
+    }
+    h3{
+        font-size: 1rem;
+        padding: 0;
+    }
+    #dataMobi{
+        display: flex;
+    }
+    
+    #dataDesk{
+        display: none;
+    }
+    .img_div{
+        display: flex;
+        top: 0%;
+        width: 100%;
+        justify-content: end;
+        height: 120%;
+
+
+    }
+    .img{
+        height: 100%;
+    }
+
+    .con-warning{
+        width: 100%;
+    }
+
+    #aviso_label{
+        font-size: 0.7rem;
+    }
+
+    .avisos_divtr{
+        font-size: 0.6rem;
+    }
+    #avisos_tr{
+        margin-top: 0;
+    }
+    .avisos_divtr{
+        width: 100%;
+    }
+
+    .avisos_div{
+        height: 1.8rem;
+    }
+    .iconAviso{
+        height: 1.5rem;
+        padding-right: 0.5rem;
+    }
+    .dados_aviso{
+        font-size: 0.6rem;
+        
+    }
+    .divider{
+        border: 0.5px solid #CA1717;
+    }
+    #seta{
+        display: none;
+    }
+    .atencao_div{
+        margin: 2rem 0;
+    }
+    #atencao_label{
+        font-size: 0.7rem;
+    }
+
+    .dados_atencao{
+        width: 100%;
+    }
+    .row_atencao{
+        font-size: 0.6rem;
+        height: 1.8rem;
+    }
+
+
+}

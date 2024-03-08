@@ -15,10 +15,14 @@ function editCaixa() {
 function subFormCaixa(btn) {
     var acao = document.getElementById('acao')
     var editVal =  document.getElementById('editVal')
-    editVal.value = editVal.value.replace(/\D/g, '')
+    editVal.value = editVal.value.replace(/[^\d,]/g, '')
+    editVal.value = editVal.value.replace(',', '.')
+    console.log(editVal.value);
+
+
     if (btn.value == 'Retirar') {
         if (editVal.value=="") {
-            document.getElementById('editVal').value = '0'
+            document.getElementById('editVal').value = 0
         }
         
         acao.value = 1
@@ -34,18 +38,6 @@ function subFormCaixa(btn) {
     }
 }
 
-function mascaraMoedaIn(i) {
-    const v = i.value;
-        
-    if(isNaN(v[v.length-1])){ 
-        i.value = v.substring(0, v.length-1);
-        return;
-    }
-    
-    i.setAttribute("maxlength", "15");
-    if (v.length == 3 ) i.value += ") ";
-    if (v.length == 10) i.value += "-";
-}
 
 
 String.prototype.reverse = function () {
@@ -54,9 +46,9 @@ String.prototype.reverse = function () {
 
 function mascaraMoedaIn(campo, evento) {
     var tecla = (!evento) ? window.event.keyCode : evento.which;
-    var valor = campo.value.replace(/[^\d]+/gi, '').reverse();
+    var valor = campo.value.replace(/[^\d]+/gi, '').reverse(); // Permitindo vírgula e ponto como separadores
     var resultado = "";
-    var mascara = "###.###.###".reverse();
+    var mascara = "###.###.###,##".reverse(); // Adicionando suporte para duas casas decimais
     for (var x = 0, y = 0; x < mascara.length && y < valor.length;) {
         if (mascara.charAt(x) != '#') {
             resultado += mascara.charAt(x);
