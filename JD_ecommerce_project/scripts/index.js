@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateCardsPosition()
     }
-    // setInterval(autoNext, 8000)
+    setInterval(autoNext, 5000)
   });
 
   function hrefGo() {

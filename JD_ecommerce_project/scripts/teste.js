@@ -1,43 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const cardsContainer = document.querySelector('.cards-container');
 
-  let cardIndex = 0;
-  const cardWidth = document.querySelector('.card').offsetWidth;
+const inputImagens = document.getElementById('inputImagens');
+const imagensSelecionadas = document.getElementById('imagensSelecionadas');
 
-  nextBtn.addEventListener('click', function () {
-    console.log(cardIndex);
-    if (cardIndex <= cardsContainer.children.length - 1 ) {
-      cardIndex++;
-      if (cardIndex >= cardsContainer.children.length) {
-        cardIndex = 0;
-      }
-      updateCardsPosition();
-    }
-  });
+// Adiciona um ouvinte de eventos para quando as imagens forem selecionadas
+inputImagens.addEventListener('change', function(event) {
+  // Limpa o container antes de exibir as novas imagens
+  imagensSelecionadas.innerHTML = '';
 
-  prevBtn.addEventListener('click', function () {
-    if (cardIndex > -1) {
-      cardIndex--;
-      if (cardIndex == -1) {
-        cardIndex = cardsContainer.children.length -1;
-      }
-      updateCardsPosition();
-    }
-  });
+  // Itera sobre os arquivos selecionados
+  for (const arquivo of event.target.files) {
+    // Cria um elemento de imagem para cada arquivo selecionado
+    const imagem = document.createElement('img');
 
-  function updateCardsPosition() {
-    const newPosition = -cardIndex * cardWidth;
-    cardsContainer.style.transform = `translateX(${newPosition}px)`;
+    // Define o atributo src da imagem com a URL do arquivo
+    imagem.src = URL.createObjectURL(arquivo);
+
+    // Define estilos para a imagem (tamanho, margem, etc.)
+    imagem.style.maxWidth = '200px';
+    imagem.style.marginRight = '10px';
+
+    // Adiciona a imagem ao container
+    imagensSelecionadas.appendChild(imagem);
   }
-
-  function autoNext() {
-    cardIndex++;
-    if (cardIndex == cardsContainer.children.length) {
-      cardIndex = 0;
-    }
-    updateCardsPosition()
-  }
-  setInterval(autoNext, 4000)
 });

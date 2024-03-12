@@ -23,3 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
         sidenav2.style.width = '0';
     });
 });
+
+let i = 1
+
+function divAcao() {
+    i=i*(-1)
+}
+function focusAcao(acao) {
+    var alingH = acao.querySelector('.alingH')
+    var txt = acao.querySelector('.txt')
+    var seta = acao.querySelector('#setaDesc')
+    
+    if (i < 0 ) {
+        txt.style.height = '40rem';
+        seta.style.transform = 'rotate(-180deg)';
+    } else{
+        txt.style.height = '0rem';
+        seta.style.transform = 'rotate(0deg)';
+    }
+};
