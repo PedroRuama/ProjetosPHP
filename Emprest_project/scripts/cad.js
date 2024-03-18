@@ -1,6 +1,9 @@
 
 var inputs = document.getElementsByTagName('input')
 
+window.onload = function(){
+    dev()
+}
 
 function Submit() {
     for (let index = 0; index < inputs.length; index++) {
@@ -22,8 +25,8 @@ function Submit() {
     }
     var val_emp = document.getElementById('val_emp')
     val_emp.value = val_emp.value.replace(/\D/g, '')
+    document.getElementById('val_parcela').value = document.getElementById('val_parcela').value.replace(',', '.')
     
-    var options
 }
 
 
@@ -32,6 +35,23 @@ String.prototype.reverse = function () {
 };
 
 function mascaraMoeda(campo, evento) {
+    var tecla = (!evento) ? window.event.keyCode : evento.which;
+    var valor = campo.value.replace(/[^\d]+/gi, '').reverse(); // Permitindo vírgula e ponto como separadores
+    var resultado = "";
+    var mascara = "###.###.###,##".reverse(); // Adicionando suporte para duas casas decimais
+    for (var x = 0, y = 0; x < mascara.length && y < valor.length;) {
+        if (mascara.charAt(x) != '#') {
+            resultado += mascara.charAt(x);
+            x++;
+        } else {
+            resultado += valor.charAt(y);
+            y++;
+            x++;
+        }
+    }
+    campo.value = resultado.reverse();
+}
+function mascaraMoeda2(campo, evento) {
     var tecla = (!evento) ? window.event.keyCode : evento.which;
     var valor = campo.value.replace(/[^\d]+/gi, '').reverse();
     var resultado = "";
@@ -52,7 +72,6 @@ function mascaraMoeda(campo, evento) {
 
 
 
-
 function check(x) {
     var check1 = document.getElementById('divida_label');
     var check2 = document.getElementById('quitado_label');
@@ -68,7 +87,7 @@ function check(x) {
 
 function dev() {
     var valor = parseInt(document.getElementById('val_emp').value.replace(/\D/g, '')); //capital   replace tira os .
-    var i = parseInt(document.getElementById('juros').value) / 100; //taxa de juros
+  
     
     
     var data_emp = document.getElementById('data_emp').value
@@ -82,7 +101,7 @@ function dev() {
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
     
     
-    var juros = valor * i //juros
+    var juros //juros
     
 
     
@@ -101,14 +120,14 @@ function dev() {
 
     }
 
-    console.log('-------------------------------------')
-    console.log('capital: ' + valor)
-    console.log('taxa: ' + i)
-    console.log("tempo: " + quantidadeDeMeses);
-    console.log('juros: ' + juros)
+    // console.log('-------------------------------------')
+    // console.log('capital: ' + valor)
+    // console.log('taxa: ' + i)
+    // console.log("tempo: " + quantidadeDeMeses);
+    // console.log('juros: ' + juros)
     
     var parcelas = parseInt(document.getElementById('parcelas').value.replace("x"))
-
+     
     
     var mesemp = parseInt([mes])
     var newAno = parseInt(data1.getFullYear())
@@ -128,8 +147,24 @@ function dev() {
     var valParcela = document.getElementById('val_parcela')
     var diaPag = document.getElementById('dia_pag')
     
-    dev.value = valor + juros //montante
-    valParcela.value =  parseFloat(dev.value/parcelas).toFixed(2)
+    var valParcelaFormat = valParcela.value.replace(',', '.')
+  
+   
+    
+    dev.value = (valParcelaFormat * parcelas).toFixed(2)
+
+    juros  = dev.value*100/valor
+
+    
+    juros = juros - 100
+
+ 
+
+    document.getElementById('juros').value = juros.toFixed(0)
+    
+    console.log(i);
+    //dev.value = valor + juros montante
+    // valParcela.value =  parseFloat(dev.value/parcelas).toFixed(2)
 
     diaPag.value = parseInt([diaDev])
 

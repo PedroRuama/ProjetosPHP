@@ -103,12 +103,12 @@ $valmax = $_GET['rangeMax'];
                     <div class="hr"></div>
                     <div class="aling" id="Emp">
                         <div class="inputGroup" id="inp-valEmp">
-                            <input type="search" required autocomplete="off" id="val_emp" name="val_emp" oninput="mascaraMoeda(this, event)" class="obrigatorio" onkeyup="dev()">
+                            <input type="search" required autocomplete="off" id="val_emp" name="val_emp" oninput="mascaraMoeda2(this, event)" class="obrigatorio" onkeyup="dev()">
                             <label for="">R$ Valor Emprestimo</label>
 
                         </div>
                         <div class="inputGroup" id="inp-juros">
-                            <input type="search" required autocomplete="off" name="juros" class="obrigatorio" onkeyup="dev()" id="juros" oninput="jurosmascara(this)">
+                            <input type="search" required autocomplete="off" name="juros" class="obrigatorio" onkeyup="dev()" id="juros" oninput="jurosmascara(this)" class="disabili">
                             <label for="">% Juros</label>
                         </div>
                         <div class="inputGroup" id="inp-dataEmp">
@@ -173,7 +173,7 @@ $valmax = $_GET['rangeMax'];
                                         </div>
                                         <div class="inputGroup" id="inp-valEmp">
                                             <p class="label_select" id="label_valparcela"> R$ da parcela</p>
-                                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_parcela" id="val_parcela"  class="disabili">
+                                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event); dev()" name="val_parcela" id="val_parcela" value=0>
                                             
                                         </div>
                                         <div class="inputGroup">

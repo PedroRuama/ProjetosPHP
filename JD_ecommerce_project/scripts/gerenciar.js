@@ -35,7 +35,7 @@ function focusAcao(acao) {
     var seta = acao.querySelector('#setaDesc')
     
     if (i < 0 ) {
-        txt.style.height = '40rem';
+        txt.style.height = '35rem';
         seta.style.transform = 'rotate(-180deg)';
     } else{
         txt.style.height = '0rem';

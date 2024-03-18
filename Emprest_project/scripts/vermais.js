@@ -75,6 +75,7 @@ function Submit() {
         document.getElementById("pag").disabled = false;
         var val_emp = document.getElementById('val_emp')
         val_emp.value = val_emp.value.replace(/\D/g, '')
+        document.getElementById('val_parcela').value = document.getElementById('val_parcela').value.replace(',', '.')
     }
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
@@ -89,7 +90,25 @@ String.prototype.reverse = function () {
     return this.split('').reverse().join('');
 };
 
+
 function mascaraMoeda(campo, evento) {
+    var tecla = (!evento) ? window.event.keyCode : evento.which;
+    var valor = campo.value.replace(/[^\d]+/gi, '').reverse(); // Permitindo vírgula e ponto como separadores
+    var resultado = "";
+    var mascara = "###.###.###,##".reverse(); // Adicionando suporte para duas casas decimais
+    for (var x = 0, y = 0; x < mascara.length && y < valor.length;) {
+        if (mascara.charAt(x) != '#') {
+            resultado += mascara.charAt(x);
+            x++;
+        } else {
+            resultado += valor.charAt(y);
+            y++;
+            x++;
+        }
+    }
+    campo.value = resultado.reverse();
+}
+function mascaraMoeda2(campo, evento) {
     var tecla = (!evento) ? window.event.keyCode : evento.which;
     var valor = campo.value.replace(/[^\d]+/gi, '').reverse();
     var resultado = "";
@@ -110,7 +129,6 @@ function mascaraMoeda(campo, evento) {
 
 
 
-
 function check(x) {
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
@@ -126,8 +144,7 @@ function check(x) {
 
 function dev() {
     var valor = parseInt(document.getElementById('val_emp').value.replace(/\D/g, '')); //capital   replace tira os .
-    var i = parseInt(document.getElementById('juros').value) / 100; //taxa de juros
-
+   
 
     var data_emp = document.getElementById('data_emp').value
     var data_dev = document.getElementById('data_dev').value
@@ -138,7 +155,7 @@ function dev() {
     let diferencaEmDias = Math.round((data2 - data1) / (1000 * 60 * 60 * 24))
     let quantidadeDeMeses = Math.round(diferencaEmDias / 30.44)
 
-    var juros = valor * i//juros
+    var juros
 
     var select_parcelas = document.getElementById('SelecParcelas')
 
@@ -184,10 +201,22 @@ function dev() {
     var valParcela = document.getElementById('val_parcela')
     var diaPag = document.getElementById('dia_pag')
     
-    dev.value = valor + juros //montante
-    valParcela.value = parseFloat(dev.value / parcelasSelc).toFixed(2)
+    var valParcelaFormat = valParcela.value.replace(',', '.')
+
+
+    dev.value = (valParcelaFormat * parcelasSelc).toFixed(2)
+
+    juros  = dev.value*100/valor
+
+    juros = juros - 100
+
+    document.getElementById('juros').value = juros.toFixed(0)
+
+    // valParcela.value = parseFloat(dev.value / parcelasSelc).toFixed(2)
     diaPag.value = parseInt([diaDev])
     
+
+
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
 

@@ -79,20 +79,11 @@ a{
 }
 
 
-#input-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 11rem;
-    transform: translate(0, -16px);
-   
-}
 #input-container2 {
     width: 90%;
     display: flex;
     
-    transform: translate(0, -16px);
+    
    
 }
 
@@ -267,8 +258,9 @@ nav .alingH{
     color: #2c2c2c;
     font-size: 0.7rem;
     border-bottom: 2px solid #0f0f0f;
-    overflow-y: hidden;
+    overflow: hidden;
     height:0rem;
+    overflow-y: scroll;
     transition: 1s;
    
     
@@ -361,8 +353,11 @@ form{
     font-size: 0.8rem;
   }
 
-  #UpImgs_div{
+  .UpImgs_div{
+    display: flex;
     width: 100%;
+    margin: 0;
+    flex-direction: column;
   }
 
 #img_select{
@@ -389,3 +384,120 @@ button:hover{
 
 }
 
+.tabela_produtos{
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: brown;
+}
+.div_produto{
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    margin: 0.7rem 0;
+    padding-bottom: 0.5rem;
+    
+    justify-content: space-between;
+    
+}
+
+.div_produtoDestaque{
+    border-bottom: 1px solid #9b9b9b;
+}
+.div_produtoEdit{
+    border-bottom: 1px solid #9b9b9b;
+
+}
+.div_Pedidos{
+    border-bottom: 1px solid #9b9b9b;
+
+}
+
+
+
+#tr{
+ 
+    margin: 0;
+    align-items: end;
+    height: 2rem;
+    
+    position: relative;
+}
+
+#tr .info{
+    color: #9b9b9b;
+    font-size: 0.8rem;   
+    bottom: 0;
+}
+
+.div_img{
+    height: 100%;
+    width: 90px;
+    background-color: #a10000;
+}
+
+.div_info{
+    font-size: 1rem;
+    display: flex;
+    margin: 0 0.2rem ;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info{
+    max-width: 6rem;
+    font-size: 0.7rem;
+}
+
+.container{
+    padding: 1rem;
+}
+
+.backDiv{
+    height: 1.3rem;
+    display: flex;
+    width: 5rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#backseta{
+    rotate: 180deg;
+}
+.radio{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.tr_setor{
+    height: 1rem;
+    width: 100%;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #f5f5f5;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.div_radiosForm{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.div_radio{
+    margin-bottom: 0.5rem;
+}
+
+#limparImagens{
+    height: 2rem;
+    width: 10rem;
+    background-color: #9b9b9b;
+}

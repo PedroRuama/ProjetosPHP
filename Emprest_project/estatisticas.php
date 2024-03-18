@@ -154,7 +154,7 @@ $somaJuros = 0;
             <div class="aling2">
                 <div class="con-infos2">
                     <h2>Em Caixa</h2>
-                    <h4 id="caixaTxt">R$ <?=$caixa?></h4>
+                    <h4 id="caixaTxt">R$ <?=number_format($caixa, 2)?></h4>
                 </div>
                 <div class="con-infos2">
                     <div class="aling">

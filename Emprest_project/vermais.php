@@ -102,12 +102,12 @@ $dados = mysqli_fetch_array($query);
                     <div class="hr"></div>
                     <div class="aling" id="Emp">
                         <div class="inputGroup" id="inp-valEmp">
-                            <input type="search" required autocomplete="off" id="val_emp" name="val_emp" oninput="mascaraMoeda(this, event)" class="obrigatorio" onkeyup="dev()" value="<?= $dados['val_emp'] ?>" disabled>
+                            <input type="search" required autocomplete="off" id="val_emp" name="val_emp" oninput="mascaraMoeda2(this, event)" class="obrigatorio" onkeyup="dev()" value="<?= $dados['val_emp'] ?>" disabled>
                             <label for="">R$ Valor Emprestimo</label>
 
                         </div>
                         <div class="inputGroup" id="inp-juros">
-                            <input type="search" required autocomplete="off" name="juros" class="obrigatorio" onkeyup="dev()" id="juros" oninput="jurosmascara(this)" value="<?= $dados['juros'] ?>" disabled>
+                            <input type="search" required autocomplete="off" name="juros" class="disabili" onkeyup="dev()" id="juros" oninput="jurosmascara(this)" value="<?= $dados['juros'] ?>" disabled>
                             <label for="">% Juros</label>
                         </div>
                         <div class="inputGroup" id="inp-dataEmp">
@@ -174,7 +174,7 @@ $dados = mysqli_fetch_array($query);
                                         </div>
                                         <div class="inputGroup" id="inp-valEmp">
                                             <p class="label_select" id="label_valparcela"> R$ da parcela</p>
-                                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event)" name="val_parcela" id="val_parcela" class="disabili">
+                                            <input type="search" required autocomplete="off" oninput="mascaraMoeda(this, event); dev()" name="val_parcela" id="val_parcela" disabled value="<?= $dados['val_parcela'] ?>">
                                             
                                         </div>
                                         <div class="inputGroup">

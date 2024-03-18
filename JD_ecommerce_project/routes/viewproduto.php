@@ -31,8 +31,8 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.html">Home Page</a></li>
-                        <li><a href="produtos.html">Camisetas</a></li>
+                        <li><a href="../index.php">Home Page</a></li>
+                        <li><a href="produtos.php">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -50,8 +50,8 @@
                         </li>
 
                         <div class="optionsConta" id="login" style="display: none;">
-                            <li><a href="criarconta.html">Criar Conta</a></li>
-                            <li><a href="login.html">Entrar</a></li>
+                            <li><a href="criarconta.php">Criar Conta</a></li>
+                            <li><a href="login.php">Entrar</a></li>
                         </div>
 
                         <div class="optionsConta" id="logado" >
@@ -64,7 +64,7 @@
                             <br>
                             <br>
                             <br>
-                            <li><a href="gerenciar.html">Gerenciar Loja</a></li> 
+                            <li><a href="gerenciar.php">Gerenciar Loja</a></li> 
                         </div>
                     </ul>
                 </nav>

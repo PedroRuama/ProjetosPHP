@@ -31,8 +31,8 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.html">HomePage</a></li>
-                        <li><a href="../produtos.html">Camisetas</a></li>
+                        <li><a href="../index.php">HomePage</a></li>
+                        <li><a href="../produtos.php">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -48,8 +48,8 @@
                                 <p> Minha Conta</p>
                             </div>
                         </li>
-                        <li><a href="criarconta.html">Criar Conta</a></li>
-                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="criarconta.php">Criar Conta</a></li>
+                        <li><a href="login.php">Entrar</a></li>
                         <!-- <li><a href="#">Item 4</a></li> -->
                     </ul>
                 </nav>
@@ -75,7 +75,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
+                <a href="viewproduto.php">
                     <div class="acoesCard">
                         comprar
                     </div>
@@ -88,7 +88,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
+                <a href="viewproduto.php">
                     <div class="acoesCard">
                         comprar
                     </div>
@@ -101,7 +101,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
+                <a href="viewproduto.php">
                     <div class="acoesCard">
                         comprar
                     </div>
@@ -114,7 +114,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.html">
+                <a href="viewproduto.php">
                     <div class="acoesCard">
                         comprar
                     </div>

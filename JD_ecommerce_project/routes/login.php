@@ -11,7 +11,7 @@
         <form class="form">
             
             <div class="divLogo">
-                <a href="../index.html"><img src="../imgs/logofake.png" alt="logo" class="img"></a>
+                <a href="../index.php"><img src="../imgs/logofake.png" alt="logo" class="img"></a>
             </div>
             <p class="form-title">Entre na sua conta JD</p>
             <div class="input-container">
@@ -27,11 +27,11 @@
             <br>
             <p class="signup-link">
             Não tem uma conta?
-            <a href="criarconta.html">Criar conta</a>
+            <a href="criarconta.php">Criar conta</a>
             </p>
             <p class="signup-link">
                 
-                <a href="criarconta.html">Esqueci a senha</a>
+                <a href="criarconta.php">Esqueci a senha</a>
                 </p>
       </form>
 
