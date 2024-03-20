@@ -1,95 +1,82 @@
 <?php
-    include_once('conexao.php'); 
-    
-    $codP = $_POST['codP'];
-    echo '<br>';
-    $titulo = $_POST['titulo'];
-    echo '<br>';
-    $preco = $_POST['preco'];
-    echo '<br>';
-    $preco_risc = $_POST['preco_risc'];
-    echo '<br>';
-    $qnt_estoque = $_POST['qnt'];
-    echo '<br>';
-    $cat = $_POST['cat'];
-    echo '<br>';
-    $desc = $_POST['desc'];
-    echo '<br>';
+include_once('conexao.php');
 
-    if(isset($_FILES['imagem']) && count($_FILES) > 0){
-      $arquivo = $_FILES['imagem'];
-      $tudo_certo= true;
-      foreach($arquivo['name'] as $index => $arq)
-      $deu_certo = enviarArquivo($arquivo['error'][$index], $arquivo['name'][$index],$arquivo["tmp_name"][$index]);
-      if (!$deu_certo) {
-          $tudo_certo = false;
-      }
-      if($tudo_certo){
-        echo "<p>Todos os arquivos foram enviados com sucesso!";
-      }else{echo "<p>Falha ao enviar arquivos";}
-    }
+echo $codP = $_POST['codP'];
+echo '<br>';
+echo $titulo = $_POST['titulo'];
+echo '<br>';
+echo $preco = $_POST['preco'];
+echo '<br>';
+echo $preco_risc = $_POST['preco_risc'];
+echo '<br>';
+echo $qnt_estoque = $_POST['qnt'];
+echo '<br>';
+echo $cat = $_POST['cat'];
+echo '<br>';
+echo $desc = $_POST['desc'];
+echo '<br>';
 
-    function enviarArquivo($error, $name, $tmp_name){
-      include('/conexao.php');  
-      if ($error) {
-        echo  'erro ao enviar arquivo';  
-      }  
-    
-      $pasta = 'imgs_banco/';
-      $nomeDoArquivo = $name;
-      $novoNomeDoArquivo = uniqid();
-      $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+function enviarArquivo($error, $name, $tmp_name, $num_img)
+{
+  include('conexao.php');
+  if ($error) {
+    echo  'erro ao enviar arquivo';
+  }
+  $codP = $_POST['codP'];
+
+  $pasta = '../imgs_banco/';
+  $nomeDoArquivo = $name;
+  $novoNomeDoArquivo = $codP;
+  $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+  if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg") {
+    die("tipo de arquivo não aceito");
+  }
   
-      if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg") {
-        die("tipo de arquivo não aceito");  
-      }  
+  $path =  $pasta . $novoNomeDoArquivo . "_" . $num_img . "." . $extensao;
+  $deu_certo = move_uploaded_file($tmp_name, $path);
   
-      $path =  $pasta . $novoNomeDoArquivo . "." . $extensao;
-      $deu_certo = move_uploaded_file($tmp_name, $path);
-      if ($deu_certo) {
-        $conexao->query("INSERT INTO arquivos(path) value('$path')") or die($conexao->error);  
-        // echo "tudo certo, acesse o arquivo: <a href='imgs_banco/$novoNomeDoArquivo.$extensao'>clique aq</a></p>";
-        return true;
-      }else{ return false;}  
-    }  
-    
+
+  if ($deu_certo) {
+    $conexao->query("INSERT INTO imagens(codP, path) value($codP, '$path')") or die($conexao->error);
+    // echo "tudo certo, acesse o arquivo: <a href='imgs_banco/$novoNomeDoArquivo.$extensao'>clique aq</a></p>";
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+if (isset($_FILES['imagem']) && count($_FILES) > 0) {
+  $arquivo = $_FILES['imagem'];
+  $tudo_certo = true;
+
+  foreach ($arquivo['name'] as $index => $arq)
+    $deu_certo = enviarArquivo($arquivo['error'][$index], $arquivo['name'][$index], $arquivo["tmp_name"][$index], $index);
+  if (!$deu_certo) {
+    $tudo_certo = false;
+  }
+  if ($tudo_certo) {
+    echo "<p>Todos os arquivos foram enviados com sucesso!";
+  } else {
+    echo "<p>Falha ao enviar arquivos";
+  }
+}
 
 
 
+$insert = "insert into produtos( codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao)
+values('$codP', '$titulo', '$preco', '$preco_risc', $qnt_estoque, '$cat', '$desc')";
 
 
+// //executando instrução SQL
+$resultado = @mysqli_query($conexao, $insert);
 
+if (!$resultado) {
+    die('Query Inválida:' . @mysqli_error($conexao));
+} else { echo 'Sucesso!';
+}
 
-
-
-
-
-
-
-
-
-    
-
-    // $conteudo = file_get_contents($caminhoTemporario);
-
-    // $insert = "insert into produtos( codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao, img1, vb_img1) 
-    //             values('$codP', '$titulo', $preco, $preco_risc, $qnt_estoque, '$cat', '$desc', 'img', $conteudo)";
-
-
-
-
-
-
-
-    // //executando instrução SQL
-    // $resultado = @mysqli_query($conexao, $insert);
-
-    // if (!$resultado) {
-    //     die('Query Inválida:' . @mysqli_error($conexao));
-    // } else { echo 'Sucesso!';
-    // }
-    // mysqli_close($conexao);
-
-
+mysqli_close($conexao);
 
 ?>

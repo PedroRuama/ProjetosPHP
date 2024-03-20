@@ -67,5 +67,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function hrefGo() {
-      window.location.href = "routes/produtos.html"
+      window.location.href = "routes/produtos.php"
   }

@@ -49,23 +49,37 @@
                             </div>
                         </li>
 
-                        <div class="optionsConta" id="login" style="display: none;">
-                            <li><a href="criarconta.php">Criar Conta</a></li>
-                            <li><a href="login.php">Entrar</a></li>
-                        </div>
+                        <?php
+                        if (isset($_GET['user'])) {
+                            $user = $_GET['user'];
+                        ?>
+                            <div class="optionsConta" id="logado">
+                                <br>
+                                <p>Nome do fulano</p>
+                                <br>
+                                <li><a href="#">Favoritos</a></li>
+                                <li><a href="">Pedidos</a></li>
+                                <li><a href="">Meu Cadastro</a></li>
+                                <br>
+                                <br>
+                                <br>
+                                <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+                            </div>
+                        <?php
 
-                        <div class="optionsConta" id="logado" >
-                            <br>
-                            <p>Nome do fulano</p>
-                            <br>
-                            <li><a href="#">Favoritos</a></li>
-                            <li><a href="">Pedidos</a></li>
-                            <li><a href="">Meu Cadastro</a></li>
-                            <br>
-                            <br>
-                            <br>
-                            <li><a href="gerenciar.php">Gerenciar Loja</a></li> 
-                        </div>
+                        } else {
+                        ?>
+
+                            <div class="optionsConta" id="login">
+                                <li><a href="routes/criarconta.php">Criar Conta</a></li>
+                                <li><a href="routes/login.php">Entrar</a></li>
+                            </div>
+
+                        <?php
+                        }
+
+
+                        ?>  
                     </ul>
                 </nav>
 

@@ -1,3 +1,16 @@
+<?php
+    include_once('../controllers/conexao.php');
+
+    do {
+        $numero_aleatorio = rand(1, 9999); 
+        $AutoCodP = str_pad($numero_aleatorio, 4, '0', STR_PAD_LEFT); // Formata o número com zeros à esquerda
+        
+        $Verificacao = mysqli_query($conexao, "SELECT codP from produtos where codP = '$AutoCodP'");
+        $num_rows = mysqli_num_rows($Verificacao);
+    } while ($num_rows > 0);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +54,7 @@
                 </nav>
 
                 <nav class="sidenav" id="sidenav2">
-                    <button id="close-btn2">Voltar</button>
+                    <button ifd="close-btn2">Voltar</button>
                     <br>
                     <ul>
                         <li>
@@ -95,26 +108,26 @@
                     </div>
                 </div>
                 <div class="txt" id="desc_peca_txt">
-                    <form action="../controllers/receber.php" method="post" enctype="multipart/form-data">
+                    <form action="../controllers/addProduto.php" method="post" enctype="multipart/form-data" id="form_produto">
                         <div class="form__group">
-                            <input type="text" class="form__field" placeholder="Cod" name="codP">
-                            <label for="name" class="form__label">Código do produto</label>
+                            <input type="text" required class="form__field" placeholder="Cod" name="codP" value="<?= $AutoCodP ?>" disabled>
+                            <label for="codP" class="form__label">Código do produto</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" class="form__field" placeholder="titulo" name="titulo">
+                            <input type="text" required class="form__field" placeholder="titulo" name="titulo" >
                             <label for="name" class="form__label">Titulo do produto</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" class="form__field" placeholder="preçõ" name="preco">
+                            <input type="text" required class="form__field" placeholder="preçõ" name="preco" oninput="mascaraMoeda(this, event)">
                             <label for="name" class="form__label">Preço R$</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" class="form__field" placeholder="preço riscado" name="preco_risc">
+                            <input type="text" required class="form__field" placeholder="preço riscado" name="preco_risc" oninput="mascaraMoeda(this, event)">
                             <label for="name" class="form__label">Preço R$ <del>riscado</del></label>
                         </div>
 
                         <div class="form__group">
-                            <input type="text" class="form__field" placeholder="Quantidade" name="qnt">
+                            <input type="text" required class="form__field" placeholder="Quantidade" name="qnt">
                             <label for="name" class="form__label">Quantidade em Estoque</label>
                         </div>
                         <div class="form__group">
@@ -131,7 +144,8 @@
 
                         <div class="form__group">
                             <select name="desc" id="selectForm" class="form__field">
-                                <option value="Camiseta">Camiseta</option>
+                                <option value="CamisetaAlgodao">C Algodão</option>
+                                <option value="Camiseta">C Poliester</option>
                                 <option value="Moletom">Moletom</option>
                                 <option value="Acessorio">Acessório</option>
                                 <option value="Shorts">Shorts</option>
@@ -145,7 +159,7 @@
                             <p for="name" class="form__label">Carregar Imagens (selecione e carregue 3 imagnses do produto de uma vez)</p>
                         </div>
                         <div class="form__group UpImgs_div">
-                            <input type="file" id="inputImagens" accept="image/*" multiple name="imagem[]">
+                            <input type="file" id="inputImagens" accept="image/*" multiple name="imagem[]" required>
                         </div>
                         <div id="img_select">
                             
@@ -159,39 +173,34 @@
                             const img_select = document.getElementById('img_select');
                             const limparImagensBtn = document.getElementById('limparImagens');
 
-                            // Adiciona um ouvinte de eventos para quando as imagens forem selecionadas
                             inputImagens.addEventListener('change', function(event) {
                                
                                 img_select.innerHTML = '';
 
-                                // Itera sobre os arquivos selecionados
                                 for (const arquivo of event.target.files) {
-                                    // Cria um elemento de imagem para cada arquivo selecionado
+                                  
                                     const imagem = document.createElement('img');
 
-                                    // Define o atributo src da imagem com a URL do arquivo
+                                 
                                     imagem.src = URL.createObjectURL(arquivo);
                                     imagem.classList.add('img3')
-                                    // Define estilos para a imagem (tamanho, margem, etc.)
+                                 
 
                                     imagem.style.width = '4.5rem';
                                     imagem.style.margin = '0 0.5rem';
 
 
-                                    // Adiciona a imagem ao container
                                     img_select.appendChild(imagem);
                                 }
                             });
                             limparImagensBtn.addEventListener('click', function() {
-                                // Limpa o conteúdo do contêiner de imagens
+                          
                                 img_select.innerHTML = '';
-
-                                // Reseta o valor do input de imagens para limpar a seleção atual
                                 inputImagens.value = '';
                             });
                         </script>
                         
-                        <button type="submit">Adicionar à loja</button>
+                        <button type="button" onclick="submitAdd(this)">Adicionar à loja</button>
                         <button type="reset"> Cancelar</button>
                     </form>
                 </div>

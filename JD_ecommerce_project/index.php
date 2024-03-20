@@ -1,3 +1,20 @@
+<?php
+    $user=0;
+
+    if (isset($_GET['user'])) {
+        $user = $_GET['user'];
+    }
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,23 +68,37 @@
                             </div>
                         </li>
 
-                        <div class="optionsConta" id="login" style="display: none;">
-                            <li><a href="routes/criarconta.php">Criar Conta</a></li>
-                            <li><a href="routes/login.php">Entrar</a></li>
-                        </div>
+                        <?php
+                        if ($user==1) {
+                            
+                        ?>
+                            <div class="optionsConta" id="logado">
+                                <br>
+                                <p>Nome do fulano</p>
+                                <br>
+                                <li><a href="#">Favoritos</a></li>
+                                <li><a href="">Pedidos</a></li>
+                                <li><a href="">Meu Cadastro</a></li>
+                                <br>
+                                <br>
+                                <br>
+                                <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+                            </div>
+                        <?php
 
-                        <div class="optionsConta" id="logado"  >
-                            <br>
-                            <p>Nome do fulano</p>
-                            <br>
-                            <li><a href="#">Favoritos</a></li>
-                            <li><a href="">Pedidos</a></li>
-                            <li><a href="">Meu Cadastro</a></li>
-                            <br>
-                            <br>
-                            <br>
-                            <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li> 
-                        </div>
+                        } else {
+                        ?>
+
+                            <div class="optionsConta" id="login">
+                                <li><a href="routes/criarconta.php">Criar Conta</a></li>
+                                <li><a href="routes/login.php">Entrar</a></li>
+                            </div>
+
+                        <?php
+                        }
+
+
+                        ?>
                     </ul>
                 </nav>
 
@@ -98,13 +129,13 @@
                     <div class="imgCard">
                         <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
                     </div>
-                    <a href="routes/viewproduto.php">
+                    <a href="routes/viewproduto.php?user">
                         <div class="acoesCard">
                             comprar
                         </div>
                     </a>
                     <br>
-                    <p class="nomeP"> Camiseta Preta</p>
+                    <p class="nomeP"> Lamiseta Preta</p>
                     <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
                 </div>
                 <div class="card">
@@ -124,7 +155,7 @@
                     <div class="imgCard">
                         <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
                     </div>
-                    <a href="routes/viewproduto.php">
+                    <a href="routes/viewproduto.php?">
                         <div class="acoesCard">
                             comprar
                         </div>
@@ -185,7 +216,7 @@
             <div class="FullImg_div">
                 <div class="FullImg_txt">
                     <h2>em Destaque!</h2>
-                    
+
                     <button class="FullBtn">Ver Destaque</button>
                 </div>
                 <img src="imgs/trapper.jpg" alt="img_promocional" class="img3">
@@ -195,7 +226,7 @@
         </div>
 
         <div class="alingV">
-            <button id="verMaisBtn" onclick="hrefGo()" >Mais produtos</button>
+            <button id="verMaisBtn" onclick="hrefGo()">Mais produtos</button>
 
         </div>
 

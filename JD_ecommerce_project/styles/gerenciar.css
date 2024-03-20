@@ -78,6 +78,10 @@ a{
    
 }
 
+input:disabled{
+    color: #9b9b9b;
+}
+
 
 #input-container2 {
     width: 90%;
