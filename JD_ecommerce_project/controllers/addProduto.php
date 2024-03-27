@@ -24,22 +24,27 @@ function enviarArquivo($error, $name, $tmp_name, $num_img)
   }
   $codP = $_POST['codP'];
 
-  $pasta = '../imgs_banco/';
+  $pasta = 'imgs_banco/';
   $nomeDoArquivo = $name;
   $novoNomeDoArquivo = $codP;
   $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
 
   if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg") {
-    die("tipo de arquivo não aceito");
+    die("tipo de arquivo não aceito, os arquivos devem ser png, jpg ou jpeg");
   }
   
   $path =  $pasta . $novoNomeDoArquivo . "_" . $num_img . "." . $extensao;
-  $deu_certo = move_uploaded_file($tmp_name, $path);
+
+  $move = "../imgs_banco/" . $novoNomeDoArquivo . "_" . $num_img . "." . $extensao;
+  $deu_certo = move_uploaded_file($tmp_name, $move);
   
 
   if ($deu_certo) {
-    $conexao->query("INSERT INTO imagens(codP, path) value($codP, '$path')") or die($conexao->error);
+    $conexao->query("INSERT INTO imagens(codP, path, extensao) value($codP, '$path', '$extensao')") or die($conexao->error);
     // echo "tudo certo, acesse o arquivo: <a href='imgs_banco/$novoNomeDoArquivo.$extensao'>clique aq</a></p>";
+    echo '<br>';
+    echo "adicionado no banco e na pasta";
+    echo '<br>';
     return true;
   } else {
     return false;
@@ -65,7 +70,7 @@ if (isset($_FILES['imagem']) && count($_FILES) > 0) {
 
 
 
-$insert = "insert into produtos( codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao)
+$insert = "insert into produtos(codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao)
 values('$codP', '$titulo', '$preco', '$preco_risc', $qnt_estoque, '$cat', '$desc')";
 
 
@@ -74,7 +79,7 @@ $resultado = @mysqli_query($conexao, $insert);
 
 if (!$resultado) {
     die('Query Inválida:' . @mysqli_error($conexao));
-} else { echo 'Sucesso!';
+} else { header("Location: ../routes/gerenciar.php");
 }
 
 mysqli_close($conexao);

@@ -2,18 +2,20 @@
 
 <?php
   include_once('controllers/conexao.php');
-
-  $destinatario = "pedroruama@gmail.com";
-  $assunto = "teste do e-mail";
-  $mensagem = "Isso aq foi um teste para enviar um e-mail";
-
-  // Enviar e-mail
-  if(mail($destinatario, $assunto, $mensagem)) {
-      echo "E-mail enviado com sucesso.";
-  } else {
-      echo "Falha ao enviar o e-mail.";
-  }
-
+  
+  // O remetente deve ser um e-mail do seu domínio conforme determina a RFC 822.
+  // O return-path deve ser ser o mesmo e-mail do remetente.
+  // $headers = "MIME-Version: 1.1\r\n";
+  // $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+  // $headers .= "From: pedroruama246@gmail.com\r\n"; // remetente
+  // $headers .= "Return-Path: eu@seudominio.com\r\n"; // return-path
+  // $envio = mail("destinatario@algum-email.com", "Assunto", "Texto", $headers);
+   
+  // if($envio)
+  //  echo "Mensagem enviada com sucesso";
+  // else
+  //  echo "A mensagem não pode ser enviada";
+  
 
 
 
@@ -73,16 +75,7 @@
 </head>
 
 <body>
-  <form action="" method="post" enctype="multipart/form-data">
-    Selecione uma imagem para enviar:
-    <p>
-      <input multiple type="file" name="imagem[]" id="imagem">
-    </p>
-    <p>
-      <input type="submit" value="Enviar Imagem" name="submit">
-    </p>
-  </form>
-
+ 
 </body>
 
 </html>

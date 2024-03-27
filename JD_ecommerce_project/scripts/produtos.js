@@ -23,3 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sidenav2.style.width = '0';
     });
 });
+
+function selectImagem(img) {
+  var mainImg = document.getElementById('mainImg')
+  imgClick = img.getElementsByTagName('img')[0].src
+  
+  mainImg.src = imgClick
+  
+}

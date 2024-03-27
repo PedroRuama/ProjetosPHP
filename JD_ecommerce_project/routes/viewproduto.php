@@ -1,5 +1,29 @@
+<?php
+
+include_once('../controllers/conexao.php');
+$user = 0;
+
+
+if (isset($_GET['user'])) {
+    $user = $_GET['user'];
+    $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+    $dadosU = mysqli_fetch_array($select_user);
+}
+
+
+if (isset($_GET['codP'])) {
+    $codP = $_GET['codP'];
+    $select_produto = mysqli_query($conexao, "SELECT * from produtos where codP = $codP");
+    $dadosP = mysqli_fetch_array($select_produto);
+
+    $imagens = mysqli_query($conexao, "SELECT * FROM imagens WHERE codP = $codP");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +31,7 @@
     <link rel="stylesheet" href="../styles/viewprodutos.css">
     <script src="../scripts/produtos.js"></script>
 </head>
+
 <body>
     <div class="box_nav">
         <div class="alingV">
@@ -79,7 +104,7 @@
                         }
 
 
-                        ?>  
+                        ?>
                     </ul>
                 </nav>
 
@@ -96,26 +121,30 @@
     <div class="containerGeral">
         <div class="alingH" id="containerImgs">
             <div class="alingV">
-                <div class="miniImg">
-                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
-                </div>
-                <div class="miniImg">
-                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
-                </div>
-                <div class="miniImg">
-                    <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
-                </div>
+
+                <?php
+                while ($dadosImg = mysqli_fetch_array($imagens)) {
+                ?>
+                    <div class="miniImg" onclick="selectImagem(this)">
+                        <img src="../<?= $dadosImg['path'] ?>" alt="imgMax" class="img3">
+                    </div>
+                <?php
+                }
+                ?>
+
+
             </div>
             <div class="maxImg">
                 <div class="lineFullImg"></div>
-                <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3">
+                <img src="../imgs/ExmpCamiseta.png" alt="imgMax" class="img3" id="mainImg">
                 <div class="like"> <img src="../iconsJD/gostar.png" alt="like" class="img"></div>
             </div>
         </div>
         <div class="labelselct_div">
-            <p>Nome Sei lá das quantas </p> <h2>R$preço tbm sla</h2>
+            <p><?= $dadosP['titulo'] ?></p>
+            <h2> <del>R$<?= $dadosP['preco_risc'] ?></del> R$<?= $dadosP['preco'] ?></h2>
         </div>
-        
+
         <div class="compra_div">
             <form action="">
                 <input type="number" name="quantidade" placeholder="Quantidade" id="quantidade">
@@ -129,8 +158,8 @@
 
                 <div class="alingH">
                     <button type="button" class="btn_compra" id="comprar_btn">comprar</button>
-                    <button  type="button" class="btn_compra" id="addsacola_btn">
-                       <img src="../iconsJD/sacola.png" alt="sacola" class="img">
+                    <button type="button" class="btn_compra" id="addsacola_btn">
+                        <img src="../iconsJD/sacola.png" alt="sacola" class="img">
                     </button>
                 </div>
             </form>
@@ -148,7 +177,7 @@
                     <p> CAMISETA BAW REGULAR HOUSE TOY<br><br>
 
                         Camiseta manga curta confeccionada em tecido de algodão. Possui estampa na parte frontal. <br><br>
-                        
+
                         P - Comprimento: 25cm/ Torax: 64cm/ Barra: 64cm/ Manga: 22cm/ Cava: 25cm.<br>
                         M - Comprimento: 26cm/ Torax: 67cm/ Barra: 67cm/ Manga: 23cm/ Cava: 26cm.<br>
                         G - Comprimento: 27cm/ Torax: 70cm/ Barra: 70cm/ Manga: 24cm/ Cava: 27cm.<br>
@@ -156,11 +185,11 @@
                         <br>
                         *MEDIDAS APROXIMADAS.
                         <br><br>
-                        
+
                         *Este anúncio se refere somente a camiseta. Os demais itens contidos na imagem, são vendidos separadamente.
                         <br><br>
                         Composição: 100% algodão.
-                       
+
                     </p>
                 </div>
             </div>
@@ -202,4 +231,5 @@
         </div>
     </div>
 </body>
+
 </html>

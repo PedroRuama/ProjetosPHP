@@ -2,7 +2,7 @@
     include_once('../controllers/conexao.php');
 
     do {
-        $numero_aleatorio = rand(1, 9999); 
+        $numero_aleatorio = rand(1000, 9999); 
         $AutoCodP = str_pad($numero_aleatorio, 4, '0', STR_PAD_LEFT); // Formata o número com zeros à esquerda
         
         $Verificacao = mysqli_query($conexao, "SELECT codP from produtos where codP = '$AutoCodP'");
@@ -54,7 +54,7 @@
                 </nav>
 
                 <nav class="sidenav" id="sidenav2">
-                    <button ifd="close-btn2">Voltar</button>
+                    <button id="close-btn2">Voltar</button>
                     <br>
                     <ul>
                         <li>

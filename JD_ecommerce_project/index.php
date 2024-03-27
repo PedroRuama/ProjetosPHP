@@ -1,18 +1,19 @@
 <?php
+    
+    include_once('controllers/conexao.php');
     $user=0;
+
 
     if (isset($_GET['user'])) {
         $user = $_GET['user'];
+        $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+        $dadosU = mysqli_fetch_array($select_user);
     }
 
+
+    $ultimosCad = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY id DESC LIMIT 6;");
+
 ?>
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -69,20 +70,28 @@
                         </li>
 
                         <?php
-                        if ($user==1) {
+                        if ($user!=0) {
                             
                         ?>
                             <div class="optionsConta" id="logado">
                                 <br>
-                                <p>Nome do fulano</p>
+                                <p><?= $dadosU['user_name']?></p>
                                 <br>
-                                <li><a href="#">Favoritos</a></li>
+                                <li><a href="">Favoritos</a></li>
                                 <li><a href="">Pedidos</a></li>
                                 <li><a href="">Meu Cadastro</a></li>
+                                <li><a href="index.php">Sair</a></li>
                                 <br>
                                 <br>
                                 <br>
-                                <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+
+                                <?php
+                                if ($user=='JdAdm') {
+                                ?>
+                                     <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+                                <?php
+                                }
+                                ?>
                             </div>
                         <?php
 
@@ -125,85 +134,34 @@
         </div>
         <div class="carousel">
             <div class="cards-container">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                    </div>
-                    <a href="routes/viewproduto.php?user">
-                        <div class="acoesCard">
-                            comprar
-                        </div>
-                    </a>
-                    <br>
-                    <p class="nomeP"> Lamiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
-                </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                    </div>
-                    <a href="routes/viewproduto.php">
-                        <div class="acoesCard">
-                            comprar
-                        </div>
-                    </a>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b></p>
-                </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                    </div>
-                    <a href="routes/viewproduto.php?">
-                        <div class="acoesCard">
-                            comprar
-                        </div>
-                    </a>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
-                </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                    </div>
-                    <a href="routes/viewproduto.php">
-                        <div class="acoesCard">
-                            comprar
-                        </div>
-                    </a>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
-                </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                        <a href="routes/viewproduto.php">
-                            <div class="acoesCard">
-                                comprar
-                            </div>
-                        </a>
-                    </div>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
-                </div>
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                        <a href="routes/viewproduto.php">
-                            <div class="acoesCard">
-                                comprar
-                            </div>
-                        </a>
-                    </div>
-                    <br>
-                    <p class="nomeP"> Camiseta Preta</p>
-                    <p class="precoP"><del>$149,99</del> <b>R$69,99</b> </p>
-                </div>
+                <?php
+                
+                while($novidades = mysqli_fetch_array($ultimosCad)){
+                    $codP = $novidades['codP'];
+                    $imagens = mysqli_query($conexao, "SELECT * FROM imagens WHERE codP = $codP");
+                    $dadosImg = mysqli_fetch_array($imagens);
+                    ?>
 
+                    <div class="card">
+                        <div class="imgCard">
+                           
+                            <img src="<?= $dadosImg['path']?>" alt="produto_img" class="img2">
+                        </div>
+                        <a href="routes/viewproduto.php?user=<?= $user?>&codP=<?= $codP ?>">
+                            <div class="acoesCard">
+                                comprar
+                            </div>
+                        </a>
+                        <br>
+                        <p class="nomeP"> <?= $novidades['titulo']?></p>
+                        <p class="precoP"><del>R$<?= $novidades['preco_risc']?></del> <b>R$<?= $novidades['preco']?></b> </p>
+                    </div>
+
+
+                    <?php
+                }
+                ?>
+                
             </div>
             <button class="prev-btn">
                 <img src="iconsJD/seta.png" alt="setaPrev" class="img">
