@@ -4,7 +4,8 @@ include_once('../controllers/conexao.php');
 $user = 0;
 
 
-if (isset($_GET['user'])) {
+
+if (isset($_GET['user']) != 0) {
     $user = $_GET['user'];
     $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
     $dadosU = mysqli_fetch_array($select_user);
@@ -15,9 +16,12 @@ if (isset($_GET['codP'])) {
     $codP = $_GET['codP'];
     $select_produto = mysqli_query($conexao, "SELECT * from produtos where codP = $codP");
     $dadosP = mysqli_fetch_array($select_produto);
-
+    
     $imagens = mysqli_query($conexao, "SELECT * FROM imagens WHERE codP = $codP");
 }
+
+
+
 
 ?>
 
@@ -56,8 +60,8 @@ if (isset($_GET['codP'])) {
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.php">Home Page</a></li>
-                        <li><a href="produtos.php">Camisetas</a></li>
+                        <li><a href="../index.php?user=<?=$user?>">Home Page</a></li>
+                        <li><a href="produtos.php?user=<?=$user?>">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -88,7 +92,7 @@ if (isset($_GET['codP'])) {
                                 <br>
                                 <br>
                                 <br>
-                                <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+                                <li><a href="routes/gerenciar.php?user=<?=$user?>">Gerenciar Loja</a></li>
                             </div>
                         <?php
 
@@ -146,8 +150,11 @@ if (isset($_GET['codP'])) {
         </div>
 
         <div class="compra_div">
-            <form action="">
+            <form action="comprar.php" method="post">
                 <input type="number" name="quantidade" placeholder="Quantidade" id="quantidade">
+               
+                <input type="text" value="<?=$user?>" name="user" style="display: none">
+                <input type="text" value="<?=$codP?>" name="codP" style="display: none">
 
                 <select name="tamanho" id="">
                     <option value="p">P</option>
@@ -157,7 +164,8 @@ if (isset($_GET['codP'])) {
                 </select>
 
                 <div class="alingH">
-                    <button type="button" class="btn_compra" id="comprar_btn">comprar</button>
+                     <button type="submit" class="btn_compra" id="comprar_btn">comprar</button>
+                    
                     <button type="button" class="btn_compra" id="addsacola_btn">
                         <img src="../iconsJD/sacola.png" alt="sacola" class="img">
                     </button>

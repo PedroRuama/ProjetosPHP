@@ -66,6 +66,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // setInterval(autoNext, 5000)
   });
 
-  function hrefGo() {
-      window.location.href = "routes/produtos.php"
-  }

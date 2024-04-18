@@ -119,11 +119,19 @@
                 <input type="text" disabled class="form__field" placeholder="Name" required="">
                 <label for="name" class="form__label">Forma de Pagamento</label>
             </div>
+            <div class="form__group">
+                <input type="text" disabled class="form__field" placeholder="Name" required="">
+                <label for="name" class="form__label">Status Pagamento</label>
+            </div>
 
             <div class="tr_setor">
                 Selecionar Etapa Pedido
             </div>
             <div class="div_radiosForm">
+                <div class="div_radio">
+                    <input type="radio" id="radio1" name="grupo" value="opcao1">
+                    <label for="radio1">Esperando Pagamento</label><br>
+                </div>
                 <div class="div_radio">
                     <input type="radio" id="radio1" name="grupo" value="opcao1">
                     <label for="radio1">Pagamento Confirmado</label><br>

@@ -18,30 +18,37 @@
             </div>
             <p class="form-title">Crie sua conta JD</p>
 
+            <div class="Allinputs_div">
 
-            <div class="input-container">
-                <input type="email" autocomplete="on" placeholder="Email" required name="email">
+                <div class="input-container">
+                    <input type="email" autocomplete="on" placeholder="Email" required name="email">
+                </div>
 
+                <div class="input-container">
+                    <input type="text" autocomplete="on" placeholder="Nome Completo" required name="nome">
+                </div>
+
+                <div class="input-container">
+                    <input type="text" autocomplete="on" placeholder="Nome de Usuário" required name="user_name">
+                    <?php
+                    if (isset($_GET['error'])) {
+                        echo "<p> Nome de usuario já existente</p>";
+                    }
+    
+                    ?>
+    
+                </div>
+    
+                <br>
+                <div class="input-container">
+                    <input type="password" placeholder="Senha" required name="pass">
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Confirmar senha" required>
+                </div>
             </div>
-
-            <div class="input-container">
-                <input type="text" autocomplete="on" placeholder="Nome de Usuário" required name="user_name">
-                <?php
-                if (isset($_GET['error'])) {
-                    echo "<p> Nome de usuario já existente</p>";
-                }
-
-                ?>
-
-            </div>
-
-            <br>
-            <div class="input-container">
-                <input type="password" placeholder="Senha" required name="pass">
-            </div>
-            <div class="input-container">
-                <input type="password" placeholder="Confirmar senha" required>
-            </div>
+                
+                
             <button type="submit" class="submit">
                 Criar Conta
             </button>

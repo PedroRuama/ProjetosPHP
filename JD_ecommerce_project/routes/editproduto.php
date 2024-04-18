@@ -1,3 +1,17 @@
+<?php
+    
+    include_once('../controllers/conexao.php');
+    $user=0;
+
+
+    if (isset($_GET['user'])) {
+        $user = $_GET['user'];
+        $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+        $dadosU = mysqli_fetch_array($select_user);
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +23,7 @@
 <body>
     <div class="container">
         <button type="button"> 
-            <a href="gerenciar.php"><div class="backDiv"> <img src="../iconsJD/setaBranca.png" alt="seta" class="img" id="backseta"> Voltar</div></a>
+            <a href="gerenciar.php?user=<?=$user?>"><div class="backDiv"> <img src="../iconsJD/setaBranca.png" alt="seta" class="img" id="backseta"> Voltar</div></a>
         
         </button>
         <form action="" id="EditProdutoForm">

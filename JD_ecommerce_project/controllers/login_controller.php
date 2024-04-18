@@ -12,11 +12,16 @@
     if (isset($_POST['email_user'])) {
         $email_user = $_POST['email_user'];
     }
-    echo $pass = $_POST['pass'];
-    echo '<br>';
-    echo $senha_codificada = password_hash($pass, PASSWORD_DEFAULT);
-    echo '<br>';
-    echo '<br>';
+    if (isset($_POST['nome'])) {
+        $nome = $_POST['nome'];
+    }
+
+
+
+    $pass = $_POST['pass'];
+   
+    $senha_codificada = password_hash($pass, PASSWORD_DEFAULT);
+  
 
 
     
@@ -30,8 +35,8 @@
         }else{
 
 
-            $insert = "insert into users(email, user_name, pass)
-            values('$email', '$username', '$senha_codificada')";
+            $insert = "insert into users(email, user_name, pass, nome)
+            values('$email', '$username', '$senha_codificada', '$nome')";
             // //executando instrução SQL
             $resultado = @mysqli_query($conexao, $insert);
         

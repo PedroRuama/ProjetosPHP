@@ -21,18 +21,23 @@
                 <a href="../index.php"><img src="../imgs/logofake.png" alt="logo" class="img"></a>
             </div>
             <p class="form-title">Entre na sua conta JD</p>
-            <div class="input-container">
-                <input type="text" placeholder="Email ou usuário" name="email_user">
-            </div>
-            <div class="input-container">
-                <input type="password" placeholder="Senha" name="pass">
-            </div>
-            <?php
-                if (isset($_GET['logError'])) {
-                    echo "<p> email/usuario ou senha incorretas</p>";
-                }
+
+            <div class="Allinputs_div">
+
+                <div class="input-container">
+                    <input type="text" placeholder="Email ou usuário" name="email_user">
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Senha" name="pass">
+                </div>
+                <?php
+                    if (isset($_GET['logError'])) {
+                        echo "<p> email/usuario ou senha incorretas</p>";
+                    }
 
                 ?>
+            </div>
+            
 
             <button type="submit" class="submit">
                  Entrar
@@ -45,7 +50,7 @@
             </p>
             <p class="signup-link">
                 
-                <a href="criarconta.php">Esqueci a senha</a>
+                <a href="comprar.php">Esqueci a senha</a>
                 </p>
       </form>
 

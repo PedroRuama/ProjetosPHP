@@ -1,3 +1,21 @@
+<?php
+    
+    include_once('../controllers/conexao.php');
+    $user=0;
+
+
+    if (isset($_GET['user'])) {
+        $user = $_GET['user'];
+        $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+        $dadosU = mysqli_fetch_array($select_user);
+    }
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +49,8 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.php">HomePage</a></li>
-                        <li><a href="../produtos.php">Camisetas</a></li>
+                        <li><a href="../index.php?user=<?=$user?>">HomePage</a></li>
+                        <li><a href="../produtos.php?user=<?=$user?>">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -75,7 +93,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.php">
+                <a href="viewproduto.php?user=<?=$user?>">
                     <div class="acoesCard">
                         comprar
                     </div>
@@ -88,7 +106,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.php">
+                <a href="viewproduto.php?user=<?=$user?>">
                     <div class="acoesCard">
                         comprar
                     </div>
@@ -101,7 +119,7 @@
         <div class="card">
             <div class="imgCard">
                 <img src="../imgs/ExmpCamiseta.png" alt="produto_img" class="img2">
-                <a href="viewproduto.php">
+                <a href="viewproduto.php?user=<?=$user?>">
                     <div class="acoesCard">
                         comprar
                     </div>

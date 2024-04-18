@@ -70,8 +70,8 @@ if (isset($_FILES['imagem']) && count($_FILES) > 0) {
 
 
 
-$insert = "insert into produtos(codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao)
-values('$codP', '$titulo', '$preco', '$preco_risc', $qnt_estoque, '$cat', '$desc')";
+$insert = "insert into produtos(codP, titulo, preco, preco_risc, qnt_estoque, categoria, descricao, destaque)
+values('$codP', '$titulo', '$preco', '$preco_risc', $qnt_estoque, '$cat', '$desc', 0)";
 
 
 // //executando instrução SQL

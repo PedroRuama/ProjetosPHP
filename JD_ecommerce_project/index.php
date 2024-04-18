@@ -51,8 +51,8 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="index.php">Home Page</a></li>
-                        <li><a href="routes/produtos.php">Camisetas</a></li>
+                        <li><a href="index.php?user=<?=$user?>">Home Page</a></li>
+                        <li><a href="routes/produtos.php?user=<?=$user?>">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
                     </ul>
@@ -80,7 +80,7 @@
                                 <li><a href="">Favoritos</a></li>
                                 <li><a href="">Pedidos</a></li>
                                 <li><a href="">Meu Cadastro</a></li>
-                                <li><a href="index.php">Sair</a></li>
+                                <li><a href="index.php?user=<?=$user?>">Sair</a></li>
                                 <br>
                                 <br>
                                 <br>
@@ -88,7 +88,7 @@
                                 <?php
                                 if ($user=='JdAdm') {
                                 ?>
-                                     <li><a href="routes/gerenciar.php">Gerenciar Loja</a></li>
+                                     <li><a href="routes/gerenciar.php?user=<?=$user?>">Gerenciar Loja</a></li>
                                 <?php
                                 }
                                 ?>
@@ -184,7 +184,8 @@
         </div>
 
         <div class="alingV">
-            <button id="verMaisBtn" onclick="hrefGo()">Mais produtos</button>
+            <a href="routes/produtos.php?user=<?=$user?>"><button id="verMaisBtn">Mais produtos</button></a>
+            
 
         </div>
 

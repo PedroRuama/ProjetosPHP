@@ -9,6 +9,16 @@
         $num_rows = mysqli_num_rows($Verificacao);
     } while ($num_rows > 0);
 
+    $user=0;
+
+    if (isset($_GET['user'])) {
+        $user = $_GET['user'];
+        $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+        $dadosU = mysqli_fetch_array($select_user);
+    }
+
+    $produtos = mysqli_query($conexao, "SELECT * from produtos");
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +56,7 @@
                                     <p> Minha Conta</p>
                                 </div>
                             </a></li>
-                        <li><a href="../index.php">Home Page</a></li>
+                        <li><a href="../index.php?user=<?=$user?>">Home Page</a></li>
                         <li><a href="produtos.php">Camisetas</a></li>
                         <li><a href="#">Moletons</a></li>
                         <li><a href="#">acessórios</a></li>
@@ -248,31 +258,40 @@
                                 <div class="info"></div>
                             </div>
                         </div>
-                        <div class="div_produto div_produtoEdit">
-                            <div class="div_img">
-                                <img src="../imgs/cabides.jpg" alt="img" class="img3">
-                            </div>
-                            <div class="div_info">
-                                <div class="info">fEsfjsl</div>
+
+                        <?php
+                            while($dProduto = mysqli_fetch_array($produtos)){
+                                $imagem = mysqli_query($conexao, 'SELECT * FROM imagens WHERE codP =' . $dProduto['codP']);
+                                $dImg = mysqli_fetch_array($imagem);
+                            ?>
+                            <div class="div_produto div_produtoEdit">
+                                <div class="div_img">
+                                    <img src="../<?=$dImg['path'] ?>" alt="img" class="img3">
+                                </div>
+                                <div class="div_info">
+                                    <div class="info"><?=$dProduto['titulo'] ?></div>
+
+                                </div>
+                                <div class="div_info">
+                                    <!-- Categoria: -->
+                                    <div class="info"><?=$dProduto['categoria']?></div>
+
+                                </div>
+                                <div class="div_info">
+                                    <!-- Estoque: -->
+                                    <div class="info"><?=$dProduto['qnt_estoque']?></div>
+
+                                </div>
+
+                                <div class="div_info">
+                                    <button><a href="editproduto.php">Editar </a></button>
+                                </div>
+
 
                             </div>
-                            <div class="div_info">
-                                <!-- Categoria: -->
-                                <div class="info">Camiseta</div>
-
-                            </div>
-                            <div class="div_info">
-                                <!-- Estoque: -->
-                                <div class="info">0</div>
-
-                            </div>
-
-                            <div class="div_info">
-                                <button><a href="editproduto.php">Editar </a></button>
-                            </div>
-
-
-                        </div>
+                        <?php
+                            }
+                        ?>
 
 
 

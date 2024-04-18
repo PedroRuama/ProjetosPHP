@@ -273,13 +273,6 @@ nav .alingH{
 
 /* ---------------- forms start ------------------- */
 
-form{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: space-between;
-    
-}
 .form__group {
     position: relative;
     padding: 1rem 0 0;
