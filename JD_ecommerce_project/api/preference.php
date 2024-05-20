@@ -3,6 +3,16 @@
 $config = require_once '../config.php';
 include_once('../controllers/conexao.php');
 
+mysqli_query($conexao, "UPDATE users SET verificacao=77 where user_name = 'ruama'");
+
+if (isset($_SESSION['user_name'])) {
+  $user = $_SESSION['user_name'];
+  $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+  $dadosU = mysqli_fetch_array($select_user);
+} else{
+ $user = 0;
+}
+
 if (isset($_POST['codP'])) {
   $codP = $_POST['codP'];
   $select_produto = mysqli_query($conexao, "SELECT * from produtos where codP = $codP");
@@ -15,12 +25,22 @@ if (isset($_POST['codP'])) {
   die;
 }
 
-$nome_p = $_POST['nome_p'];
-$n_pedido = $_POST['n_pedido'];
-$email = $_POST['email'];
-
-
-
+echo $nome_p = $_POST['nome_p'];
+echo "<br>";
+echo $n_pedido = $_POST['n_pedido'];
+echo "<br>";
+echo $email = $_POST['email'];
+echo "<br>";
+echo $nome_c = $_POST['nome_c'];
+echo "<br>";
+echo $tel = $_POST['tel'];
+echo "<br>";
+echo $cpf = preg_replace("/[^0-9]/", "", $_POST['cpf']);
+echo "<br>";
+echo $CEP = preg_replace("/[^0-9]/", "", $_POST['CEP']);
+echo "<br>";
+echo $ende = $_POST['ende'];
+echo "<br>";
 
 
 $accesstoken = $config['accesstoken'];
@@ -32,6 +52,16 @@ echo "<br>";
 echo $config['notification'];
 echo "<br>";
 
+
+
+$insert = "insert into pedidos(n_pedido, nome_c, tel_c, cpf_c, ende_c, codP, email, status, etapa, cep, valor_p, user_name)
+values('$n_pedido', '$nome_c', '$tel', '$cpf', '$ende', '$codP', '$email', 'pendente', 'Esperando Pagamento', $CEP, $amount, '$user')";
+  
+$resultado = @mysqli_query($conexao, $insert);
+
+if (!$resultado) {
+    die('Query Inválida:' . @mysqli_error($conexao));
+} 
 
 $curl = curl_init();
 
@@ -52,14 +82,14 @@ curl_setopt_array($curl, array(
     "pending": "https://www.google.com/search?client=opera-gx&q=pendente&sourceid=opera&ie=UTF-8&oe=UTF-8",
     "failure": "https://www.google.com/search?client=opera-gx&q=falhou&sourceid=opera&ie=UTF-8&oe=UTF-8"
   },
- "external_reference": "teste",
- "notification_url": "' . $config['notification'] . '",
+ "external_reference": "'.$_POST['n_pedido'].'",
+ "notification_url": '.$notification_url.',
  "auto_return": "approved",
   "items": [
     {
-      "title": ' . $dadosP['titulo'] . ',
+      "title": "' . $dadosP['titulo'] . '",
       "description": "Dummy description",
-      "picture_url": "../' . $dadosImg['path'] . '",
+      "picture_url": "e7ad9b1147feba.lhr.life/' . $dadosImg['path'] . '",
       "category_id": "car_electronics",
       "quantity": 1,
       "currency_id": "BRL",
@@ -96,8 +126,8 @@ curl_setopt_array($curl, array(
 
 // {"id": "ticket"}
 $response = curl_exec($curl);
-
 curl_close($curl);
+
 
 
 $obj = json_decode($response);
@@ -107,6 +137,7 @@ if (isset($obj->id)) {
 
     $link_externo = $obj->init_point;
     $id_pag = $obj->id;
+    $reference = $obj->external_reference;
     $noticao = $obj->notification_url;
     echo "<a href='{$link_externo}' target='_blank'> Link externo </a> ";
     echo "<br>";
@@ -114,5 +145,13 @@ if (isset($obj->id)) {
     echo "id: " . $id_pag;
     echo "<br>";
     echo "noticação_url: " . $noticao;
+    echo "<br>";
+    echo "external-ref: " . $reference;
   }
 }
+
+
+mysqli_close($conexao);
+
+
+?>

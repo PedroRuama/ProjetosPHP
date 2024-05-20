@@ -79,7 +79,7 @@ $resultado = @mysqli_query($conexao, $insert);
 
 if (!$resultado) {
     die('Query Inválida:' . @mysqli_error($conexao));
-} else { header("Location: ../routes/gerenciar.php");
+} else { header("Location: ../gerenciar.php");
 }
 
 mysqli_close($conexao);

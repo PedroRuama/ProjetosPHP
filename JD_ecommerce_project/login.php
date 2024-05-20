@@ -15,10 +15,10 @@
 
 <body>
     <div class="alingLogin">
-        <form class="form" action="../controllers/login_controller.php?log=2" method="post">
+        <form class="form" action="controllers/login_controller.php?log=2" method="post">
             
             <div class="divLogo">
-                <a href="../index.php"><img src="../imgs/logofake.png" alt="logo" class="img"></a>
+                <a href="index.php"><img src="imgs/logofake.png" alt="logo" class="img"></a>
             </div>
             <p class="form-title">Entre na sua conta JD</p>
 
@@ -58,9 +58,9 @@
         
     <?php
         if (isset($_GET['logcreated'])) { 
-            ?>
-            <script> alert("Conta criada com sucesso!");</script>
-        <?php
+            
+            echo "<script> alert('Conta criada com sucesso!'');</script>";
+        
         }
     ?> 
 </body>

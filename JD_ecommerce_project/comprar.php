@@ -1,15 +1,9 @@
 <?php
 
-include_once('../controllers/conexao.php');
+include_once('controllers/conexao.php');
+include('menu.php');
 
-
-
-
-if (isset($_POST['user']) != 0) {
-    $user = $_POST['user'];
-    $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
-    $dadosU = mysqli_fetch_array($select_user);
-}
+mysqli_query($conexao, "UPDATE users SET verificacao=0 where user_name = 'ruama'");
 
 
 do {
@@ -57,13 +51,13 @@ if (isset($_POST['codP'])) {
 
 <body>
     <div class="alingLogin">
-        <form class="form_c" action="../api/preference.php" method="post">
+        <form class="form_c" action="api/preference.php" method="post">
             <input type="text" value="<?= $codP ?>" name="codP" style="display: none">
 
             <div class="divLogo">
                 <img src="../imgs/logofake.png" alt="logo" class="img">
             </div>
-            <p class="form-title">Comprar </p>
+            <p class="form-title">Comprar produto JD</p>
 
 
             <div class="alingV" id="boxGeral">
@@ -88,8 +82,8 @@ if (isset($_POST['codP'])) {
 
                 </div>
                 <br>
-              
-                
+
+
 
                 <div class="input-container">
                     <input type="email" autocomplete="on" placeholder="Email" required name="email" value="
@@ -104,7 +98,7 @@ if (isset($_POST['codP'])) {
                 </div>
 
                 <div class="input-container">
-                    <input type="text" autocomplete="on" placeholder="Nome Completo" required name="nome" value="<?php
+                    <input type="text" autocomplete="on" placeholder="Nome Completo" required name="nome_c" value="<?php
                                                                                                                     if (isset($dadosU['nome'])) {
                                                                                                                         echo $dadosU['nome'];
                                                                                                                     }
