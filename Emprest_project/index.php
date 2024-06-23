@@ -1,6 +1,9 @@
 
 
-<?php 
+    <?php 
+    header("Cache-Control: no-cache, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
     $user = 0;
     if (isset($_GET['user'])) {
         $user = $_GET['user']; 

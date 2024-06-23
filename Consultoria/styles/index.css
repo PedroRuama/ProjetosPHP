@@ -1,0 +1,414 @@
+/* 
+branco: #f5f5f5
+preto: #0f0f0f
+vermelho: #a10000
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.section {
+    border-top: solid 5px var(--primary-color);
+    color: var(--backColor);
+    width: 40%;
+    padding: 2rem;
+}
+
+.sectionFull {
+
+    width: 80%;
+
+}
+
+.section h1 {
+    font-size: 2.5rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.img {
+    height: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    object-fit: contain;
+}
+
+.img2 {
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img3 {
+    width: 100%;
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.alingH {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alingV {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.img_capa {
+    height: 70vh;
+    flex: 0 0 100%;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.img_capa .img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    filter: brightness(30%);
+
+}
+
+.img_capa span {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+
+
+}
+
+.img_service {
+    height: 50vh;
+}
+
+.img_service span {
+    bottom: 3rem
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+
+
+    overflow: hidden;
+}
+
+.cards-container {
+
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.div_nav-dots {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    top: 90%;
+
+
+}
+
+
+.nav-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nav-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #858585;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-dots .dot.active {
+    background-color: #ddd;
+}
+
+
+
+.hero {
+    /* background: url('../imgs/consultoria-financeira.webp') no-repeat center center/cover; */
+    color: white;
+    text-align: center;
+
+
+}
+
+.hero h2 {
+    font-size: 2.5em;
+
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.cta-button {
+    background-color: var(--terciary-color);
+    color: white;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero .cta-button {
+    background-color: var(--primary-color);
+}
+
+.services {
+    background-color: var(--backColor);
+    /* margin: 4rem 0; */
+}
+
+#services2 {
+    background-color: var(--gray-color);
+    
+}
+
+#services {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.services .section {
+    color: #f5f5f5;
+    border-top: solid 5px var(--terciary-color);
+}
+
+#services2 .section {
+    border-top: solid 5px var(--primary-color);
+}
+
+
+
+.services,
+.about,
+.contact {
+    padding: 2em 0;
+}
+
+.container {
+    width: 80%;
+    filter: brightness(100%);
+    margin: 0 auto;
+}
+
+.services h2,
+.about h2,
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.service-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 1em;
+    flex: 1 1 calc(33% - 2em);
+    text-align: center;
+}
+
+.service-item h3 {
+    margin-bottom: 0.5em;
+}
+
+.about p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact {
+    background-color: var(--backColor);
+    color: white;
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.Flashlogin {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 10;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 10px;
+
+    padding: 0.5rem;
+    opacity: 60%;
+}
+
+.prev-btn {
+    left: 10px;
+    height: 3rem;
+}
+
+
+.prev-btn img {
+    rotate: 180deg;
+}
+
+.next-btn {
+    right: 10px;
+    height: 3rem;
+}
+
+
+
+
+
+.blob_ {
+    height: 30rem;
+    width: 45%;
+    display: flex;
+    overflow: hidden;
+
+
+    border-radius: 73% 25% 18% 70% / 60% 40% 55% 42%;
+}
+
+/* border-radius: 82% 29% 18% 70% / 59% 88% 12% 50%; */
+
+
+
+.scroll_animado {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease-in-out;
+
+}
+
+/* Classe para ativar a animação */
+.scroll_animado.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card_info{
+    background-color: var(--white-color);
+    padding: 1.5em;
+    width: 25%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0.5rem;
+    padding-top: 4rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.icon_card{
+    height: 5rem;
+    width: 5rem;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    position: absolute;
+    top: -3rem;
+}
+
+
+@media (min-width: 700px) {
+
+    .tutorial {
+        display: flex;
+
+        width: 100%;
+        color: var(--backColor);
+        flex-direction: column;
+        align-items: center;
+        background-color: #f5f5f5;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+
+
+    .tutorial .alingH {
+        height: 15rem;
+
+        justify-content: center;
+
+    }
+
+    .tutorial .alingV {
+        justify-content: center;
+        align-items: start;
+        width: 50%;
+
+
+    }
+
+}

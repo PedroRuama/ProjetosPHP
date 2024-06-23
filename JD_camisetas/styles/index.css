@@ -1,0 +1,488 @@
+/* 
+branco: #f5f5f5
+preto: #0f0f0f
+vermelho: #a10000
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+
+body{
+    background-color: #f5f5f5;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.img{
+    height: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    object-fit: contain;
+}
+.img2{
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.img3{
+    width: 100%;
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.icon{
+    height: 2rem;
+    
+}
+
+.alingH{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alingV{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+   
+}
+
+#sidenav{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+#sidenav2{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+}
+#sidenav2 .user_div{
+    color: #a10000;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding: 1rem 0;
+    width: 90%;
+    text-transform: uppercase;
+    border-bottom: 2px solid #a10000;
+}
+.sidenav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: .8rem;
+    
+}
+.sidenav a:hover {
+    color: #a10000;
+    font-weight: bold;
+}
+.sidenav button {
+    background-color: transparent;
+    border: none;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    padding: 1rem;
+   
+}
+.open-btn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1000;
+}
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 10px;
+    height: 2rem;
+    width: 2.5rem;
+    cursor: pointer;
+    padding: 1rem;
+  
+}
+
+nav .alingH{
+    border-bottom: solid 2px #f5f5f5;
+}
+
+.logo_nav{
+    height: 8rem;
+    width: 4rem;
+    position: absolute;
+}
+.user_div{
+    display: flex;
+    align-items: end;
+    height: 1.4rem;
+}
+.user_div p{
+   padding: 0 1rem;
+}
+
+
+.optionsConta{
+    width: 90%;
+}
+
+.optionsConta p{
+    color: #f5f5f5;
+    text-transform: uppercase;
+    
+}
+/* -------------------nav end------------------------- */
+
+.img_capa{ 
+   height: 35vh;
+   
+}
+
+.img_capa .img{
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    filter: brightness(50%);
+ 
+}
+ 
+/* -------------------destaques start------------------------- */
+.destaques_div{
+   
+    width: 100%;
+    height: 50rem;
+}
+
+.labeldestq_div{
+    height: 3rem;
+    font-size: 0.9rem;
+    margin: 1rem;
+    color: #2c2c2c;
+    padding: .5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.cards-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    flex: 0 0 8rem; /* Largura fixa dos cards */
+    margin: 0 10px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 14rem;
+ 
+ 
+}
+.card:hover{
+    border-top: #a10000 2px solid;
+}
+
+
+
+.imgCard{
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    
+}
+
+.nomeP{
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: #2c2c2c;
+}
+
+.precoP{
+    font-size: 0.8rem;
+}
+
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 10;
+    
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+    height: 2rem;
+}
+
+
+.prev-btn img{
+    rotate: 180deg;
+}
+
+.next-btn {
+    right: 10px;
+    height: 2rem;
+}
+
+.acoesCard{
+    background-color: #00a10d;
+    height: 0rem;
+    width: 7rem;
+    display: flex;
+    transform: translate(0, -2rem);
+    padding: 0 0.5rem;
+    align-items: center;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 9;
+    font-weight: bold;
+    justify-content: center;
+    overflow-y: hidden;
+    transition: 0.3s;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+.card:hover .acoesCard{
+    height: 2rem;
+    
+}
+
+/* --------------------- cards end ------------------ */
+
+
+#alingFull{
+    height: 35rem;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.FullImg_div{
+    height: 30rem;
+    
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+   
+
+}
+
+.FullImg_div img{
+    filter: brightness(40%);
+    
+}
+.lineFullImg{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #a10000;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    
+    transform: translate(-0.7rem, 0.7rem);
+}
+
+.lineFullImg2{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #a10000;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translate(0.7rem, -0.7rem);
+}
+
+
+.FullImg_txt{
+    height: 25rem;
+    position: absolute;
+    font-size: 140%;
+    color: #f5f5f5;
+    padding: 2rem;
+    z-index: 2;
+    text-transform: uppercase;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+.FullImg_div button{
+    text-transform: uppercase;
+    border: 2px solid #f5f5f5;
+    padding: 1rem;
+    font-size: 70%;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #f5f5f5;
+    transition: 0.3s;
+
+}
+
+.FullImg_div button:hover{
+    border: 2px solid #0f0f0f;
+    color: #f5f5f5;
+    font-weight: bold;
+    background-color: #0f0f0f;
+
+}
+
+/* -------------------destaques end------------------------- */
+
+
+#verMaisBtn {
+    padding: 1em 2em;
+    border: none;
+    margin: 2rem;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #f5f5f5;
+    transition: all 0.5s;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #0f0f0f;
+    
+  }
+  
+  #verMaisBtn:hover {
+    color: #0f0f0f;
+    transform: scale(1.1);
+    outline: 2px solid #0f0f0f;
+ 
+  }
+  
+  #verMaisBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f5f5f5;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  #verMaisBtn:hover::before {
+    width: 250%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.labelselct_div{
+    height: 3rem;
+    margin-bottom: 2rem;
+    background-color: #dfdede;
+    color: #2c2c2c;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+/* ------------------- grade start------------------------- */
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaçamento entre os cards */
+    justify-content: space-around;
+}
+
+  
+
+
+
+@media only screen and (min-width: 980px) {
+   
+
+ }

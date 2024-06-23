@@ -1,0 +1,156 @@
+.div_aling_plano {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+
+.div_aling_plano::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../imgs/mulher_tablet.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0.5);
+  z-index: -1;
+  }
+
+
+  .content {
+    position: relative;
+    /* background-color: #4133B7; */
+    height: 100vh;
+    top: 6rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+    z-index: 1; 
+    color: white;
+}
+
+
+.plan {
+  border-radius: 16px;
+  box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+  padding: 10px;
+  background-color: #fff;
+  color: #697e91;
+  max-width: 300px;
+}
+
+strong {
+  font-weight: 600;
+  color: #425275;
+}
+
+.inner {
+  align-items: center;
+  padding: 20px;
+  padding-top: 40px;
+  background-color: #ecf0ff;
+  border-radius: 12px;
+  position: relative;
+}
+
+.pricing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--gray-color);
+  border-radius: 99em 0 0 99em;
+  display: flex;
+  align-items: center;
+  padding: 0.625em 0.75em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #425475;
+}
+
+.pricing small {
+  color: #707a91;
+  font-size: 0.75em;
+  margin-left: 0.25em;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #425675;
+}
+
+.title + * {
+  margin-top: 0.75rem;
+}
+
+.info + * {
+  margin-top: 1rem;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+}
+
+.features .icon {
+  background-color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.features .icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+
+.features + * {
+  margin-top: 1.25rem;
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.button {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 0.625em 0.75em;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button:hover, .plan .button:focus {
+  background-color: var(--terciary-color);
+}

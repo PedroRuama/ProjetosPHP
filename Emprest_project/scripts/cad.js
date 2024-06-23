@@ -25,9 +25,24 @@ function Submit() {
     }
     var val_emp = document.getElementById('val_emp')
     val_emp.value = val_emp.value.replace(/\D/g, '')
-    document.getElementById('val_parcela').value = document.getElementById('val_parcela').value.replace(',', '.')
+    document.getElementById('val_parcela').value =  adicionarPonto(document.getElementById('val_parcela').value.replace(/[.,]/g, ''))
+    
     
 }
+
+function adicionarPonto(str) {
+
+    if (str.length >= 3) {
+        var primeiraParte = str.substring(0, str.length - 2);
+        var ultimosDoisCaracteres = str.substring(str.length - 2);
+        return primeiraParte + '.' + ultimosDoisCaracteres;
+    } else {
+        return str;
+    }
+}
+
+ 
+
 
 
 String.prototype.reverse = function () {
@@ -147,7 +162,13 @@ function dev() {
     var valParcela = document.getElementById('val_parcela')
     var diaPag = document.getElementById('dia_pag')
     
-    var valParcelaFormat = valParcela.value.replace(',', '.')
+
+    console.log("---------------");
+    var valParcelaFormat = adicionarPonto(valParcela.value.replace(/[.,]/g, ''))
+    console.log(valParcelaFormat);
+ 
+ 
+ 
   
    
     
@@ -162,7 +183,7 @@ function dev() {
 
     document.getElementById('juros').value = juros.toFixed(0)
     
-    console.log(i);
+    // console.log(i);
     //dev.value = valor + juros montante
     // valParcela.value =  parseFloat(dev.value/parcelas).toFixed(2)
 

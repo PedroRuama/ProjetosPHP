@@ -1,4 +1,8 @@
 <?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
 
 //executa a query com base na conexão
 include_once('controllers/conexao.php');

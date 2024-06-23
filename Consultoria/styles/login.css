@@ -1,0 +1,304 @@
+
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.img {
+  height: 100%;
+  -webkit-height: 100%;
+  -moz-height: 100%;
+  -ms-height: 100%;
+  object-fit: contain;
+}
+
+.img2 {
+  -webkit-width: 100%;
+  -moz-width: 100%;
+  -ms-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img3 {
+  width: 100%;
+  -webkit-width: 100%;
+  -moz-width: 100%;
+  -ms-width: 100%;
+  -webkit-height: 100%;
+  -moz-height: 100%;
+  -ms-height: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img_redonda {
+
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100px;
+  overflow: hidden;
+  border: #e5e7eb solid 1px;
+}
+
+
+.icon {
+  height: 2rem;
+
+}
+
+.alingH {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.alingV {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+
+#erro {
+  color: #a10000;
+}
+
+
+.divLogo {
+  height: 6.5rem;
+  /* position: absolute; */
+  /* top: -3rem; */
+
+}
+
+
+.Allinputs_div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  position: relative;
+ 
+  width: 100%;
+
+}
+
+#boxGeral {
+  width: 100%;
+}
+
+
+#inputs_compra {
+  justify-content: center;
+  align-items: center;
+
+}
+
+#dPedido_box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30rem;
+  width: 35%;
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+#form_singin{
+  width: 25%;
+}
+
+#form_pf{
+  background-color: var(--gray-color);
+  
+}
+
+.form_c {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 80%;
+  margin-top: 5rem;
+  background-color: #f5f5f5;
+  padding: 5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+  font-size: 1.1rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  max-width: 12rem;
+  justify-content: center;
+}
+.textarea_container{
+  max-width: 100%;
+}
+
+.input-container2 {
+  position: relative;
+}
+
+.input-container input, textarea, select,
+.form button {
+  outline: none;
+  border: none;
+  margin: 0.25rem 0;
+}
+
+.input-container input, textarea, select {
+  background-color: #fff;
+  padding: 0.7rem;
+  font-size: 0.875rem;
+  border: #35424a solid 2px;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.input-container input:hover, textarea:hover, select:hover{
+  border: #6B7280 solid 2px;
+}
+
+.submit {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  /* background-color: var(--terciary-color); */
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  width: 90%;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+
+.submit:hover {
+
+  background-color: var(--terciary-color);
+  color: var(--primary-color);
+
+
+
+}
+
+.submit_comprar {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  background-color: #00a10d;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+
+.submit_comprar:hover {
+  background-color: #004b06;
+}
+
+
+
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+.inp_c {
+  width: 70%;
+
+}
+
+.label_p {
+  color: #2c2c2c;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  display: flex;
+  justify-content: end;
+
+}
+
+.fake_inp {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  border: none;
+  outline: none;
+
+  pointer-events: none;
+  background-color: transparent;
+  width: 100%
+}
+
+#fake_inp1 {
+  text-align: start;
+}
+
+#fake_inp2 {
+  text-align: end;
+}
+
+#codigo_compra_div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .form {
+    width: 70%;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}

@@ -75,7 +75,7 @@ function Submit() {
         document.getElementById("pag").disabled = false;
         var val_emp = document.getElementById('val_emp')
         val_emp.value = val_emp.value.replace(/\D/g, '')
-        document.getElementById('val_parcela').value = document.getElementById('val_parcela').value.replace(',', '.')
+        document.getElementById('val_parcela').value =  adicionarPonto(document.getElementById('val_parcela').value.replace(/[.,]/g, ''))
     }
     var inp1 = document.getElementById('inp-divida');
     var inp2 = document.getElementById('inp-quitado');
@@ -85,6 +85,16 @@ function Submit() {
 
 }
 
+function adicionarPonto(str) {
+
+    if (str.length >= 3) {
+        var primeiraParte = str.substring(0, str.length - 2);
+        var ultimosDoisCaracteres = str.substring(str.length - 2);
+        return primeiraParte + '.' + ultimosDoisCaracteres;
+    } else {
+        return str;
+    }
+}
 
 String.prototype.reverse = function () {
     return this.split('').reverse().join('');
@@ -201,8 +211,8 @@ function dev() {
     var valParcela = document.getElementById('val_parcela')
     var diaPag = document.getElementById('dia_pag')
     
-    var valParcelaFormat = valParcela.value.replace(',', '.')
-
+    var valParcelaFormat = adicionarPonto(valParcela.value.replace(/[.,]/g, ''))
+  
 
     dev.value = (valParcelaFormat * parcelasSelc).toFixed(2)
 
