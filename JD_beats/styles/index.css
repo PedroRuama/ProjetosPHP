@@ -76,7 +76,7 @@ body {
     background-color: #0f0f0f;
     overflow-x: hidden;
     transition: 0.5s;
-    z-index: 1000;
+    z-index: 11;
 }
 
 #sidenav2 {
@@ -88,7 +88,7 @@ body {
     background-color: #0f0f0f;
     overflow-x: hidden;
     transition: 0.5s;
-    z-index: 1000;
+    z-index: 11;
 }
 
 #sidenav2 .user_div {
@@ -128,7 +128,7 @@ ul {
     position: fixed;
     left: 10px;
     top: 10px;
-    z-index: 1000;
+    z-index: 15;
 }
 
 .close-btn {
@@ -193,15 +193,14 @@ nav .alingH {
 
 /* -------------------destaques start------------------------- */
 .destaques_div {
-
     width: 100%;
-    height: 50rem;
+    /* height: 50rem; */
 }
 
 .labeldestq_div {
     height: 3rem;
     font-size: 0.9rem;
-    margin: 1rem;
+    margin: 1rem 0;
     color: #dfdede;
     padding: .5rem;
     text-transform: uppercase;
@@ -212,16 +211,25 @@ nav .alingH {
 }
 
 
+.modal {
+   
+    position: fixed; 
+  
+}
 
 .carousel {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    height: 20rem;
-    overflow: hidden;
+    /* height: 20rem; */
+    /* overflow: hidden; */
 }
 
 .cards-container {
     display: flex;
+    /* height: 100%; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     transition: transform 0.5s ease;
 }
 
@@ -236,7 +244,7 @@ nav .alingH {
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 14rem;
+    /* height: 14rem; */
 
 
 }
@@ -422,7 +430,7 @@ nav .alingH {
     color: #f5f5f5;
     transition: all 0.5s;
     font-size: 1rem;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     box-shadow: inset 0px 0px 10px #f5f5f5;
     outline: 2px solid #0f0f0f;
@@ -582,6 +590,12 @@ nav .alingH {
     font-size: 1.1rem;
 }
 
+.modal {
+   
+    position: fixed; 
+  
+}
+
 
 
 @media (min-width: 700px) {
@@ -637,6 +651,11 @@ nav .alingH {
         width: 50%;
 
 
+    }
+    .modal {
+   
+        position: fixed; 
+      
     }
 
 }

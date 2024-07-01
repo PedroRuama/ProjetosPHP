@@ -91,23 +91,20 @@ if (isset($_FILES['imagem']) && count($_FILES) > 0) {
 
 
 
-$insert = "insert into beats(codP, titulo, preco, preco_risc, categoria, descricao, destaque, link)
-values('$codP', '$titulo', '$preco', '$preco_risc', '$cat', '$desc', 0, '$link')";
+$update = "update beats set titulo='$titulo', preco='$preco', preco_risc='$preco_risc', categoria='$cat', descricao='$desc', destaque=0, link='$link' where codP=$codP";
 
- echo "<script>alert('Falha ao enviar arquivos')";
+//  echo "<script>alert('Falha ao enviar arquivos')";
   
 // //executando instrução SQL
-$resultado = @mysqli_query($conexao, $insert);
+$resultado = @mysqli_query($conexao, $update);
+
+echo "<script>location.href='../editproduto.php?codP=$codP&edited';</script>";
 
 if (!$resultado) {
     die('Query Inválida:' . @mysqli_error($conexao));
     echo "<script>alert('Falha ao enviar arquivos')";
     echo "<script>location.href='../gerenciar.php';</script>";
 } 
-echo "<script>alert('Cadastrado com sucesso')";
-echo "<script>location.href='../gerenciar.php';</script>";
-
-echo 'oii';
 
 mysqli_close($conexao);
 

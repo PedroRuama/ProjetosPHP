@@ -34,7 +34,7 @@ if (isset($_GET['logado'])) {
 
 </head>
 <script>
-    
+
 </script>
 
 
@@ -69,37 +69,29 @@ if (isset($_GET['logado'])) {
                     $imagens = mysqli_query($conexao, "SELECT * FROM imagens WHERE codP = $codP");
                     $dadosImg = mysqli_fetch_array($imagens);
                 ?>
-
                     <div class="card" onclick="PopUpCard(this)">
                         <span class="openPopupBtn">
                             <div class="imgCard">
-
                                 <img src="<?= $dadosImg['path'] ?>" alt="produto_img" class="img2">
                             </div>
                             <a>
-                                <!-- href="viewproduto.php?user=<?= $user ?>&codP=<?= $codP ?>" -->
-                                <div class="acoesCard">
-                                    OUVIR
-                                </div>
+                                <div class="acoesCard">OUVIR</div>
                             </a>
                         </span>
                         <br>
-                        <p class="nomeP"><?= $novidades['titulo'] ?> </p>
-
-                        <p class="precoP"><del>R$<?= $novidades['preco_risc'] ?></del> <b>R$<?= $novidades['preco'] ?></b> </p>
-                        <p class="nomeP"><?= $novidades['categoria'] ?> </p>
-
+                        <p class="nomeP"><?= $novidades['titulo'] ?></p>
+                        <p class="precoP"><del>R$<?= $novidades['preco_risc'] ?></del> <b>R$<?= $novidades['preco'] ?></b></p>
+                        <p class="nomeP"><?= $novidades['categoria'] ?></p>
 
                         <div id="audioModal" class="modal audioModal">
                             <div class="modal-content">
-                                <span class="close">&times;</span>
+                                <span class="close closess">&times;</span>
                                 <div class="beat-content">
                                     <div class="imgCardModal">
                                         <img src="<?= $dadosImg['path'] ?>" alt="produto_img">
                                     </div>
                                     <div class="txtModal">
                                         <h3><?= $novidades['titulo'] ?></h3>
-
                                         <br>
                                         <h4>Estilo do Beat: <?= $novidades['categoria'] ?></h4>
                                         <br>
@@ -111,7 +103,7 @@ if (isset($_GET['logado'])) {
                                         <br>
                                         <form action="comprar.php" method="post">
 
-                                            <input type="text" value="<?= $novidades['codP']?>" name="codP" style="display: none;">
+                                            <input type="text" value="<?= $novidades['codP'] ?>" name="codP" style="display: none;">
                                             <button type="submit" class="btn_compra" id="comprar_btn">comprar</button>
                                         </form>
                                     </div>
@@ -132,12 +124,12 @@ if (isset($_GET['logado'])) {
                 ?>
 
             </div>
-            <button class="prev-btn">
+            <!-- <button class="prev-btn">
                 <img src="iconsJD/seta.png" alt="setaPrev" class="img">
             </button>
             <button class="next-btn">
                 <img src="iconsJD/seta.png" alt="setaPrev" class="img">
-            </button>
+            </button> -->
         </div>
 
 

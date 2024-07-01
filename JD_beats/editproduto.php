@@ -28,11 +28,12 @@ $dadosImg = mysqli_fetch_array($imagens);
     <title>Editar Produto</title>
     <link rel="stylesheet" href="../styles/gerenciar.css">
     <link rel="stylesheet" href="../styles/modal.css">
+    <script src="scripts/gerenciar.js"></script>
 </head>
 <script>
     function edit(btn_edit) {
         var inputs = document.getElementsByTagName('input')
-      
+
         for (let index = 0; index < inputs.length; index++) {
             const element = inputs[index];
 
@@ -43,10 +44,13 @@ $dadosImg = mysqli_fetch_array($imagens);
         document.getElementById('selectForm').disabled = false;
         btn_edit.style = "display: none";
         document.getElementById("submit").style = "display: flex"
+        document.getElementById("cancelar").style = "display: flex"
         alert("Edição habilitada;\n Agora Você pode alterar os dados do Beat")
-        
-        }
+
+    }
 </script>
+
+
 
 
 
@@ -96,10 +100,10 @@ $dadosImg = mysqli_fetch_array($imagens);
         </div>
 
 
-        <form action="controllers/" id="EditProdutoForm">
+        <form action="controllers/updateProduto.php" id="EditProdutoForm" method="post">
 
             <div class="form__group">
-                <input type="text" disabled class="form__field" placeholder="Name" required="" name="codP" value="<?= $produto['codP'] ?>">
+                <input type="text" disabled class="form__field" placeholder="Name" required="" name="codP" value="<?= $produto['codP'] ?>" style="pointer-events: none;">
                 <label for="name" class="form__label">Código do Beat</label>
             </div>
 
@@ -108,27 +112,18 @@ $dadosImg = mysqli_fetch_array($imagens);
                 <label for="name" class="form__label">Titulo do produto</label>
             </div>
             <div class="form__group">
-                <input type="text" disabled class="form__field" placeholder="Name" required="" name="preco" value="<?= $produto['preco'] ?>">
+                <input type="text" disabled class="form__field" placeholder="Name" required="" name="preco" value="<?= $produto['preco'] ?>" oninput="mascaraMoeda(this, event)">
                 <label for="name" class="form__label">Preço R$</label>
             </div>
 
             <div class="form__group">
-                <input type="text" disabled class="form__field" placeholder="Name" required="" name="preco_risc" value="<?= $produto['preco_risc'] ?>">
+                <input type="text" disabled class="form__field" placeholder="Name" required="" name="preco_risc" value="<?= $produto['preco_risc'] ?>" oninput="mascaraMoeda(this, event)">
                 <label for="name" class="form__label">Preço R$ <del>riscado</del></label>
             </div>
 
-            <input type="text" style="display: none;" id="categoria_beat" value="<?= $produto['categoria'] ?>">
 
-            <script>
-                var cat_beat = document.getElementsByTagName('option')
-                var pag = document.getElementById('categoria_beat').value
-                for (let index = 0; index < cat_beat.length; index++) {
-                    const option = cat_beat[index];
-                    if (option.value == pag) {
-                        option.selected = true
-                    }
-                }
-            </script>
+            
+            <input type="text" style="display: none;" id="categoria_beat" value="<?= $produto['categoria'] ?>">
 
             <div class="form__group">
                 <select name="cat" id="selectForm" class="form__field" disabled>
@@ -158,7 +153,7 @@ $dadosImg = mysqli_fetch_array($imagens);
             </div>
 
             <div class="form__group" id="UpImgs_div">
-                <input type="file" disabled id="inputImagens" accept="image/*">
+                <input type="file" disabled id="inputImagens" accept="image/*" name="imagem[]">
                 <label for="name" class="form__label">Carregar Imagens</label>
             </div>
 
@@ -169,8 +164,15 @@ $dadosImg = mysqli_fetch_array($imagens);
 
             <button type="button" onclick="edit(this)">Editar dados</button>
             <button type="submit" id="submit" style="display:none;">&nbsp;&nbsp; Salvar &nbsp;&nbsp;</button>
+
+            <button type="button" id="cancelar" style="display:none;">
+                <a href="editproduto.php?codP=<?= $codP ?>">
+                    <div class="backDiv"> Cancelar</div>
+                </a>
+            </button>
+
             <button type="button">
-                <a href="gerenciar.php?user=<?= $user ?>">
+                <a href="controllers/excluir.php?codP=<?= $codP ?>">
                     <div class="backDiv"> Excluir</div>
                 </a>
             </button>
@@ -181,4 +183,15 @@ $dadosImg = mysqli_fetch_array($imagens);
 
 </body>
 
+
+
 </html>
+<?php
+if (isset($_GET['edited'])) {
+?>
+    <script>
+        alert("Editado com Sucesso!")
+    </script>
+<?php
+}
+?>

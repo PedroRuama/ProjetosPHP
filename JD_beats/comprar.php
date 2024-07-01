@@ -64,7 +64,7 @@ if (isset($_POST['codP'])) {
 
                 <div class="Allinputs_div" id="inputs_compra">
                     <div id="dPedido_box">
-                        <div class="alingV">
+                        <div class="alingH ">
                             <div class="img_redonda">
                                 <img src="../<?= $dadosImg['path'] ?>" alt="imgProduto" class="img2">
                             </div>

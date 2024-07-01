@@ -114,6 +114,7 @@ a {
 #dPedido_box {
   display: flex;
   width: 100%;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
@@ -268,14 +269,14 @@ a {
   background-color: transparent;
   width: 100%
 }
+  /* 
+  #fake_inp1 {
+    text-align: start;
+  }
 
-#fake_inp1 {
-  text-align: start;
-}
-
-#fake_inp2 {
-  text-align: end;
-}
+  #fake_inp2 {
+    text-align: end;
+  } */
 
 #codigo_compra_div {
   display: flex;

@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var cat_beat = document.getElementsByTagName('option')
+    var catBeat = document.getElementById('categoria_beat').value
+    for (let index = 0; index < cat_beat.length; index++) {
+        const option = cat_beat[index];
+        if (option.value == catBeat) {
+            option.selected = true
+        }
+        console.log("opa");
+    }
+    
     var openBtn = document.getElementById('open-btn');
     var closeBtn = document.getElementById('close-btn');
     var sidenav = document.getElementById('sidenav');

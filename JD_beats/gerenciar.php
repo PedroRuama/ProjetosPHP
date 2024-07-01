@@ -55,7 +55,7 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
                             <label for="name" class="form__label">Titulo do Beat</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" required class="form__field" placeholder="preçõ" name="preco" oninput="mascaraMoeda(this, event)">
+                            <input type="text" required class="form__field" placeholder="preço" name="preco" oninput="mascaraMoeda(this, event)">
                             <label for="name" class="form__label">Preço R$</label>
                         </div>
                         <div class="form__group">
@@ -76,7 +76,7 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
                                 <option value="calça">Eletronico</option>
                                 <option value="GangstaRap">Gangsta rap</option>
                             </select>
-                            <label for="name" class="form__label">Selecione o estilo do Beat</label>
+                            <label for="name" class="form__label">Estilo do Beat</label>
                         </div>
 
                         <div class="form__group">
