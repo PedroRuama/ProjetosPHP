@@ -2,7 +2,7 @@
 
 include_once('controllers/conexao.php');
 include('menu.php');
-$ultimosCad = mysqli_query($conexao, "SELECT * FROM beats");
+// $ultimosCad = mysqli_query($conexao, "SELECT * FROM beats");
 // ORDER BY id DESC LIMIT 6; 
 
 
@@ -28,7 +28,9 @@ if (isset($_GET['logado'])) {
     <title>Consultoria Financeira</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/planos.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <script src="scripts/index.js"></script>
+    <script src="scripts/modal.js"></script>
 </head>
 
 
@@ -248,9 +250,10 @@ if (isset($_GET['logado'])) {
 
             </h2>
         </div>
-
-        <div class="blob_">
-            <img src="imgs/computador-empresa.jpeg" alt="">
+        <div class="div_b">
+            <div class="blob_">
+                <img src="imgs/computador-empresa.jpeg" alt="">
+            </div>
         </div>
     </div>
 
@@ -492,26 +495,37 @@ if (isset($_GET['logado'])) {
 
 
     <div class="Flashlogin">
-        <div class="blob_">
-            <img src="imgs/computador-empresa.jpeg" alt="">
+        <div class="div_b">
+
+            <div class="blob_">
+                <img src="imgs/computador-empresa.jpeg" alt="">
+            </div>
         </div>
 
-        <section id="services" >
+        <section id="services">
             <div class="container">
-                
-                <div class="service-items" >
-                    <div class="service-item scroll_animado">
-                        <h3>Avalie suas particularidades</h3>
-                        <p>Crie um planejamento exclusivo as suas necessidades, objetivos e visões</p>
-                    </div>
-                    <div class="service-item scroll_animado">
-                        <h3>Garanta mais eficiência</h3>
-                        <p>Otimize processos e evolua a gestão de seus negócios a um outro nível. </p>
-                    </div>
-                    <div class="service-item scroll_animado">
-                        <h3>Tome decisões</h3>
-                        <p>Baseie-se a partir de informações fidedignas com foco em resultados.</p>
-                    </div>
+
+                <div class="service-items">
+                    <a href="#avalie">
+                        <div class="service-item scroll_animado">
+
+                            <h3>Avalie suas particularidades</h3>
+                            <p>Crie um planejamento exclusivo as suas necessidades, objetivos e visões</p>
+
+                        </div>
+                    </a>
+                    <a href="#eficiencia">
+                        <div class="service-item scroll_animado">
+                            <h3>Garanta mais eficiência</h3>
+                            <p>Otimize processos e evolua a gestão de seus negócios a um outro nível. </p>
+                        </div>
+                    </a>
+                    <a>
+                        <div class="service-item scroll_animado">
+                            <h3>Tome decisões</h3>
+                            <p>Baseie-se a partir de informações fidedignas com foco em resultados.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -519,21 +533,12 @@ if (isset($_GET['logado'])) {
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
     <div class="tutorial">
         <div class="section scroll_animado sectionFull">
             <h1>Como funciona a consultoria?</h1>
         </div>
-
+        <img src="imgs/planejamento.jpg" alt="" class="backImg">
+        <div class="fundo_img"></div>
         <!-- <div class="alingH scroll_animado">
             <img src="imgs/criarconta2.png" class="img">
             <div class="alingV">
@@ -558,13 +563,13 @@ if (isset($_GET['logado'])) {
                     </button>
                 </a>
             </div>
-            <img src="imgs/chatting.png" class="img">
+            <img src="imgs/Chatting-amico (1).png" class="img">
         </div>
         <br>
         <br>
         <div class="alingH scroll_animado">
             <!-- <img src="imgs/grafico.png" class="img"> -->
-            <img src="imgs/analises.png" class="img">
+            <img src="imgs/Data analysis-amico.png" class="img">
 
             <div class="alingV">
                 <h1>Nós fazemos o diagnóstico da sua empresa/negócio </h1><br>
@@ -576,7 +581,7 @@ if (isset($_GET['logado'])) {
                 <h1>Execução do plano de ação</h1><br>
                 <p>Nesse momento é colocado tudo em pratica! O plano de ação totalmente planejado para o seu negócio é executado com nosso acompanhamento e consultoria dos resultados!</p>
             </div>
-            <img src="imgs/process.png" class="img">
+            <img src="imgs/Process-amico (1).png" class="img">
         </div>
         <!-- <div class="alingH">
             <img src="imgs/Confirmed2.png" class="img">
@@ -589,6 +594,73 @@ if (isset($_GET['logado'])) {
 
     </div>
 
+
+    <div class="Flashlogin" id="avalie">
+        <div class="vertical-section">
+
+            <h1>Avalie suas Particularidades</h1>
+
+        </div>
+        <div class="desc_conteudo">
+            <h3>Na Ystrategy, valorizamos a singularidade de cada cliente, seja em financas pessoais ou empresarial. Entendemos que cada um possui características, objetivos e necessidades próprias. </h3>
+            <br>
+            <ul>
+                <li><b>Entendimento Profundo:</b> Realizamos uma imersão completa na sua realidade financeira, seja pessoal ou empresarial, para captar a essência do seu perfil e identificar pontos fortes, oportunidades e desafios específicos.</li>
+                <br>
+                <li><b>Planejamento Personalizado: </b> Desenvolvemos um plano financeiro sob medida, alinhado às suas metas e aspirações, seja para crescimento empresarial, investimentos pessoais, ou planejamento de aposentadoria.</li>
+                <br>
+                <li><b>Alinhamento com Objetivos:</b>Nossas estratégias são criadas para atingir seus objetivos de curto, médio e longo prazo, garantindo que cada decisão tomada esteja em perfeita sintonia com suas ambições.</li>
+                <br>
+                <li><b> Flexibilidade e Adaptabilidade: </b>Adaptamos nossos planos conforme mudanças e novas oportunidades surgem, assegurando que você esteja sempre preparado para enfrentar as incertezas do mercado.</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="Flashlogin" id="eficiencia">
+        <div class="vertical-section">
+
+            <h1>Garanta mais Eficiência</h1>
+
+        </div>
+        <div class="desc_conteudo">
+            <h3>Nosso objetivo é otimizar os processos e elevar a gestão do seu negócio ou suas finanças pessoais a um novo patamar de eficiência. </h3>
+            <br>
+            <ul>
+                <li><b>Otimização de Processos:</b> Identificamos gargalos e ineficiências, utilizando ferramentas avançadas para mapear seu fluxo de trabalho. Implementamos melhorias que reduzem custos, aumentam a produtividade e melhoram a qualidade dos resultados.</li>
+                <br>
+                <li><b>Implementação de Melhores Práticas: </b> Recomendamos e implementamos as melhores práticas de gestão financeira e operacional, incluindo novas tecnologias, automação e metodologias de gestão. Para empresas, isso pode envolver a revisão de cadeias de suprimentos e otimização de estoques. Para indivíduos, pode significar a organização de finanças pessoais e planejamento de investimentos.</li>
+                <br>
+                <li><b>Evolução Contínua: </b>Monitoramos constantemente os resultados das mudanças, ajustando estratégias conforme necessário para garantir eficiência contínua e responsividade às mudanças do mercado e novas oportunidades.</li>
+                <br>
+                <li><b>Resultados Mensuráveis: </b>Utilizamos métricas e indicadores de desempenho para medir o impacto das nossas iniciativas. Fornecemos uma visão clara dos benefícios obtidos, como redução de custos, aumento de produtividade, melhoria na qualidade do serviço e crescimento da rentabilidade.</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="Flashlogin" id="eficiencia">
+        <div class="vertical-section">
+
+            <h1>Tome Decisões Informadas</h1>
+
+        </div>
+        <div class="desc_conteudo">
+            <h3>Na Ystrategy, fornecemos informações precisas e confiáveis para apoiar suas decisões estratégicas, tanto para empresas quanto para indivíduos.</h3>
+            <br>
+            <ul>
+                <li><b>Informações Confiáveis:</b> Utilizamos fontes de dados atualizadas e confiáveis, oferecendo análises de mercado, relatórios financeiros e indicadores econômicos para empresas e análises de gastos, rendimentos e investimentos para indivíduos.</li>
+                <br>
+                <li><b>Análises Rigorosas: </b> Realizamos análises aprofundadas utilizando técnicas avançadas de análise financeira para identificar tendências e prever cenários futuros, dando uma visão clara e abrangente da sua situação financeira.</li>
+                <br>
+                <li><b>Foco em Resultados: </b>Nossas recomendações são focadas em resultados mensuráveis, ajudando a definir metas claras e estratégias para alcançá-las, seja otimizando custos e aumentando receitas para empresas ou maximizando retornos e planejando para a aposentadoria para indivíduos.</li>
+                <br>
+                <li><b>Tomada de Decisão Estratégica: </b>Oferecemos suporte contínuo com insights e recomendações baseadas em dados, garantindo que suas decisões sejam bem fundamentadas e alinhadas com seus objetivos de longo prazo.</li>
+            </ul>
+        </div>
+    </div>
 
 
     <?php

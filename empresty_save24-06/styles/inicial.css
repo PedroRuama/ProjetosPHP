@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.pontos {
+    width: 1rem;
+    font-size: 1.7rem;
+    color: #808080;
+    position: absolute;
+}
+
+/* ------------------------------------nav-------------------------------- */
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 3.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+
+.btn {
+    font-size: 105%;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    padding: 1em 1.5em;
+    color: #071A5F;
+    /* text-transform: uppercase; */
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+/* linha do bottom */
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    border-radius: 10px;
+    background-color: #071A5F;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    color: #f5f5f5;
+    transition-delay: 0.3s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+
+/* background subindo */
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #071A5F;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+
+
+
+.itens {
+    list-style-type: none;
+    display: flex;
+    padding-right: 10rem;
+}
+
+
+.btn-nav {
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    color: #071A5F;
+    font-size: 100%;
+    border: solid 2px #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    transition: 0.5s;
+}
+
+.btn-nav:hover {
+    background-color: #071A5F;
+    color: #f5f5f5;
+
+}
+
+/* ------------------------------------nav-------------------------------- */
+
+.container {
+    display: flex;
+    margin: 6rem 3rem 3rem 3rem;
+    transition: 1s;
+
+}
+
+h1 {
+    color: #071A5F;
+    font-size: 3rem;
+    padding: 0 2rem;
+
+}
+
+h3 {
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    color: #808080;
+}
+
+.con-title {
+    width: 50%;
+}
+
+.img_div {
+    width: 90%;
+    position: absolute;
+    z-index: -1;
+    top: 30%;
+}
+
+.img {
+    width: 50%;
+    
+
+}
+
+#img_aviso_tr {
+    filter: opacity(0%);
+}
+
+.con-warning {
+    width: 70%;
+}
+
+.avisos_div {
+    width: 100%;
+    height: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.avisos_divtr {
+    width: 93%;
+    height: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+
+#avisos_tr_div {
+    margin-bottom: 0;
+}
+
+.avisos {
+    height: 100%;
+    display: flex;
+
+}
+
+
+.avisos_ {
+    display: flex;
+}
+
+#avisos_tr {
+
+    display: flex;
+
+    margin-top: 1rem;
+
+}
+
+
+#avisos_tr_div2 {
+    margin-bottom: 0;
+}
+
+.iconAviso {
+    height: 2.2rem;
+    padding-right: 1rem;
+}
+
+
+#aviso_label {
+    color: #CA1717;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#atencao_label {
+    color: #bdae29;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.dados_aviso {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 2px #CA1717;
+    display: flex;
+    overflow: hidden;
+    font-size: 100%;
+    justify-content: space-between;
+
+}
+
+#tr {
+    border: none;
+}
+
+
+.atencao_div {
+    margin: 4rem 0;
+    width: 100%;
+    height: 2.2rem;
+}
+
+.dados_atencao {
+
+    height: 100%;
+    width: 86%;
+    border-radius: 10px;
+    border: solid 2px #e4d232;
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    overflow: hidden;
+
+}
+
+
+#seta { 
+    height: 100%;
+    width: 40%;
+    padding: 0 0.5rem;
+    object-fit: contain;
+    filter: grayscale(200%) invert(100%);
+    rotate: 90deg;
+    transition: 0.3s;
+}
+
+#seta:hover{
+    rotate: 0deg;
+    filter: grayscale(70%) invert(0);
+}
+
+.divider {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8888;
+    border: 1px solid #CA1717;
+
+}
+
+.divider_tr {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: #cfcfcf;
+    text-align: center;
+
+
+
+}
+
+.divider_ {
+    height: 100%;
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row_atencao {
+    background-color: #fff492;
+    border-bottom: 2px solid #e4d232;
+    height: 2.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+
+
+
+.divider:nth-child(even) {
+    background-color: #ffc1c1;
+}
+
+
+
+#dataDesk{
+    display: flex;
+}
+
+#dataMobi{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .btn{
+        font-size: 1rem;
+        
+    }
+    .navbar{
+        justify-content: start;
+    }
+    li{
+        width: 7rem;
+    }
+    
+
+
+    .container{
+        flex-direction: column;
+        margin: 1rem;
+        margin-top: 5rem;
+      
+    }
+
+    .con-title{
+        width: 100%;
+        position: relative;
+    }
+    
+    h1 { 
+        font-size: 2.5rem;
+        padding: 0;
+    }
+    h3{
+        font-size: 1rem;
+        padding: 0;
+    }
+    #dataMobi{
+        display: flex;
+    }
+    
+    #dataDesk{
+        display: none;
+    }
+    .img_div{
+        display: flex;
+        top: 0%;
+        width: 100%;
+        justify-content: end;
+        height: 120%;
+
+
+    }
+    .img{
+        height: 100%;
+    }
+
+    .con-warning{
+        width: 100%;
+    }
+
+    #aviso_label{
+        font-size: 0.7rem;
+    }
+
+    .avisos_divtr{
+        font-size: 0.6rem;
+    }
+    #avisos_tr{
+        margin-top: 0;
+    }
+    .avisos_divtr{
+        width: 100%;
+    }
+
+    .avisos_div{
+        height: 1.8rem;
+    }
+    .iconAviso{
+        height: 1.5rem;
+        padding-right: 0.5rem;
+    }
+    .dados_aviso{
+        font-size: 0.6rem;
+        
+    }
+    .divider{
+        border: 0.5px solid #CA1717;
+    }
+    #seta{
+        display: none;
+    }
+    .atencao_div{
+        margin: 2rem 0;
+    }
+    #atencao_label{
+        font-size: 0.7rem;
+    }
+
+    .dados_atencao{
+        width: 100%;
+    }
+    .row_atencao{
+        font-size: 0.6rem;
+        height: 1.8rem;
+    }
+
+
+}

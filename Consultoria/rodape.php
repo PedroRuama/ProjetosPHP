@@ -10,10 +10,11 @@
 <body>
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contato</h2>
+            <h2 id="contato">Contato</h2>
          
             <p>Entre em contato conosco para agendar uma consulta gratuita.</p>
             <br>
+            <!-- <a href="sendMail.php" class="cta-button">Envie um E-mail</a> -->
             <a href="mailto:info@consultoriafinanceira.com" class="cta-button">Envie um E-mail</a>
             <br>
         </div>

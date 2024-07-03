@@ -1,13 +1,15 @@
 * {
-    --primary-color: #021954;
-    /* --primary-color: #e8491d; */
+    --primary-color: #1f293b;
+    --secondary-color: #e8491d;
     --terciary-color: #8997b7;
     --gray-color: #c4c4c8;
     --darkgray-color: #8d8d8d;
     --hover-color: #fff;
     --white-color: #f5f5f5;
+    --backColor: #1f293b;
     /* --backColor: #384972; */
-    --backColor: #021954;
+    /* --backColor: #021954; */
+    --blue-color: #021954;
     padding: 0;
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -97,19 +99,21 @@ header h1 {
 }
 
 .box_nav {
-    /* background-color: var(--backColor); */
-    background-color: transparent;
-    position: absolute;
-    height: 11rem;
+    background-color: #1f293b;
+    /* background-color: transparent; */
+    /* position: absolute; */
+    /* box-shadow: inset 0px 0px 20px #0f0f0f; */
+    /* height: 11rem; */
     width: 100%;
     z-index: 200;
 }
 
 .logo_div {
-    height: 8rem;
+    /* height: 8rem; */
 
 }
-#logo_line{
+
+#logo_line {
     height: 80%;
 }
 
@@ -117,7 +121,7 @@ header h1 {
     display: none;
 
 }
-    
+
 
 #input-container {
     width: 100%;
@@ -187,7 +191,7 @@ header h1 {
     font-weight: bold;
 }
 
-ul {
+.box_nav ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -196,7 +200,7 @@ ul {
     margin: 0;
 }
 
-li {
+.box_nav  li {
     padding: 1rem;
     transition: 0.2s;
     list-style-type: none;
@@ -287,7 +291,7 @@ nav .alingH {
 }
 
 .dropdown_servicos {
-    
+
     flex-direction: column;
     position: absolute;
     z-index: 100;
@@ -297,7 +301,8 @@ nav .alingH {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     color: var(--primary-color);
 }
-#drop_service{
+
+#drop_service {
     display: none;
 }
 
@@ -318,7 +323,7 @@ nav .alingH {
     background-color: var(--primary-color);
 }
 
-#li_servicos:hover #drop_service{
+#li_servicos:hover #drop_service {
     display: flex;
 }
 
@@ -373,7 +378,7 @@ nav .alingH {
     border-radius: 20px;
     color: var(--white-color);
     padding: 1em 1.8em;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     display: flex;
     justify-content: center;
     transition: 0.2s background;
@@ -391,7 +396,7 @@ nav .alingH {
 .singup .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
-    background: var(--primary-color);
+    background: var(--secundary-color);
     height: var(--arrow-stroke);
     position: relative;
     transition: 0.2s;
@@ -487,7 +492,8 @@ nav .alingH {
 
     #nav_desktop {
         display: flex;
-        padding: 2rem;
+        /* padding: 2rem; */
+        align-items: center;
         height: 100%;
         width: 50%;
 
@@ -504,32 +510,89 @@ nav .alingH {
         position: relative;
         font-size: 16px;
         list-style-type: none;
-        height: 80%;
+        /* height: 100%; */
         display: flex;
+        z-index: 5;
+        border: none;
+        background-color: transparent;
         text-align: center;
         justify-content: center;
         align-items: center;
-        border-bottom: none;
-        transition: 0.3s;
-        color: #f5f5f5;
+        transition: 0.3s ease;
+        color: var(--white-color);
     }
 
+    
     #nav_desktop a {
         width: 100%;
         text-decoration: none;
-        height: 90%;
+        /* height: 100%; */
         /* position: relative; */
         text-align: center;
 
 
     }
 
-
+/* 
     #nav_desktop .li_desktop:hover {
         color: #021954;
         font-weight: 600;
-        background-color: #f5f5f5;
+        background-color: #f5f5f5
+    } */
+
+    /* linha do bottom */
+    .li_desktop::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        border-radius: 10px;
+        background-color: var(--secondary-color);
+        transition: 0.5s ease;
     }
+
+    .li_desktop:hover {
+        /* color: #f5f5f5; */
+        font-weight: 600;
+        /* transition-delay: 0.3s; */
+    }
+
+    .li_desktop:hover::before {
+        width: 100%;
+    }
+
+
+    /* background subindo */
+    /* .li_desktop::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background-color: #071A5F;
+        transition: 0.4s ease;
+        z-index: -1;
+    }
+
+    .li_desktop:hover::after {
+        height: 100%;
+        transition-delay: 0.4s;
+        color: aliceblue;
+    } */
+
+
+
+
+
+
+
+
+
+
+
 
     #nav_desktop button {
         background-color: transparent;

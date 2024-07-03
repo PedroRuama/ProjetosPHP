@@ -103,6 +103,7 @@ strong {
 
 .features li {
   display: flex;
+  text-align: start;
   align-items: center;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -110,11 +111,13 @@ strong {
 }
 
 .features .icon {
-  background-color: var(--primary-color);
-  display: inline-flex;
+  background-color: var(--secondary-color);
+  display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white-color);
+  width: 15px;
+  height: 15px;
   padding: 2px;
   border-radius: 10px;
 }

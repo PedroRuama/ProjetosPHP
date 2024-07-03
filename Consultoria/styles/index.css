@@ -12,10 +12,11 @@ vermelho: #a10000
 }
 
 .section {
-    border-top: solid 5px var(--primary-color);
+    border-top: solid 5px var(--secondary-color);
     color: var(--backColor);
     width: 40%;
     padding: 2rem;
+    margin: 2rem;
 }
 
 .sectionFull {
@@ -80,7 +81,7 @@ body {
 }
 
 .img_capa {
-    height: 70vh;
+    height: 45vh;
     flex: 0 0 100%;
 
     position: relative;
@@ -133,9 +134,7 @@ body {
     position: absolute;
     width: 100%;
     z-index: 100;
-    top: 90%;
-
-
+    top: 85%;
 }
 
 
@@ -193,19 +192,20 @@ body {
 }
 
 .services {
+    /* background-color: var(--backColor); */
     background-color: var(--backColor);
     /* margin: 4rem 0; */
 }
 
 #services2 {
     background-color: var(--gray-color);
-    
+
 }
 
 #services {
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -252,7 +252,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin: 1em;
     flex: 1 1 calc(33% - 2em);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+
     text-align: center;
+}
+
+.service-item:hover {
+    /* transform: scale(1.15); */
+    color: white;
+    cursor: pointer;
+    background-color: var(--primary-color);
 }
 
 .service-item h3 {
@@ -284,7 +295,7 @@ footer {
 
 .Flashlogin {
     display: flex;
-    margin: 2rem;
+    /* margin: 2rem */
     justify-content: space-between;
 }
 
@@ -322,15 +333,19 @@ footer {
 
 
 
-
+.div_b {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    /* background-color: var(--secondary-color); */
+}
 
 .blob_ {
     height: 30rem;
-    width: 45%;
+    width: 100%;
     display: flex;
     overflow: hidden;
-
-
     border-radius: 73% 25% 18% 70% / 60% 40% 55% 42%;
 }
 
@@ -351,7 +366,7 @@ footer {
     transform: translateY(0);
 }
 
-.card_info{
+.card_info {
     background-color: var(--white-color);
     padding: 1.5em;
     width: 25%;
@@ -364,10 +379,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 
 }
-.icon_card{
+
+.icon_card {
     height: 5rem;
     width: 5rem;
     padding: 0.5rem;
@@ -382,16 +398,16 @@ footer {
 
     .tutorial {
         display: flex;
-
+        position: relative;
         width: 100%;
-        color: var(--backColor);
+        color: var(--white-color);
         flex-direction: column;
         align-items: center;
-        background-color: #f5f5f5;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+
+        /* margin-top: 2rem; */
+        /* margin-bottom: 4rem; */
+        /* padding-top: 4rem; */
+        /* padding-bottom: 4rem; */
     }
 
 
@@ -411,4 +427,57 @@ footer {
 
     }
 
+    .tutorial .section {
+        color: var(--white-color);
+    }
+
+
+
+
+    .backImg {
+        position: absolute;
+        z-index: -5;
+        height: 100%;
+        width: 100%;
+        filter: brightness(0.4);
+    }
+
+    .fundo_img {
+        position: absolute;
+        z-index: -4;
+        height: 100%;
+        background-color: var(--blue-color);
+        filter: opacity(0.8);
+        width: 100%;
+    }
+
+
+}
+.vertical-section {
+    display: flex;
+    width: 27%;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    border-right: 5px solid var(--secondary-color);
+    
+}
+
+.v-s2{
+    border-right: 5px solid var(--blue-color);
+
+}
+.vertical-section h1{
+    text-align: center;
+
+}
+.desc_conteudo{
+    text-align: justify;
+    width: 70%;
+    padding: 2rem;
+    padding-right: 5rem;
+}
+.desc_conteudo ul{
+    padding-left: 3rem;
 }

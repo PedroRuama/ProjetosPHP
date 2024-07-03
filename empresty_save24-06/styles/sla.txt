@@ -1,0 +1,28 @@
+<div class="inputGroup">
+  <p class="label_select">Parcelas</p> 
+  <select name="parcela">
+    <option value="1x">1x</option>
+    <option value="2x">2x</option>
+    <option value="3x">3x</option>
+    <option value="6x">6x</option>
+    <option value="12x">12x</option>
+  </select>
+</div> 
+<div class="inputGroup">
+  <p class="label_select">Pagas</p> 
+  <select name="par_pagas">
+    <option value="0x">0x</option>
+    <option value="1x">1x</option>
+    <option value="2x">2x</option>
+    <option value="3x">3x</option>
+    <option value="4x">4x</option>
+    <option value="5x">5x</option>
+    <option value="6x">6x</option>
+    <option value="7x">7x</option>
+    <option value="8x">8x</option>
+    <option value="9x">9x</option>
+    <option value="10x">10x</option>
+    <option value="11x">11x</option>
+    <option value="12x">12x</option>
+  </select>
+</div> '

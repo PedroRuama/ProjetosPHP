@@ -1,0 +1,704 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+html{
+    height: 100%
+}
+body{
+    height: 100%;
+    background-color: #cfcfcf;
+    display: flex;
+    flex-direction: column;
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    
+}
+
+p{
+    padding: 0 1rem;
+}
+
+
+.back1{
+    background-color: #071A5F;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    font-size: 90%;
+    position: absolute;
+  
+}
+
+
+.voltar{
+    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    display: flex;
+    color: #f5f5f5;
+    font-size: 120%;
+    padding: 1rem 0;
+    z-index: 2;
+}
+
+
+img{
+    height: 50%;
+    transition: 0.5s;
+    rotate: 180deg;
+}
+
+.div_img{
+    width: 1.5rem;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.div_img img{
+    cursor: pointer;
+    height: 100%;
+}
+
+#img_parcela{
+    rotate: 90deg;
+    filter: grayscale(40%);
+}
+
+
+
+#div_parcelas{
+    height:7rem;
+    width: 10rem;
+    margin-top: 1.5rem;
+    z-index: 10;
+    transition: 0.5s;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    background-color: #e4e4e4;
+    border: solid 1px #ff8888;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    
+
+}
+
+#label_valparcela{
+    width: 10rem;
+    margin-top: 0.5rem;
+   
+}
+#label_diapag{
+    margin-top: 0.5rem;
+   
+    display: flex;
+    justify-content: end;
+   
+}
+
+#val_parcela{
+    height: 2rem;
+    width: 6rem;
+   
+}
+
+#val_parcela_label{
+   background-color: transparent;
+    width: 6rem;
+   
+}
+
+#cancelar_div{
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    
+}
+
+
+.btn {
+    font-size: 105%;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    color: #f5f5f5;
+    /* text-transform: uppercase; */
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+/* linha do bottom */
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #f5f5f5   ;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    color: #071A5F;
+    transition-delay: 0.3s;
+}
+
+#seta-azul{
+    display: flex;
+    filter: grayscale(200%) invert(100%);
+    transition: 0.5s;
+    
+}
+
+.btn:hover #seta-azul{
+    filter: grayscale(0) invert(0);
+    transition-delay: 0.3s;
+}
+
+
+.btn:hover::before {
+    width: 95%;
+}
+
+
+
+/* background subindo */
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+    background-color: #f5f5f5;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+ 
+
+
+/* ---------------------------------------------cadastro --------------------------------------------- */
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    display: flex;
+    position: absolute;
+    top: 3%;
+    width: 30%;
+    border: 2px solid #f5f5f5;
+    justify-content: center;
+    z-index: -1;
+    border-radius: 10px;
+
+}
+
+#title h1{
+    padding: 0.5rem 0;
+    color: #f5f5f5  ;
+}
+.cad{
+    top: 11%;
+    position: absolute;
+    width: 60%;    
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    display: flex;    
+    
+}
+.forms_div{
+    
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+form{
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.inputGroup {
+    position: relative;
+    
+}
+
+.inputGroup input {
+    font-size: 100%;
+    outline: none;
+    display: flex;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: .15rem .5rem;
+    min-height: 2.8rem;    
+    box-shadow: 0px 8px 16px -18px;
+    width: 100%;
+   
+    
+}
+.inputGroup textarea {
+    width: 90%;
+    max-width: 90%;
+    padding: 1rem;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: 0px 8px 16px -18px;
+    outline: none;
+    display: flex;
+    height: 6rem;
+    max-height: 6rem;
+    font-size: 100%;
+    border-radius: 5px; 
+
+}
+
+#aling_obs{
+    height: 8rem;
+}
+
+
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #808080;
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.8);
+    margin: 0em;
+    margin-left: 1.3em;
+    top: 0;
+    flex-wrap: nowrap;
+    padding: 0.4em;
+    background-color: #f5f5f5;
+    color: #071A5F;
+   
+}
+
+
+
+
+.inputGroup :is(input:disabled)~label {
+    transform: translateY(-50%) scale(.8);
+    margin: 0em;
+    margin-left: 1.3em;
+    top: 0;
+    padding: 0.4em;
+    background-color: transparent;
+    color: #808080  ;
+   
+}
+
+
+#inp-dataEmp :is(input:focus, input:valid)~label{
+    background-color: #f5f5f5;
+    padding: 0 0.5rem;
+    top: 0;
+}
+#inp-dataDev :is(input:focus, input:valid)~label{
+    background-color: #f5f5f5;
+    padding: 0 0.5rem;
+    top: 0;
+}
+
+#inp-dataEmp :is(input:disabled)~label{
+    background-color: transparent;
+    padding: 0 0.5rem;
+    top: 0;
+}
+#inp-dataDev :is(input:disabled)~label{
+    background-color: transparent;
+    padding: 0 0.5rem;
+    top: 0;
+}
+
+
+
+
+.inputGroup :is(textarea:disabled)~label {
+    transform: translateY(-50%) scale(.8);
+    margin: 0em;
+    margin-left: 1.3em;
+    top: 0;
+    padding: 0.4em;
+    background-color: transparent;
+    color: #808080  ;
+   
+}
+
+
+
+
+
+.inputGroup :is(textarea:focus, textarea:valid)~label {
+    transform: translateY(-50%) scale(.8);
+    margin: 0em;
+    margin-left: 1.3em;
+    top: 0;
+    padding: 0.4em;
+    background-color: #f5f5f5;
+    color: #071A5F;
+   
+}
+
+.inputGroup :is(input:focus) {
+    border-color: rgb(150, 150, 200);
+    border-bottom: 2px solid #071A5F;
+}
+.inputGroup :is(input:disabled) {
+   background-color: #dfdfdf;
+   cursor: not-allowed;
+}
+.inputGroup :is(textarea:disabled) {
+    background-color: #dfdfdf;
+    cursor: not-allowed;
+ }
+
+.disabili{
+    color:#808080;
+    
+    pointer-events: none;
+}
+#disabili{
+    color:#808080;
+    padding: 0 1rem;
+    border-radius: 10px;
+    pointer-events: none;
+}
+.inputGroup :is(textarea:focus) {
+    border-color: rgb(150, 150, 200);
+    border-bottom: 2px solid #071A5F;
+}
+
+.inputGroup select{
+    font-size: 95%;
+    outline: none;
+    display: flex;
+    
+    border: 1px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: .15rem .5rem;
+    min-height: 2rem;    
+    box-shadow: 0px 8px 16px -18px;
+    width: auto;
+}
+
+
+.aling{
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.hr1{
+    width: 100%;
+    border-bottom: 1px solid #071A5F;
+    margin-bottom: 1rem;
+    
+}
+
+.hr{
+    width: 100%;
+    
+    border-bottom: 1px solid #808080;
+    margin-bottom: 1rem;
+}
+
+
+
+.div_checkbox{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* The label_check */
+.label_check {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+.label_check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+}
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #e4e4e4;
+    border: 1px solid #808080;
+    border-radius: 5px;
+   
+}
+
+/* On mouse-over, add a grey background color */
+.label_check:hover input ~ .checkmark {
+    background-color: #808080;
+}
+  
+/* When the checkbox is checked, add a blue background */
+.label_check #inp-divida:checked ~ .checkmark {
+    background-color: #ff8888;
+}
+
+.label_check #inp-quitado:checked ~ .checkmark {
+    background-color: #7cf582;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* mostra o checkmark quando checked */
+  .label_check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* estilo do check de dentro */
+  .label_check .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+#divida_label{
+    color: #f32121;
+    font-weight: bold;
+    padding-left: 2rem; 
+    padding-right: 1rem; 
+}
+
+#quitado_label{
+    color: green;
+    
+    font-weight: bold;
+    padding-left: 2rem; 
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#inp-id{
+    width: 15%;
+}
+#inp-nome{
+    width: 35%;
+}    
+#inp-sobrenome{
+    width: 40%;  
+}   
+
+#inp-cpf{
+    width: 30%;
+}
+
+#inp-rg{
+    width: 30%;
+}
+
+#inp-tel{
+    width: 30%;
+}
+
+#inp-end{
+    width: 65%;  
+}
+
+#inp-email{
+    width: 40%;
+}
+
+#inp-social{
+    width: 30%;
+
+}
+#Emp{
+    justify-content: start;
+}
+
+#inp-valEmp{
+    width: 25%;
+    margin-right: 1.5rem;
+}
+#dia_pag{
+    
+    width: 3.5rem;
+    margin-left: 1.5rem;
+}
+#inp-dataEmp{
+    width: 23%;
+    margin-left: 1.5rem;
+    margin-right: 2rem;  
+}
+#inp-dataDev{
+    width: 23%;
+      
+}
+
+#inp-juros{
+    width: 13%;
+    height: 3rem;
+}
+#inp-obs{
+    width: 100%;
+}
+
+#inp-dataEmp label{
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    top: 5px;
+}
+#inp-dataDev label{
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    top: 5px;
+}
+
+.label_select{
+    color: #808080;
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+}
+
+.btns{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns1{
+    width: 40%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    
+    padding: 8px;
+    cursor: pointer;
+    background-color: #071A5F;
+    color:#f5f5f5;
+    border-radius: 8px;
+    font-size: 75%;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    width: 8rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    border: solid 2px #071A5F;
+    transition: 0.5s;
+}
+
+button:disabled{
+    opacity: 40%;
+    cursor: not-allowed;
+}
+
+#excluir{
+    border: solid 2px #CA1717;
+    background-color: #CA1717;
+    
+}
+
+
+#excluir:hover{
+    border: solid 2px #CA1717;
+    background-color: #CA1717;
+    color: #f5f5f5;
+}
+
+#forms_ex{
+    position: absolute;
+    display: flex;     
+    width: auto; 
+    right: 1rem;
+    flex-direction: row;
+    bottom: 2.7%;
+    z-index: 0;
+}
+
+
+
+
+
+
+@media (max-width: 1000px){
+    .cad{
+        width: 80%;
+    }
+}

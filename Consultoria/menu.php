@@ -5,8 +5,8 @@ $_SESSION['user_name'] = 'JdAdm';
 
 if (isset($_SESSION['user_name'])) {
     $user = $_SESSION['user_name'];
-    $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
-    $dadosU = mysqli_fetch_array($select_user);
+    // $select_user = mysqli_query($conexao, "SELECT * from users where user_name='$user'");
+    // $dadosU = mysqli_fetch_array($select_user);
 } else {
     $user = 0;
 }
@@ -36,7 +36,7 @@ if (isset($_SESSION['user_name'])) {
 
 
                 <div class="logo_div" id="logo_desktop">
-                    <img src="imgs/logos/3-removebg-preview.png" alt="logo" class="img" >
+                    <img src="imgs/logos/7-removebg-preview.png" alt="logo" class="img" >
                     <nav id="nav_desktop" class="sidenav">
                         <a href="index.php?user=<?= $user ?>">
                             <li class="li_desktop">Home Page</li>
@@ -44,17 +44,17 @@ if (isset($_SESSION['user_name'])) {
                         <span style=" width: 100%;" id="li_servicos">
                             <li class="li_desktop">Serviços</li>
                             <div class="dropdown_servicos" id="drop_service">
-                                <a href="servicos.php?servicePf">p\ Pessoa Fisica 
+                                <a href="servicos.php?servicePf">Finanças Pessoais 
                                     &nbsp; <img src="iconsJD/setaBranca.png" class="img" alt="">
                                 </a>
-                                <a href="servicos.php?serviceEm">p\ Pessoa Juridica
+                                <a href="servicos.php?serviceEm">Gestão Empresarial
                                 &nbsp; <img src="iconsJD/setaBranca.png" class="img" alt="">
                                 </a>
                             </div>
                         </span>    
-                        <a href="planos.php">
+                        <!-- <a href="planos.php">
                             <li class="li_desktop">Planos</li>
-                        </a>
+                        </a> -->
                         <a href="#">
                             <li class="li_desktop">Sobre Nós</li>
                         </a>
@@ -88,7 +88,7 @@ if (isset($_SESSION['user_name'])) {
                         <li><a href="index.php?user=<?= $user ?>">Home Page</a></li>
                         <li><a href="produtos.php?user=<?= $user ?>">Serviços</a></li>
                         <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </nav>
 

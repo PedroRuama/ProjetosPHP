@@ -13,10 +13,12 @@
 
     <form class="form" action="../controllers/login_controller.php?log=1" method="post">
 
+
+        <div class="divLogo">
+            <a href="../index.php"><img src="../imgs/logos/7-removebg-preview.png" alt="logo" class="img"></a>
+        </div>
+
         <p class="form-title">Preencha os dados da sua empresa</p>
-        <!-- <div class="divLogo">
-                <a href="../index.php"><img src="../imgs/logofake.png" alt="logo" class="img"></a>
-            </div> -->
 
         <div class="Allinputs_div">
 
@@ -88,7 +90,7 @@
             </div>
 
             <div class="input-container textarea_container">
-                <textarea class="box" rows="12" cols="50" placeholder="Faça a primeira apresentação de sua Empresa/Negócio "></textarea>
+                <textarea class="box" rows="8" cols="50" placeholder="Faça a primeira apresentação de sua Empresa/Negócio "></textarea>
             </div>
             <!-- <div class="input-container">
                 <input type="password" placeholder="Senha" required name="pass">
