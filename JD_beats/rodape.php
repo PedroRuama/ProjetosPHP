@@ -23,10 +23,10 @@
                     <img src="iconsJD/telefone.png" alt="telefone" class="img">
                     <p>(19) 99999-3232</p>
                 </div>
-                <div class="icon">
+                <!-- <div class="icon">
                     <img src="iconsJD/o-email2.png" alt="email" class="img">
                     <p>jdnthatrack@gmail.com</p>
-                </div>
+                </div> -->
             </div>
             <img src="imgs/logofake.png" alt="logo" class="img">
         </div>

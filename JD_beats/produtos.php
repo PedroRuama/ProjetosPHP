@@ -30,14 +30,37 @@ $ultimosCad = mysqli_query($conexao, "SELECT * FROM beats");
     <script src="scripts/modal.js"></script>
 </head>
 
+<script> 
+    function busc() {
+        console.log("1");
+        var busc = document.getElementById("inputBusc").value.toLowerCase();
+        var card_beat =document.getElementsByClassName("card")
+       
+
+        for (let index = 0; index < card_beat.length; index++) {
+            const beat_name = card_beat[index].getElementsByClassName("nomeP")[0].innerHTML.toLowerCase();
+
+            if(beat_name.includes(busc)){
+                card_beat[index].style.display = "flex";
+                // card_beat[index].removeProperty("display");
+            }else{
+                card_beat[index].style.display = "none";
+            }
+            
+        }
+    }
+    
+</script>
+
 <body>
     <div class="labelselct_div">
-        <p>JDONTHATRACK® </p>
-        <h2>Camisetas</h2>
+        <p>JDONTHATRACK®</p>
+        <h2> &nbsp; beats</h2>
+        
     </div>
     <div id="input-container2">
         <div class="lineBusc"></div>
-        <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site...">
+        <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site..." onkeyup="busc()">
     </div>
     <div class="grid-container">
         <?php

@@ -258,7 +258,9 @@ if (isset($_GET['logado'])) {
     </div>
 
 
-    <section id="services" class="services">
+    <section id="cards_beneficios">
+        <img src="imgs/consultoria-financeira.webp" alt="" class="backImg">
+        <div class="fundo_img"></div>
         <div class="container">
             <div class="section scroll_animado sectionFull">
                 <h1>Tenha Ystrategy em sua organização</h1>
@@ -269,9 +271,6 @@ if (isset($_GET['logado'])) {
                         <img src="iconsJD/computador_lucro.png" class="img" alt="">
                     </div>
                     <h3>Para que serve:</h3>
-
-
-
                     <ul class="features">
                         <li>
                             <span class="icon img">
@@ -490,6 +489,7 @@ if (isset($_GET['logado'])) {
                 </div>
             </div>
         </div>
+        
     </section>
 
 
@@ -527,9 +527,9 @@ if (isset($_GET['logado'])) {
                         </div>
                     </a>
                 </div>
+                
             </div>
         </section>
-
     </div>
 
 

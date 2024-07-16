@@ -457,6 +457,46 @@ nav .alingH {
 
 
 
+.MobileNot{
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+    background-color: var(--backColor);
+    height: 100%;
+    width: 100%;
+    color: #f5f5f5;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    position: fixed;
+
+}
+.MobileNot img{
+   height: 10rem;
+   width: 10rem;
+   
+
+}
+
+@media (max-width: 700px){
+    .MobileNot{
+        display: flex;
+        
+    }
+    
+    .box_nav{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
 
 
 @media (min-width: 900px) {

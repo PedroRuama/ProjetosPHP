@@ -26,6 +26,16 @@ if (isset($_POST['desc'])) {
 if (isset($_POST['link'])) {
   $link =  mysqli_real_escape_string($conexao, $_POST['link']);
 }
+if (isset($_POST['destaque'])) {
+  $destaque =  mysqli_real_escape_string($conexao, $_POST['destaque']);
+}
+
+
+if($destaque){
+  $conexao->query("UPDATE beats set destaque=0 WHERE destaque=1");
+}
+
+
 
 function enviarArquivo($error, $name, $tmp_name, $num_img)
 {
@@ -91,7 +101,7 @@ if (isset($_FILES['imagem']) && count($_FILES) > 0) {
 
 
 
-$update = "update beats set titulo='$titulo', preco='$preco', preco_risc='$preco_risc', categoria='$cat', descricao='$desc', destaque=0, link='$link' where codP=$codP";
+$update = "update beats set titulo='$titulo', preco='$preco', preco_risc='$preco_risc', categoria='$cat', descricao='$desc', destaque='$destaque', link='$link' where codP=$codP";
 
 //  echo "<script>alert('Falha ao enviar arquivos')";
   

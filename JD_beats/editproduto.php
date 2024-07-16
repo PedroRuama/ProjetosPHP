@@ -45,9 +45,12 @@ $dadosImg = mysqli_fetch_array($imagens);
         btn_edit.style = "display: none";
         document.getElementById("submit").style = "display: flex"
         document.getElementById("cancelar").style = "display: flex"
+        document.getElementById("editDestaque").style = "display: flex"
         alert("Edição habilitada;\n Agora Você pode alterar os dados do Beat")
 
     }
+
+    var radios = document.getElementsByClassName("radio")
 </script>
 
 
@@ -97,11 +100,40 @@ $dadosImg = mysqli_fetch_array($imagens);
                     Seu navegador não suporta o elemento de áudio.
                 </audio> -->
             <a href="<?= $produto['link'] ?>" target="_blank"> <button type="button" class="ouvir_btn">Ouvir Prévia</button> </a>
+
+            <br>
+            <br>
+            <hr>
+            <br>
+            <form action="controllers/updateProduto.php" method="post">
+                <div id="editDestaque">
+
+                    <h3>Deixar como destaque na home? :</h3>
+                    <label>
+                        <input type="radio" class="radio" name="destaque" value="1">
+                        Sim
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" class="radio" name="destaque" value="0">
+                        Não
+                    </label>
+
+                    <?php
+                   
+                    if ($produto['destaque']) {
+                        echo "<script> radios[0].checked = true</script>";
+                    } else {
+                        echo "<script> radios[1].checked = true</script>";
+                    }
+                    ?>
+
+                </div>
+
         </div>
 
 
-        <form action="controllers/updateProduto.php" id="EditProdutoForm" method="post">
-
+        <div id="EditProdutoForm">
             <div class="form__group">
                 <input type="text" disabled class="form__field" placeholder="Name" required="" name="codP" value="<?= $produto['codP'] ?>" style="pointer-events: none;">
                 <label for="name" class="form__label">Código do Beat</label>
@@ -122,7 +154,7 @@ $dadosImg = mysqli_fetch_array($imagens);
             </div>
 
 
-            
+
             <input type="text" style="display: none;" id="categoria_beat" value="<?= $produto['categoria'] ?>">
 
             <div class="form__group">
@@ -176,6 +208,7 @@ $dadosImg = mysqli_fetch_array($imagens);
                     <div class="backDiv"> Excluir</div>
                 </a>
             </button>
+        </div>
         </form>
 
 

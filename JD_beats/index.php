@@ -5,8 +5,11 @@ include('menu.php');
 
 $ultimosCad = mysqli_query($conexao, "SELECT * FROM beats ORDER BY id DESC LIMIT 10; ");
 
+$destaque = mysqli_query($conexao, "SELECT * FROM beats where destaque=1; ");
+$destaque_ = mysqli_fetch_array($destaque);
 
-
+$imgDestaque = mysqli_query($conexao, "SELECT * FROM imagens WHERE codP =" . $destaque_['codP']);
+$imgDestaque_ = mysqli_fetch_array($imgDestaque);
 
 if (isset($_GET['deslog'])) {
 
@@ -208,29 +211,46 @@ if (isset($_GET['logado'])) {
         <br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div id="alingFull">
-            <div class="FullImg_div">
+            <div class="FullImg_div" onclick="PopUpCard(this)">
                 <div class="FullImg_txt">
-                    <h2>em Destaque!</h2>
-
-                    <button class="FullBtn">Ver Destaque</button>
+                    <h2>em Destaque!!!</h2>
+                    <h3><?= $destaque_['titulo'] ?></h3>
+                    <a href=""></a>
+                    <button type="button" class="FullBtn">Ver Destaque</button>
                 </div>
-                <img src="imgs/trapper.jpg" alt="img_promocional" class="img3">
+                <img src="<?= $imgDestaque_['path'] ?>" alt="img_promocional" class="img3">
                 <div class="lineFullImg"></div>
                 <div class="lineFullImg2"></div>
+
+                <div id="audioModal" class="modal audioModal">
+                    <div class="modal-content">
+                        <span class="close closess">&times;</span>
+                        <div class="beat-content">
+                            <div class="imgCardModal">
+                                <img src="<?= $imgDestaque_['path'] ?>" alt="produto_img">
+                            </div>
+                            <div class="txtModal">
+                                <h3><?= $destaque_['titulo'] ?></h3>
+                                <br>
+                                <h4>Estilo do Beat: <?= $destaque_['categoria'] ?></h4>
+                                <br>
+                                <br>
+                                <del>R$<?= $destaque_['preco_risc'] ?></del> <b>R$<?= $destaque_['preco'] ?></b>
+                                <br>
+                                <?= $destaque_['descricao'] ?>
+                                <br>
+                                <br>
+                                <form action="comprar.php" method="post">
+
+                                    <input type="text" value="<?= $destaque_['codP'] ?>" name="codP" style="display: none;">
+                                    <button type="submit" class="btn_compra" id="comprar_btn">comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                        <a href="<?= $destaque_['link'] ?>" target="_blank"> <button type="button" class="ouvir_btn">Ouvir Prévia</button> </a>
+                    </div>
+                </div>
             </div>
         </div>
 

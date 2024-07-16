@@ -27,6 +27,26 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
     <link rel="stylesheet" href="../styles/gerenciar.css">
     <script src="../scripts/gerenciar.js"></script>
 </head>
+<script>
+    function busc() {
+        var busc = document.getElementById("inputBusc").value.toLowerCase();
+        console.log(busc);
+
+
+        var card_beat = document.getElementsByClassName("card")
+        for (let index = 0; index < card_beat.length; index++) {
+            const beat_name = card_beat[index].getElementsByClassName("nomeP")[0].innerHTML.toLowerCase();
+
+            if (beat_name.includes(busc)) {
+                card_beat[index].style.display = "flex";
+                // card_beat[index].removeProperty("display");
+            } else {
+                card_beat[index].style.display = "none";
+            }
+
+        }
+    }
+</script>
 
 <body>
 
@@ -148,184 +168,6 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
             <div class="acaoADM" onclick="focusAcao(this)">
 
                 <div class="alingH" id="desc_peca" onclick="divAcao()">
-                    Pesquisar Produto Existente
-                    <div class="icon" id="setaDesc">
-                        <img src="../iconsJD/seta.png" alt="seta" class="img">
-                    </div>
-                </div>
-                <div class="txt" id="desc_peca_txt">
-                    <form action="">
-                        <br>
-                        <br>
-                        <div id="input-container2">
-                            <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site...">
-                        </div>
-
-
-                        <div class="div_produto" id="tr">
-                            <div class="div_info">
-                                <div class="info">imagem -</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">--</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">titulo -</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">--</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">Categoria </div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">--</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">Estoque</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info"></div>
-                            </div>
-                        </div>
-
-                        <?php
-                        while ($dProduto = mysqli_fetch_array($produtos)) {
-                            $imagem = mysqli_query($conexao, 'SELECT * FROM imagens WHERE codP =' . $dProduto['codP']);
-                            $dImg = mysqli_fetch_array($imagem);
-                        ?>
-                            <div class="div_produto div_produtoEdit">
-                                <div class="div_img">
-                                    <img src="../<?= $dImg['path'] ?>" alt="img" class="img3">
-                                </div>
-                                <div class="div_info">
-                                    <div class="info"><?= $dProduto['titulo'] ?></div>
-
-                                </div>
-                                <div class="div_info">
-                                    <!-- Categoria: -->
-                                    <div class="info"><?= $dProduto['categoria'] ?></div>
-
-                                </div>
-                                <div class="div_info">
-                                    <!-- Estoque: -->
-                                    <div class="info"><a href="<?= $dProduto['link'] ?>"> Ouvir </a> </div>
-
-                                </div>
-
-                                <div class="div_info">
-                                    <button> <a href="editproduto.php?codP=<?= $dProduto['codP']?>">Editar </a> </button> 
-                                </div>
-
-
-                            </div>
-                        <?php
-                        }
-                        ?>
-
-
-
-                    </form>
-                </div>
-
-            </div>
-            <div class="acaoADM" onclick="focusAcao(this)">
-
-                <div class="alingH" id="desc_peca" onclick="divAcao()">
-                    Editar produto em destaque na home
-                    <div class="icon" id="setaDesc">
-                        <img src="../iconsJD/seta.png" alt="seta" class="img">
-                    </div>
-                </div>
-                <div class="txt" id="desc_peca_txt">
-                    <form action="">
-
-                        <div id="input-container2">
-                            <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar Produto...">
-                        </div>
-
-
-                        <div class="div_produto" id="tr">
-                            <div class="div_info">
-                                <div class="info">imagem</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">-</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">titulo</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">-</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">Categoria</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">-</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info">Selecionar <br> em destaque</div>
-                            </div>
-                            <div class="div_info">
-                                <div class="info"></div>
-                            </div>
-                        </div>
-
-                        <div class="div_produto div_produtoDestaque">
-                            <div class="div_img">
-                                <img src="../imgs/cabides.jpg" alt="img" class="img3">
-                            </div>
-                            <div class="div_info">
-                                <div class="info">fEsfjsl</div>
-
-                            </div>
-                            <div class="div_info">
-                                <!-- Categoria: -->
-                                <div class="info">Camiseta</div>
-
-                            </div>
-
-
-                            <div class="div_info">
-                                <input type="radio" name="EmDestaque" class="radio">
-                            </div>
-
-                        </div>
-
-                        <div class="div_produto div_produtoDestaque">
-                            <div class="div_img">
-                                <img src="../imgs/cabides.jpg" alt="img" class="img3">
-                            </div>
-                            <div class="div_info">
-                                <div class="info">fEsfjsl</div>
-
-                            </div>
-                            <div class="div_info">
-                                <!-- Categoria: -->
-                                <div class="info">Camiseta</div>
-
-                            </div>
-
-
-                            <div class="div_info">
-                                <input type="radio" name="EmDestaque" class="radio">
-                            </div>
-
-                        </div>
-
-
-
-                    </form>
-                </div>
-
-
-
-            </div>
-
-            <div class="acaoADM" onclick="focusAcao(this)">
-
-                <div class="alingH" id="desc_peca" onclick="divAcao()">
                     Pedidos Clientes
                     <div class="icon" id="setaDesc">
                         <img src="../iconsJD/seta.png" alt="seta" class="img">
@@ -408,8 +250,13 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
         </div>
 
         <div id="viewPs_box">
+            <br>
+            <br>
             <form action="">
-
+                <div id="input-container2">
+                    <img src="" alt="">
+                    <input type="text" autocomplete="off" name="text" id="inputBusc" placeholder="Pesquisar no site..." onkeyup="busc()">
+                </div>
                 <div class="div_produto" id="tr">
                     <div class="div_info">
                         <div class="info">imagem -</div>
@@ -442,12 +289,12 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
                     $imagem = mysqli_query($conexao, 'SELECT * FROM imagens WHERE codP =' . $dPrdts['codP']);
                     $dImg = mysqli_fetch_array($imagem);
                 ?>
-                    <div class="div_produto div_produtoEdit">
+                    <div class="div_produto div_produtoEdit card">
                         <div class="div_img">
                             <img src="../<?= $dImg['path'] ?>" alt="img" class="img3">
                         </div>
                         <div class="div_info">
-                            <div class="info"><?= $dPrdts['titulo'] ?></div>
+                            <div class="info nomeP"><?= $dPrdts['titulo'] ?></div>
 
                         </div>
                         <div class="div_info">
@@ -461,9 +308,13 @@ $selectPedidos = mysqli_query($conexao, "SELECT * from pedidos ORDER BY id_p DES
 
                         </div>
 
+
                         <div class="div_info">
-                            <button><a href="editproduto.php?codP=<?=$dPrdts['codP']?>">Editar </a></button>
+                            <a href="editproduto.php?codP=<?= $dPrdts['codP'] ?>">
+                                <button type="button">Editar </button>
+                            </a>
                         </div>
+
                     </div>
                 <?php
                 }

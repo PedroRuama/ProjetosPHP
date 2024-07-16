@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var cat_beat = document.getElementsByTagName('option')
-    var catBeat = document.getElementById('categoria_beat').value
+    // var catBeat = document.getElementById('categoria_beat').value
     for (let index = 0; index < cat_beat.length; index++) {
         const option = cat_beat[index];
         if (option.value == catBeat) {

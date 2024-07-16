@@ -394,7 +394,7 @@ nav .alingH {
 
 }
 
-.FullImg_div button {
+.FullImg_div .FullBtn{
     text-transform: uppercase;
     border: 2px solid #f5f5f5;
     padding: 1rem;
@@ -406,7 +406,7 @@ nav .alingH {
 
 }
 
-.FullImg_div button:hover {
+.FullImg_div:hover .FullBtn {
     border: 2px solid #0f0f0f;
     color: #f5f5f5;
     font-weight: bold;

@@ -400,11 +400,18 @@ button:hover {
     background-color: #9b9b9b;
 }
 
-
 input:disabled{
     color: #9b9b9b;
 }
 
+#editDestaque{
+    display: none;
+    gap:1rem;
+}
+#editDestaque label{
+    display: flex;
+    align-items: center;
+}
 
 
 

@@ -29,14 +29,18 @@ if (isset($_SESSION['user_name'])) {
 
 
 <body>
-
+    <!-- <div class="MobileNot">
+        <img src="imgs/logos/7-removebg-preview.png" alt="" class="img2">
+        <h2>Atualmete a visualização do sistema esta disponivel apenas para computador.</h2>
+        <p>Em breve lançamento para Celular</p>
+    </div> -->
     <div class="box_nav">
         <div class="alingV">
             <div class="alingH">
 
 
                 <div class="logo_div" id="logo_desktop">
-                    <img src="imgs/logos/7-removebg-preview.png" alt="logo" class="img" >
+                    <img src="imgs/logos/2-removebg-preview.png" alt="logo" class="img">
                     <nav id="nav_desktop" class="sidenav">
                         <a href="index.php?user=<?= $user ?>">
                             <li class="li_desktop">Home Page</li>
@@ -44,14 +48,14 @@ if (isset($_SESSION['user_name'])) {
                         <span style=" width: 100%;" id="li_servicos">
                             <li class="li_desktop">Serviços</li>
                             <div class="dropdown_servicos" id="drop_service">
-                                <a href="servicos.php?servicePf">Finanças Pessoais 
+                                <a href="servicos.php?servicePf">Finanças Pessoais
                                     &nbsp; <img src="iconsJD/setaBranca.png" class="img" alt="">
                                 </a>
                                 <a href="servicos.php?serviceEm">Gestão Empresarial
-                                &nbsp; <img src="iconsJD/setaBranca.png" class="img" alt="">
+                                    &nbsp; <img src="iconsJD/setaBranca.png" class="img" alt="">
                                 </a>
                             </div>
-                        </span>    
+                        </span>
                         <!-- <a href="planos.php">
                             <li class="li_desktop">Planos</li>
                         </a> -->
@@ -149,7 +153,7 @@ if (isset($_SESSION['user_name'])) {
                 </div>
 
 
-<!-- 
+                <!-- 
 
                 <?php
                 if ($user != 0) {
