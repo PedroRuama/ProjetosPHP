@@ -40,7 +40,7 @@ if (isset($_SESSION['user_name'])) {
 
 
                 <div class="logo_div" id="logo_desktop">
-                    <img src="imgs/logos/2-removebg-preview.png" alt="logo" class="img">
+                    <img src="imgs/logos/ys_horizontal_branco.png" alt="logo" class="img">
                     <nav id="nav_desktop" class="sidenav">
                         <a href="index.php?user=<?= $user ?>">
                             <li class="li_desktop">Home Page</li>

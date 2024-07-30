@@ -1,0 +1,661 @@
+/* 
+branco: #f5f5f5
+preto: #0f0f0f
+vermelho: #a10000
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+
+body {
+    background-color: #0f0f0f;
+}
+
+
+
+.img {
+    height: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    object-fit: contain;
+}
+
+.img2 {
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img3 {
+    width: 100%;
+    -webkit-width: 100%;
+    -moz-width: 100%;
+    -ms-width: 100%;
+    -webkit-height: 100%;
+    -moz-height: 100%;
+    -ms-height: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.icon {
+    height: 2rem;
+
+}
+
+.alingH {
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.alingV {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+#sidenav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 11;
+}
+
+#sidenav2 {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 11;
+}
+
+#sidenav2 .user_div {
+    color: #a10000;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.sidenav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: .8rem;
+
+}
+
+
+.sidenav button {
+    background-color: transparent;
+    border: none;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+
+.open-btn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 15;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 10px;
+    height: 2rem;
+    width: 2.5rem;
+    cursor: pointer;
+    padding: 1rem;
+
+}
+
+nav .alingH {
+    /* border-bottom: solid 2px #f5f5f5; */
+}
+
+.logo_nav {
+    height: 8rem;
+    width: 4rem;
+    position: absolute;
+}
+
+.user_div {
+    display: flex;
+    align-items: end;
+    height: 1.4rem;
+}
+
+.user_div p {
+    padding: 0 1rem;
+}
+
+
+.optionsConta {
+    width: 90%;
+}
+
+.optionsConta p {
+    color: #f5f5f5;
+    text-transform: uppercase;
+
+}
+
+/* -------------------nav end------------------------- */
+
+.img_capa {
+    height: 35vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.img_capa .img {
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    filter: brightness(50%);
+
+}
+
+/* -------------------destaques start------------------------- */
+.destaques_div {
+    width: 100%;
+    /* height: 50rem; */
+}
+
+.labeldestq_div {
+    height: 3rem;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    color: #dfdede;
+    padding: .5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal {
+   
+    position: fixed; 
+  
+}
+
+.carousel {
+    /* position: relative; */
+    width: 100%;
+    /* height: 20rem; */
+    /* overflow: hidden; */
+}
+
+.cards-container {
+    display: flex;
+    /* height: 100%; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    flex: 0 0 8rem;
+    /* Largura fixa dos cards */
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* height: 14rem; */
+
+
+}
+
+.imgCard {
+    width: 12rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    box-shadow: 0px 0px 5px #f5f5f5;
+
+
+}
+
+
+.nomeP {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+}
+
+.precoP {
+    font-size: 0.8rem;
+    color: #f5f5f5;
+}
+
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 10;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #f5f5f5;
+    padding: 0.5rem;
+    opacity: 60%;
+}
+
+.prev-btn {
+    left: 10px;
+    height: 3rem;
+}
+
+
+.prev-btn img {
+    rotate: 180deg;
+}
+
+.next-btn {
+    right: 10px;
+    height: 3rem;
+}
+
+.acoesCard {
+    background-color: #f5f5f5;
+    height: 0rem;
+    width: 11rem;
+    display: flex;
+    transform: translate(0, -2rem);
+    padding: 0 0.5rem;
+    align-items: center;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 9;
+    font-weight: bold;
+    justify-content: center;
+    overflow-y: hidden;
+    transition: 0.3s;
+
+}
+
+
+.card:hover .acoesCard {
+    height: 2rem;
+
+}
+
+/* --------------------- cards end ------------------ */
+
+
+#alingFull {
+    height: 35rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.FullImg_div {
+    height: 30rem;
+
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+
+}
+
+.FullImg_div img {
+    filter: brightness(40%);
+
+}
+
+.lineFullImg {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #f5f5f5;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    box-shadow: 0px 0px 10px #f5f5f5;
+    transform: translate(-0.7rem, 0.7rem);
+}
+
+.lineFullImg2 {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #f5f5f5;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    box-shadow: 0px 0px 10px #f5f5f5;
+    transform: translate(0.7rem, -0.7rem);
+}
+
+
+.FullImg_txt {
+    height: 25rem;
+    position: absolute;
+    font-size: 140%;
+    color: #f5f5f5;
+    padding: 2rem;
+    z-index: 2;
+    text-transform: uppercase;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.FullImg_div .FullBtn{
+    text-transform: uppercase;
+    border: 2px solid #f5f5f5;
+    padding: 1rem;
+    font-size: 70%;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #f5f5f5;
+    transition: 0.3s;
+
+}
+
+.FullImg_div:hover .FullBtn {
+    border: 2px solid #0f0f0f;
+    color: #f5f5f5;
+    font-weight: bold;
+    background-color: #0f0f0f;
+
+}
+
+/* -------------------destaques end------------------------- */
+
+
+#verMaisBtn {
+    padding: 3em 2em;
+    border: 2px solid #f5f5f5;
+    margin: 2rem;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #f5f5f5;
+    transition: all 0.5s;
+    font-size: 1rem;
+    /* position: relative; */
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px #f5f5f5;
+    outline: 2px solid #0f0f0f;
+
+}
+
+#verMaisBtn:hover {
+    color: #0f0f0f;
+    transform: scale(1.1);
+    outline: 2px solid #0f0f0f;
+
+}
+
+#verMaisBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f5f5f5;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+#verMaisBtn:hover::before {
+    width: 250%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.labelselct_div {
+    height: 3rem;
+    margin-bottom: 2rem;
+    background-color: #dfdede;
+    color: #2c2c2c;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+/* ------------------- grade start------------------------- */
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* Espaçamento entre os cards */
+    justify-content: start;
+}
+
+.img_capa2 {
+    position: relative;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.img_capa span {
+    color: #f5f5f5;
+    font-weight: bold;
+    width: 35%;
+    font-size: 46px;
+    position: absolute;
+    z-index: 10;
+    padding: 2rem;
+
+}
+
+
+
+.FlashCadastro {
+ 
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+}
+
+.bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+    20% {
+        background-color: #ffff;
+        transform: scaleY(1.5);
+    }
+
+    40% {
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+.Flashlogin {
+    display: flex;
+    margin: 2rem;
+    width: 90%;
+    justify-content: space-between;
+}
+
+
+.section {
+    border-top: solid 5px #a0a0a0;
+    color: #a0a0a0;
+    width: 40%;
+    padding: 2rem;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+}
+
+.modal {
+   
+    position: fixed; 
+  
+}
+
+
+
+@media (min-width: 700px) {
+
+    .img_capa {
+        height: 45vh;
+
+    }
+
+    .img_capa .img {
+        object-fit: cover;
+        width: 100%;
+        position: relative;
+        filter: brightness(150%) contrast(200%);
+
+
+    }
+
+
+    .img_capa2 .img {
+        object-fit: cover;
+        width: 100%;
+        position: relative;
+        filter: brightness(50%);
+
+
+    }
+
+    .tutorial {
+        display: flex;
+        height: 55rem;
+        width: 100%;
+        color: #131313;
+        flex-direction: column;
+        align-items: center;
+        background-color: #dfdede;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .tutorial .alingH {
+        height: 15rem;
+
+        justify-content: center;
+
+    }
+
+    .tutorial .alingV {
+        justify-content: center;
+        align-items: start;
+        width: 50%;
+
+
+    }
+    .modal {
+   
+        position: fixed; 
+      
+    }
+
+}

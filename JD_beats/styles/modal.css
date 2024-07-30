@@ -66,6 +66,14 @@ audio {
     
 
 }
+.imgCardModal img{
+    
+    width: 16rem;
+    height: 16rem;
+    
+    
+
+}
 
 .beat-content{
     padding: 1rem 0;
@@ -109,4 +117,27 @@ audio {
 }
 .btn_compra:hover{
     background-color: #004b06;
+}
+
+
+
+@media (max-width: 900px){
+
+    .beat-content{
+        
+       flex-direction: column;
+    }
+
+    
+    .imgCardModal {
+        width: 18rem;
+        height: 18rem;
+        
+    }
+    .imgCardModal img{
+    
+        width: 18rem;
+        height: 18rem;
+    
+    }
 }

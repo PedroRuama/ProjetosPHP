@@ -31,9 +31,9 @@ if (isset($_SESSION['user_name'])) {
         var closeBtn = document.getElementById('close-btn');
         var sidenav = document.getElementById('sidenav');
 
-        var openBtn2 = document.getElementById('open-btn2');
-        var closeBtn2 = document.getElementById('close-btn2');
-        var sidenav2 = document.getElementById('sidenav2');
+        // var openBtn2 = document.getElementById('open-btn2');
+        // var closeBtn2 = document.getElementById('close-btn2');
+        // var sidenav2 = document.getElementById('sidenav2');
 
         var openLog = document.getElementById('icon_log');
         var optns_conta = document.getElementById('logado__');
@@ -47,13 +47,13 @@ if (isset($_SESSION['user_name'])) {
             sidenav.style.width = '0';
         });
 
-        openBtn2.addEventListener('click', function() {
-            sidenav2.style.width = '250px';
-        });
+        // openBtn2.addEventListener('click', function() {
+        //     sidenav2.style.width = '250px';
+        // });
 
-        closeBtn2.addEventListener('click', function() {
-            sidenav2.style.width = '0';
-        });
+        // closeBtn2.addEventListener('click', function() {
+        //     sidenav2.style.width = '0';
+        // });
 
         openLog.addEventListener('click', function() {
             optns_conta.style.height = '240px';
@@ -69,11 +69,11 @@ if (isset($_SESSION['user_name'])) {
 
 
 <body>
-    <div class="MobileNot">
+    <!-- <div class="MobileNot">
         <img src="imgs/logofake.png" alt="" class="img2">
         <h2>Atualmete a visualização do sistema esta  disponivel apenas para computador.</h2>
         <p>Em breve lançamento para Celular</p>
-    </div>
+    </div> -->
 
     <div class="box_nav">
         <div class="alingV">
@@ -113,20 +113,22 @@ if (isset($_SESSION['user_name'])) {
 
 
                     <ul>
-                        <li><a href="#">
-                                <div class="user_div" id="open-btn2">
-                                    <img src="iconsJD/user.png" alt="user" class="img" id="img_user">
-                                    <p> Minha Conta</p>
-                                </div>
-                            </a></li>
-                        <li><a href="index.php?user=<?= $user ?>">Home Page</a></li>
-                        <li><a href="produtos.php?user=<?= $user ?>">Camisetas</a></li>
-                        <li><a href="#">Moletons</a></li>
-                        <li><a href="#">acessórios</a></li>
+                        <a href="index.php?user=<?= $user ?>">
+                            <li>Home Page</li>
+                        </a>
+                        <a href="produtos.php?user=<?= $user ?>">
+                            <li>Beats</li>
+                        </a>
+                        <a href="#">
+                            <li>Ouça mais JD</li>
+                        </a>
+                        <a href="#">
+                            <li>Estilos</li>
+                        </a>
                     </ul>
                 </nav>
 
-                <nav class="sidenav" id="sidenav2">
+                <!-- <nav class="sidenav" id="sidenav2">
                     <button id="close-btn2">Voltar</button>
                     <br>
                     <ul>
@@ -167,8 +169,8 @@ if (isset($_SESSION['user_name'])) {
                         ?>
 
                             <div class="optionsConta" id="login">
-                                <li><a href="criarconta.php">Criar Conta</a></li>
-                                <li><a href="login.php">Entrar</a></li>
+                                <li><a href="log_page.php?singin">Criar Conta</a></li>
+                                <li><a href="log_page.php?singup">Entrar</a></li>
                             </div>
 
                         <?php
@@ -177,7 +179,7 @@ if (isset($_SESSION['user_name'])) {
 
                         ?>
                     </ul>
-                </nav>
+                </nav> -->
 
                 <div class="logo_div" id="logo_mobile">
                     <img src="imgs/logofake.png" alt="logo" class="img">
@@ -194,6 +196,7 @@ if (isset($_SESSION['user_name'])) {
                     <div class="icon menu_btn" id="icon_log">
                         <img src="iconsJD/user.png" alt="menu" class="img">
                         <span><?= $user; ?></span>
+                        
                     </div>
 
                     <div class="optionsConta_log" id="logado__">
@@ -222,18 +225,20 @@ if (isset($_SESSION['user_name'])) {
                         ?>
                     </div>
 
+                    
+
 
                 <?php
 
                 } else {
                 ?>
 
-                    <div>
+                    <div class="div_sing_up_in">
                         <a href="log_page.php?singin"> <button class="menu_btn2">
                                 ENTRAR
                             </button> </a>
                         <a href="log_page.php?singup"><button class="menu_btn">
-                                REGISTRAR
+                                CRIAR
                             </button></a>
                     </div>
 

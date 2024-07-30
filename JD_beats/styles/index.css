@@ -176,7 +176,7 @@ nav .alingH {
 /* -------------------nav end------------------------- */
 
 .img_capa {
-    height: 35vh;
+    height: 30vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@ nav .alingH {
     object-fit: cover;
     width: 100%;
     position: relative;
-    filter: brightness(50%);
+    filter: brightness(60%);
 
 }
 
@@ -212,9 +212,9 @@ nav .alingH {
 
 
 .modal {
-   
-    position: fixed; 
-  
+
+    position: fixed;
+
 }
 
 .carousel {
@@ -250,15 +250,13 @@ nav .alingH {
 }
 
 .imgCard {
-    width: 12rem;
-    height: 12rem;
+    width: 8rem;
+    height: 8rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     justify-content: center;
     box-shadow: 0px 0px 5px #f5f5f5;
-
-
 }
 
 
@@ -394,7 +392,7 @@ nav .alingH {
 
 }
 
-.FullImg_div .FullBtn{
+.FullImg_div .FullBtn {
     text-transform: uppercase;
     border: 2px solid #f5f5f5;
     padding: 1rem;
@@ -503,18 +501,28 @@ nav .alingH {
 
 .img_capa2 {
     position: relative;
-    height: 25vh;
+    height: 15vh;
     display: flex;
     align-items: center;
+
+}
+
+.img_capa2 .img {
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    filter: brightness(50%);
+
 
 }
 
 .img_capa span {
     color: #f5f5f5;
     font-weight: bold;
-    width: 35%;
-    font-size: 46px;
+    width: 80%;
+    font-size: 200%;
     position: absolute;
+    top: 0;
     z-index: 10;
     padding: 2rem;
 
@@ -523,7 +531,7 @@ nav .alingH {
 
 
 .FlashCadastro {
- 
+
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -569,21 +577,25 @@ nav .alingH {
 
 .Flashlogin {
     display: flex;
+    flex-direction: column;
     margin: 2rem;
     width: 90%;
+    font-size: 80%;
     justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
 }
 
 
 .section {
     border-top: solid 5px #a0a0a0;
     color: #a0a0a0;
-    width: 40%;
+    width: 80%;
     padding: 2rem;
 }
 
 .section h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .section p {
@@ -591,12 +603,47 @@ nav .alingH {
 }
 
 .modal {
-   
-    position: fixed; 
-  
+
+    position: fixed;
+
+}
+
+.tutorial {
+    display: flex;
+    height: 45rem;
+    width: 100%;
+    color: #131313;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dfdede;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 
+.tutorial .alingH {
+    height: 15rem;
+    justify-content: center;
+
+}
+
+.tutorial .alingH .img {
+    height: 60%;
+
+
+}
+
+.tutorial .alingV {
+    justify-content: center;
+    align-items: start;
+    width: 60%;
+}
+
+.tutorial .alingV {
+    font-size: 80%;
+}
 
 @media (min-width: 700px) {
 
@@ -614,48 +661,71 @@ nav .alingH {
 
     }
 
+    .img_capa2 {
 
-    .img_capa2 .img {
-        object-fit: cover;
-        width: 100%;
-        position: relative;
-        filter: brightness(50%);
-
+        height: 25vh;
 
     }
 
-    .tutorial {
-        display: flex;
+
+
+    .modal {
+
+        position: fixed;
+
+    }
+
+    .img_capa span {
+        top: auto;
+        width: 35%;
+        font-size: 300%;
+
+    }
+
+    .imgCard {
+        width: 12rem;
+        height: 12rem;
+
+    }
+    .tutorial{
         height: 55rem;
-        width: 100%;
-        color: #131313;
-        flex-direction: column;
-        align-items: center;
-        background-color: #dfdede;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
     }
 
     .tutorial .alingH {
         height: 15rem;
-
         justify-content: center;
+
+    }
+
+    .tutorial .alingH .img {
+        height: 100%;
+
 
     }
 
     .tutorial .alingV {
-        justify-content: center;
-        align-items: start;
+        font-size: 100%;
         width: 50%;
-
-
     }
-    .modal {
+
+
+    .Flashlogin {
+        flex-direction: row;
+        font-size: 100%;
+        gap: 0rem
+    }
+
+
+
    
-        position: fixed; 
-      
+
+    .section {
+        width: 40%;
+    }
+
+
+    .section h1 {
+        font-size: 2.5rem;
     }
 
 }

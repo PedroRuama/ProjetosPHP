@@ -32,7 +32,7 @@ switch ($log) {
         $Verificacao = mysqli_query($conexao, "SELECT user_name from users where user_name='$username'");
         $num_rows = mysqli_num_rows($Verificacao);
         if ($num_rows > 0) {
-            header("Location: ../criarconta.php?error");
+            header("Location: ../log_page.php?singup&error");
         } else {
             $insert = "insert into users(email, user_name, pass, nome)
             values('$email', '$username', '$senha_codificada', '$nome')";
@@ -69,7 +69,7 @@ switch ($log) {
             // echo "<script>location.href='../index.php';</script>";
             header("Location: ../index.php?logado");
         } else {
-            header("Location: ../login.php?logError");
+            header("Location: ../log_page.php?singin&logError");
         }
         break;
 
