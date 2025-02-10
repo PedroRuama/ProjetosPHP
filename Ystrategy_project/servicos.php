@@ -13,8 +13,7 @@ include('menu.php');
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria Financeira</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/index.css">
     <script src="scripts/index.js"></script>
 </head>
@@ -56,7 +55,7 @@ include('menu.php');
 
 
 
-        <section class="hero carousel">
+        <section class="">
             <div class="cards-container">
 
                 <div class="img_capa card img_service">
@@ -147,7 +146,7 @@ include('menu.php');
     <?php
     } else if (isset($_GET['servicePf'])) {
     ?>
-        <section class="hero carousel">
+        <section class="">
             <div class="cards-container">
                 <div class="img_capa card img_service">
                     <span>

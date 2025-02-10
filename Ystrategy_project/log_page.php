@@ -7,17 +7,19 @@
 </head>
 
 <body>
-    <div style="display:none;">
+    <div>
         <?php
         include('menu.php');
         ?>
     </div>
 
 
-
-
-
-
+    <button class="voltar" onclick="window.history.go(-1);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M5.854 8.354a.5.5 0 0 1 0-.708L9.526 3.975a.5.5 0 1 1 .708.708L6.207 8l4.027 3.318a.5.5 0 0 1-.708.708l-3.672-3.672z" />
+        </svg>
+        Voltar
+    </button>
 
     <div class="alingLogin">
         <div class="blob">
@@ -30,7 +32,7 @@
         <?php
         if (isset($_GET['opcaosingUp'])) {
         ?>
-            <a href="log_page.php?singUpEm">
+            <!-- <a href="log_page.php?singUpEm">
                 <div class="opCadastro" id="opUpEm">
                     <h2>Cadastro Empresa</h2>
                     <img src="iconsJD/setaBranca.png" alt="seta" class="img">
@@ -42,16 +44,36 @@
                     <h2>Cadastro Pessoa Fisíca</h2>
                     <img src="iconsJD/setaBranca.png" alt="seta" class="img">
                 </div>
-                </ah>
+             </a> -->
+            <div class="container">
+                <div class="title">Escolha como deseja se cadastrar</div>
+                <div class="description">Selecione uma das opções abaixo para continuar com o seu cadastro.</div>
+                <div class="buttons">
+                    <a href="log_page.php?singUpEm">
+                        <button class="button company">
+                            Cadastro Empresa
+
+                        </button>
+                    </a>
+                    <a href="log_page.php?singUpPf">
+                        <button class="button person">
+                            Cadastro Pessoa Física
+
+                        </button>
+                    </a>
+                </div>
+            </div>
 
 
-            <?php
+
+
+        <?php
         } else {
-         
+
 
             if (isset($_GET['singin'])) {
-
                 include('login.php');
+                
             } else if (isset($_GET['singUpEm'])) {
 
                 include('criarcontaEM.php');
@@ -60,7 +82,7 @@
                 include('criarcontaPF.php');
             }
         }
-            ?>
+        ?>
 
 
     </div>

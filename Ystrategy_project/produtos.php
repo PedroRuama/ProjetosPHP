@@ -19,13 +19,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produtos</title>
     <link rel="stylesheet" href="styles/index.css">
     <script src="scripts/produtos.js"></script>
 </head>
 <body>
     <div class="labelselct_div">
-        <p>JDONTHATRACK® </p> <h2>Camisetas</h2>
+        <p>JDONTHATRACK® </p> <h2>Beats</h2>
     </div>
     <div id="input-container2">
         <div class="lineBusc"></div>

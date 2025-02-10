@@ -7,14 +7,6 @@ include('menu.php');
 
 
 
-if (isset($_GET['deslog'])) {
-
-    echo "<script>alert('Deslogado com sucesso!');</script>";
-}
-if (isset($_GET['logado'])) {
-
-    echo "<script>alert('Logado com sucesso! Bem vindo(a), " . $user . "');</script>";
-}
 
 ?>
 
@@ -24,8 +16,7 @@ if (isset($_GET['logado'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria Financeira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/planos.css">
     <link rel="stylesheet" href="styles/modal.css">
@@ -40,10 +31,10 @@ if (isset($_GET['logado'])) {
         const cardsContainer = document.querySelector('.cards-container');
         const navDotsContainer = document.querySelector('.nav-dots');
         let cardIndex = 0;
-        const cardWidth = document.querySelector('.card').offsetWidth;
+        let cardWidth = document.querySelector('.card').offsetWidth;
         const cardsCount = cardsContainer.children.length;
 
-        // Create navigation dots
+        // Cria os pontos de navegação
         for (let i = 0; i < cardsCount; i++) {
             const dot = document.createElement('span');
             dot.classList.add('dot');
@@ -80,7 +71,11 @@ if (isset($_GET['logado'])) {
 
         setInterval(autoNext, 7000);
 
-
+        // Atualiza o cardWidth ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            cardWidth = document.querySelector('.card').offsetWidth;
+            updateCardsPosition();
+        });
 
         const boxes = document.querySelectorAll('.scroll_animado');
 
@@ -99,11 +94,6 @@ if (isset($_GET['logado'])) {
             observer.observe(box);
         });
 
-
-
-
-
-
     });
 </script>
 
@@ -117,7 +107,7 @@ if (isset($_GET['logado'])) {
                 <span>
                     <div class="container">
                         <h2>Sua jornada para a liberdade financeira começa aqui!</h2>
-                        <p>Transforme suas finanças com soluções personalizadas para as necessidades financeiras da sua empresa.</p>
+                        <p>Organize suas finanças com soluções personalizadas para suas necessidades.</p>
                         <br>
                         <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
                     </div>
@@ -127,7 +117,7 @@ if (isset($_GET['logado'])) {
             <div class="img_capa card">
                 <span>
                     <div class="container">
-                        <h2>Diagnostique problemas e oportunidades da sua empresa</h2>
+                        <h2>Diagnóstico de problemas e oportunidades para sua empresa</h2>
 
                         <p>Oferecemos soluções personalizadas para suas necessidades financeiras.</p>
                         <br>
@@ -141,7 +131,7 @@ if (isset($_GET['logado'])) {
                     <div class="container">
                         <h2>Tenha clareza sobre suas finanças</h2>
 
-                        <p> Obtenha uma visão detalhada e transparente da sua situação financeira, permitindo decisões mais informadas e assertivas.</p>
+                        <p>Obtenha uma visão detalhada e transparente da sua situação financeira, permitindo tomar decisões inteligentes e assertivas.</p>
                         <br>
                         <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
                     </div>
@@ -151,9 +141,9 @@ if (isset($_GET['logado'])) {
             <div class="img_capa card">
                 <span>
                     <div class="container">
-                        <h2>Alcance processos financeiros mais eficientes</h2>
+                        <h2>Desenvolva processos financeiros eficientes</h2>
 
-                        <p>Simplifique e torne mais eficazes seus processos financeiros, aumentando a produtividade e a precisão na gestão.</p>
+                        <p>Crie, simplifique ou melhore seus processos financeiros. Aumente sua produtividade e precisão na gestão.</p>
                         <br>
                         <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
                     </div>
@@ -188,38 +178,11 @@ if (isset($_GET['logado'])) {
             <div class="img_capa card">
                 <span>
                     <div class="container">
-                        <h2>Planejamento financeiro para um futuro seguro</h2>
+                        <h2>Gestão patrimonial estratégica</h2>
 
-                        <p> Estruture seu futuro financeiro com um planejamento detalhado, assegurando estabilidade e crescimento a longo prazo.
-                        <p>
-                            <br>
-                            <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
-                    </div>
-                </span>
-                <img src="imgs/planejamento.jpg" alt="foto_capa" class="img">
-            </div>
-            <div class="img_capa card">
-                <span>
-                    <div class="container">
-                        <h2>Controle abrangente de suas finanças pessoais</h2>
-
-                        <p>Gerencie suas finanças pessoais com controle rigoroso e disciplina, garantindo um futuro financeiro seguro.
-                        <p>
-                            <br>
-                            <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
-                    </div>
-                </span>
-                <img src="imgs/contas.jpg" alt="foto_capa" class="img">
-            </div>
-            <div class="img_capa card">
-                <span>
-                    <div class="container">
-                        <h2>Gestão patrimonial estratégica e eficaz</h2>
-
-                        <p>Preserve e aumente seu patrimônio através de estratégias eficazes e personalizadas, assegurando um legado duradouro.
-                        <p>
-                            <br>
-                            <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
+                        <p>Preserve e aumente seu patrimônio através de estratégias personalizadas ao seu perfil, assegurando um legado duradouro</p>
+                        <br>
+                        <!-- <a href="#contact" class="cta-button">Entre em contato</a> -->
                     </div>
                 </span>
                 <img src="imgs/moedas.jpg" alt="foto_capa" class="img">
@@ -236,25 +199,34 @@ if (isset($_GET['logado'])) {
         <div class="section">
             <h1>Afinal, o que é a Gestão Financeira/Empresarial? </h1>
             <br>
+            <p class="scroll_animado">Gestão financeira/empresarial é um conjunto das ações e procedimentos administrativos relacionados com o planejamento, execução,
+                análise e controle das atividades financeiras do seu negócio. Simplificando: obter o melhor resultado <b> e o máximo de lucro </b> atividades da empresa com esforços inteligentes e eficientes;</p>
             <br>
-            <h2 class="scroll_animado">Planejamento, Organização e Acompanhamento dos processos</h2>
+            <h2> Qual nosso propósito: </h2>
             <br>
+            <p class="scroll_animado">Nosso propósito fundamental é dar transparência às suas informações, eficiência nos processos, aumento de lucro e gestão/acompanhamento dos resultados;</p>
             <br>
-            <p class="scroll_animado">Nosso propósito fundamental é a transparência das informações, eficiência, aumento dos lucros e a gestão eficaz da companhia ou pessoal;</p>
-            <br>
-            <br>
-            <p class="scroll_animado">Criamos um planejamento exclusivo às suas necessidades e visões;</p>
-            <br>
+            <p class="scroll_animado">Desenvolvemos um planejamento exclusivo, atendendo suas necessidades e seu perfil;</p>
             <br>
             <h2 class="scroll_animado">Preencha o formulário de apresentação e dê o próximo passo para o sucesso financeiro pessoal!
-
             </h2>
+            <br>
+            <a href="log_page.php?opcaosingUp">
+                <button class="singup">
+                    COMEÇAR AGORA
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+
+                    </div>
+                </button>
+            </a>
         </div>
         <div class="div_b">
             <div class="blob_">
                 <img src="imgs/computador-empresa.jpeg" alt="">
             </div>
         </div>
+
     </div>
 
 
@@ -265,6 +237,9 @@ if (isset($_GET['logado'])) {
             <div class="section scroll_animado sectionFull">
                 <h1>Tenha Ystrategy em sua organização</h1>
             </div>
+            <br>
+            <br>
+            <br>
             <div class="service-items">
                 <div class="card_info scroll_animado">
                     <div class="icon_card">
@@ -279,7 +254,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card"> Garante a <strong>estabilidade financeira</strong>;</span>
+                            <span class="txt_card"> garantir <strong>saúde financeira</strong>;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -288,7 +263,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card"> Gera valor para a marca;</span>
+                            <span class="txt_card">Fortalecer sua marca;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -297,7 +272,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card"> Maior <strong> credibilidade </strong>entre CLIENTES FORNECEDORES e INVESTIDORES;</span>
+                            <span class="txt_card"> Dar <strong> credibilidade </strong>perante o mercado;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -306,7 +281,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Auxilia nos processos decisórios;</span>
+                            <span class="txt_card">Auxiliar nos processos decisórios;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -315,7 +290,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Fortalece sua posição no mercado;</span>
+                            <span class="txt_card">Identificar riscos e oportunidades;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -324,7 +299,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Honra obrigações financeiras;</span>
+                            <span class="txt_card">Gerar transparência da operação e dos processos;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -333,16 +308,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Identifica riscos e oportunidades;</span>
-                        </li>
-                        <li>
-                            <span class="icon img">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 0h24v24H0z" fill="none"></path>
-                                    <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                                </svg>
-                            </span>
-                            <span class="txt_card">Gera transparência das operações e processos;</span>
+                            <span class="txt_card"><strong> Planejar a vida </strong>no longo prazo;</span>
                         </li>
 
                     </ul>
@@ -365,7 +331,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card"> Diminuição dos custos e despesas;</span>
+                            <span class="txt_card"> Diminuição dos <strong> custos e despesas </strong> ;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -374,7 +340,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Aumento de Lucros e Margens;</span>
+                            <span class="txt_card">Aumento de lucros e/ou margens;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -383,7 +349,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Diminue os riscos;</span>
+                            <span class="txt_card">Mitigar riscos;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -401,7 +367,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Reduz erros operacionais;</span>
+                            <span class="txt_card"><strong> Reduzir erros </strong> operacionais;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -409,17 +375,7 @@ if (isset($_GET['logado'])) {
                                     <path d="M0 0h24v24H0z" fill="none"></path>
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
-                            </span>
-                            <span class="txt_card">Sustentabilidade a Longo Prazo;</span>
-                        </li>
-                        <li>
-                            <span class="icon img">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 0h24v24H0z" fill="none"></path>
-                                    <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                                </svg>
-                            </span>
-                            <span class="txt_card">Suporte e respaldo na tomada de decisões.</span>
+                            </span>Tomadas de decisões assertivas;</span>
                         </li>
                     </ul>
                 </div>
@@ -439,7 +395,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Controle e planejamento orçamentário;</span>
+                            <span class="txt_card">Análise de perfil e objetivos;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -448,7 +404,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Planejamento e gestão de Fluxo de Caixa;</span>
+                            <span class="txt_card">Planejamento e controle orçamentário;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -457,7 +413,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Controle de custos e despesas;</span>
+                            <span class="txt_card">Gestão de custos e despesas;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -466,7 +422,7 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Automatização e/ou sistematização de processos;</span>
+                            <span class="txt_card">Gestão do fluxo de caixa;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -474,7 +430,7 @@ if (isset($_GET['logado'])) {
                                     <path d="M0 0h24v24H0z" fill="none"></path>
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
-                            </span>Análise de Investimentos;</span>
+                            </span>Automatização e/ou sistematização de processos;</span>
                         </li>
                         <li>
                             <span class="icon img">
@@ -483,13 +439,23 @@ if (isset($_GET['logado'])) {
                                     <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                 </svg>
                             </span>
-                            <span class="txt_card">Elaboração de relatórios administrativos/financeiros de forma simplificada;</span>
+                            <span class="txt_card">Análise de <strong> invstimentos e retornos </strong>;</span>
+                        </li>
+                        <li>
+                            <span class="icon img">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                    <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                </svg>
+                            </span>
+                            <span class="txt_card">Elaboração de <strong> relatórios de suporte </strong>
+                                administrativos /financeiros simplificados;</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        
+
     </section>
 
 
@@ -527,7 +493,7 @@ if (isset($_GET['logado'])) {
                         </div>
                     </a>
                 </div>
-                
+
             </div>
         </section>
     </div>
@@ -550,7 +516,7 @@ if (isset($_GET['logado'])) {
 
             <div class="alingV">
                 <h1>Apresente seu negócio</h1><br>
-                <p>Após criar seu login, apresente seu negócio o mais detalhado possivel, dando enfase à processos, despesas e situação atual, qual pode ser feito tanto de forma remota como presencial!</p>
+                <p>Apresente seu negócio de forma detalhada, destacando suas principais dificuldades. Entraremos em contato para oferecer as melhores soluções e oportunidades personalizadas para você!</p>
                 <br>
                 <br>
                 <a href="log_page.php?opcaosingUp">
@@ -572,14 +538,14 @@ if (isset($_GET['logado'])) {
             <img src="imgs/Data analysis-amico.png" class="img">
 
             <div class="alingV">
-                <h1>Nós fazemos o diagnóstico da sua empresa/negócio </h1><br>
-                <p>É feita a analíse da situação atual e é criado um plano de ação para alanvancar seu negócio, obtendo uma visão detalhada e transparente da sua situação financeira agindo de forma estratégica e eficaz</p>
+                <h1>Fazemos um diagnóstico preciso da sua empresa</h1><br>
+                <p>Realizamos uma análise detalhada da sua situação atual e desenvolvemos planos de ação estratégicos, com foco em identificar oportunidades de melhoria e impulsionar o crescimento do seu negócio.</p>
             </div>
         </div>
         <div class="alingH scroll_animado">
             <div class="alingV">
                 <h1>Execução do plano de ação</h1><br>
-                <p>Nesse momento é colocado tudo em pratica! O plano de ação totalmente planejado para o seu negócio é executado com nosso acompanhamento e consultoria dos resultados!</p>
+                <p>Chegou o momento de colocar tudo em prática! O plano de ação, cuidadosamente elaborado para o seu negócio, é executado com o nosso acompanhamento especializado, garantindo consultoria contínua e análise dos resultados obtidos.</p>
             </div>
             <img src="imgs/Process-amico (1).png" class="img">
         </div>
@@ -595,7 +561,7 @@ if (isset($_GET['logado'])) {
     </div>
 
 
-    <div class="Flashlogin" id="avalie">
+    <div class="detalhesBoxes" id="avalie">
         <div class="vertical-section">
 
             <h1>Avalie suas Particularidades</h1>
@@ -618,7 +584,7 @@ if (isset($_GET['logado'])) {
     <br>
     <br>
     <br>
-    <div class="Flashlogin" id="eficiencia">
+    <div class="detalhesBoxes" id="eficiencia">
         <div class="vertical-section">
 
             <h1>Garanta mais Eficiência</h1>
@@ -641,7 +607,7 @@ if (isset($_GET['logado'])) {
     <br>
     <br>
     <br>
-    <div class="Flashlogin" id="eficiencia">
+    <div class="detalhesBoxes" id="eficiencia">
         <div class="vertical-section">
 
             <h1>Tome Decisões Informadas</h1>

@@ -15,7 +15,7 @@
 
 
         <div class="divLogo">
-            <a href="../index.php"><img src="../imgs/logos/7-removebg-preview.png" alt="logo" class="img"></a>
+            <a href="../index.php"><img src="./imgs/logos/ystrategylogolaranja.png" alt="logo" class="img"></a>
         </div>
 
         <p class="form-title">Preencha os dados da sua empresa</p>
@@ -90,7 +90,7 @@
             </div>
 
             <div class="input-container textarea_container">
-                <textarea class="box" rows="8" cols="50" placeholder="Faça a primeira apresentação de sua Empresa/Negócio "></textarea>
+                <textarea class="box" rows="4" cols="50" placeholder="Faça a primeira apresentação de sua Empresa/Negócio "></textarea>
             </div>
             <!-- <div class="input-container">
                 <input type="password" placeholder="Senha" required name="pass">
@@ -100,10 +100,10 @@
                 <input type="password" placeholder="Confirmar senha" required>
             </div> -->
 
-            <button type="submit" class="submit">
-                Enviar Formulário
-            </button>
         </div>
+        <button type="submit" class="submit">
+            Enviar Formulário
+        </button>
 
 
         <!-- <br>

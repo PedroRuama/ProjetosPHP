@@ -12,7 +12,10 @@
     --blue-color: #021954;
     padding: 0;
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
     --arrow-width: 10px;
     --arrow-stroke: 2px;
 }
@@ -81,7 +84,7 @@ header h1 {
 
 /* -------------------top start------------------------- */
 .box_nav .alingH {
-    height: 7.5rem;
+    /* height: 7.5rem; */
     padding: 0 1.5rem;
 
 
@@ -95,31 +98,39 @@ header h1 {
 }
 
 #nav_desktop {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .box_nav {
     background-color: #1f293b;
-    /* background-color: transparent; */
-    /* position: absolute; */
-    /* box-shadow: inset 0px 0px 20px #0f0f0f; */
-    /* height: 11rem; */
+    display: flex;
+    position: relative;
     width: 100%;
     z-index: 200;
 }
 
+#img_logo {
+    height: 3rem;
+}
+
 .logo_div {
-    /* height: 8rem; */
+    
+    padding: 0.5rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 85vw;
+
+    flex-direction: column;
 
 }
+
 
 #logo_line {
     height: 80%;
-}
-
-#logo_desktop {
-    display: none;
-
 }
 
 
@@ -146,7 +157,7 @@ header h1 {
     height: 1.2rem;
     padding: 0.5rem;
     transition: .2s linear;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     letter-spacing: 2px;
     z-index: 1;
     background-color: #dfdede;
@@ -200,7 +211,7 @@ header h1 {
     margin: 0;
 }
 
-.box_nav  li {
+.box_nav li {
     padding: 1rem;
     transition: 0.2s;
     list-style-type: none;
@@ -342,7 +353,7 @@ nav .alingH {
     color: white;
     transition: 0.3s;
     border-radius: 0.3rem;
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: bold;
     cursor: pointer;
 }
@@ -375,9 +386,9 @@ nav .alingH {
 
     box-sizing: border-box;
     border: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     color: var(--white-color);
-    padding: 1em 1.8em;
+    padding: .75rem;
     background: var(--secondary-color);
     display: flex;
     justify-content: center;
@@ -440,7 +451,7 @@ nav .alingH {
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    /* font-size: 28px; */
     font-weight: bold;
 }
 
@@ -457,7 +468,7 @@ nav .alingH {
 
 
 
-.MobileNot{
+.MobileNot {
     display: none;
     flex-direction: column;
     z-index: 100;
@@ -473,24 +484,31 @@ nav .alingH {
     position: fixed;
 
 }
-.MobileNot img{
-   height: 10rem;
-   width: 10rem;
-   
+
+.MobileNot img {
+    height: 10rem;
+    width: 10rem;
+
 
 }
 
-@media (max-width: 700px){
-    .MobileNot{
-        display: flex;
-        
-    }
-    
-    .box_nav{
-        display: none;
-    }
-}
 
+.li_desktop {
+    position: relative;
+    font-size: 80%;
+    list-style-type: none;
+    /* height: 100%; */
+    display: flex;
+    z-index: 5;
+    border: none;
+    flex-wrap: nowrap;
+    background-color: transparent;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    color: var(--white-color);
+}
 
 
 
@@ -500,6 +518,8 @@ nav .alingH {
 
 
 @media (min-width: 900px) {
+
+
 
 
     #logo_desktop {
@@ -517,13 +537,10 @@ nav .alingH {
         height: 4rem;
         padding: 0.5rem;
         display: flex;
-
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         width: 70%;
-
-
-
     }
 
     #icon_menu {
@@ -541,28 +558,16 @@ nav .alingH {
 
     }
 
+    .li_desktop {
+        font-size: 100%;
+    }
+
     .sidenav {
         display: flex;
     }
 
 
-    .li_desktop {
-        position: relative;
-        font-size: 16px;
-        list-style-type: none;
-        /* height: 100%; */
-        display: flex;
-        z-index: 5;
-        border: none;
-        background-color: transparent;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s ease;
-        color: var(--white-color);
-    }
 
-    
     #nav_desktop a {
         width: 100%;
         text-decoration: none;
@@ -570,15 +575,7 @@ nav .alingH {
         /* position: relative; */
         text-align: center;
 
-
     }
-
-/* 
-    #nav_desktop .li_desktop:hover {
-        color: #021954;
-        font-weight: 600;
-        background-color: #f5f5f5
-    } */
 
     /* linha do bottom */
     .li_desktop::before {
@@ -665,7 +662,7 @@ nav .alingH {
 
     .box_nav .alingH {
         height: 100%;
-        
+
         display: flex;
         align-items: center;
 
@@ -677,7 +674,10 @@ nav .alingH {
 
 
 
-
+    .singup{
+        padding: 1em 1.8em;
+        border-radius: 20px;
+    }
 
 
 
