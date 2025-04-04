@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /Mundial/mundial/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+<FilesMatch "\.(css)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>

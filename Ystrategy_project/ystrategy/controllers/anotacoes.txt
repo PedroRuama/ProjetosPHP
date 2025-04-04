@@ -1,0 +1,13 @@
+CREATE DATABASE ystrategy_bd
+
+
+CREATE TABLE cad_user(
+id int(4) PRIMARY KEY AUTO_INCREMENT,
+usuario varchar(20) NOT NULL,
+senha varchar(50) NOT NULL,
+email varchar(40),
+acesso varchar(20),
+acao varchar(20)
+);
+
+INSERT INTO cad_user(usuario, senha,email,acesso, acao) VALUES ("RUAMA", md5("123456"), "ruma246@gmail.com", "ADMIN", "geral")

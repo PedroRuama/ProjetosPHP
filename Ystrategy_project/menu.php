@@ -33,7 +33,7 @@ if (isset($_SESSION['user_name'])) {
 
 
 <body>
-
+    
     <div class="box_nav">
         <div class="alingV">
             <div class="alingH">
