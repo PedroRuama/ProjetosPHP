@@ -46,6 +46,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="#" class="<?php if ($current_page === '#.php'){echo 'active';}?>">
                 Orçamento
             </a>
+            <a href="config.php" class="<?php if ($current_page === 'config.php'){echo 'active';}?>">
+                Configurações
+            </a>
             <a href="logout.php" class="<?php if ($current_page === '#.php'){echo 'active';}?>">
                 Logout
             </a>

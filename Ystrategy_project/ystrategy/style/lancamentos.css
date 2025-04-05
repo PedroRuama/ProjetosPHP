@@ -1,0 +1,500 @@
+
+* {
+    --primary-color: #1f293b;
+    --secondary-color: #e8491d;
+    --terciary-color: #8997b7;
+    --gray-color: #c4c4c8;
+    --lightgray-color: #d3d3d4;
+    --darkgray-color: #8d8d8d;
+    --hover-color: #fff;
+    --white-color: #f5f5f5;
+    --backColor: #1f293b;
+    --blackColor: #080a0e;
+    /* --backColor: #384972; */
+    /* --backColor: #021954; */
+    --blue-color: #021954;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", serif;
+}
+
+
+body {
+    background-color: var(--lightgray-color);
+    /* background-color: red; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 20px;
+}
+
+
+.summary,
+.expenses,
+.fixed-expense,
+.monthly-budget {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.fixed-expense{
+    background-color: var(--backColor);
+    color: var(--white-color);
+}
+
+.profile {
+    flex: 1 1 250px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    flex-direction: column;
+     align-items: center; /*o align-items esta fazendo sumir o .hrs, por que?; */
+}
+
+.profile img {
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 3px var(--backColor);
+    width: 100px;
+    height: 100px;
+}
+
+.profile h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.profile .balance {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff4500;
+}
+.profile .hrs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+.profile .hr1 {
+    height: 8px;
+    width: 70%;
+    background-color: #ff4500;
+}
+.profile .hr2 {
+    height: 5px;
+    width: 50%;
+    background-color: var(--darkgray-color);
+}
+
+.summary,
+.expenses,
+.fixed-expense,
+.monthly-budget {
+    flex: 1 1 300px;
+    
+}
+
+.summary{
+    height: 50%;
+    width: 30%;
+}
+
+.gastos{
+   color: #ff4500;
+}
+.recebimentos{
+   color:  rgb(0, 122, 0) ;
+}
+
+.value{
+   color: var(--blackColor)
+}
+
+.summary h3,
+.expenses h3,
+.fixed-expense h3,
+.monthly-budget h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.amount{
+    display: flex;
+}
+
+.summary .amount span,
+.expenses .amount,
+.fixed-expense .amount,
+.monthly-budget .amount {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.summary .add,
+.summary .sub,
+.expenses .add,
+.expenses .sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.add{
+    background-color: rgb(0, 122, 0);
+}
+.sub{
+    background-color: var(--secondary-color);
+}
+
+.lancamentos_div {
+    flex: 50 2 500px;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+
+.expenses table,
+.monthly-budget table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.expenses table th,
+.expenses table td,
+.monthly-budget table th,
+.monthly-budget table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.expenses table th,
+.monthly-budget table th {
+    background-color: #f5f5f5;
+}
+
+.fixed-expense {
+    position: relative;
+}
+
+.fixed-expense .alert {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4500;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.fixed-expense .next-expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.fixed-expense .next-expense .date {
+    color: #ff4500;
+}
+
+.monthly-budget .total {
+    display: flex;
+}
+
+.monthly-budget .manage {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;* {
+        --primary-color: #1f293b;
+        --secondary-color: #e8491d;
+        --terciary-color: #8997b7;
+        --gray-color: #c4c4c8;
+        --lightgray-color: #d3d3d4;
+        --darkgray-color: #8d8d8d;
+        --hover-color: #fff;
+        --white-color: #f5f5f5;
+        --backColor: #1f293b;
+        /* --backColor: #384972; */
+        /* --backColor: #021954; */
+        --blue-color: #021954;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 14px;
+        --arrow-width: 10px;
+        --arrow-stroke: 2px;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", serif;
+    }
+    
+    
+    body {
+        background-color: var(--lightgray-color);
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+    
+    .profile,
+    .summary,
+    .expenses,
+    .fixed-expense,
+    .monthly-budget {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .profile {
+        flex: 1 1 250px;
+        text-align: center;
+    }
+   
+    .profile img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile h2 {
+        margin: 10px 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .profile .balance {
+        font-size: 24px;
+        font-weight: 700;
+        color: #ff4500;
+    }
+    
+    .summary,
+    .expenses,
+    .fixed-expense,
+    .monthly-budget {
+        flex: 1 1 300px;
+    }
+    
+    .summary h3,
+    .expenses h3,
+    .fixed-expense h3,
+    .monthly-budget h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .summary .amount,
+    .expenses .amount,
+    .fixed-expense .amount,
+    .monthly-budget .amount {
+        font-size: 36px;
+        font-weight: 700;
+    }
+    
+    .summary .add, .sub
+    .expenses .add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .add{
+        background-color: rgb(0, 122, 0);
+    }
+    .sub{
+        background-color: rgb(145, 2, 2);
+    }
+    
+    .expenses table,
+    .monthly-budget table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .expenses table th,
+    .expenses table td,
+    .monthly-budget table th,
+    .monthly-budget table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .expenses table th,
+    .monthly-budget table th {
+        background-color: #f5f5f5;
+    }
+    
+    .fixed-expense {
+        position: relative;
+    }
+    
+    .fixed-expense .alert {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: #ff4500;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+    }
+    
+    .fixed-expense .next-expense {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .fixed-expense .next-expense .date {
+        color: #ff4500;
+    }
+    
+    .monthly-budget .total {
+        display: flex;
+    }
+    
+    .monthly-budget .manage {
+        background-color: #ff4500;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+        .main {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .profile,
+        .summary,
+        .expenses,
+        .fixed-expense,
+        .monthly-budget {
+            flex: 1 1 100%;
+        }
+    }
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile,
+    .summary,
+    .expenses,
+    .fixed-expense,
+    .monthly-budget {
+        flex: 1 1 100%;
+       
+    }
+    .profile{
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+    
+    .lancamentos_div {
+        flex: 50 2 220px;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        height: 60px; /* Altura reduzida (era 100px) */
+        flex-direction: row;
+    }
+    
+    .summary{
+        padding: 10px;
+        margin: 5px;
+    }
+    .summary .amount{
+        transform: scale(0.65) translateX(-26px);
+        width: 100%;
+    }
+    .fixed-expense{
+        width: 80%;
+    }
+}

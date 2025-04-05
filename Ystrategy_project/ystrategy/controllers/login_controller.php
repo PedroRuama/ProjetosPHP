@@ -14,6 +14,7 @@ if ($user === "") {
     echo "<script> alert('O campo usuário não pode estar vazio')</script>";
 }elseif ($rows == 1) {
     $dados = $resultado->fetch_assoc();
+    $_SESSION['userID'] = $dados['id'];
     $_SESSION['user'] = $dados['usuario'];
     $_SESSION['acao'] = $dados['acao'];
     $_SESSION['acesso'] = $dados['acesso'];
