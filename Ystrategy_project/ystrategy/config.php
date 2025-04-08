@@ -29,7 +29,7 @@
                     <label for="imagem-perfil">Adicionar Imagem Perfil</label>
                     <input type="file" id="imagem-perfil" name="img_perfil_" accept="image/*">
                     <div class="img_select" style="width: 80%">
-                        <button type="submit">Adicionar Imagem</button>
+                        <button type="submit">Adicionar Img</button>
                         <img alt="Profile Picture" id="img_user" src="<?= $path ?>" />
                     </div>
                 </form>

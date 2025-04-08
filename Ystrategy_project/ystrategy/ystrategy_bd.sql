@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/04/2025 às 23:59
+-- Tempo de geração: 08/04/2025 às 21:17
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -42,7 +42,6 @@ CREATE TABLE `cad_user` (
 --
 
 INSERT INTO `cad_user` (`id`, `usuario`, `senha`, `nome_completo`, `email`, `acesso`, `acao`) VALUES
-(1, 'RUAMA', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'ruma246@gmail.com', 'ADMIN', 'geral'),
 (2, 'RUAMA', 'e10adc3949ba59abbe56e057f20f883e', 'Pedro Ruama Nunes dos Santos', 'ruama246@gmail.com', 'ADMIN', 'geral');
 
 --
@@ -79,11 +78,27 @@ DELIMITER ;
 
 CREATE TABLE `categorias` (
   `categoria_id` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
+  `userID` int(11) DEFAULT NULL,
   `name` varchar(50) NOT NULL,
   `tipo` enum('gasto','recebimento','ambos') NOT NULL,
   `padrao_ys` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `categorias`
+--
+
+INSERT INTO `categorias` (`categoria_id`, `userID`, `name`, `tipo`, `padrao_ys`) VALUES
+(3, NULL, 'Alimentação', 'gasto', 1),
+(4, NULL, 'Aluguel', 'gasto', 1),
+(5, NULL, 'Água/Luz', 'gasto', 1),
+(6, NULL, 'Transporte', 'gasto', 1),
+(7, NULL, 'Internet', 'gasto', 1),
+(8, NULL, 'Investimento', 'gasto', 1),
+(9, NULL, 'Fatura', 'gasto', 1),
+(10, NULL, 'Academia', 'gasto', 1),
+(11, NULL, 'Lazer', 'gasto', 1),
+(13, NULL, 'Outros', 'gasto', 1);
 
 -- --------------------------------------------------------
 
@@ -260,7 +275,7 @@ ALTER TABLE `cad_user`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `financas_mes`

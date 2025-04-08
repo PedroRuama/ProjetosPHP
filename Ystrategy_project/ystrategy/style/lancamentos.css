@@ -59,6 +59,7 @@ body {
     padding: 20px;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 .fixed-expense{
     background-color: var(--backColor);
@@ -91,6 +92,15 @@ body {
     width: 80%;
     border-radius: 10px;
 }
+.profile h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #8d8d8d;
+    width: 55%;
+    border-radius: 10px;
+    color: #021954;
+}
 
 .profile .balance {
     font-size: 24px;
@@ -118,19 +128,26 @@ body {
 
 .summary,
 .expenses,
-.fixed-expense,
+.fixed-expense,o
 .monthly-budget {
     flex: 1 1 300px;
-    
+    transition: 0.3s;
 }
 
 .summary{
     height: 50%;
     width: 30%;
+    transition: 0.3s ease-in-out;
+}
+
+.summary.extendido{
+   
+    height: auto;
 }
 
 .gastos{
    color: #ff4500;
+
 }
 .recebimentos{
    color:  rgb(0, 122, 0) ;
@@ -187,6 +204,7 @@ body {
     display: flex;
     width: 100%;
     flex-direction: row;
+    transition: 0.3s ease-in-out;
 }
 
 
@@ -339,6 +357,7 @@ body {
     .fixed-expense,
     .monthly-budget {
         flex: 1 1 300px;
+         
     }
     
     .summary h3,
@@ -470,6 +489,7 @@ body {
     .fixed-expense,
     .monthly-budget {
         flex: 1 1 100%;
+        width: 90%;
        
     }
     .profile{
@@ -484,6 +504,7 @@ body {
         width: 100%;
         height: 60px; /* Altura reduzida (era 100px) */
         flex-direction: row;
+        transition: 0.3s ease-in-out;
     }
     
     .summary{
@@ -498,3 +519,50 @@ body {
         width: 80%;
     }
 }
+
+#container_cad_gasto{
+    display: none;
+}
+
+.input_cad[type="text"],
+.input_cad[type="number"],
+.input_cad[type="date"],
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+   
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+button {
+    /* background-color: #4CAF50; */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+.button_gasto{
+    background-color: #ff4500;
+    color: white;
+}
+
+.button_gasto:hover {
+    background-color: #e8491d;
+}
+

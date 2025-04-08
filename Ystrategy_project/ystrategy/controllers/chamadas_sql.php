@@ -1,25 +1,14 @@
-<script type="text/javascript">
+<?php 
+include("conexao.php");
 
-function maiuscula(string) {
-
-    res = string.value.toUpperCase();
-
-    string.value = res;
-
-
-
+if (!isset($_SESSION)) {
+    session_start();
 }
 
-</script>
+$s_financas = mysqli_query($conexao, "SELECT * FROM financas_mes WHERE userID = {$_SESSION['userID']}") or die("MySQL Error: " . $mysqli->Error);
+$u_financas = $s_financas->fetch_assoc();
 
-<script type="text/javascript">
 
-function minuscula(string) {
 
-    min = string.value.toLowerCase();
 
-    string.value = min;
-
-}
-
-</script> 
+?>
