@@ -45,7 +45,7 @@ echo "<br>";
                 </p>
                 <div class="hrs">
                     <div class="hr1"></div>
-                    <div class="hr2"></div>
+                    <div class="hr2"></div>var closeBtn = document.getElementById('close-btn');
                 </div>
                 <br>
                 <h3>Mês: <?= $u_financas['mes'] ?>/<?= $u_financas['ano'] ?></h3>

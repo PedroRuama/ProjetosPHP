@@ -7,16 +7,18 @@ if (!isset($_SESSION)) {
 }
 
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$dbhost = '127.0.0.1:3306';
-$dbusername = 'u247855321_ystrategy';
-$dbpassword = 'B^$SJoB=b9T';
-$dbname = 'u247855321_ystrategy_bd';
+// $dbhost = '127.0.0.1:3306';
+// $dbusername = 'u247855321_ystrategy';
+// $dbpassword = 'B^$SJoB=b9T';
+// $dbname = 'u247855321_ystrategy_bd';
 
-// $dbhost = 'localhost';
-// $dbusername = 'root';
-// $dbpassword = '';
-// $dbname = 'ystrategy_bd';
+$dbhost = 'localhost';
+$dbusername = 'root';
+$dbpassword = '';
+$dbname = 'ystrategy_bd';
 
 $conexao = new mysqli($dbhost, $dbusername, $dbpassword, $dbname) or die('Não foi possivel conectar com o banco');
 

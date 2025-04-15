@@ -53,3 +53,18 @@ BEGIN
 END//
 
 DELIMITER ;
+
+
+
+
+
+
+127.0.0.1/u247855321_ystrategy_bd/		https://auth-db1183.hstgr.io/index.php?route=/database/sql&db=u247855321_ystrategy_bd
+Seu comando SQL foi executado com sucesso.
+
+SHOW CREATE PROCEDURE update_is_active_fixos;
+
+
+
+update_is_active_fixos	NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION	CREATE DEFINER=`u247855321_ystrategy`@`127.0.0.1` ...	utf8mb4	utf8mb4_unicode_ci	utf8mb4_unicode_ci	
+

@@ -40,8 +40,16 @@
     padding: 10px 20px;
 }
 
+.header2 {
+    display: none;
+}
+
 
 .header img {
+    height: 50px;
+}
+
+.header2 img {
     height: 50px;
 }
 
@@ -50,7 +58,7 @@
     margin: 0 10px;
     text-decoration: none;
     font-weight: 500;
-    
+
 }
 
 .header nav a.active {
@@ -59,4 +67,57 @@
 
 .header nav a:hover {
     border-bottom: 2px solid #ff4500;
-}   
+}
+
+@media (max-width: 800px) {
+    .header2 {
+        display: flex;
+        width: 100%;
+        background-color: var(--primary-color);
+        color: white;
+        justify-content: start;
+        gap: 3rem;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .header2 .i_menu {
+        height: 30px;
+        transition: 0.2s;
+    }
+    .header2 .i_close {
+        display: none;
+        height: 30px;
+        
+    }
+
+    .header {
+        width: 0;
+        background-color: #26324a;
+        color: white;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        position: fixed;
+        z-index: 2;
+        overflow-x: hidden;
+        transition: 0.3s ease;
+    }
+
+
+    .header .logo_desktop {
+        display: none;
+    }
+
+    .nav_div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+}
