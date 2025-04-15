@@ -28,6 +28,7 @@
                 <form action="./controllers/addImg.php" method="post" enctype="multipart/form-data">
                     <label for="imagem-perfil">Adicionar Imagem Perfil</label>
                     <input type="file" id="imagem-perfil" name="img_perfil_" accept="image/*">
+                    <br> <br>
                     <div class="img_select" style="width: 80%">
                         <button type="submit">Adicionar Img</button>
                         <img alt="Profile Picture" id="img_user" src="<?= $path ?>" />
@@ -58,9 +59,10 @@
             <hr>
             <div class="campo">
                 <br>
-                <form action="" method="post">
+                <form action="./controllers/addInitialA.php" method="post">
                     <label for="saldo-inicial">Adicionar Saldo Inicial</label>
                     <input type="number" id="saldo-inici al" name="saldo-inicial" step="0.01" placeholder="Digite o saldo inicial">
+                    <br> <br>
                     <button type="submit">Adicionar Saldo</button>
 
                 </form>
@@ -68,10 +70,20 @@
             <hr>
             <div class="campo">
                 <br>
-                <form action="" method="post">
+                <form action="./controllers/addCat.php" method="post" id="addCat">
 
                     <label for="nova-categoria">Criar Nova Categoria</label>
-                    <input type="text" id="nova-categoria" name="nova-categoria" placeholder="Digite o nome da nova categoria">
+                    <input type="text" require name="name" placeholder="Digite o nome da nova categoria">
+                    <br>
+                    <br>
+                    <label for="nova-categoria">Adicionar</label>
+                    <select name="tipo" id="" require>
+                        <option value="gasto">Em Gastos</option>
+                        <option value="recebimento">Em Recebimentos</option>
+                        <option value="ambos">Em Ambos</option>
+
+                    </select>
+                    <br> <br>
                     <button type="submit">Criar Categoria</button>
 
                 </form>

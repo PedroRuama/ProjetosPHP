@@ -1,4 +1,5 @@
 <?php include("./menu.php");
+include './controllers/conexao.php';
 include("./controllers/chamadas_sql.php");
 
 echo "<br>";
@@ -40,7 +41,7 @@ echo "<br>";
                     Pedro Ruama
                 </h2>
                 <p class="balance">
-                    R$ <?= $u_financas['saldoAtual_amount'] ?>
+                    R$ <?= $u_financas['inicial_amount'] + $u_financas['total_recebimentos'] - $u_financas['total_gastos'] ?>
                 </p>
                 <div class="hrs">
                     <div class="hr1"></div>
@@ -64,14 +65,17 @@ echo "<br>";
                     </p>
                     <hr>
                     <div class="sub" onclick="show(this)">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon+">
                             <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                             <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-" style="display: none;">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
                     </div>
-                    <div id="container_cad_gasto">
+                    <div class="container_cad">
 
-                        <form>
+                        <form method="post" action="./controllers/addLancamento.php">
                             <div class="row">
                                 <div class="form-group">
                                     <!-- <label for="valor">R$ Valor</label> -->
@@ -90,14 +94,17 @@ echo "<br>";
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="categoria">Categoria</label> -->
-                                    <select class="select_cad" id="categoria" name="categoria" required>
+                                    <?php $scat = mysqli_query($conexao, "SELECT * from categorias where (padrao_ys = 1 OR (padrao_ys = 0 AND userID=$userID)) and (tipo = 'gasto' OR tipo='ambos')");
+                                    ?>
+                                    <select class="select_cad" id="categoria" name="categoria_id" required>
                                         <option value="" disabled selected>Categoria</option>
-                                        <option value="contas">Contas</option>
-                                        <option value="transporte">Transporte</option>
-                                        <option value="alimentacao">Alimentação</option>
-                                        <option value="lazer">Lazer</option>
-                                        <option value="outros">Outros</option>
+                                        <?php while ($cat = $scat->fetch_assoc()) {
+
+                                        ?>
+                                            <option value="<?= $cat['categoria_id'] ?>"><?= $cat['name'] ?></option>
+                                        <?php }; ?>
                                     </select>
+                                    <a href="config.php#addCat"> Add nova categoria + </a>
                                 </div>
 
                                 <!-- <div class="form-group">
@@ -125,11 +132,61 @@ echo "<br>";
                         <span class="value"> <?= $u_financas['total_recebimentos'] ?></span>
                     </p>
                     <hr>
-                    <div class="add">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="add" onclick="show(this)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon+">
                             <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                             <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-" style="display: none;">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="container_cad">
+
+                        <form method="post" action="./controllers/addLancamento.php">
+                            <div class="row">
+                                <div class="form-group">
+                                    <!-- <label for="valor">R$ Valor</label> -->
+                                    <input class="input_cad" type="number" id="valor" name="valor" step="0.01" min="0" placeholder="R$0,00" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="input_cad" type="date" id="data" name="data" value="<?php echo date('Y-m-d'); ?>" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="input_cad" type="text" id="descricao" name="descricao" placeholder="Descrição" required>
+                                </div>
+                                <div class="form-group">
+                                    <?php $scat = mysqli_query($conexao, "SELECT * from categorias where padrao_ys = 1  and (tipo = 'recebimento' OR tipo='ambos')");
+                                    ?>
+                                    <select class="select_cad" id="categoria" name="categoria_id" required>
+                                        <option value="" disabled selected>Categoria</option>
+                                        <?php while ($cat = $scat->fetch_assoc()) {
+
+                                        ?>
+                                            <option value="<?= $cat['categoria_id'] ?>"><?= $cat['name'] ?></option>
+                                        <?php }; ?>
+                                    </select>
+                                    <a href="config.php#addCat"> Add nova categoria + </a>
+                                </div>
+
+                                <!-- <div class="form-group">
+                                    <label for="objetivo">Objetivo</label>
+                                    <select id="objetivo" name="objetivo">
+                                        <option value="" selected>Nenhum</option>
+                                        <option value="viagem">Viagem</option>
+                                        <option value="investimento">Investimento</option>
+                                        <option value="emergencia">Fundo de Emergência</option>
+                                    </select>
+                                </div> -->
+                            </div>
+
+                            <button type="submit" class="button_recebimento">Adicionar Recebimento</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -187,66 +244,35 @@ echo "<br>";
                                 Descrição
                             </th>
                             <th>
+                                Categoria
+                            </th>
+                            <th>
                                 Data
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                R$ 16,00
-                            </td>
-                            <td>
-                                Biblioteca
-                            </td>
-                            <td>
-                                17/07
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                R$ 200,00
-                            </td>
-                            <td>
-                                Água/Luz
-                            </td>
-                            <td>
-                                15/07
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                R$ 93,50
-                            </td>
-                            <td>
-                                Jantar Restaurante
-                            </td>
-                            <td>
-                                11/07
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                R$ 24,99
-                            </td>
-                            <td>
-                                Açaí
-                            </td>
-                            <td>
-                                09/07
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                R$ 130,00
-                            </td>
-                            <td>
-                                Academia
-                            </td>
-                            <td>
-                                11/07
-                            </td>
-                        </tr>
+                        <?php
+
+                        $sgastos = mysqli_query($conexao, "SELECT * FROM transacoes WHERE userID = $userID and mes_id = " . $u_financas['mes_id'] . " AND tipo = 'gasto'");
+                        while ($gastos = mysqli_fetch_array($sgastos)) {
+                        ?>
+                            <tr>
+                                <td>
+                                    R$ <?= $gastos['amount']; ?>
+                                </td>
+                                <td>
+                                    <?= $gastos['name']; ?>
+                                </td>
+                                <td>
+                                    <?= $gastos['categoria']; ?>
+                                </td>
+                                <td>
+                                    <?php echo date('d/m/Y', strtotime($gastos['data_transacao'])) ?>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
                     </tbody>
                 </table>
             </div>
@@ -333,16 +359,48 @@ echo "<br>";
 
     <script>
         let f = 1;
+
         function show(card) {
-            f = f*(-1)
-            if(f<0){
+            f = f * (-1)
+            document.getElementsByClassName
+            const isMobile = window.innerWidth <= 768;
+            if (f < 0) {
                 card.parentElement.classList.add('extendido');
-            }else{
+                card.style = "transform: rotate(180deg);"
+                card.parentElement.getElementsByClassName('container_cad')[0].style = 'display:flex'
+                card.getElementsByClassName('icon+')[0].style = "display: none"
+                card.getElementsByClassName('icon-')[0].style = "display: flex"
+                //  console.log(card.parentElement.parentElement);
+
+
+                if (isMobile) {
+
+
+
+                    if (card.classList.contains('add')) {
+                        card.parentElement.parentElement.style = " flex-direction: column-reverse; height:auto;"
+                    } else {
+                        card.parentElement.parentElement.style = "flex-direction: column; height:auto;"
+                    }
+                }
+            } else {
                 card.parentElement.classList.remove('extendido');
+                card.style = "transform: rotate(-90deg);"
+                card.parentElement.getElementsByClassName('container_cad')[0].style = 'display:none'
+                card.getElementsByClassName('icon-')[0].style = "display: none"
+                card.getElementsByClassName('icon+')[0].style = "display: flex"
+                card.parentElement.parentElement.style = "flex-direction: row; height:auto;"
+
+                if (isMobile) {
+
+                    card.parentElement.parentElement.style = "flex-direction: row; height: 60px;"
+
+
+                }
             }
-            console.log(f);
-            
-            
+            // console.log(f);
+
+
         }
     </script>
 

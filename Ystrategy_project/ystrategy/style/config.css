@@ -29,15 +29,16 @@ label {
     margin-bottom: 8px;
     font-weight: bold;
 }
-
 input[type="text"],
 input[type="number"],
-input[type="file"] {
+input[type="date"],
+select {
     width: 90%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    padding: 5px;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 button {
@@ -77,3 +78,4 @@ button:hover {
     width: 80px;
     height: 80px;
 }
+
