@@ -79,3 +79,24 @@ button:hover {
     height: 80px;
 }
 
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para linha seguinte */
+    
+    /* Espaço entre os elementos */
+    gap: 5px;
+    /* Alinha verticalmente */
+}
+
+.form-group {
+    display: flex;
+    flex: 1 1 40%;
+    /* Cresce, encolhe, base de 200px */
+    min-width: 0;
+    /* Permite que o item encolha abaixo do flex-basis */
+}
+
+

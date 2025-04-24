@@ -25,6 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     <link rel="stylesheet" href="./style/menu.css">
+    <link rel="icon" href="./logos/ystrategylogolaranja.png" type="image/x-icon">
 </head>
 <style>
 
@@ -50,17 +51,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </a>
             <a href="#" class="<?php if ($current_page === '#.php') {
                                     echo 'active';
-                                } ?>">
+                                } ?> disabled">
                 Metas
             </a>
             <a href="#" class="<?php if ($current_page === '#.php') {
                                     echo 'active';
-                                } ?>">
+                                } ?> disabled">
                 Resumo do Mês
             </a>
             <a href="#" class="<?php if ($current_page === '#.php') {
                                     echo 'active';
-                                } ?>">
+                                } ?> disabled">
                 Orçamento
             </a>
             <a href="config.php" class="<?php if ($current_page === 'config.php') {

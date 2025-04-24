@@ -1,29 +1,37 @@
-<?php include("./menu.php"); ?>
+<?php include("./menu.php");
+include './controllers/chamadas_sql.php';
+?>
 <html>
 
 <head>
     <title>Formulários de Adição</title>
     <link rel="stylesheet" href="./style/config.css">
+    <script src="./script/format.js"></script>
     <style>
 
     </style>
 </head>
+<script>
+
+
+
+</script>
 
 <body>
     <div class="container">
         <h1>Formulários de Adição</h1>
 
         <div class="forms">
-        <?php
-                $simg = mysqli_query($conexao, "SELECT path FROM imgs_users where userID = '".$_SESSION['userID']."'");
-                $img = mysqli_fetch_array($simg);
-                $row_img = mysqli_num_rows($simg);
-                if($row_img >= 1){
-                    $path = $img['path'];
-                }else{
-                    $path = './icons/user.png';
-                }
-                ?>
+            <?php
+            $simg = mysqli_query($conexao, "SELECT path FROM imgs_users where userID = '" . $_SESSION['userID'] . "'");
+            $img = mysqli_fetch_array($simg);
+            $row_img = mysqli_num_rows($simg);
+            if ($row_img >= 1) {
+                $path = $img['path'];
+            } else {
+                $path = './icons/user.png';
+            }
+            ?>
             <div class="campo">
                 <form action="./controllers/addImg.php" method="post" enctype="multipart/form-data">
                     <label for="imagem-perfil">Adicionar Imagem Perfil</label>
@@ -91,17 +99,124 @@
             <hr>
             <div class="campo">
                 <br>
-                <form action="" method="post">
+                <form action="./controllers/add_fixos.php" method="post">
+
                     <label for="novo-gasto-fixo">Adicionar Novo Gasto Fixo</label>
-                    <input type="text" id="novo-gasto-fixo" name="novo-gasto-fixo" placeholder="Digite o nome do gasto fixo">
-                    <input type="number" id="valor-gasto-fixo" name="valor-gasto-fixo" step="0.01" placeholder="Digite o valor do gasto fixo">
+                    <div class="row">
+                        <div class="form-group">
+                            <!-- <label for="valor">R$ Valor</label> -->
+                            <input class="input_cad" type="text" id="novo-gasto-fixo" name="titulo" placeholder="Titulo">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="input_cad" type="number" id="valor-gasto-fixo" oninput="mascaraMoeda(this, event)" name="valor" step="0.01" placeholder="Valor Aproximado">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="input_cad" type="number" id="start" name="start_date" step="0.01" placeholder="Dia Pagamento">
+                        </div>
+                        <div class="form-group">
+                            <input class="input_cad" type="number" name="end_date" step="0.01" placeholder="Dia max final">
+                        </div>
+                        <div class="form-group">
+                            <?php $scat = mysqli_query($conexao, "SELECT * from categorias where padrao_ys = 1  and (tipo = 'gasto' OR tipo='ambos')");
+                            ?>
+                            <select class="select_cad" id="categoria" name="categoria_id" required>
+                                <option value="" disabled selected>Categoria</option>
+                                <?php while ($cat = $scat->fetch_assoc()) {
+
+                                ?>
+                                    <option value="<?= $cat['categoria_id'] ?>"><?= $cat['name'] ?></option>
+                                <?php }; ?>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <br>
                     <button type="submit">Adicionar Gasto</button>
                 </form>
+                <br>
+                <form action="./controllers/add_fixos.php?editar" method="post">
+                    <label for="novo-gasto-fixo">Editar Gasto Fixo</label>
+                    <div class="row">
+                        <div class="form-group">
+                            <?php $sGast = mysqli_query($conexao, "SELECT * from gastos_fixos where userID = $userID");
+                            ?>
+                            <select class="select_gast" id="Gasto" name="Gasto_id" required>
+                                <option value="" disabled selected>Selecionar gasto</option>
+                                <?php while ($Gast = $sGast->fetch_assoc()) {
+
+                                ?>
+                                    <option value="<?= $Gast['gasto_fixo_id'] ?>"><?= $Gast['name'] ?></option>
+                                <?php }; ?>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input class="input_cad" type="number" id="valor-gasto-fixo" oninput="mascaraMoeda(this, event)" name="valor" step="0.01" placeholder="Novo Valor Aproximado">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="input_cad" type="number" id="start" name="start_date" step="0.01" placeholder="Novo Dia Pagamento">
+                        </div>
+                        <div class="form-group">
+                            <input class="input_cad" type="number" name="end_date" step="0.01" placeholder="Novo Dia max final">
+                        </div>
+                        <div class="form-group">
+                            <?php $scat = mysqli_query($conexao, "SELECT * from categorias where padrao_ys = 1  and (tipo = 'gasto' OR tipo='ambos')");
+                            ?>
+                            <select class="select_cad" id="categoria" name="categoria_id" required>
+                                <option value="" disabled selected> Nova Categoria</option>
+                                <?php while ($cat = $scat->fetch_assoc()) {
+
+                                ?>
+                                    <option value="<?= $cat['categoria_id'] ?>"><?= $cat['name'] ?></option>
+                                <?php }; ?>
+                            </select>
+
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <button type="submit">Editar Gasto</button>
+                </form>
+            </div>
+            <hr>
+            <div class="campo">
+                <br>
+                <form action="./controllers/metas_controller.php?criar_meta" method="post">
+
+                    <label for="novo-gasto-fixo">Criar Nova Meta</label>
+                    <div class="row">
+                       
+                        <div class="form-group">
+                            <input class="input_cad" type="number" oninput="mascaraMoeda(this, event)" name="valor" step="0.01" placeholder="Objetivo Meta">
+                        </div>
+                        <div class="form-group">
+                            <input class="input_cad" type="number" oninput="mascaraMoeda(this, event)" name="valor_atual" step="0.01" placeholder="Valor Atual">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="valor">R$ Valor</label> -->
+                            <input class="input_cad" type="text" id="novo-gasto-fixo" name="titulo" placeholder="Titulo">
+                        </div>
+
+
+                    </div>
             </div>
 
+            <br>
+            <button type="submit">Adicionar Meta</button>
+            </form>
 
-
+            </form>
         </div>
+
+
+
+    </div>
 </body>
 
 </html>

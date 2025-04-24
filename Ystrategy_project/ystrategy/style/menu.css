@@ -60,6 +60,10 @@
     font-weight: 500;
 
 }
+.disabled{
+    opacity: 0.6;
+    position: inherit;
+}
 
 .header nav a.active {
     border-bottom: 2px solid #ff4500;
@@ -72,7 +76,7 @@
 @media (max-width: 800px) {
     .header2 {
         display: flex;
-        width: 100%;
+        /* width: 100%; */
         background-color: var(--primary-color);
         color: white;
         justify-content: start;

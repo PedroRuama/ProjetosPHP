@@ -1,4 +1,3 @@
-
 * {
     --primary-color: #1f293b;
     --secondary-color: #e8491d;
@@ -36,17 +35,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 
 .main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 1400px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 
@@ -61,7 +60,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
-.fixed-expense{
+
+.fixed-expense {
     background-color: var(--backColor);
     color: var(--white-color);
 }
@@ -73,7 +73,8 @@ body {
     position: relative;
     justify-content: start;
     flex-direction: column;
-     align-items: center; /*o align-items esta fazendo sumir o .hrs, por que?; */
+    align-items: center;
+    /*o align-items esta fazendo sumir o .hrs, por que?; */
 }
 
 .profile img {
@@ -92,6 +93,7 @@ body {
     width: 80%;
     border-radius: 10px;
 }
+
 .profile h3 {
     margin: 10px 0;
     font-size: 18px;
@@ -107,6 +109,7 @@ body {
     font-weight: 700;
     color: #ff4500;
 }
+
 .profile .hrs {
     display: flex;
     flex-direction: column;
@@ -115,11 +118,13 @@ body {
     gap: 0.5rem;
     width: 100%;
 }
+
 .profile .hr1 {
     height: 8px;
     width: 70%;
     background-color: #ff4500;
 }
+
 .profile .hr2 {
     height: 5px;
     width: 50%;
@@ -128,34 +133,40 @@ body {
 
 .summary,
 .expenses,
-.fixed-expense,o
+.fixed-expense,
 .monthly-budget {
     flex: 1 1 300px;
     transition: 0.3s;
-    
+
 }
 
-.summary{
+.summary {
     height: 50%;
     width: 30%;
     transition: 0.3s ease-in-out;
 }
 
-.summary.extendido{
-   transition: height 3s ease-in-out;
+.summary.extendido {
+    transition: height 3s ease-in-out;
     height: auto;
 }
 
-.gastos{
-   color: #ff4500;
+.gastos {
+    color: #ff4500;
 
 }
-.recebimentos{
-   color:  rgb(0, 122, 0) ;
+
+.recebimentos {
+    color: rgb(0, 122, 0);
 }
 
-.value{
-   color: var(--blackColor)
+.guardado {
+    color: rgb(237, 207, 12);
+    width: 92%;
+}
+
+.value {
+    color: var(--blackColor)
 }
 
 .summary h3,
@@ -166,7 +177,8 @@ body {
     font-weight: 500;
     margin-bottom: 10px;
 }
-.amount{
+
+.amount {
     display: flex;
 }
 
@@ -192,11 +204,18 @@ body {
     margin-top: 10px;
     cursor: pointer;
 }
-.add{
+
+.add {
     background-color: rgb(0, 122, 0);
     transition: 0.4s;
 }
-.sub{
+
+.guardar {
+    background-color: rgb(237, 207, 12);
+    transition: 0.4s;
+}
+
+.sub {
     background-color: var(--secondary-color);
     transition: 0.4s;
 }
@@ -266,264 +285,7 @@ body {
     display: flex;
 }
 
-.monthly-budget .manage {
-    background-color: #ff4500;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;* {
-        --primary-color: #1f293b;
-        --secondary-color: #e8491d;
-        --terciary-color: #8997b7;
-        --gray-color: #c4c4c8;
-        --lightgray-color: #d3d3d4;
-        --darkgray-color: #8d8d8d;
-        --hover-color: #fff;
-        --white-color: #f5f5f5;
-        --backColor: #1f293b;
-        /* --backColor: #384972; */
-        /* --backColor: #021954; */
-        --blue-color: #021954;
-        padding: 0;
-        margin: 0;
-        font-family: "Poppins", serif;
-        font-weight: 300;
-        font-style: normal;
-        font-size: 14px;
-        --arrow-width: 10px;
-        --arrow-stroke: 2px;
-        padding: 0;
-        margin: 0;
-        font-family: "Poppins", serif;
-    }
-    
-    
-    body {
-        background-color: var(--lightgray-color);
-    }
-    
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    
-    .main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1200px;
-        margin-top: 20px;
-    }
-    
-    .profile,
-    .summary,
-    .expenses,
-    .fixed-expense,
-    .monthly-budget {
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .profile {
-        flex: 1 1 250px;
-        text-align: center;
-    }
-   
-    .profile img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-    }
-    
-    .profile h2 {
-        margin: 10px 0;
-        font-size: 18px;
-        font-weight: 500;
-    }
-    
-    .profile .balance {
-        font-size: 24px;
-        font-weight: 700;
-        color: #ff4500;
-    }
-    
-    .summary,
-    .expenses,
-    .fixed-expense,
-    .monthly-budget {
-        flex: 1 1 300px;
-         
-    }
-    
-    .summary h3,
-    .expenses h3,
-    .fixed-expense h3,
-    .monthly-budget h3 {
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
-    
-    .summary .amount,
-    .expenses .amount,
-    .fixed-expense .amount,
-    .monthly-budget .amount {
-        font-size: 36px;
-        font-weight: 700;
-    }
-    
-    .summary .add, .sub
-    .expenses .add {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-    .add{
-        background-color: rgb(0, 122, 0);
-    }
-    .sub{
-        background-color: rgb(145, 2, 2);
-    }
-    
-    .expenses table,
-    .monthly-budget table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    
-    .expenses table th,
-    .expenses table td,
-    .monthly-budget table th,
-    .monthly-budget table td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    
-    .expenses table th,
-    .monthly-budget table th {
-        background-color: #f5f5f5;
-    }
-    
-    .fixed-expense {
-        position: relative;
-    }
-    
-    .fixed-expense .alert {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        background-color: #ff4500;
-        color: white;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 12px;
-    }
-    
-    .fixed-expense .next-expense {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-    }
-    
-    .fixed-expense .next-expense .date {
-        color: #ff4500;
-    }
-    
-    .monthly-budget .total {
-        display: flex;
-    }
-    
-    .monthly-budget .manage {
-        background-color: #ff4500;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-align: center;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-    
-    @media (max-width: 768px) {
-        .main {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .profile,
-        .summary,
-        .expenses,
-        .fixed-expense,
-        .monthly-budget {
-            flex: 1 1 100%;
-        }
-    }
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile,
-    .summary,
-    .expenses,
-    .fixed-expense,
-    .monthly-budget {
-        flex: 1 1 100%;
-        width: 90%;
-       
-    }
-    .profile{
-        width: 80%;
-        margin-bottom: 1rem;
-    }
-    
-    .lancamentos_div {
-        flex: 50 2 220px;
-        text-align: center;
-        display: flex;
-        width: 100%;
-        height: 60px; /* Altura reduzida (era 100px) */
-        flex-direction: row;
-        transition: 0.3s;
-    }
-    
-    .summary{
-        padding: 10px;
-        margin: 5px;
-    }
-    .summary .amount{
-        transform: scale(0.65) translateX(-26px);
-        width: 100%;
-    }
-    .fixed-expense{
-        width: 80%;
-    }
-}
-
-.container_cad{
+.container_cad {
     display: none;
 }
 
@@ -543,7 +305,7 @@ select {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
-   
+
 }
 
 .row .form-group {
@@ -560,7 +322,8 @@ button {
     width: 100%;
     margin-top: 10px;
 }
-.button_gasto{
+
+.button_gasto {
     background-color: #ff4500;
     color: white;
 }
@@ -568,8 +331,10 @@ button {
 .button_gasto:hover {
     background-color: #e8491d;
 }
-.button_recebimento{
-   background-color: rgb(0, 122, 0);;
+
+.button_recebimento {
+    background-color: rgb(0, 122, 0);
+    ;
     color: white;
 }
 
@@ -577,3 +342,130 @@ button {
     background-color: rgb(0, 83, 0);
 }
 
+.button_guardado {
+    background-color: rgb(237, 207, 12);
+    color: white;
+}
+
+.button_guardado:hover {
+    background-color: rgb(207, 180, 6);
+
+}
+
+.gerencia_financas_div {
+    display: flex;
+    /* flex-direction: row; */
+    width: 70%;
+}
+
+/* From Uiverse.io by Yaya12085 */
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked+.name {
+    background-color: #dcbd10ab;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .profile,
+    .summary,
+    .expenses,
+    .fixed-expense,
+    .monthly-budget {
+        flex: 1 1 100%;
+        /* width: 85%; */
+
+    }
+
+    .profile {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .lancamentos_div {
+        flex: 50 2 100%;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        height: 60px;
+        /* Altura reduzida (era 100px) */
+        flex-direction: row;
+        transition: 0.3s;
+        justify-content: end;
+    }
+
+
+    .gerencia_financas_div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .summary {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .summary .amount {
+        transform: scale(0.65) translateX(-26px);
+        width: 100%;
+    }
+
+    .fixed-expense {
+        width: 85%;
+    }
+
+
+    .summary h3,
+    .expenses h3,
+    .fixed-expense h3,
+    .monthly-budget h3 {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    td {
+        font-size: 80%;
+    }
+}

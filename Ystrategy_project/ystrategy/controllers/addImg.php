@@ -32,9 +32,9 @@ function enviarArquivo($error, $name, $tmp_name) {
     echo $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
     echo "<br>";
     
-    if (!in_array($extensao, ["jpg", "png", "jpeg"])) {
-        die("Tipo de arquivo não aceito. Use PNG, JPG ou JPEG.");
-    }
+    // if (!in_array($extensao, ["jpg", "png", "jpeg"])) {
+    //     die("Tipo de arquivo não aceito. Use PNG, JPG ou JPEG.");
+    // }
     
     // Gera um nome único para o arquivo
     echo $novoNomeDoArquivo = uniqid('img_') . '_' . $id . '.' . $extensao;

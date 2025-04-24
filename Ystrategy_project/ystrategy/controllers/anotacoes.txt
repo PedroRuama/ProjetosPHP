@@ -68,3 +68,118 @@ SHOW CREATE PROCEDURE update_is_active_fixos;
 
 update_is_active_fixos	NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION	CREATE DEFINER=`u247855321_ystrategy`@`127.0.0.1` ...	utf8mb4	utf8mb4_unicode_ci	utf8mb4_unicode_ci	
 
+
+
+
+DELIMITER //
+
+CREATE TRIGGER update_saldo_atual AFTER INSERT ON transacoes
+FOR EACH ROW
+FOLLOWS atualizar_financas
+BEGIN
+    DECLARE saldo_base DECIMAL(10,2);
+    
+    -- Calcula o saldo base (recebimentos - gastos)
+    SELECT (inicial_amount + total_recebimentos - total_gastos) INTO saldo_base
+    FROM financas_mes 
+    WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+    
+    -- Ajusta o saldo conforme o tipo de transação
+    IF NEW.tipo_operacao = 'guardado' THEN
+        UPDATE financas_mes 
+        SET saldoAtual_amount = saldo_base - NEW.amount
+        WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+        
+    ELSEIF NEW.tipo_operacao = 'resgatado' THEN
+        UPDATE financas_mes 
+        SET saldoAtual_amount = saldo_base + NEW.amount
+        WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+        
+    ELSE
+        -- Transação normal (já considerada em total_recebimentos ou total_gastos)
+        UPDATE financas_mes 
+        SET saldoAtual_amount = saldo_base
+        WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+    END IF;
+END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE TRIGGER update_saldo_atual AFTER INSERT ON transacoes
+FOR EACH ROW
+FOLLOWS atualizar_financas
+BEGIN
+    -- Atualização única com cálculo completo
+    UPDATE financas_mes fm
+    SET saldoAtual_amount = 
+        (fm.inicial_amount + fm.total_recebimentos - fm.total_gastos) +
+        CASE 
+            WHEN NEW.tipo_operacao = 'guardado' THEN -NEW.amount
+            WHEN NEW.tipo_operacao = 'resgatado' THEN NEW.amount
+            ELSE 0
+        END
+    WHERE fm.userID = NEW.userID AND fm.mes_id = NEW.mes_id;
+END//
+
+DELIMITER ;
+
+
+
+
+
+
+DELIMITER //
+
+CREATE TRIGGER atualizar_financas_completo
+AFTER INSERT ON transacoes
+FOR EACH ROW
+BEGIN
+    DECLARE tipo_cat VARCHAR(20);
+    DECLARE v_inicial_amount DECIMAL(10,2);
+    DECLARE v_total_recebimentos DECIMAL(10,2);
+    DECLARE v_total_gastos DECIMAL(10,2);
+    
+    -- Obtém os valores atuais do mês financeiro
+    SELECT inicial_amount, total_recebimentos, total_gastos 
+    INTO v_inicial_amount, v_total_recebimentos, v_total_gastos
+    FROM financas_mes 
+    WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+    
+    -- Verifica o tipo de categoria (para transações normais)
+    IF NEW.categoria_id IS NOT NULL THEN
+        SELECT c.tipo INTO tipo_cat 
+        FROM categorias c 
+        WHERE c.categoria_id = NEW.categoria_id;
+    END IF;
+    
+    -- Atualiza os valores conforme o tipo de transação
+    UPDATE financas_mes
+    SET 
+        total_recebimentos = CASE
+            WHEN NEW.tipo_operacao = 'resgatado' THEN total_recebimentos
+            WHEN NEW.categoria_id IS NOT NULL AND tipo_cat = 'recebimento' THEN total_recebimentos + NEW.amount
+            ELSE total_recebimentos
+        END,
+        total_gastos = CASE
+            WHEN NEW.tipo_operacao = 'guardado' THEN total_gastos
+            WHEN NEW.categoria_id IS NOT NULL AND tipo_cat = 'gasto' THEN total_gastos + NEW.amount
+            ELSE total_gastos
+        END,
+        saldoAtual_amount = 
+            v_inicial_amount + 
+            CASE
+                WHEN NEW.tipo_operacao = 'resgatado' THEN v_total_recebimentos + NEW.amount
+                WHEN NEW.categoria_id IS NOT NULL AND tipo_cat = 'recebimento' THEN v_total_recebimentos + NEW.amount
+                ELSE v_total_recebimentos
+            END -
+            CASE
+                WHEN NEW.tipo_operacao = 'guardado' THEN v_total_gastos + NEW.amount
+                WHEN NEW.categoria_id IS NOT NULL AND tipo_cat = 'gasto' THEN v_total_gastos + NEW.amount
+                ELSE v_total_gastos
+            END
+    WHERE userID = NEW.userID AND mes_id = NEW.mes_id;
+END//
+
+DELIMITER ;
