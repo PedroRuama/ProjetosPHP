@@ -41,7 +41,7 @@ echo "<br>";
                     <?php echo $_SESSION['user']; ?>
                 </h2>
                 <p class="balance">
-                    R$ <?= $u_financas['saldoAtual_amount']?>
+                    R$ <?= $u_financas['saldoAtual_amount'] ?>
                 </p>
                 <div class="hrs">
                     <div class="hr1"></div>
@@ -50,6 +50,13 @@ echo "<br>";
                 <br>
                 <h3>Mês: <?= $u_financas['mes'] ?>/<?= $u_financas['ano'] ?></h3>
                 <br>
+
+                
+                <div class="row">
+                    <h3><b>-$ Hoje:</b> <br>R$<?php echo $g_hoje['gastos_hj']; ?></h3>
+                    <h3><b>-$ Semana:</b> <br>R$<?php echo $g_semana['gastos_semana'];  ?></h3>
+                </div>
+
             </div>
 
 
@@ -226,7 +233,7 @@ echo "<br>";
                                     <span class="name">RESGATAR</span>
                                 </label>
 
-                                
+
                             </div>
                             <div class="row">
 
@@ -243,7 +250,7 @@ echo "<br>";
                                             <option value="" disabled selected>EM</option>
                                             <?php while ($meta = $smeta->fetch_assoc()) {
                                             ?>
-                                                <option value="<?= $meta['meta_id'] ?>"><?= $meta['name']?>:  <?= $meta['atual_amount']?></option>
+                                                <option value="<?= $meta['meta_id'] ?>"><?= $meta['name'] ?>: <?= $meta['atual_amount'] ?></option>
                                             <?php }; ?>
                                         </select>
                                         <!-- <a href="config.php#addCat"> Add nova categoria +</a> -->
@@ -419,7 +426,7 @@ echo "<br>";
             </div>
         </div>
     </div>
-  
+
     <script>
         let f = 1;
 
