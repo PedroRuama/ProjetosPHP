@@ -1,0 +1,43 @@
+.visual-indice {
+    background-color: rgb(17, 4, 207);
+    padding: 5px;
+    border-radius: 15px;
+    position: relative;
+
+}
+
+.visual-indice .indice ul li {
+    display: inline-block;
+    /* position: relative; */
+    padding: 4.5px;
+}
+
+.visual-indice .indice ul li a {
+    color: rgb(255, 255, 255) !important;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+/* .indice ul li a:hover {
+    background-color: black;
+    border-radius: 15px;
+    color: aqua !important;
+
+} */
+
+
+.visual-indice .indice ul {
+    list-style-type: none;
+
+}
+
+/* .indice ul {
+    display: none;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    /* transition: all .6s;
+
+    }
+    */

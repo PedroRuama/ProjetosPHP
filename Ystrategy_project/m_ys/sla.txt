@@ -1,0 +1,54 @@
+  <div class="sidebar">
+         <br>
+         <br>
+         <h1 class="icon">
+             <div class="logo_div">
+                 <img src="logo/logo.png" alt="logo" class="img">
+             </div>
+             MUNDIAL ENTULHOS
+         </h1>
+         <br>
+         <br>
+         <a href="#">
+             <i class="fas fa-home">
+             </i>
+             Home
+         </a>
+         <a href="#">
+             <i class="fas fa-leaf">
+             </i>
+             Sustainability
+         </a>
+         <a href="#">
+             <i class="fas fa-recycle">
+             </i>
+             Recycling
+         </a>
+         <a href="#">
+             <i class="fas fa-water">
+             </i>
+             Water Conservation
+         </a>
+         <a href="#">
+             <i class="fas fa-solar-panel">
+             </i>
+             Solar Energy
+         </a>
+         <a href="#">
+             <i class="fas fa-tree">
+             </i>
+             Forest Preservation
+         </a>
+         <a href="#">
+             <i class="fas fa-info-circle">
+             </i>
+             About
+         </a>
+         <a href="#">
+             <i class="fas fa-envelope">
+             </i>
+             Contact
+         </a>
+     </div>
+
+    

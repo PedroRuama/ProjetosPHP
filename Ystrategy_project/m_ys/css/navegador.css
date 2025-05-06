@@ -1,0 +1,63 @@
+.foto-logo{
+  margin-top: 4%;
+  width: 5%;
+  height: 10%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.5%;
+}
+
+.navegador {
+    background-color: mediumslateblue;
+    /* padding: 2px; */
+    border-radius: 15px;
+    position: relative;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+    text-decoration:none;
+}
+
+.navegador ul {
+    list-style-type: none;
+    display: inline;
+    background: powderblue;
+    align-items: center;
+    justify-content: center;}
+
+
+.navegador  ul li {
+    display: inline-block;
+    position: relative;
+    color: rgb(39, 33, 33);
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    text-decoration:none;
+}
+
+.navegador ul li.t_lista{
+
+height: 5%;
+color: white;
+background: black;
+border-radius: 15%;
+
+.navegador ul li a {
+    color: rgb(32, 30, 30) !important;
+text-decoration: none;  
+  padding: 2px;
+    position: relative  ;
+}
+
+.navegador ul li button {
+    color: rgb(255, 255, 255) !important;
+    text-decoration:aqua;
+    display: inline-block;
+    padding: 2px;
+}

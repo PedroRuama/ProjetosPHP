@@ -6,6 +6,9 @@ if (!isset($_SESSION)) {
 }
 
 $userID = $_SESSION['userID'];
+ini_set('date.timezone', 'America/Sao_Paulo');
+
+
 
 $ano = date('Y');
 $mes = date('m');

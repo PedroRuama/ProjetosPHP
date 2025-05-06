@@ -1,0 +1,20 @@
+{
+    "short_name": "MeuApp",
+    "name": "Meu Aplicativo Web",
+    "icons": [
+      {
+        "src": "/logo/logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/logo/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/index.php",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }

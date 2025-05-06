@@ -1,0 +1,15 @@
+/* body{
+font-family:poppins,sans-serif;
+background-image:linear-gradient(45deg,cyan,yellow,blue);
+overflow-x: hidden;
+} */
+
+main:after{
+    content:"";
+    min-height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(53,113,89,1) 14%, rgba(204,183,197,1) 49%, rgba(4,125,149,1) 86%);
+    z-index:-1;
+}

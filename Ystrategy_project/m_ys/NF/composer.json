@@ -1,0 +1,6 @@
+{
+    "require": {
+        "dompdf/dompdf": "^3.0",
+        "nfephp-org/sped-nfe": "^5.0"
+    }
+}

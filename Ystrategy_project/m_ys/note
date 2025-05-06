@@ -1,0 +1,143 @@
+
+                                            <form action="cmcr.php?update3=<?PHP echo $peds['Ped_ret'] ?>" method="post">
+
+                                                <?php
+
+                                                if ($peds['troca']) {
+
+                                                ?>
+
+                                                    <div class="card" style="background-color: yellow;">
+
+
+
+                                                        <br>
+
+                                                        Endereço&nbsp;:
+
+                                                        &nbsp;&nbsp;<?php echo $peds['Endereco']; ?>&nbsp;&nbsp;Nº&nbsp;:
+
+                                                        &nbsp;&nbsp;<?php echo $peds['numero']; ?><br>
+
+                                                        Numero do Pedido&nbsp;:
+
+                                                        <?php echo $peds['Ped_ret']; ?><br>
+
+                                                        Numero da Caçamba&nbsp;:
+
+                                                        <?php echo $peds['cacamba']; ?><br>
+
+                                                        Data de Retirada&nbsp;:&nbsp;&nbsp;
+
+                                                        &nbsp;&nbsp;<?php echo $peds['data_retirada']; ?>&nbsp;&nbsp;&nbsp;
+
+                                                        <br><br>
+
+                                                        <label>Aterro</label>
+
+                                                        <select id="aterro" name="aterro">
+
+
+
+                                                            <option value=""></option>
+
+                                                            <?php
+
+
+
+                                                            mysqli_data_seek($aterross, 0);
+
+                                                            while ($p_aterros = $aterross->fetch_assoc()) { ?>
+
+                                                                <option value='<?php echo $p_aterros['Nome_aterro']; ?>'>
+
+                                                                    <?php echo $p_aterros['Nome_aterro']; ?></option>
+
+                                                            <?php } ?>
+
+                                                        </select>
+
+
+
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                        <button input type="submit" name="acao">&nbsp;&nbsp;&nbsp;<?php echo $peds['status']; ?>&nbsp;&nbsp;&nbsp;</button>
+
+                                                        <br><br>
+
+                                                    </div>
+
+                                                <?php } else {
+
+
+
+                                                ?>
+
+                                                    <div class="card" style="background-color:antiquewhite;">
+
+                                                        &nbsp;&nbsp;<?php echo $peds['motorista']; ?>&nbsp;&nbsp;Nº&nbsp;:<br>
+
+                                                        Endereço&nbsp;:
+
+                                                        &nbsp;&nbsp;<?php echo $peds['Endereco']; ?>&nbsp;&nbsp;Nº&nbsp;:
+
+                                                        &nbsp;&nbsp;<?php echo $peds['numero']; ?><br>
+
+                                                        Numero do Pedido&nbsp;:
+
+                                                        <?php echo $peds['Ped_ret']; ?><br>
+
+                                                        Numero da Caçamba&nbsp;:
+
+                                                        <?php echo $peds['cacamba']; ?><br>
+
+                                                        Data de Retirada&nbsp;:&nbsp;&nbsp;
+
+                                                        &nbsp;&nbsp;<?php echo $peds['data_retirada']; ?>&nbsp;&nbsp;&nbsp;
+
+                                                        <br><br>
+
+                                                        <label>Aterro</label>
+
+                                                        <select id="aterro" name="aterro">
+
+
+
+                                                            <option value=""></option>
+
+                                                            <?php
+
+
+
+                                                            mysqli_data_seek($aterross, 0);
+
+                                                            while ($p_aterros = $aterross->fetch_assoc()) { ?>
+
+                                                                <option value='<?php echo $p_aterros['Nome_aterro']; ?>'>
+
+                                                                    <?php echo $p_aterros['Nome_aterro']; ?></option>
+
+                                                            <?php } ?>
+
+                                                        </select>
+
+
+
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                        <button input type="submit" name="acao">&nbsp;&nbsp;&nbsp;<?php echo $peds['status']; ?>&nbsp;&nbsp;&nbsp;</button>
+
+                                                        <br><br>
+
+                                                    </div>
+
+                                            <?php }
+                                            ?>
+
+
+
+
+
+
+
+                                            </form>

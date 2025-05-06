@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+            <infNFe versao="4.00" Id="NFeXXXXXXXXX">
+                <!-- Identificação da Nota Fiscal -->
+                <ide>
+                    <cUF>35</cUF> <!-- Código da UF do Emitente -->
+                    <cNF>12345678</cNF> <!-- Código Numérico -->
+                    <natOp>Venda de Mercadorias</natOp> <!-- Natureza da Operação -->
+                    <mod>55</mod> <!-- Modelo da NF-e -->
+                    <serie>1</serie> <!-- Série da NF -->
+                    <nNF>12345</nNF> <!-- Número da NF -->
+                    <dhEmi>2024-12-28T12:00:00-03:00</dhEmi> <!-- Data e Hora de Emissão -->
+                    <tpNF>1</tpNF> <!-- Tipo de Operação: 1=Entrada, 2=Saída -->
+                    <idDest>1</idDest> <!-- Identificador de Destino: 1=Interno -->
+                    <cMunFG>3550308</cMunFG> <!-- Código do Município do Emitente -->
+                    <tpImp>1</tpImp> <!-- Tipo de Impressão DANFE -->
+                    <tpEmis>1</tpEmis> <!-- Tipo de Emissão -->
+                    <cDV>3</cDV> <!-- Dígito Verificador da Chave de Acesso -->
+                    <tpAmb>2</tpAmb> <!-- Ambiente: 1=Produção, 2=Homologação -->
+                    <finNFe>1</finNFe> <!-- Finalidade: 1=Normal -->
+                    <indFinal>1</indFinal> <!-- Consumidor Final: 1=Sim -->
+                    <indPres>1</indPres> <!-- Indicador de Presença: 1=Presencial -->
+                    <procEmi>0</procEmi> <!-- Processo de Emissão -->
+                    <verProc>1.0</verProc> <!-- Versão do Processo -->
+                </ide>
+
+                <!-- Emitente -->
+                <emit>
+                    <CNPJ>12345678000195</CNPJ>
+                    <xNome>Empresa Emitente LTDA</xNome>
+                    <xFant>Nome Fantasia</xFant>
+                    <enderEmit>
+                        <xLgr>Rua A</xLgr>
+                        <nro>123</nro>
+                        <xBairro>Centro</xBairro>
+                        <cMun>3550308</cMun>
+                        <xMun>S&#xE3;o Paulo</xMun>
+                        <UF>SP</UF>
+                        <CEP>01001000</CEP>
+                        <cPais>1058</cPais>
+                        <xPais>Brasil</xPais>
+                        <fone>11987654321</fone>
+                    </enderEmit>
+                    <IE>1234567890</IE>
+                    <CRT>3</CRT> <!-- Código de Regime Tributário -->
+                </emit>
+
+                <!-- Destinatário -->
+                <dest>
+                    <CNPJ>98765432000123</CNPJ>
+                    <xNome>Cliente LTDA</xNome>
+                    <enderDest>
+                        <xLgr>Rua B</xLgr>
+                        <nro>456</nro>
+                        <xBairro>Centro</xBairro>
+                        <cMun>3550308</cMun>
+                        <xMun>S&#xE3;o Paulo</xMun>
+                        <UF>SP</UF>
+                        <CEP>01002000</CEP>
+                        <cPais>1058</cPais>
+                        <xPais>Brasil</xPais>
+                        <fone>11912345678</fone>
+                    </enderDest>
+                    <indIEDest>1</indIEDest> <!-- Contribuinte de ICMS -->
+                </dest>
+
+                <!-- Detalhes dos Produtos -->
+                <det nItem="1">
+                    <prod>
+                        <cProd>001</cProd>
+                        <cEAN>7891234567890</cEAN>
+                        <xProd>Produto Exemplo</xProd>
+                        <NCM>12345678</NCM>
+                        <CFOP>5102</CFOP>
+                        <uCom>UN</uCom>
+                        <qCom>10.0000</qCom>
+                        <vUnCom>5.00</vUnCom>
+                        <vProd>50.00</vProd>
+                        <cEANTrib>7891234567890</cEANTrib>
+                        <uTrib>UN</uTrib>
+                        <qTrib>10.0000</qTrib>
+                        <vUnTrib>5.00</vUnTrib>
+                        <indTot>1</indTot>
+                    </prod>
+                    <imposto>
+                        <ICMS>
+                            <ICMS00>
+                                <orig>0</orig>
+                                <CST>00</CST>
+                                <modBC>3</modBC>
+                                <vBC>50.00</vBC>
+                                <pICMS>18.00</pICMS>
+                                <vICMS>9.00</vICMS>
+                            </ICMS00>
+                        </ICMS>
+                        <PIS>
+                            <PISAliq>
+                                <CST>01</CST>
+                                <vBC>50.00</vBC>
+                                <pPIS>1.65</pPIS>
+                                <vPIS>0.83</vPIS>
+                            </PISAliq>
+                        </PIS>
+                        <COFINS>
+                            <COFINSAliq>
+                                <CST>01</CST>
+                                <vBC>50.00</vBC>
+                                <pCOFINS>7.60</pCOFINS>
+                                <vCOFINS>3.80</vCOFINS>
+                            </COFINSAliq>
+                        </COFINS>
+                    </imposto>
+                </det>
+
+                <!-- Total da Nota -->
+                <total>
+                    <ICMSTot>
+                        <vBC>50.00</vBC>
+                        <vICMS>9.00</vICMS>
+                        <vICMSDeson>0.00</vICMSDeson>
+                        <vFCP>0.00</vFCP>
+                        <vBCST>0.00</vBCST>
+                        <vST>0.00</vST>
+                        <vFCPST>0.00</vFCPST>
+                        <vFCPSTRet>0.00</vFCPSTRet>
+                        <vProd>50.00</vProd>
+                        <vFrete>0.00</vFrete>
+                        <vSeg>0.00</vSeg>
+                        <vDesc>0.00</vDesc>
+                        <vII>0.00</vII>
+                        <vIPI>0.00</vIPI>
+                        <vPIS>0.83</vPIS>
+                        <vCOFINS>3.80</vCOFINS>
+                        <vOutro>0.00</vOutro>
+                        <vNF>50.00</vNF>
+                    </ICMSTot>
+                </total>
+
+                <!-- Transporte -->
+                <transp>
+                    <modFrete>9</modFrete>
+                </transp>
+
+                <!-- Pagamento -->
+                <pag>
+                    <detPag>
+                        <indPag>0</indPag>
+                        <tPag>01</tPag>
+                        <vPag>50.00</vPag>
+                    </detPag>
+                </pag>
+
+                <!-- Informações Adicionais -->
+                <infAdic>
+                    <infCpl>Informa&#xE7;&#xF5;es complementares da nota.</infCpl>
+                </infAdic>
+            </infNFe>
+        </NFe>

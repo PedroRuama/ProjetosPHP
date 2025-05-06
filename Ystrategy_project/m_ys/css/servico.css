@@ -1,0 +1,479 @@
+
+
+
+
+.visual-indice {
+
+    background-color: mediumslateblue;
+
+    /* padding: 2px; */
+
+    border-radius: 15px;
+
+    position: relative;
+
+    width: 95%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 1%;
+
+}
+
+
+
+
+
+.foto-logo{
+
+  margin-top: 4%;
+
+  width: 5%;
+
+  height: 10%;
+
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-left: 1.5%;
+
+}
+
+
+
+.visual-indice .indice ul {
+
+    list-style-type: none;
+
+    display: inline;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.visual-indice .indice ul li {
+
+    display: inline-block;
+
+    position: relative;
+
+    color: rgb(39, 33, 33);
+
+    padding: 5px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 2px;
+
+}
+
+
+
+.visual-indice .indice ul li.t_lista{
+
+
+
+height: 5%;
+
+}
+
+
+
+.visual-indice .indice ul li a {
+
+    color: rgb(255, 255, 255) !important;
+
+    text-decoration:aqua;
+
+    padding: 2px;
+
+    position: relative  ;
+
+}
+
+
+
+.visual-indice .indice ul li button {
+
+    color: rgb(255, 255, 255) !important;
+
+    text-decoration:aqua;
+
+    display: inline-block;
+
+    padding: 2px;
+
+}
+
+
+
+
+
+.visual-indice .indice .botao1.on {
+
+    background-color: black;
+
+    border-radius: 15px;
+
+    color: aqua !important;
+
+}
+
+
+
+.visao_pedidos{
+
+    margin-top: 1%;
+
+    background-color: dodgerblue;
+
+    width: 95%;
+
+    margin-left: 2.5%;
+
+    display: block;
+
+    position: relative;
+
+} 
+
+
+
+.visao_pedidos h1{
+
+    margin-left: 40%;
+
+} 
+
+.teste{
+
+    display: inline;
+
+    width: 95%;
+
+   margin-left: 2.5%; 
+
+    background: gainsboro;
+
+
+
+}
+
+.visao_dados{
+
+    display: block;
+
+
+
+    margin-left: 2.5%; 
+
+    background-color:white;
+
+   color: rgb(9, 9, 9);
+
+   width: 30%;
+
+   border-style: dashed; 
+
+   
+
+}
+
+
+
+
+
+.testenovo{
+
+    align-items: center;
+
+    justify-items: center;
+
+    color: #000;
+
+    display: block;
+
+    position: relative;
+
+    margin-left: 40%;
+
+    margin-top: 10%;
+
+    width: 50%;
+
+    align-content: center;
+
+}
+
+
+
+.ativo{
+
+    display: none;
+
+}
+
+
+
+.ativo.onn{
+
+    display: block;
+
+}
+
+
+
+.botao{
+
+    margin: -500px  0px   -1000px   0px;
+
+}
+
+
+
+
+
+
+
+.pedido-pedido{
+
+    position: relative; 
+
+    transform: translate(2%);
+
+    border-radius: 5px; 
+
+    background-color: white;
+
+    width: 95%;
+
+    margin-top: 2%;
+
+    margin-block-end: 2%;
+
+    align-items: center;
+
+}
+
+
+
+.form_cliente{
+
+   background-color: rgb(243, 240, 255) 248, 255, 0.213;
+
+}
+
+
+
+.form{
+
+    margin-left: 10px;
+
+    position: relative;
+
+
+
+
+
+}
+
+
+
+
+
+.visao_clientes{
+
+    background-color: antiquewhite;
+
+    max-width: 97%;
+
+    display: inline-block;
+
+    margin-top:2%;
+
+    margin-right:2%;
+
+    margin-left:2%;
+
+}
+
+
+
+.oculto{
+
+    display: none;
+
+}
+
+
+
+.carga_principal{
+
+    /* display: inline-block; */
+
+    margin-top: 5px;
+
+    padding-top: 5px;
+
+    max-width: 90%;
+
+    display: flex;
+
+    min-height: 100%;
+
+    min-width: 100%;
+
+}
+
+
+
+.carga{
+
+    padding: 2%;
+
+    display: inline;
+
+    margin-top: 15px;
+
+    max-width: 100%;
+
+    border-top-width: 3px;
+
+    border-top-style: solid;
+
+    border-top-color: #000;
+
+}
+
+
+
+.table-wrapper {
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    height: 300px;
+
+    overflow:auto;
+
+}
+
+.table-wrapper1 {
+
+   
+
+    margin-left: 65%; 
+
+    position:relative;
+
+ 
+
+}
+
+
+
+.table-wrapper th {
+
+    white-space: nowrap!important;
+
+    font-size:12px;
+
+    background-color:#ffffff;
+
+    border-width: 1px;
+
+    padding: 3px;
+
+    border-style: solid;
+
+    border-color: #a9a9a9; 
+
+    text-align:left; 
+
+    padding-bottom: 0px; 
+
+    padding-top: 0px; 
+
+    font-style: italic;
+
+}
+
+
+
+.absoluto{
+
+    position: absolute;
+
+    display: inline;
+
+    margin-left: 5px;
+
+    border-width: 2%;
+
+    border-style: dashed; 
+
+    border-color: #000;
+
+    padding-top: 2%;
+
+}
+
+.quadro{
+
+
+
+
+
+background-color: #a9a9a9;
+
+width: 30%;
+
+border-color: white;
+
+position: absolute;
+
+padding: 1%;
+
+
+
+
+
+}
+
+.seleção{
+
+    
+
+    margin-left: 2.5%;
+
+    background-color: #ffffff;
+
+    width: 95%;
+
+    border-color: white;
+
+    position: absolute;
+
+    }
+
+
+
+
+
+  

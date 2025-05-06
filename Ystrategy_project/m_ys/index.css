@@ -1,0 +1,818 @@
+CONTAS A RECEBER
+
+.Digitar_cr{
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: translate(2%);
+
+    border-radius: 5px; 
+
+    width: 95%;
+
+    position: relative;
+
+
+
+
+
+}
+
+
+
+
+
+.form_pesq_cr{
+
+    width: 95%;
+
+    margin-top: 3%;
+
+    margin-left: 2.5%;
+
+    position: relative;
+
+    border: 1px inset #000;
+
+}
+
+
+
+.formulario_consulta_cr{
+
+width: 95%;
+
+margin-left: 2.5%;
+
+
+
+}
+
+
+.formulario_em_aberto{
+
+    width: 200px; 
+
+    position: relative;
+
+    margin-left: auto;
+
+    margin-left: 80%;
+
+}
+
+
+
+
+
+/* VEICULOS */
+
+
+
+.digitar_veiculos{
+
+  width: 95%;
+
+  margin-left: 2.5%;
+
+
+
+}
+
+
+
+.formulario_pesquisa_veiculos{
+
+    width: 95%;
+
+    margin-left: 2.5%;
+
+
+
+}
+
+.table-wrapper-veiculos tr th {
+
+    position: sticky;
+
+    top: 0;
+
+    color: #210202;
+
+    padding: 0.3rem 0.6rem;
+
+}
+
+
+
+/* MOTORISTA */
+
+
+
+.digitar-motorista{
+
+    width: 95%;
+
+    margin-left: 2.5%;
+
+    position: relative;
+
+}
+
+.table-wrapper-motorista{
+
+    width: 95%;
+
+    margin-left: 2.5%;
+
+
+
+}
+
+
+
+
+
+/* CAÇAMBA */
+
+
+
+.digitar-cacamba{
+
+
+
+    display: grid;
+
+    place-items: center;
+
+
+
+
+
+}
+
+
+
+.formulario_pesquisa_cacamba{
+
+
+
+    display: grid;
+
+    place-items: center;
+
+
+
+}
+
+
+
+/* VALORES */
+
+
+
+.digitar-valores{
+
+    display: grid;
+
+    place-items: center;
+
+
+
+}
+
+
+
+.table-wrapper-valores{
+
+    display: grid;
+
+    place-items: center;
+
+
+
+}
+
+
+
+/* ATERRO */
+
+
+
+#div-01{
+
+    display: inline-block;
+
+    
+
+}
+
+
+
+
+
+
+
+.formulario_pesquisa_aterro{
+
+border-style: solid;
+
+border-collapse: black;
+
+width: 20%;
+
+float:inline-end;
+
+margin-right: 5%;
+
+margin-top: 4%;
+
+z-index: -1;
+
+
+
+
+
+
+
+}
+
+.digitar-aterro{
+
+ /* background: #a9a9a9; */
+
+ /* width:50% ; */
+
+ margin-left: 2.5%;
+
+ width: 60%;
+
+
+
+}
+
+.consulta-aterro{
+
+    background: #000;
+
+
+
+
+
+}
+
+
+
+/* INCLUIR PEDIDO */
+
+ .t{
+
+
+
+    margin-left: 3%;
+
+ }
+
+
+
+
+
+.digitar-pedido{
+
+    display: grid;
+
+    place-items: center;
+
+
+
+}
+
+
+
+.digitar-cep{
+
+    display: grid;
+
+    place-items: center;
+
+
+
+}
+
+
+
+.table-wrapper-pedido{
+
+margin-left: 5%;
+
+
+
+}
+
+
+
+
+
+/* SERVIÇO */
+
+
+
+.tabela-resumo1{
+
+    justify-content: center;
+
+    align-items: top;
+
+    width: 33%;
+
+    display: inline-flex;
+
+}
+
+
+
+
+
+
+
+.quadro{
+
+    justify-content: center;  
+
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visual-indice {
+
+    background-color: mediumslateblue;
+
+    /* padding: 2px; */
+
+    border-radius: 15px;
+
+    position: relative;
+
+    width: 95%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 1%;
+
+}
+
+
+
+.foto-logo{
+
+  margin-top: 4%;
+
+  width: 5%;
+
+  height: 10%;
+
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-left: 1.5%;
+
+}
+
+
+
+.visual-indice .indice ul {
+
+    list-style-type: none;
+
+    display: inline;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.form33{
+
+    margin-top: -30px;
+
+    position: relative;
+
+    display: flex;
+
+}
+
+
+
+.visual-indice .indice ul li {
+
+    display: inline-block;
+
+    position: relative;
+
+    color: rgb(39, 33, 33);
+
+    padding: 5px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 2px;
+
+}
+
+
+
+.visual-indice .indice ul li.t_lista{
+
+
+
+height: 5%;
+
+}
+
+
+
+.visual-indice .indice ul li a {
+
+    color: rgb(255, 255, 255) !important;
+
+    text-decoration:aqua;
+
+    padding: 2px;
+
+    position: relative  ;
+
+}
+
+
+
+.visual-indice .indice ul li button {
+
+    color: rgb(255, 255, 255) !important;
+
+    text-decoration:aqua;
+
+    display: inline-block;
+
+    padding: 2px;
+
+}
+
+
+
+/* .indice ul li a:hover {
+
+    background-color: asrgb(198, 223, 198);
+
+    border-radius: 2px;
+
+    color: aqua !important;
+
+    display: inline-block;
+
+} */
+
+
+
+.visual-indice .indice .botao1.on {
+
+    background-color: black;
+
+    border-radius: 15px;
+
+    color: aqua !important;
+
+}
+
+
+
+.visao_pedidos{
+
+    margin-top: 1%;
+
+    background-color: dodgerblue;
+
+    width: 95%;
+
+    margin-left: 2.5%;
+
+    display: block;
+
+    position: absolute;
+
+} 
+
+
+
+.visao_pedidos h1{
+
+    margin-left: 40%;
+
+}      
+
+.visao_dados{
+
+   background-color: rgb(13, 13, 13);
+
+   color: white;
+
+   margin-left: 30.5%;
+
+   width: 40%;
+
+   border-style: dashed; 
+
+   display: block;
+
+   position: relative;
+
+   align-items: center;
+
+   justify-items: center;
+
+}
+
+.visao_dados_caixa{
+
+    background-color: rgb(252, 247, 247);
+
+    color: rgb(9, 9, 9);
+
+    margin-left: 30.5%;
+
+    width: 40%;
+
+    border-style: dashed; 
+
+    display: block;
+
+    position: relative;
+
+    align-items: center;
+
+    justify-items: center;
+
+}
+
+
+
+.testenovo{
+
+    align-items: center;
+
+    justify-items: center;
+
+    color: #000;
+
+    display: block;
+
+    position: relative;
+
+    margin-left: 40%;
+
+    margin-top: 10%;
+
+    width: 50%;
+
+    align-content: center;
+
+}
+
+
+
+.ativo{
+
+    display: none;
+
+}
+
+
+
+.ativo.onn{
+
+    display: block;
+
+}
+
+
+
+.botao{
+
+    margin: -500px  0px   -1000px   0px;
+
+}
+
+
+
+
+
+
+
+.pedido-pedido{
+
+    position: relative; 
+
+    transform: translate(2%);
+
+    border-radius: 5px; 
+
+    background-color: white;
+
+    width: 95%;
+
+    margin-top: 2%;
+
+    margin-block-end: 2%;
+
+    align-items: center;
+
+}
+
+
+
+.form_cliente{
+
+   background-color: rgb(243, 240, 255) 248, 255, 0.213;
+
+}
+
+
+
+
+
+
+
+.visao_clientes{
+
+    background-color: antiquewhite;
+
+    max-width: 99%;
+
+    display: inline-block;
+
+    margin-top:2%;
+
+    margin-right:2%;
+
+    margin-left:2%;
+
+}
+
+
+
+.oculto{
+
+    display: none;
+
+}
+
+
+
+.carga_principal{
+
+    /* display: inline-block; */
+
+    margin-top: 5px;
+
+    padding-top: 5px;
+
+    max-width: 90%;
+
+    display: flex;
+
+    min-height: 100%;
+
+    min-width: 100%;
+
+}
+
+
+
+
+
+.carga{
+
+    padding: 2%;
+
+    display: inline;
+
+    margin-top: 15px;
+
+    max-width: 100%;
+
+    border-top-width: 3px;
+
+    border-top-style: solid;
+
+    border-top-color: #000;
+
+}
+
+
+
+
+
+.select-editable {position:relative; background-color:white; border:solid grey 1px;  width:120px; height:18px;}
+
+.select-editable select {position:absolute; top:0px; left:0px; font-size:14px; border:none; width:120px; margin:0;}
+
+.select-editable input {position:absolute; top:0px; left:0px; width:100px; padding:1px; font-size:12px; border:none;}
+
+.select-editable select:focus, .select-editable input:focus {outline:none;}
+
+
+
+
+
+.table-wrapper1 {
+
+   
+
+    margin-left: 65%; 
+
+    position:absolute;
+
+ 
+
+}
+
+
+
+
+
+
+
+.absoluto{
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-left: 5px;
+
+    border-width: 2%;
+
+    border-style: dashed; 
+
+    border-color: #000;
+
+    padding-top: 2%;
+
+}
+
+.cadastrar{
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: translate(2%);
+
+    border-radius: 5px; 
+
+    background-color: rgb(222, 217, 217); 
+
+    width: 92%;
+
+    margin-left: 1.5%;
+
+    max-width: 92%;
+
+    position: absolute;
+
+
+
+}
+
+  
